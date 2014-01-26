@@ -58,15 +58,18 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qi8-Yz-TGC" kind="push" id="H3G-cM-roK"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allitems" textLabel="wkL-wp-cFB" style="IBUITableViewCellStyleDefault" id="M9E-Jp-hXv">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settings" textLabel="s5Q-XQ-mSr" style="IBUITableViewCellStyleDefault" id="eUn-fV-0GI">
                                 <rect key="frame" x="0.0" y="238" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M9E-Jp-hXv" id="qeg-bf-nnl">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eUn-fV-0GI" id="HGU-px-UUC">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="All Items" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wkL-wp-cFB">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s5Q-XQ-mSr">
                                             <rect key="frame" x="15" y="0.0" width="270" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -75,6 +78,29 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fVr-6B-0Zl" kind="push" id="13u-PJ-qh4"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="credits" textLabel="JWn-JY-AqV" style="IBUITableViewCellStyleDefault" id="HOu-PD-uCx">
+                                <rect key="frame" x="0.0" y="292" width="320" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HOu-PD-uCx" id="RDD-p8-qQi">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="53"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JWn-JY-AqV">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="d0C-FY-N1N" kind="push" id="wcm-54-ZQf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -106,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="636" y="-541"/>
         </scene>
-        <!--View Controller-->
+        <!--Dummy Dismiss View Controller-->
         <scene sceneID="Z8o-cv-NSF">
             <objects>
-                <viewController id="RtL-Lj-wqq" sceneMemberID="viewController">
+                <viewController id="RtL-Lj-wqq" customClass="RWSDummyDismissViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kRx-OE-QRh"/>
                         <viewControllerLayoutGuide type="bottom" id="qel-H8-ZNh"/>
@@ -123,12 +149,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-50-pXX">
-                                <rect key="frame" x="235" y="20" width="65" height="41"/>
+                                <rect key="frame" x="240" y="20" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="close:" destination="RtL-Lj-wqq" eventType="touchUpInside" id="NEH-39-46g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -314,10 +343,64 @@
             </objects>
             <point key="canvasLocation" x="2487" y="-553"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Settings-->
+        <scene sceneID="MrQ-8c-8Fs">
+            <objects>
+                <viewController id="fVr-6B-0Zl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aa8-zO-bRx"/>
+                        <viewControllerLayoutGuide type="bottom" id="0rY-51-DsM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h4H-jn-ldh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgM-e0-2pk">
+                                <rect key="frame" x="129" y="118" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="21z-lu-lVK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r83-0M-VLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131" y="144"/>
+        </scene>
+        <!--View Controller - Credits-->
+        <scene sceneID="nVf-Tv-brK">
+            <objects>
+                <viewController id="d0C-FY-N1N" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f6O-09-R9q"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZKV-TX-msQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ewn-Xr-hdU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Credits" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1U-9J-DBq">
+                                <rect key="frame" x="139" y="135" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Credits" id="DsK-eu-17Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZq-f7-Kdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131" y="810"/>
+        </scene>
+        <!--Dummy Dismiss View Controller-->
         <scene sceneID="SDQ-TH-lrb">
             <objects>
-                <viewController id="hlH-PG-fMP" sceneMemberID="viewController">
+                <viewController id="hlH-PG-fMP" customClass="RWSDummyDismissViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OUq-Lz-Klb"/>
                         <viewControllerLayoutGuide type="bottom" id="ayu-FF-50k"/>
@@ -327,14 +410,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You add an item here somewhow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhQ-cF-cxn">
-                                <rect key="frame" x="33" y="78" width="255" height="21"/>
+                                <rect key="frame" x="33" y="123" width="255" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUr-W8-hMi">
+                                <rect key="frame" x="217" y="20" width="65" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="hlH-PG-fMP" eventType="touchUpInside" id="y8r-d2-2mw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEx-Ff-U0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,5 +462,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="nKY-6n-VL9"/>
+        <segue reference="NDp-5W-szv"/>
     </inferredMetricsTieBreakers>
 </document>
