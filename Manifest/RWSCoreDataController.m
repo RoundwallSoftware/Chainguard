@@ -20,7 +20,11 @@
     self = [super init];
     if(self){
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+        NSParameterAssert(url);
+
         NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:url];
+        NSParameterAssert(model);
+        
         _storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
 
         NSError *storeError;
