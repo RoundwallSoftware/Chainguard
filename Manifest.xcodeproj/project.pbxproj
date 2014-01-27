@@ -157,19 +157,19 @@
 				9B5579F218969E99008E3C0A /* RWSManagedList.m */,
 				9BD6B1561895A1CC006E02D0 /* RWSAppDelegate.h */,
 				9BD6B1571895A1CC006E02D0 /* RWSAppDelegate.m */,
-				9BD6B14E1895A1CC006E02D0 /* Supporting Files */,
 				9BD6B1781895A4C4006E02D0 /* RWSListViewController.h */,
 				9BD6B1791895A4C4006E02D0 /* RWSListViewController.m */,
 				9B5579DC18968370008E3C0A /* RWSListSource.h */,
 				9B5579DD18968370008E3C0A /* RWSListSource.m */,
-				9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */,
-				9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */,
-				9B59DC801895AA27000530EF /* Storyboard.storyboard */,
 				9B5579DF18969070008E3C0A /* RWSList.h */,
 				9B5579E018969361008E3C0A /* RWSListCell.h */,
 				9B5579E118969361008E3C0A /* RWSListCell.m */,
 				9B5579E51896989D008E3C0A /* RWSCoreDataController.h */,
 				9B5579E61896989D008E3C0A /* RWSCoreDataController.m */,
+				9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */,
+				9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */,
+				9B59DC801895AA27000530EF /* Storyboard.storyboard */,
+				9BD6B14E1895A1CC006E02D0 /* Supporting Files */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
