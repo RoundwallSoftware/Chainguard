@@ -7,19 +7,15 @@
 //
 
 #import "RWSAppDelegate.h"
-#import "RWSCoreDataController.h"
 #import "RWSListViewController.h"
 
 @interface RWSAppDelegate()
-@property (nonatomic, strong) RWSCoreDataController *coreDataController;
 @end
 
 @implementation RWSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.coreDataController = [[RWSCoreDataController alloc] init];
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     UIColor *someKindOfPurple = [UIColor colorWithRed:113.0/255.0 green:60.0/255.0 blue:179.0/255.0 alpha:1.0];
