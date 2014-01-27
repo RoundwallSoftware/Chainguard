@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class RWSCoreDataController;
+@class RWSListSource;
 
 @interface RWSListViewController : UITableViewController
-
+@property (nonatomic, strong) RWSCoreDataController *coreDataController;
+@property (nonatomic, strong) RWSListSource *listSource;
 @end
