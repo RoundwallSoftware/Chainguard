@@ -86,6 +86,8 @@
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     UITableView *mockTable = mock([UITableView class]);
+    RWSListSource *source = mock([RWSListSource class]);
+    controller.listSource = source;
 
     [controller tableView:mockTable cellForRowAtIndexPath:indexPath];
 
