@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		745C2B8D6429406091C897BB /* libPods-ManifestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */; };
+		9B0DECD018970290007C80A6 /* RWSManagedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECCF18970290007C80A6 /* RWSManagedListTests.m */; };
+		9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */; };
 		9B5579DE18968370008E3C0A /* RWSListSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579DD18968370008E3C0A /* RWSListSource.m */; };
 		9B5579E218969361008E3C0A /* RWSListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579E118969361008E3C0A /* RWSListCell.m */; };
 		9B5579E41896977F008E3C0A /* RWSListSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579E31896977F008E3C0A /* RWSListSourceTests.m */; };
@@ -47,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManifestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0DECCF18970290007C80A6 /* RWSManagedListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedListTests.m; sourceTree = "<group>"; };
+		9B0DECD11897096B007C80A6 /* RWSProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSProjectViewController.h; sourceTree = "<group>"; };
+		9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectViewController.m; sourceTree = "<group>"; };
 		9B5579DC18968370008E3C0A /* RWSListSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSListSource.h; sourceTree = "<group>"; };
 		9B5579DD18968370008E3C0A /* RWSListSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSListSource.m; sourceTree = "<group>"; };
 		9B5579DF18969070008E3C0A /* RWSList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSList.h; sourceTree = "<group>"; };
@@ -164,6 +169,8 @@
 				9B5579DF18969070008E3C0A /* RWSList.h */,
 				9B5579E018969361008E3C0A /* RWSListCell.h */,
 				9B5579E118969361008E3C0A /* RWSListCell.m */,
+				9B0DECD11897096B007C80A6 /* RWSProjectViewController.h */,
+				9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */,
 				9B5579E51896989D008E3C0A /* RWSCoreDataController.h */,
 				9B5579E61896989D008E3C0A /* RWSCoreDataController.m */,
 				9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */,
@@ -194,6 +201,7 @@
 				9BD6B1761895A3A1006E02D0 /* RWSListViewControllerTests.m */,
 				9B5579E31896977F008E3C0A /* RWSListSourceTests.m */,
 				9B5579E8189698BC008E3C0A /* RWSCoreDataControllerTests.m */,
+				9B0DECCF18970290007C80A6 /* RWSManagedListTests.m */,
 			);
 			path = ManifestTests;
 			sourceTree = "<group>";
@@ -348,6 +356,7 @@
 				9B5579E71896989D008E3C0A /* RWSCoreDataController.m in Sources */,
 				9B5579DE18968370008E3C0A /* RWSListSource.m in Sources */,
 				9BD6B17A1895A4C4006E02D0 /* RWSListViewController.m in Sources */,
+				9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */,
 				9BD6B1581895A1CC006E02D0 /* RWSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B0DECD018970290007C80A6 /* RWSManagedListTests.m in Sources */,
 				9B5579E9189698BC008E3C0A /* RWSCoreDataControllerTests.m in Sources */,
 				9BD6B1771895A3A1006E02D0 /* RWSListViewControllerTests.m in Sources */,
 				9B5579E41896977F008E3C0A /* RWSListSourceTests.m in Sources */,

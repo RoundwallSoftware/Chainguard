@@ -11,45 +11,34 @@
 #import "RWSCoreDataController.h"
 
 @interface RWSListSource()
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 @end
 
 @implementation RWSListSource
-
-- (NSString *)debugDescription
-{
-    return [[self.fetchedResultsController fetchedObjects] debugDescription];
-}
 
 - (id)initWithCoreDataController:(RWSCoreDataController *)controller;
 {
     self = [super init];
     if(self){
-        NSManagedObjectContext *mainContext = [controller mainContext];
-
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[RWSManagedList entityName]];
-        [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:RWSManagedListAttributes.title ascending:YES]]];
-
-        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:mainContext sectionNameKeyPath:nil cacheName:nil];
-
-        NSError *fetchError;
-        BOOL fetched = [self.fetchedResultsController performFetch:&fetchError];
-        if(!fetched){
-            abort();
-        }
+        _context = [controller mainContext];
     }
     return self;
 }
 
 - (NSUInteger)listCount
 {
-    id<NSFetchedResultsSectionInfo> info = [[self fetchedResultsController] sections][0];
-    return [info numberOfObjects];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[RWSManagedList entityName]];
+    return [self.context countForFetchRequest:request error:nil];
 }
 
 - (id<RWSList>)listAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if(indexPath.section != 0){
+        return nil;
+    }
+
+    NSArray *allLists = [RWSManagedList allListsInContext:self.context];
+    return allLists[indexPath.row];
 }
 
 @end

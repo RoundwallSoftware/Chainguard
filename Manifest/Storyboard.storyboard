@@ -39,7 +39,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="qi8-Yz-TGC" kind="push" id="NDp-5W-szv"/>
+                                    <segue destination="qi8-Yz-TGC" kind="push" identifier="showList" id="NDp-5W-szv"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settings" textLabel="s5Q-XQ-mSr" style="IBUITableViewCellStyleDefault" id="eUn-fV-0GI">
@@ -93,7 +93,11 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Projects" id="Cvf-uC-x3k">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="B6u-S3-Ktr"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zPZ-OQ-u0m"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zPZ-OQ-u0m">
+                            <connections>
+                                <segue destination="qi8-Yz-TGC" kind="push" identifier="addList" id="SPm-kw-cRD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="Hwm-w0-we9" id="fZ5-8u-GYV"/>
@@ -147,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="1615" y="-1220"/>
         </scene>
-        <!--Table View Controller - Items-->
+        <!--Project View Controller - Items-->
         <scene sceneID="NG8-An-tgX">
             <objects>
-                <tableViewController id="qi8-Yz-TGC" sceneMemberID="viewController">
+                <tableViewController id="qi8-Yz-TGC" customClass="RWSProjectViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="22" sectionFooterHeight="22" id="kHd-Ia-oHs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -442,6 +446,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nKY-6n-VL9"/>
+        <segue reference="NDp-5W-szv"/>
+        <segue reference="VOf-k2-mXb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2,5 +2,8 @@
 #import "RWSList.h"
 
 @interface RWSManagedList : _RWSManagedList<RWSList> {}
-// Custom logic goes here.
+
++ (instancetype)makeUntitledListInContext:(NSManagedObjectContext *)context;
++ (NSArray *)allListsInContext:(NSManagedObjectContext *)context;
+
 @end

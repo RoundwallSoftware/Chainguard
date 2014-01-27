@@ -11,6 +11,7 @@
 #import "RWSListSource.h"
 #import "RWSManagedList.h"
 #import "RWSListCell.h"
+#import "RWSProjectViewController.h"
 
 @interface RWSListViewController ()
 
@@ -42,6 +43,13 @@
         self.coreDataController = [[RWSCoreDataController alloc] init];
     }
     return _coreDataController;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    [self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -86,6 +94,18 @@
     }
 
     return nil;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *identifier = [segue identifier];
+    if([identifier isEqualToString:@"addList"]){
+        RWSManagedList *list = [RWSManagedList makeUntitledListInContext:[self.coreDataController mainContext]];
+
+        RWSProjectViewController *controller = [segue destinationViewController];
+        controller.coreDataController = self.coreDataController;
+        controller.list = list;
+    }
 }
 
 @end
