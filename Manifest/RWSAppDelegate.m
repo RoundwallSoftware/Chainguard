@@ -14,6 +14,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    UIColor *someKindOfPurple = [UIColor colorWithRed:113.0/255.0 green:60.0/255.0 blue:179.0/255.0 alpha:1.0];
+
+    self.window.tintColor = someKindOfPurple;
+
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
 
     self.window.rootViewController = [storyboard instantiateInitialViewController];
