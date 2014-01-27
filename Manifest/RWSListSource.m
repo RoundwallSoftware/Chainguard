@@ -27,14 +27,6 @@
     if(self){
         NSManagedObjectContext *mainContext = [controller mainContext];
 
-        RWSManagedList *list = [RWSManagedList insertInManagedObjectContext:mainContext];
-        list.title = @"Example Project";
-        NSError *saveError;
-        BOOL saved = [mainContext save:&saveError];
-        if(!saved){
-            abort();
-        }
-
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[RWSManagedList entityName]];
         [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:RWSManagedListAttributes.title ascending:YES]]];
 

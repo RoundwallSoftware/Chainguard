@@ -9,6 +9,7 @@
 #import "RWSListViewController.h"
 #import "RWSCoreDataController.h"
 #import "RWSListSource.h"
+#import "RWSManagedList.h"
 #import "RWSListCell.h"
 
 @interface RWSListViewController ()
@@ -21,6 +22,16 @@
 {
     if(!_listSource){
         self.listSource = [[RWSListSource alloc] initWithCoreDataController:self.coreDataController];
+
+        NSManagedObjectContext *mainContext = [self.coreDataController mainContext];
+
+        RWSManagedList *list = [RWSManagedList insertInManagedObjectContext:mainContext];
+        list.title = @"Example Project";
+        NSError *saveError;
+        BOOL saved = [mainContext save:&saveError];
+        if(!saved){
+            abort();
+        }
     }
     return _listSource;
 }
