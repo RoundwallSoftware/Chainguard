@@ -16,19 +16,6 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-@interface RWSFakeProject : NSObject<RWSProject>
-
-@end
-
-@implementation RWSFakeProject
-
-- (NSString *)title
-{
-    return @"Fake";
-}
-
-@end
-
 @interface RWSProjectViewControllerTests : XCTestCase{
     RWSProjectViewController *controller;
 }
@@ -43,13 +30,37 @@
     controller = [[RWSProjectViewController alloc] init];
 }
 
-- (void)testProjectAcceptsAProject
+- (void)testControllerAcceptsAProject
 {
-    RWSFakeProject *project = [[RWSFakeProject alloc] init];
+    NSString *title = @"Fake Project";
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    [given([project title]) willReturn:title];
 
     controller.project = project;
 
-    assertThat(controller.title, equalTo(project.title));
+    assertThat(controller.title, equalTo(title));
+}
+
+- (void)testControllerAsksProjectForItemCount
+{
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    [given([project count]) willReturnInteger:3];
+
+    controller.project = project;
+
+    assertThatInteger([controller tableView:nil numberOfRowsInSection:0], equalToInteger(3));
+}
+
+- (void)testControllerAsksProjectForItem
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+
+    controller.project = project;
+
+    [controller tableView:nil cellForRowAtIndexPath:indexPath];
+
+    [verify(project) itemAtIndexPath:indexPath];
 }
 
 @end

@@ -14,23 +14,33 @@
 
 @implementation RWSProjectViewController
 
-- (void)setProject:(id<RWSProject>)project
+- (void)viewDidLoad
 {
-    _project = project;
+    [super viewDidLoad];
 
-    self.title = project.title;
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 100.0, 44.0)];
+    textField.textAlignment = NSTextAlignmentCenter;
+    textField.text = [self.project title];
+
+    self.navigationItem.titleView = textField;
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.project count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
+
+    id<RWSItem> item = [self.project itemAtIndexPath:indexPath];
+
+    cell.textLabel.text = item.name;
+
+    return cell;
 }
 
 @end

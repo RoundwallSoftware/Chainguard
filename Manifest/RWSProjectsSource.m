@@ -34,7 +34,7 @@
     return [self.context countForFetchRequest:request error:nil];
 }
 
-- (id<RWSProject>)listAtIndexPath:(NSIndexPath *)indexPath
+- (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section != 0){
         return nil;

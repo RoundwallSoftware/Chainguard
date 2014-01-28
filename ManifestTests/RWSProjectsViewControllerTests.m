@@ -104,11 +104,11 @@
     controller.projectSource = source;
 
     [given([table dequeueReusableCellWithIdentifier:@"list" forIndexPath:indexPath]) willReturn:cell];
-    [given([source listAtIndexPath:indexPath]) willReturn:list];
+    [given([source projectAtIndexPath:indexPath]) willReturn:list];
 
     [controller tableView:table cellForRowAtIndexPath:indexPath];
 
-    [verify(source) listAtIndexPath:indexPath];
+    [verify(source) projectAtIndexPath:indexPath];
     [verify(cell) setList:list];
 }
 

@@ -56,7 +56,7 @@
 
 - (void)testListSourceGrabsCorrectList
 {
-    RWSManagedProject *project = [source listAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    RWSManagedProject *project = [source projectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     assertThat(project, notNilValue());
     assertThat([project title], equalTo(@"Untitled From Test"));
 }

@@ -68,7 +68,7 @@
 {
     RWSProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"list" forIndexPath:indexPath];
 
-    id<RWSProject> list = [self.projectSource listAtIndexPath:indexPath];
+    id<RWSProject> list = [self.projectSource projectAtIndexPath:indexPath];
     [cell setList:list];
 
     return cell;
@@ -91,6 +91,13 @@
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"addList"]){
         RWSManagedProject *project = [self.projectSource makeUntitledList];
+
+        RWSProjectViewController *controller = [segue destinationViewController];
+        controller.project = project;
+    }
+
+    if([identifier isEqualToString:@"showList"]){
+        RWSManagedProject *project = [self.projectSource projectAtIndexPath:[self.tableView indexPathForSelectedRow]];
 
         RWSProjectViewController *controller = [segue destinationViewController];
         controller.project = project;

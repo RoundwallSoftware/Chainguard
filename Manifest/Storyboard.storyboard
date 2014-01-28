@@ -151,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="1615" y="-1220"/>
         </scene>
-        <!--Project View Controller - Items-->
+        <!--Project View Controller-->
         <scene sceneID="NG8-An-tgX">
             <objects>
                 <tableViewController id="qi8-Yz-TGC" customClass="RWSProjectViewController" sceneMemberID="viewController">
@@ -208,7 +208,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="CIB-ol-RF4"/>
                         <barButtonItem title="$32.21" id="hmj-Nc-5Ju"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Items" id="hft-KQ-kc6">
+                    <navigationItem key="navigationItem" id="hft-KQ-kc6">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Jyb-sr-G0Z"/>
                     </navigationItem>
                 </tableViewController>

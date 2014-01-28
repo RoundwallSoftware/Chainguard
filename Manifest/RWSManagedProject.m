@@ -53,4 +53,14 @@
     return results;
 }
 
+- (NSUInteger)count
+{
+    return 0;
+}
+
+- (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 @end

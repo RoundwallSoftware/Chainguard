@@ -8,6 +8,12 @@
 
 @import Foundation;
 
+@protocol RWSItem <NSObject>
+- (NSString *)name;
+@end
+
 @protocol RWSProject <NSObject>
 - (NSString *)title;
+- (NSUInteger)count;
+- (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
 @end

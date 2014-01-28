@@ -13,6 +13,6 @@
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
 - (NSUInteger)count;
-- (id<RWSProject>)listAtIndexPath:(NSIndexPath *)indexPath;
+- (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath;
 - (id<RWSProject>)makeUntitledList;
 @end
