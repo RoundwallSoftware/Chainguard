@@ -8,9 +8,9 @@
 
 @import XCTest;
 
-#import "RWSListViewController.h"
-#import "RWSListSource.h"
-#import "RWSListCell.h"
+#import "RWSProjectsViewController.h"
+#import "RWSProjectsSource.h"
+#import "RWSProjectCell.h"
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
@@ -18,19 +18,19 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-@interface RWSListViewControllerTests : XCTestCase{
-    RWSListViewController *controller;
+@interface RWSProjectsViewControllerTests : XCTestCase{
+    RWSProjectsViewController *controller;
 }
 
 @end
 
-@implementation RWSListViewControllerTests
+@implementation RWSProjectsViewControllerTests
 
 - (void)setUp
 {
     [super setUp];
 
-    controller = [[RWSListViewController alloc] init];
+    controller = [[RWSProjectsViewController alloc] init];
 }
 
 - (void)testCreation
@@ -74,20 +74,20 @@
 
 - (void)testControllerAsksListSourceForFirstSectionCount
 {
-    RWSListSource *source = mock([RWSListSource class]);
-    controller.listSource = source;
+    RWSProjectsSource *source = mock([RWSProjectsSource class]);
+    controller.projectSource = source;
 
     [controller tableView:nil numberOfRowsInSection:0];
 
-    [verify(source) listCount];
+    [verify(source) count];
 }
 
 - (void)testControllerUsesListCellForLists
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     UITableView *mockTable = mock([UITableView class]);
-    RWSListSource *source = mock([RWSListSource class]);
-    controller.listSource = source;
+    RWSProjectsSource *source = mock([RWSProjectsSource class]);
+    controller.projectSource = source;
 
     [controller tableView:mockTable cellForRowAtIndexPath:indexPath];
 
@@ -98,10 +98,10 @@
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     UITableView *table = mock([UITableView class]);
-    RWSListCell *cell = mock([RWSListCell class]);
-    id<RWSList> list = mockProtocol(@protocol(RWSList));
-    RWSListSource *source = mock([RWSListSource class]);
-    controller.listSource = source;
+    RWSProjectCell *cell = mock([RWSProjectCell class]);
+    id<RWSProject> list = mockProtocol(@protocol(RWSProject));
+    RWSProjectsSource *source = mock([RWSProjectsSource class]);
+    controller.projectSource = source;
 
     [given([table dequeueReusableCellWithIdentifier:@"list" forIndexPath:indexPath]) willReturn:cell];
     [given([source listAtIndexPath:indexPath]) willReturn:list];

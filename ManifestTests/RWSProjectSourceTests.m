@@ -9,8 +9,8 @@
 @import XCTest;
 @import CoreData;
 #import "RWSCoreDataController.h"
-#import "RWSListSource.h"
-#import "RWSManagedList.h"
+#import "RWSProjectsSource.h"
+#import "RWSManagedProject.h"
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
@@ -18,15 +18,15 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-@interface RWSListSourceTests : XCTestCase{
+@interface RWSProjectSourceTests : XCTestCase{
     NSManagedObjectContext *testContext;
     NSPersistentStoreCoordinator *storeCoordinator;
     RWSCoreDataController *coreDataController;
-    RWSListSource *source;
+    RWSProjectsSource *source;
 }
 @end
 
-@implementation RWSListSourceTests
+@implementation RWSProjectSourceTests
 
 - (void)setUp
 {
@@ -41,26 +41,24 @@
     testContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [testContext setPersistentStoreCoordinator:storeCoordinator];
 
-    RWSManagedList *list = [RWSManagedList insertInManagedObjectContext:testContext];
-    list.title = @"Untitled From Test";
+    RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:testContext];
+    project.title = @"Untitled From Test";
     assertThatBool([testContext save:nil], equalToBool(YES));
 
-    coreDataController = mock([RWSCoreDataController class]);
-    [given([coreDataController mainContext]) willReturn:testContext];
-
-    source = [[RWSListSource alloc] initWithCoreDataController:coreDataController];
+    source = [[RWSProjectsSource alloc] init];
+    source.context = testContext;
 }
 
 - (void)testListSourceKnowsTheRightNumberOfLists
 {
-    assertThatInteger([source listCount], equalToInteger(1));
+    assertThatInteger([source count], equalToInteger(1));
 }
 
 - (void)testListSourceGrabsCorrectList
 {
-    RWSManagedList *list = [source listAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    assertThat(list, notNilValue());
-    assertThat([list title], equalTo(@"Untitled From Test"));
+    RWSManagedProject *project = [source listAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    assertThat(project, notNilValue());
+    assertThat([project title], equalTo(@"Untitled From Test"));
 }
 
 @end

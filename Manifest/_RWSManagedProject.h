@@ -1,30 +1,30 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to RWSManagedList.h instead.
+// Make changes to RWSManagedProject.h instead.
 
 #import <CoreData/CoreData.h>
 
 
-extern const struct RWSManagedListAttributes {
+extern const struct RWSManagedProjectAttributes {
 	__unsafe_unretained NSString *title;
-} RWSManagedListAttributes;
+} RWSManagedProjectAttributes;
 
-extern const struct RWSManagedListRelationships {
-} RWSManagedListRelationships;
+extern const struct RWSManagedProjectRelationships {
+} RWSManagedProjectRelationships;
 
-extern const struct RWSManagedListFetchedProperties {
-} RWSManagedListFetchedProperties;
-
-
+extern const struct RWSManagedProjectFetchedProperties {
+} RWSManagedProjectFetchedProperties;
 
 
-@interface RWSManagedListID : NSManagedObjectID {}
+
+
+@interface RWSManagedProjectID : NSManagedObjectID {}
 @end
 
-@interface _RWSManagedList : NSManagedObject {}
+@interface _RWSManagedProject : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (RWSManagedListID*)objectID;
+- (RWSManagedProjectID*)objectID;
 
 
 
@@ -47,11 +47,11 @@ extern const struct RWSManagedListFetchedProperties {
 
 @end
 
-@interface _RWSManagedList (CoreDataGeneratedAccessors)
+@interface _RWSManagedProject (CoreDataGeneratedAccessors)
 
 @end
 
-@interface _RWSManagedList (CoreDataGeneratedPrimitiveAccessors)
+@interface _RWSManagedProject (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSString*)primitiveTitle;

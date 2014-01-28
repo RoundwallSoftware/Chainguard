@@ -14,6 +14,13 @@
 
 @implementation RWSProjectViewController
 
+- (void)setProject:(id<RWSProject>)project
+{
+    _project = project;
+
+    self.title = project.title;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

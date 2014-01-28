@@ -7,7 +7,7 @@
 //
 
 #import "RWSAppDelegate.h"
-#import "RWSListViewController.h"
+#import "RWSProjectsViewController.h"
 
 @interface RWSAppDelegate()
 @end

@@ -6,43 +6,33 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-#import "RWSListViewController.h"
+#import "RWSProjectsViewController.h"
 #import "RWSCoreDataController.h"
-#import "RWSListSource.h"
-#import "RWSManagedList.h"
-#import "RWSListCell.h"
+#import "RWSProjectsSource.h"
+#import "RWSManagedProject.h"
+#import "RWSProjectCell.h"
 #import "RWSProjectViewController.h"
 
-@interface RWSListViewController ()
+@interface RWSProjectsViewController ()
 
 @end
 
-@implementation RWSListViewController
+@implementation RWSProjectsViewController
 
-- (RWSListSource *)listSource
+- (RWSProjectsSource *)projectSource
 {
-    if(!_listSource){
-        self.listSource = [[RWSListSource alloc] initWithCoreDataController:self.coreDataController];
+    if(!_projectSource){
+        self.projectSource = [[RWSProjectsSource alloc] init];
 
-        NSManagedObjectContext *mainContext = [self.coreDataController mainContext];
-
-        RWSManagedList *list = [RWSManagedList insertInManagedObjectContext:mainContext];
-        list.title = @"Example Project";
+        RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:self.projectSource.context];
+        project.title = @"Example Project";
         NSError *saveError;
-        BOOL saved = [mainContext save:&saveError];
+        BOOL saved = [self.projectSource.context save:&saveError];
         if(!saved){
             abort();
         }
     }
-    return _listSource;
-}
-
-- (RWSCoreDataController *)coreDataController
-{
-    if(!_coreDataController){
-        self.coreDataController = [[RWSCoreDataController alloc] init];
-    }
-    return _coreDataController;
+    return _projectSource;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -60,7 +50,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0){
-        return [self.listSource listCount];
+        return [self.projectSource count];
     }
     return 2;
 }
@@ -76,9 +66,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView firstSectionCellAtIndexPath:(NSIndexPath *)indexPath
 {
-    RWSListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"list" forIndexPath:indexPath];
+    RWSProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"list" forIndexPath:indexPath];
 
-    id<RWSList> list = [self.listSource listAtIndexPath:indexPath];
+    id<RWSProject> list = [self.projectSource listAtIndexPath:indexPath];
     [cell setList:list];
 
     return cell;
@@ -100,11 +90,10 @@
 {
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"addList"]){
-        RWSManagedList *list = [RWSManagedList makeUntitledListInContext:[self.coreDataController mainContext]];
+        RWSManagedProject *project = [self.projectSource makeUntitledList];
 
         RWSProjectViewController *controller = [segue destinationViewController];
-        controller.coreDataController = self.coreDataController;
-        controller.list = list;
+        controller.project = project;
     }
 }
 

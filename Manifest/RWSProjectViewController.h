@@ -6,10 +6,8 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-@class RWSCoreDataController;
-@class RWSManagedList;
+#import "RWSProject.h"
 
 @interface RWSProjectViewController : UITableViewController
-@property (nonatomic, strong) RWSCoreDataController *coreDataController;
-@property (nonatomic, strong) RWSManagedList *list;
+@property (nonatomic, strong) id<RWSProject> project;
 @end

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-#import "RWSListCell.h"
+#import "RWSProjectCell.h"
 
-@implementation RWSListCell
+@implementation RWSProjectCell
 
-- (void)setList:(id<RWSList>)list
+- (void)setList:(id<RWSProject>)list
 {
     self.textLabel.text = [list title];
 }

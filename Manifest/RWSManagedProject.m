@@ -1,15 +1,11 @@
-#import "RWSManagedList.h"
+#import "RWSManagedProject.h"
 
+@implementation RWSManagedProject
 
-@interface RWSManagedList ()
-@end
-
-@implementation RWSManagedList
-
-+ (instancetype)makeUntitledListInContext:(NSManagedObjectContext *)context
++ (instancetype)makeUntitledProjectInContext:(NSManagedObjectContext *)context
 {
-    RWSManagedList *list = [self insertInManagedObjectContext:context];
-    list.title = [self nextAppropriateUntitledTitleInContext:context];
+    RWSManagedProject *project = [self insertInManagedObjectContext:context];
+    project.title = [self nextAppropriateUntitledTitleInContext:context];
 
     [context performBlockAndWait:^{
         NSError *saveError;
@@ -19,7 +15,7 @@
         }
     }];
 
-    return list;
+    return project;
 }
 
 + (NSString *)nextAppropriateUntitledTitleInContext:(NSManagedObjectContext *)context
@@ -43,17 +39,17 @@
     return [NSString stringWithFormat:@"Untitled %i", [results count]+1];
 }
 
-+ (NSArray *)allListsInContext:(NSManagedObjectContext *)context
++ (NSArray *)allProjectsInContext:(NSManagedObjectContext *)context
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
-    [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:RWSManagedListAttributes.title ascending:YES]]];
+    [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:RWSManagedProjectAttributes.title ascending:YES]]];
     NSError *fetchError;
     NSArray *results = [context executeFetchRequest:request error:&fetchError];
 
     if(!results){
         abort();
     }
-
+    
     return results;
 }
 

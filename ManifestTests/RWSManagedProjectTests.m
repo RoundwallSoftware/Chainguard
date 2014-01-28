@@ -8,7 +8,7 @@
 
 @import XCTest;
 @import CoreData;
-#import "RWSManagedList.h"
+#import "RWSManagedProject.h"
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
@@ -16,14 +16,14 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-@interface RWSManagedListTests : XCTestCase{
+@interface RWSManagedProjectTests : XCTestCase{
     NSPersistentStoreCoordinator *storeCoordinator;
     NSManagedObjectContext *testContext;
 }
 
 @end
 
-@implementation RWSManagedListTests
+@implementation RWSManagedProjectTests
 
 - (void)setUp
 {
@@ -41,24 +41,24 @@
 
 - (void)testCreatingANewUntitledList
 {
-    RWSManagedList *list = [RWSManagedList makeUntitledListInContext:testContext];
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
 
-    assertThat([list title], equalTo(@"Untitled"));
+    assertThat([project title], equalTo(@"Untitled"));
 }
 
 - (void)testCreatingMultipleNewUntitledLists
 {
-    RWSManagedList *list = [RWSManagedList makeUntitledListInContext:testContext];
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
 
-    assertThat([list title], equalTo(@"Untitled"));
+    assertThat([project title], equalTo(@"Untitled"));
 
-    RWSManagedList *list2 = [RWSManagedList makeUntitledListInContext:testContext];
+    RWSManagedProject *project2 = [RWSManagedProject makeUntitledProjectInContext:testContext];
 
-    assertThat([list2 title], equalTo(@"Untitled 2"));
+    assertThat([project2 title], equalTo(@"Untitled 2"));
 
-    RWSManagedList *list3 = [RWSManagedList makeUntitledListInContext:testContext];
+    RWSManagedProject *project3 = [RWSManagedProject makeUntitledProjectInContext:testContext];
 
-    assertThat([list3 title], equalTo(@"Untitled 3"));
+    assertThat([project3 title], equalTo(@"Untitled 3"));
 }
 
 @end
