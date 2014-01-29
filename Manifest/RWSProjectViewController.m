@@ -20,6 +20,7 @@
 
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 100.0, 44.0)];
     textField.textAlignment = NSTextAlignmentCenter;
+    textField.borderStyle = UITextBorderStyleLine;
     textField.text = [self.project title];
 
     self.navigationItem.titleView = textField;
