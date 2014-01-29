@@ -77,4 +77,16 @@
     [verify(project) setTitle:@"Title Now"];
 }
 
+- (void)testControllerRenamesProjectOnOtherTextViewDelegateMethod
+{
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    controller.project = project;
+    UITextField *textField = mock([UITextField class]);
+    [given([textField text]) willReturn:@"Title Now"];
+
+    [controller textFieldDidEndEditing:textField];
+
+    [verify(project) setTitle:@"Title Now"];
+}
+
 @end

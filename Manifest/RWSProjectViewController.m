@@ -50,4 +50,9 @@
     return YES;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.project.title = textField.text;
+}
+
 @end
