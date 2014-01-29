@@ -15,4 +15,5 @@
 - (NSUInteger)count;
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath;
 - (id<RWSProject>)makeUntitledList;
+- (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath;
 @end

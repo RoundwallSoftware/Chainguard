@@ -86,8 +86,6 @@
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     UITableView *mockTable = mock([UITableView class]);
-    RWSProjectsSource *source = mock([RWSProjectsSource class]);
-    controller.projectSource = source;
 
     [controller tableView:mockTable cellForRowAtIndexPath:indexPath];
 
@@ -110,6 +108,17 @@
 
     [verify(source) projectAtIndexPath:indexPath];
     [verify(cell) setList:list];
+}
+
+- (void)testControllerDeletesAProject
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    RWSProjectsSource *source = mock([RWSProjectsSource class]);
+    controller.projectSource = source;
+
+    [controller tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
+
+    [verify(source) deleteProjectAtIndexPath:indexPath];
 }
 
 @end

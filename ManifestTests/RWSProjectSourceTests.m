@@ -61,4 +61,13 @@
     assertThat([project title], equalTo(@"Untitled From Test"));
 }
 
+- (void)testDeletingProject
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    RWSManagedProject *project = [source projectAtIndexPath:indexPath];
+    [source deleteProjectAtIndexPath:indexPath];
+
+    assertThat([testContext deletedObjects], hasItem(project));
+}
+
 @end
