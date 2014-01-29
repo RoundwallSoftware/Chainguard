@@ -37,8 +37,9 @@
     [given([project title]) willReturn:title];
 
     controller.project = project;
+    [controller viewDidLoad];
 
-    assertThat(controller.title, equalTo(title));
+    [verify(project) title];
 }
 
 - (void)testControllerAsksProjectForItemCount
@@ -61,6 +62,19 @@
     [controller tableView:nil cellForRowAtIndexPath:indexPath];
 
     [verify(project) itemAtIndexPath:indexPath];
+}
+
+- (void)testControllerRenamesProjectOnTextViewDelegateMethod
+{
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    controller.project = project;
+    UITextField *textField = mock([UITextField class]);
+    [given([textField text]) willReturn:@"Title Now"];
+
+    BOOL shouldReturn = [controller textFieldShouldReturn:textField];
+    assertThatBool(shouldReturn, equalToBool(YES));
+
+    [verify(project) setTitle:@"Title Now"];
 }
 
 @end

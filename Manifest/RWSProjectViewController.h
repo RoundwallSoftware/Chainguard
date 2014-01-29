@@ -8,6 +8,6 @@
 
 #import "RWSProject.h"
 
-@interface RWSProjectViewController : UITableViewController
+@interface RWSProjectViewController : UITableViewController<UITextFieldDelegate>
 @property (nonatomic, strong) id<RWSProject> project;
 @end

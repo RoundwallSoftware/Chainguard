@@ -43,4 +43,10 @@
     return cell;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    self.project.title = textField.text;
+    return YES;
+}
+
 @end

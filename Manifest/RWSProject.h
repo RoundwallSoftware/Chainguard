@@ -13,7 +13,7 @@
 @end
 
 @protocol RWSProject <NSObject>
-- (NSString *)title;
+@property (nonatomic, copy) NSString *title;
 - (NSUInteger)count;
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
 @end
