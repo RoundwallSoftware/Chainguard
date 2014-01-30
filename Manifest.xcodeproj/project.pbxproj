@@ -11,6 +11,13 @@
 		9B079623189A57E40026D489 /* RWSNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079622189A57E40026D489 /* RWSNewItemViewController.m */; };
 		9B079628189A59B20026D489 /* _RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079625189A59B20026D489 /* _RWSManagedItem.m */; };
 		9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079627189A59B20026D489 /* RWSManagedItem.m */; };
+		9B07962B189A86600026D489 /* RWSNewItemViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07962A189A86600026D489 /* RWSNewItemViewControllerTests.m */; };
+		9B07962E189A892F0026D489 /* RWSItemParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07962D189A892F0026D489 /* RWSItemParser.m */; };
+		9B079630189A8D2B0026D489 /* RWSItemParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07962F189A8D2B0026D489 /* RWSItemParserTests.m */; };
+		9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079632189A90020026D489 /* NSLocale+RWSCurrency.m */; };
+		9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079635189A914B0026D489 /* RWSPriceFormatter.m */; };
+		9B079638189A9FDB0026D489 /* RWSPriceFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */; };
+		9B07963B189AA8BE0026D489 /* RWSDumbItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07963A189AA8BE0026D489 /* RWSDumbItem.m */; };
 		9B0DECD018970290007C80A6 /* RWSManagedProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */; };
 		9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */; };
 		9B5579DE18968370008E3C0A /* RWSProjectsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579DD18968370008E3C0A /* RWSProjectsSource.m */; };
@@ -59,6 +66,17 @@
 		9B079625189A59B20026D489 /* _RWSManagedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RWSManagedItem.m; sourceTree = "<group>"; };
 		9B079626189A59B20026D489 /* RWSManagedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSManagedItem.h; sourceTree = "<group>"; };
 		9B079627189A59B20026D489 /* RWSManagedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedItem.m; sourceTree = "<group>"; };
+		9B07962A189A86600026D489 /* RWSNewItemViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNewItemViewControllerTests.m; sourceTree = "<group>"; };
+		9B07962C189A892F0026D489 /* RWSItemParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSItemParser.h; sourceTree = "<group>"; };
+		9B07962D189A892F0026D489 /* RWSItemParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemParser.m; sourceTree = "<group>"; };
+		9B07962F189A8D2B0026D489 /* RWSItemParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemParserTests.m; sourceTree = "<group>"; };
+		9B079631189A90020026D489 /* NSLocale+RWSCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLocale+RWSCurrency.h"; sourceTree = "<group>"; };
+		9B079632189A90020026D489 /* NSLocale+RWSCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLocale+RWSCurrency.m"; sourceTree = "<group>"; };
+		9B079634189A914B0026D489 /* RWSPriceFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPriceFormatter.h; sourceTree = "<group>"; };
+		9B079635189A914B0026D489 /* RWSPriceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPriceFormatter.m; sourceTree = "<group>"; };
+		9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPriceFormatterTests.m; sourceTree = "<group>"; };
+		9B079639189AA8BE0026D489 /* RWSDumbItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSDumbItem.h; sourceTree = "<group>"; };
+		9B07963A189AA8BE0026D489 /* RWSDumbItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSDumbItem.m; sourceTree = "<group>"; };
 		9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedProjectTests.m; sourceTree = "<group>"; };
 		9B0DECD11897096B007C80A6 /* RWSProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSProjectViewController.h; sourceTree = "<group>"; };
 		9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectViewController.m; sourceTree = "<group>"; };
@@ -175,13 +193,15 @@
 				9BDED6031897D175006E8E5C /* _RWSManagedProject.m */,
 				9BDED6041897D175006E8E5C /* RWSManagedProject.h */,
 				9BDED6051897D175006E8E5C /* RWSManagedProject.m */,
+				9B079639189AA8BE0026D489 /* RWSDumbItem.h */,
+				9B07963A189AA8BE0026D489 /* RWSDumbItem.m */,
+				9B5579DF18969070008E3C0A /* RWSProject.h */,
 				9BD6B1561895A1CC006E02D0 /* RWSAppDelegate.h */,
 				9BD6B1571895A1CC006E02D0 /* RWSAppDelegate.m */,
 				9BD6B1781895A4C4006E02D0 /* RWSProjectsViewController.h */,
 				9BD6B1791895A4C4006E02D0 /* RWSProjectsViewController.m */,
 				9B5579DC18968370008E3C0A /* RWSProjectsSource.h */,
 				9B5579DD18968370008E3C0A /* RWSProjectsSource.m */,
-				9B5579DF18969070008E3C0A /* RWSProject.h */,
 				9B5579E018969361008E3C0A /* RWSProjectCell.h */,
 				9B5579E118969361008E3C0A /* RWSProjectCell.m */,
 				9B0DECD11897096B007C80A6 /* RWSProjectViewController.h */,
@@ -190,6 +210,12 @@
 				9B5579E61896989D008E3C0A /* RWSCoreDataController.m */,
 				9B079621189A57E40026D489 /* RWSNewItemViewController.h */,
 				9B079622189A57E40026D489 /* RWSNewItemViewController.m */,
+				9B07962C189A892F0026D489 /* RWSItemParser.h */,
+				9B07962D189A892F0026D489 /* RWSItemParser.m */,
+				9B079631189A90020026D489 /* NSLocale+RWSCurrency.h */,
+				9B079632189A90020026D489 /* NSLocale+RWSCurrency.m */,
+				9B079634189A914B0026D489 /* RWSPriceFormatter.h */,
+				9B079635189A914B0026D489 /* RWSPriceFormatter.m */,
 				9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */,
 				9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */,
 				9B59DC801895AA27000530EF /* Storyboard.storyboard */,
@@ -220,6 +246,9 @@
 				9B5579E8189698BC008E3C0A /* RWSCoreDataControllerTests.m */,
 				9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */,
 				9BDED6001897CB0E006E8E5C /* RWSProjectViewControllerTests.m */,
+				9B07962A189A86600026D489 /* RWSNewItemViewControllerTests.m */,
+				9B07962F189A8D2B0026D489 /* RWSItemParserTests.m */,
+				9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */,
 			);
 			path = ManifestTests;
 			sourceTree = "<group>";
@@ -372,13 +401,17 @@
 				9BD6B1541895A1CC006E02D0 /* main.m in Sources */,
 				9B59DC861895D6BF000530EF /* RWSDummyDismissViewController.m in Sources */,
 				9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */,
+				9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */,
+				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,
 				9B5579E71896989D008E3C0A /* RWSCoreDataController.m in Sources */,
 				9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */,
 				9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */,
 				9B5579DE18968370008E3C0A /* RWSProjectsSource.m in Sources */,
 				9B079628189A59B20026D489 /* _RWSManagedItem.m in Sources */,
+				9B07963B189AA8BE0026D489 /* RWSDumbItem.m in Sources */,
 				9BD6B17A1895A4C4006E02D0 /* RWSProjectsViewController.m in Sources */,
 				9BDED6061897D175006E8E5C /* _RWSManagedProject.m in Sources */,
+				9B07962E189A892F0026D489 /* RWSItemParser.m in Sources */,
 				9B079623189A57E40026D489 /* RWSNewItemViewController.m in Sources */,
 				9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */,
 				9BD6B1581895A1CC006E02D0 /* RWSAppDelegate.m in Sources */,
@@ -390,8 +423,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B0DECD018970290007C80A6 /* RWSManagedProjectTests.m in Sources */,
+				9B079638189A9FDB0026D489 /* RWSPriceFormatterTests.m in Sources */,
 				9B5579E9189698BC008E3C0A /* RWSCoreDataControllerTests.m in Sources */,
 				9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */,
+				9B07962B189A86600026D489 /* RWSNewItemViewControllerTests.m in Sources */,
+				9B079630189A8D2B0026D489 /* RWSItemParserTests.m in Sources */,
 				9BD6B1771895A3A1006E02D0 /* RWSProjectsViewControllerTests.m in Sources */,
 				9B5579E41896977F008E3C0A /* RWSProjectSourceTests.m in Sources */,
 			);

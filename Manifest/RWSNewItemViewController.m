@@ -7,16 +7,55 @@
 //
 
 #import "RWSNewItemViewController.h"
+#import "RWSPriceFormatter.h"
+#import "RWSDumbItem.h"
 
 @interface RWSNewItemViewController ()
-
+@property (nonatomic, strong) RWSDumbItem *item;
 @end
 
 @implementation RWSNewItemViewController
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    [self.quickInputField becomeFirstResponder];
+}
+
 - (IBAction)save:(id)sender
 {
-    [self.delegate newItemController:self didMakeItem:nil];
+    [self.delegate newItemController:self didMakeItem:self.item];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return NO;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    [self.parser setText:[[textField text] stringByReplacingCharactersInRange:range
+                                                                   withString:string]];
+
+    return YES;
+}
+
+- (void)parserDidFinishParsing:(RWSItemParser *)parser
+{
+    if(!self.item){
+        self.item = [[RWSDumbItem alloc] init];
+    }
+
+    self.nameField.text = parser.name;
+    if(parser.price){
+        RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+        NSString *text = [formatter stringFromNumber:[parser price] currency:[parser currencyCode]];
+        self.priceField.text = text;
+    }
+
+    self.item.name = parser.name;
 }
 
 @end

@@ -7,10 +7,17 @@
 //
 
 #import "RWSProject.h"
+#import "RWSItemParser.h"
 
 @protocol RWSNewItemDelegate;
 
-@interface RWSNewItemViewController : UIViewController
+
+@interface RWSNewItemViewController : UIViewController<UITextFieldDelegate, RWSItemParserDelegate>
+@property (nonatomic, strong) IBOutlet RWSItemParser *parser;
+@property (nonatomic, weak) IBOutlet UITextField *quickInputField;
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UITextField *priceField;
+
 @property (nonatomic, weak) id<RWSNewItemDelegate> delegate;
 
 - (IBAction)save:(id)sender;
