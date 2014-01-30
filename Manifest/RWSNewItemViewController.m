@@ -8,7 +8,13 @@
 
 #import "RWSNewItemViewController.h"
 #import "RWSPriceFormatter.h"
-#import "RWSDumbItem.h"
+
+@interface RWSDumbItem : NSObject<RWSItem>
+@property (nonatomic, copy) NSString *name;
+@end
+
+@implementation RWSDumbItem
+@end
 
 @interface RWSNewItemViewController ()
 @property (nonatomic, strong) RWSDumbItem *item;
@@ -36,8 +42,7 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    [self.parser setText:[[textField text] stringByReplacingCharactersInRange:range
-                                                                   withString:string]];
+    [self.parser setText:[[textField text] stringByReplacingCharactersInRange:range withString:string]];
 
     return YES;
 }

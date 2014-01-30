@@ -61,4 +61,21 @@
     assertThat([project3 title], equalTo(@"Untitled 3"));
 }
 
+- (void)testAddingPartsToAList
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+
+    assertThatInteger([project count], equalToInteger(0));
+
+    id<RWSItem> item = mockProtocol(@protocol(RWSItem));
+    [given([item name]) willReturn:@"Something"];
+
+    [project addItemToList:item];
+
+    assertThatInteger([project count], equalToInteger(1));
+
+    id<RWSItem> backItem = [project itemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    assertThat([backItem name], equalTo([item name]));
+}
+
 @end

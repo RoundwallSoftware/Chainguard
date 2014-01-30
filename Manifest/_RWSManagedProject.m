@@ -57,10 +57,10 @@ const struct RWSManagedProjectFetchedProperties RWSManagedProjectFetchedProperti
 @dynamic items;
 
 	
-- (NSMutableSet*)itemsSet {
+- (NSMutableOrderedSet*)itemsSet {
 	[self willAccessValueForKey:@"items"];
   
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"items"];
+	NSMutableOrderedSet *result = (NSMutableOrderedSet*)[self mutableOrderedSetValueForKey:@"items"];
   
 	[self didAccessValueForKey:@"items"];
 	return result;

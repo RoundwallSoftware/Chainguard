@@ -42,9 +42,9 @@ extern const struct RWSManagedProjectFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSSet *items;
+@property (nonatomic, strong) NSOrderedSet *items;
 
-- (NSMutableSet*)itemsSet;
+- (NSMutableOrderedSet*)itemsSet;
 
 
 
@@ -62,8 +62,8 @@ extern const struct RWSManagedProjectFetchedProperties {
 
 @interface _RWSManagedProject (CoreDataGeneratedAccessors)
 
-- (void)addItems:(NSSet*)value_;
-- (void)removeItems:(NSSet*)value_;
+- (void)addItems:(NSOrderedSet*)value_;
+- (void)removeItems:(NSOrderedSet*)value_;
 - (void)addItemsObject:(RWSManagedItem*)value_;
 - (void)removeItemsObject:(RWSManagedItem*)value_;
 
@@ -79,8 +79,8 @@ extern const struct RWSManagedProjectFetchedProperties {
 
 
 
-- (NSMutableSet*)primitiveItems;
-- (void)setPrimitiveItems:(NSMutableSet*)value;
+- (NSMutableOrderedSet*)primitiveItems;
+- (void)setPrimitiveItems:(NSMutableOrderedSet*)value;
 
 
 @end

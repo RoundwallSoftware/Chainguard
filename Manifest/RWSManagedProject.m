@@ -56,18 +56,22 @@
 
 - (NSUInteger)count
 {
-    return 0;
+    return [self.items count];
 }
 
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    return [self.items objectAtIndex:indexPath.row];
 }
 
 - (void)addItemToList:(id<RWSItem>)item
 {
-    NSParameterAssert([item isKindOfClass:[RWSManagedItem class]]);
-    [self addItemsObject:(RWSManagedItem *)item];
+    RWSManagedItem *managedItem = [RWSManagedItem insertInManagedObjectContext:[self managedObjectContext]];
+    managedItem.name = item.name;
+
+    NSMutableOrderedSet *items = self.itemsSet;
+    [items addObject:managedItem];
+    [self setItems:items];
 }
 
 @end
