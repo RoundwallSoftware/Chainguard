@@ -1,4 +1,5 @@
 #import "RWSManagedProject.h"
+#import "RWSManagedItem.h"
 
 @implementation RWSManagedProject
 
@@ -61,6 +62,12 @@
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
+}
+
+- (void)addItemToList:(id<RWSItem>)item
+{
+    NSParameterAssert([item isKindOfClass:[RWSManagedItem class]]);
+    [self addItemsObject:(RWSManagedItem *)item];
 }
 
 @end

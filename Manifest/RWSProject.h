@@ -14,6 +14,9 @@
 
 @protocol RWSProject <NSObject>
 @property (nonatomic, copy) NSString *title;
+
 - (NSUInteger)count;
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)addItemToList:(id<RWSItem>)item;
 @end

@@ -9,11 +9,13 @@ extern const struct RWSManagedProjectAttributes {
 } RWSManagedProjectAttributes;
 
 extern const struct RWSManagedProjectRelationships {
+	__unsafe_unretained NSString *items;
 } RWSManagedProjectRelationships;
 
 extern const struct RWSManagedProjectFetchedProperties {
 } RWSManagedProjectFetchedProperties;
 
+@class RWSManagedItem;
 
 
 
@@ -40,14 +42,30 @@ extern const struct RWSManagedProjectFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSSet *items;
+
+- (NSMutableSet*)itemsSet;
+
+
+
+
 
 #if TARGET_OS_IPHONE
+
+
+- (NSFetchedResultsController*)newItemsFetchedResultsControllerWithSortDescriptors:(NSArray*)sortDescriptors;
+
 
 #endif
 
 @end
 
 @interface _RWSManagedProject (CoreDataGeneratedAccessors)
+
+- (void)addItems:(NSSet*)value_;
+- (void)removeItems:(NSSet*)value_;
+- (void)addItemsObject:(RWSManagedItem*)value_;
+- (void)removeItemsObject:(RWSManagedItem*)value_;
 
 @end
 
@@ -58,6 +76,11 @@ extern const struct RWSManagedProjectFetchedProperties {
 - (void)setPrimitiveTitle:(NSString*)value;
 
 
+
+
+
+- (NSMutableSet*)primitiveItems;
+- (void)setPrimitiveItems:(NSMutableSet*)value;
 
 
 @end

@@ -44,6 +44,8 @@
     return cell;
 }
 
+#pragma mark - UITextFieldDelegate
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     self.project.title = textField.text;
@@ -53,6 +55,26 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     self.project.title = textField.text;
+}
+
+#pragma mark - RWSNewItemDelegate
+
+- (void)newItemController:(RWSNewItemViewController *)controller didMakeItem:(id<RWSItem>)item
+{
+    if(item){
+        [self.project addItemToList:item];
+    }
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *identifier = [segue identifier];
+    if([identifier isEqualToString:@"newItem"]){
+        RWSNewItemViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
+    }
 }
 
 @end

@@ -89,4 +89,16 @@
     [verify(project) setTitle:@"Title Now"];
 }
 
+- (void)testControllerAddsItemWhenModalFinishes
+{
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    controller.project = project;
+
+    id<RWSItem> item = mockProtocol(@protocol(RWSItem));
+
+    [controller newItemController:nil didMakeItem:item];
+
+    [verify(project) addItemToList:item];
+}
+
 @end

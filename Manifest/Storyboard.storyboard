@@ -202,7 +202,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="9am-kI-hGo"/>
                         <barButtonItem systemItem="add" id="ZHa-fC-cBU">
                             <connections>
-                                <segue destination="hlH-PG-fMP" kind="modal" id="d7c-ud-JnK"/>
+                                <segue destination="hlH-PG-fMP" kind="modal" identifier="newItem" id="d7c-ud-JnK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="CIB-ol-RF4"/>
@@ -382,10 +382,10 @@
             </objects>
             <point key="canvasLocation" x="1131" y="810"/>
         </scene>
-        <!--Dummy Dismiss View Controller-->
+        <!--New Item View Controller-->
         <scene sceneID="SDQ-TH-lrb">
             <objects>
-                <viewController id="hlH-PG-fMP" customClass="RWSDummyDismissViewController" sceneMemberID="viewController">
+                <viewController id="hlH-PG-fMP" customClass="RWSNewItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OUq-Lz-Klb"/>
                         <viewControllerLayoutGuide type="bottom" id="ayu-FF-50k"/>
@@ -407,7 +407,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="close:" destination="hlH-PG-fMP" eventType="touchUpInside" id="y8r-d2-2mw"/>
+                                    <action selector="save:" destination="hlH-PG-fMP" eventType="touchUpInside" id="lAx-9f-6TF"/>
                                 </connections>
                             </button>
                         </subviews>

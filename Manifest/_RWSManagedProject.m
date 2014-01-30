@@ -8,6 +8,7 @@ const struct RWSManagedProjectAttributes RWSManagedProjectAttributes = {
 };
 
 const struct RWSManagedProjectRelationships RWSManagedProjectRelationships = {
+	.items = @"items",
 };
 
 const struct RWSManagedProjectFetchedProperties RWSManagedProjectFetchedProperties = {
@@ -53,12 +54,40 @@ const struct RWSManagedProjectFetchedProperties RWSManagedProjectFetchedProperti
 
 
 
+@dynamic items;
+
+	
+- (NSMutableSet*)itemsSet {
+	[self willAccessValueForKey:@"items"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"items"];
+  
+	[self didAccessValueForKey:@"items"];
+	return result;
+}
+	
+
 
 
 
 
 
 #if TARGET_OS_IPHONE
+
+
+- (NSFetchedResultsController*)newItemsFetchedResultsControllerWithSortDescriptors:(NSArray*)sortDescriptors {
+	NSFetchRequest *fetchRequest = [NSFetchRequest new];
+	
+	fetchRequest.entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
+	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"project == %@", self];
+	fetchRequest.sortDescriptors = sortDescriptors;
+	
+	return [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+											   managedObjectContext:self.managedObjectContext
+												 sectionNameKeyPath:nil
+														  cacheName:nil];
+}
+
 
 #endif
 

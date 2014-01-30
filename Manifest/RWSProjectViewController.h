@@ -7,7 +7,8 @@
 //
 
 #import "RWSProject.h"
+#import "RWSNewItemViewController.h"
 
-@interface RWSProjectViewController : UITableViewController<UITextFieldDelegate>
+@interface RWSProjectViewController : UITableViewController<UITextFieldDelegate, RWSNewItemDelegate>
 @property (nonatomic, strong) id<RWSProject> project;
 @end
