@@ -101,4 +101,15 @@
     [verify(project) addItemToList:item];
 }
 
+- (void)testDeletingAnItem
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    controller.project = project;
+
+    [controller tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
+
+    [verify(project) removeItemAtIndexPath:indexPath];
+}
+
 @end

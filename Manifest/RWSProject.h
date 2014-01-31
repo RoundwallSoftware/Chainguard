@@ -23,4 +23,5 @@
 - (NSDecimalNumber *)totalRemainingPriceWithCurrencyCode:(NSString *)code;
 
 - (void)addItemToList:(id<RWSItem>)item;
+- (void)removeItemAtIndexPath:(NSIndexPath *)indexPath;
 @end

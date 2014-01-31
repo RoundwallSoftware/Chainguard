@@ -61,7 +61,7 @@
     assertThat([project3 title], equalTo(@"Untitled 3"));
 }
 
-- (void)testAddingPartsToAList
+- (void)testAddingItemsToAList
 {
     RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
 
@@ -78,7 +78,7 @@
     assertThat([backItem name], equalTo([item name]));
 }
 
-- (void)testPartsKnowTheirPriceTotals
+- (void)testProjectsKnowTheirPriceTotals
 {
     RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
     id<RWSItem> item = mockProtocol(@protocol(RWSItem));
@@ -89,6 +89,19 @@
     [project addItemToList:item];
 
     assertThat([project totalRemainingPriceWithCurrencyCode:@"USD"], equalTo(@5.21));
+}
+
+- (void)testDeletingItemsFromAList
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    id<RWSItem> item = mockProtocol(@protocol(RWSItem));
+    [given([item name]) willReturn:@"Something"];
+
+    [project addItemToList:item];
+
+    [project removeItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+
+    assertThatInteger([project count], equalToInteger(0));
 }
 
 @end

@@ -76,6 +76,16 @@
     [self setItems:items];
 }
 
+- (void)removeItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RWSManagedItem *item = [self itemAtIndexPath:indexPath];
+
+    NSMutableOrderedSet *items = [self itemsSet];
+    [items removeObject:item];
+
+    self.items = items;
+}
+
 - (NSDecimalNumber *)totalRemainingPriceWithCurrencyCode:(NSString *)code
 {
     NSDecimalNumber *total = [NSDecimalNumber zero];
