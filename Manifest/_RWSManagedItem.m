@@ -4,7 +4,9 @@
 #import "_RWSManagedItem.h"
 
 const struct RWSManagedItemAttributes RWSManagedItemAttributes = {
+	.currencyCode = @"currencyCode",
 	.name = @"name",
+	.price = @"price",
 };
 
 const struct RWSManagedItemRelationships RWSManagedItemRelationships = {
@@ -47,7 +49,21 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 
 
 
+@dynamic currencyCode;
+
+
+
+
+
+
 @dynamic name;
+
+
+
+
+
+
+@dynamic price;
 
 
 

@@ -10,6 +10,8 @@
 
 @protocol RWSItem <NSObject>
 - (NSString *)name;
+- (NSDecimalNumber *)price;
+- (NSString *)currencyCode;
 @end
 
 @protocol RWSProject <NSObject>

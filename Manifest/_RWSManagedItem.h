@@ -5,7 +5,9 @@
 
 
 extern const struct RWSManagedItemAttributes {
+	__unsafe_unretained NSString *currencyCode;
 	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *price;
 } RWSManagedItemAttributes;
 
 extern const struct RWSManagedItemRelationships {
@@ -16,6 +18,8 @@ extern const struct RWSManagedItemFetchedProperties {
 } RWSManagedItemFetchedProperties;
 
 @class RWSManagedProject;
+
+
 
 
 
@@ -32,11 +36,31 @@ extern const struct RWSManagedItemFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSString* currencyCode;
+
+
+
+//- (BOOL)validateCurrencyCode:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
 @property (nonatomic, strong) NSString* name;
 
 
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSDecimalNumber* price;
+
+
+
+//- (BOOL)validatePrice:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -65,8 +89,20 @@ extern const struct RWSManagedItemFetchedProperties {
 @interface _RWSManagedItem (CoreDataGeneratedPrimitiveAccessors)
 
 
+- (NSString*)primitiveCurrencyCode;
+- (void)setPrimitiveCurrencyCode:(NSString*)value;
+
+
+
+
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
+
+
+
+
+- (NSDecimalNumber*)primitivePrice;
+- (void)setPrimitivePrice:(NSDecimalNumber*)value;
 
 
 

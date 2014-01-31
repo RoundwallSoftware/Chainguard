@@ -11,7 +11,7 @@
 
 @interface RWSItemParser()
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSNumber *price;
+@property (nonatomic, strong) NSDecimalNumber *price;
 @property (nonatomic, copy) NSString *currencyCode;
 @end
 
@@ -35,7 +35,7 @@
 
             NSArray *stringChunks = [text componentsSeparatedByString:currencySymbol];
             self.name = [[stringChunks firstObject] stringByTrimmingCharactersInSet:charSet];
-            self.price = [formatter numberFromString:[[stringChunks lastObject] stringByTrimmingCharactersInSet:charSet]];
+            self.price = [NSDecimalNumber decimalNumberWithString:[[stringChunks lastObject] stringByTrimmingCharactersInSet:charSet]];
 
             [delegate parserDidFinishParsing:self];
             return;

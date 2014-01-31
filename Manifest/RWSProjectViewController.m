@@ -7,6 +7,7 @@
 //
 
 #import "RWSProjectViewController.h"
+#import "RWSPriceFormatter.h"
 
 @interface RWSProjectViewController ()
 
@@ -40,6 +41,11 @@
     id<RWSItem> item = [self.project itemAtIndexPath:indexPath];
 
     cell.textLabel.text = item.name;
+
+    if(item.price){
+        RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+        cell.detailTextLabel.text = [formatter stringFromNumber:item.price currency:item.currencyCode];
+    }
 
     return cell;
 }

@@ -26,6 +26,7 @@
 
         RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:self.projectSource.context];
         project.title = @"Example Project";
+
         NSError *saveError;
         BOOL saved = [self.projectSource.context save:&saveError];
         if(!saved){

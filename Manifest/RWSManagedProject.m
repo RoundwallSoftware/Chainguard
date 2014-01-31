@@ -68,6 +68,8 @@
 {
     RWSManagedItem *managedItem = [RWSManagedItem insertInManagedObjectContext:[self managedObjectContext]];
     managedItem.name = item.name;
+    managedItem.price = item.price;
+    managedItem.currencyCode = item.currencyCode;
 
     NSMutableOrderedSet *items = self.itemsSet;
     [items addObject:managedItem];

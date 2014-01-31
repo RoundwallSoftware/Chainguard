@@ -11,6 +11,8 @@
 
 @interface RWSDumbItem : NSObject<RWSItem>
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSDecimalNumber *price;
+@property (nonatomic, copy) NSString *currencyCode;
 @end
 
 @implementation RWSDumbItem
@@ -61,6 +63,8 @@
     }
 
     self.item.name = parser.name;
+    self.item.price = parser.price;
+    self.item.currencyCode = parser.currencyCode;
 }
 
 @end

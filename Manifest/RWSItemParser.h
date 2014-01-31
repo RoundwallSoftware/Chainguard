@@ -12,7 +12,7 @@
 @property (nonatomic, weak) IBOutlet id<RWSItemParserDelegate> delegate;
 
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly, strong) NSNumber *price;
+@property (nonatomic, readonly, strong) NSDecimalNumber *price;
 @property (nonatomic, readonly, copy) NSString *currencyCode;
 
 - (void)setText:(NSString *)text;
