@@ -76,4 +76,13 @@
     [self setItems:items];
 }
 
+- (NSDecimalNumber *)totalRemainingPriceWithCurrencyCode:(NSString *)code
+{
+    NSDecimalNumber *total = [NSDecimalNumber zero];
+    for(RWSManagedItem *item in self.items){
+        total = [total decimalNumberByAdding:[item price]];
+    }
+    return total;
+}
+
 @end

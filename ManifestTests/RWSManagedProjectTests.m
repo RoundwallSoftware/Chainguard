@@ -78,4 +78,17 @@
     assertThat([backItem name], equalTo([item name]));
 }
 
+- (void)testPartsKnowTheirPriceTotals
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    id<RWSItem> item = mockProtocol(@protocol(RWSItem));
+    [given([item name]) willReturn:@"Something"];
+    [given([item price]) willReturn:@5.21];
+    [given([item currencyCode]) willReturn:@"USD"];
+
+    [project addItemToList:item];
+
+    assertThat([project totalRemainingPriceWithCurrencyCode:@"USD"], equalTo(@5.21));
+}
+
 @end

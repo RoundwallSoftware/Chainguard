@@ -12,6 +12,7 @@
 #import "RWSManagedProject.h"
 #import "RWSProjectCell.h"
 #import "RWSProjectViewController.h"
+#import "RWSPriceFormatter.h"
 
 @interface RWSProjectsViewController ()
 

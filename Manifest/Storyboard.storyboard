@@ -211,6 +211,9 @@
                     <navigationItem key="navigationItem" id="hft-KQ-kc6">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Jyb-sr-G0Z"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addItem" destination="ZHa-fC-cBU" id="lq8-sl-zpx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyF-sp-Lur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

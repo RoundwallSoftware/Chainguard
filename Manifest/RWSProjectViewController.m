@@ -10,10 +10,28 @@
 #import "RWSPriceFormatter.h"
 
 @interface RWSProjectViewController ()
-
+@property (nonatomic, strong) UIBarButtonItem *priceItem;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *addItem;
 @end
 
 @implementation RWSProjectViewController
+
+- (NSArray *)toolbarItems
+{
+    if(!self.priceItem){
+        self.priceItem = [[UIBarButtonItem alloc] init];
+    }
+
+    UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+
+    return @[self.addItem, flexibleItem, self.priceItem];
+}
+
+- (void)recalculatePrice
+{
+    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+    self.priceItem.title = [formatter stringFromNumber:[self.project totalRemainingPriceWithCurrencyCode:@"USD"] currency:@"USD"];
+}
 
 - (void)viewDidLoad
 {
@@ -73,6 +91,7 @@
 
     [self dismissViewControllerAnimated:YES completion:^{
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self recalculatePrice];
     }];
 }
 
