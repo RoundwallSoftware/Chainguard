@@ -8,6 +8,7 @@
 
 #import "RWSNewItemViewController.h"
 #import "RWSPriceFormatter.h"
+#import "RWSLocationManager.h"
 
 @interface RWSDumbItem : NSObject<RWSItem>
 @property (nonatomic, copy) NSString *name;
@@ -34,6 +35,12 @@
 - (IBAction)save:(id)sender
 {
     [self.delegate newItemController:self didMakeItem:self.item];
+}
+
+- (IBAction)setCurrentLocation:(id)sender
+{
+    [self.locationManager updateLocation];
+    self.locationField.text = @"Finding location...";
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

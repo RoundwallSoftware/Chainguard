@@ -10,17 +10,20 @@
 #import "RWSItemParser.h"
 
 @protocol RWSNewItemDelegate;
-
+@class RWSLocationManager;
 
 @interface RWSNewItemViewController : UIViewController<UITextFieldDelegate, RWSItemParserDelegate>
 @property (nonatomic, strong) IBOutlet RWSItemParser *parser;
+@property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, weak) IBOutlet UITextField *quickInputField;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
+@property (nonatomic, weak) IBOutlet UITextField *locationField;
 
 @property (nonatomic, weak) id<RWSNewItemDelegate> delegate;
 
 - (IBAction)save:(id)sender;
+- (IBAction)setCurrentLocation:(id)sender;
 @end
 
 @protocol RWSNewItemDelegate

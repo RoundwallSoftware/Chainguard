@@ -29,6 +29,7 @@
 		9B59DC811895AA27000530EF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B59DC801895AA27000530EF /* Storyboard.storyboard */; };
 		9B59DC831895D1C6000530EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B59DC821895D1C6000530EF /* MapKit.framework */; };
 		9B59DC861895D6BF000530EF /* RWSDummyDismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */; };
+		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
 		9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */; };
 		9BD6B14C1895A1CC006E02D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B14B1895A1CC006E02D0 /* UIKit.framework */; };
@@ -92,6 +93,8 @@
 		9B59DC821895D1C6000530EF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSDummyDismissViewController.h; sourceTree = "<group>"; };
 		9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSDummyDismissViewController.m; sourceTree = "<group>"; };
+		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
+		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD6B1471895A1CC006E02D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -211,6 +214,8 @@
 				9B079632189A90020026D489 /* NSLocale+RWSCurrency.m */,
 				9B079634189A914B0026D489 /* RWSPriceFormatter.h */,
 				9B079635189A914B0026D489 /* RWSPriceFormatter.m */,
+				9B88C853189CFA7400941A99 /* RWSLocationManager.h */,
+				9B88C854189CFA7400941A99 /* RWSLocationManager.m */,
 				9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */,
 				9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */,
 				9B59DC801895AA27000530EF /* Storyboard.storyboard */,
@@ -397,6 +402,7 @@
 				9B59DC861895D6BF000530EF /* RWSDummyDismissViewController.m in Sources */,
 				9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */,
 				9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */,
+				9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */,
 				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,
 				9B5579E71896989D008E3C0A /* RWSCoreDataController.m in Sources */,
 				9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */,

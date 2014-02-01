@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "RWSNewItemViewController.h"
 #import "RWSItemParser.h"
+#import "RWSLocationManager.h"
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
@@ -90,6 +91,19 @@
     [controller parserDidFinishParsing:parser];
 
     assertThat([[controller priceField] text], equalTo(@""));
+}
+
+- (void)testControllerRespondsToGetLocationAction
+{
+    RWSLocationManager *manager = mock([RWSLocationManager class]);
+    controller.locationManager = manager;
+    UITextField *textField = mock([UITextField class]);
+    controller.locationField = textField;
+
+    [controller setCurrentLocation:nil];
+
+    [verify(manager) updateLocation];
+    [verify(textField) setText:@"Finding location..."];
 }
 
 @end
