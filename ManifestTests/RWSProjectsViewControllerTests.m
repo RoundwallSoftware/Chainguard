@@ -121,4 +121,14 @@
     [verify(source) deleteProjectAtIndexPath:indexPath];
 }
 
+- (void)testDeletionOfFirstSectionIsOK
+{
+    assertThatBool([controller tableView:nil canEditRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], equalToBool(YES));
+}
+
+- (void)testDeletionOfSecondSectionIsNotOK
+{
+    assertThatBool([controller tableView:nil canEditRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]], equalToBool(NO));
+}
+
 @end
