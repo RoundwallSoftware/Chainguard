@@ -52,6 +52,8 @@
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 100.0, 40.0)];
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    textField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     textField.text = [self.project title];
     textField.delegate = self;
     textField.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.1];

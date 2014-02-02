@@ -27,6 +27,10 @@
     self.window.rootViewController = [storyboard instantiateInitialViewController];
 
     [self.window makeKeyAndVisible];
+
+
+    UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: someKindOfPurple, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
     return YES;
 }
 
