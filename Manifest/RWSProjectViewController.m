@@ -37,6 +37,18 @@
 {
     [super viewDidLoad];
 
+    [self setupTitleTextField];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    [self recalculatePrice];
+}
+
+- (void)setupTitleTextField
+{
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 100.0, 40.0)];
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleRoundedRect;
