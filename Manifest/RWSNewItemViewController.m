@@ -8,7 +8,7 @@
 
 #import "RWSNewItemViewController.h"
 #import "RWSPriceFormatter.h"
-#import "RWSLocationManager.h"
+@import AddressBookUI;
 
 @interface RWSDumbItem : NSObject<RWSItem>
 @property (nonatomic, copy) NSString *name;
@@ -40,7 +40,7 @@
 - (IBAction)setCurrentLocation:(id)sender
 {
     [self.locationManager updateLocation];
-    self.locationField.text = @"Finding location...";
+    self.locationLabel.text = @"Finding location...";
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -72,6 +72,16 @@
     self.item.name = parser.name;
     self.item.price = parser.price;
     self.item.currencyCode = parser.currencyCode;
+}
+
+-(void)locationManagerDidDetermineLocation:(RWSLocationManager *)manager
+{
+    CLPlacemark *placemark = manager.placemark;
+
+    NSMutableDictionary *addressDictionary = [placemark.addressDictionary mutableCopy];
+    [addressDictionary removeObjectForKey:@"Country"];
+
+    self.locationLabel.text = ABCreateStringWithAddressDictionary(addressDictionary, NO);
 }
 
 @end

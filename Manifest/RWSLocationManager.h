@@ -6,6 +6,16 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-@interface RWSLocationManager : NSObject
+@import CoreLocation;
+
+@protocol RWSLocationManagerDelegate;
+@interface RWSLocationManager : NSObject<CLLocationManagerDelegate>
+@property (nonatomic, strong, readonly) CLPlacemark *placemark;
+@property (nonatomic, weak) IBOutlet id<RWSLocationManagerDelegate> delegate;
+
 - (void)updateLocation;
+@end
+
+@protocol RWSLocationManagerDelegate <NSObject>
+- (void)locationManagerDidDetermineLocation:(RWSLocationManager *)manager;
 @end

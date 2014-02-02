@@ -435,7 +435,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-lh-3SO">
-                                <rect key="frame" x="103" y="330" width="115" height="29"/>
+                                <rect key="frame" x="103" y="362" width="115" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Notes"/>
@@ -443,23 +443,14 @@
                                 </segments>
                             </segmentedControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Tap here to add notes." translatesAutoresizingMaskIntoConstraints="NO" id="kAI-kh-bl8">
-                                <rect key="frame" x="0.0" y="366" width="320" height="106"/>
+                                <rect key="frame" x="0.0" y="398" width="320" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5j-Kq-IsL">
-                                <rect key="frame" x="69" y="280" width="182" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="hlH-PG-fMP" id="zDi-za-cAm"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-Dn-pn9">
-                                <rect key="frame" x="17" y="273" width="44" height="44"/>
+                                <rect key="frame" x="17" y="292" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="O">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -468,13 +459,20 @@
                                     <action selector="setCurrentLocation:" destination="hlH-PG-fMP" eventType="touchUpInside" id="OJ7-Hc-EgR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="183" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-9j-dBR">
+                                <rect key="frame" x="69" y="273" width="183" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="locationField" destination="P5j-Kq-IsL" id="eUp-nj-G3E"/>
+                        <outlet property="locationLabel" destination="b1I-9j-dBR" id="taA-Hp-yWn"/>
                         <outlet property="locationManager" destination="tNU-Oa-CHI" id="WGV-Ac-vow"/>
                         <outlet property="nameField" destination="Ra9-mc-8lp" id="RMd-52-k69"/>
                         <outlet property="parser" destination="7qX-ZQ-wsl" id="GB3-XI-Wty"/>
@@ -483,7 +481,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEx-Ff-U0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="tNU-Oa-CHI" customClass="RWSLocationManager"/>
+                <customObject id="tNU-Oa-CHI" customClass="RWSLocationManager">
+                    <connections>
+                        <outlet property="delegate" destination="hlH-PG-fMP" id="eXv-ec-Jh4"/>
+                    </connections>
+                </customObject>
                 <customObject id="7qX-ZQ-wsl" customClass="RWSItemParser">
                     <connections>
                         <outlet property="delegate" destination="hlH-PG-fMP" id="kTk-xW-aiO"/>

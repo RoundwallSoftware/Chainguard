@@ -8,17 +8,17 @@
 
 #import "RWSProject.h"
 #import "RWSItemParser.h"
+#import "RWSLocationManager.h"
 
 @protocol RWSNewItemDelegate;
-@class RWSLocationManager;
 
-@interface RWSNewItemViewController : UIViewController<UITextFieldDelegate, RWSItemParserDelegate>
+@interface RWSNewItemViewController : UIViewController<UITextFieldDelegate, RWSItemParserDelegate, RWSLocationManagerDelegate>
 @property (nonatomic, strong) IBOutlet RWSItemParser *parser;
 @property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, weak) IBOutlet UITextField *quickInputField;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
-@property (nonatomic, weak) IBOutlet UITextField *locationField;
+@property (nonatomic, weak) IBOutlet UILabel *locationLabel;
 
 @property (nonatomic, weak) id<RWSNewItemDelegate> delegate;
 

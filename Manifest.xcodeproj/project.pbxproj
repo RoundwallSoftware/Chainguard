@@ -30,6 +30,7 @@
 		9B59DC831895D1C6000530EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B59DC821895D1C6000530EF /* MapKit.framework */; };
 		9B59DC861895D6BF000530EF /* RWSDummyDismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */; };
 		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
+		9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
 		9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */; };
 		9BD6B14C1895A1CC006E02D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B14B1895A1CC006E02D0 /* UIKit.framework */; };
@@ -95,6 +96,7 @@
 		9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSDummyDismissViewController.m; sourceTree = "<group>"; };
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
+		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
 		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD6B1471895A1CC006E02D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -249,6 +251,7 @@
 				9B07962A189A86600026D489 /* RWSNewItemViewControllerTests.m */,
 				9B07962F189A8D2B0026D489 /* RWSItemParserTests.m */,
 				9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */,
+				9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */,
 			);
 			path = ManifestTests;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				9B07962B189A86600026D489 /* RWSNewItemViewControllerTests.m in Sources */,
 				9B079630189A8D2B0026D489 /* RWSItemParserTests.m in Sources */,
 				9BD6B1771895A3A1006E02D0 /* RWSProjectsViewControllerTests.m in Sources */,
+				9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */,
 				9B5579E41896977F008E3C0A /* RWSProjectSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

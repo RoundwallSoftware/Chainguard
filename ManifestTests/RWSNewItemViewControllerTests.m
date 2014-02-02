@@ -97,13 +97,22 @@
 {
     RWSLocationManager *manager = mock([RWSLocationManager class]);
     controller.locationManager = manager;
-    UITextField *textField = mock([UITextField class]);
-    controller.locationField = textField;
+    UILabel *label = mock([UILabel class]);
+    controller.locationLabel = label;
 
     [controller setCurrentLocation:nil];
 
     [verify(manager) updateLocation];
-    [verify(textField) setText:@"Finding location..."];
+    [verify(label) setText:@"Finding location..."];
+}
+
+- (void)testControllerRespondsWhenLocationManagerFindsPlaces
+{
+    RWSLocationManager *manager = mock([RWSLocationManager class]);
+
+    [controller locationManagerDidDetermineLocation:manager];
+
+    [verify(manager) placemark];
 }
 
 @end
