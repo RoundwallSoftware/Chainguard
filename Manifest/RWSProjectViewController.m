@@ -41,6 +41,7 @@
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleLine;
     textField.text = [self.project title];
+    textField.delegate = self;
 
     self.navigationItem.titleView = textField;
 }
@@ -82,6 +83,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [textField resignFirstResponder];
+    
     self.project.title = textField.text;
     return YES;
 }
