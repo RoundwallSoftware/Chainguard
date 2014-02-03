@@ -459,7 +459,7 @@ Saul Mora</string>
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-lh-3SO">
-                                <rect key="frame" x="103" y="255" width="115" height="29"/>
+                                <rect key="frame" x="103" y="277" width="115" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Notes"/>
@@ -467,14 +467,14 @@ Saul Mora</string>
                                 </segments>
                             </segmentedControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap here to add notes." translatesAutoresizingMaskIntoConstraints="NO" id="kAI-kh-bl8">
-                                <rect key="frame" x="0.0" y="291" width="320" height="277"/>
+                                <rect key="frame" x="0.0" y="313" width="320" height="255"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-Dn-pn9">
-                                <rect key="frame" x="115" y="217" width="92" height="30"/>
+                                <rect key="frame" x="61" y="217" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -483,9 +483,12 @@ Saul Mora</string>
                                     <action selector="setCurrentLocation:" destination="hlH-PG-fMP" eventType="touchUpInside" id="OJ7-Hc-EgR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="92" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-9j-dBR" userLabel="Location Label">
-                                <rect key="frame" x="115" y="217" width="92" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-9j-dBR" userLabel="Location Label">
+                                <rect key="frame" x="61" y="217" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="JWC-Ta-hBt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -505,7 +508,7 @@ Saul Mora</string>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="top" secondItem="GMI-XU-9tE" secondAttribute="bottom" constant="8" symbolic="YES" id="OmF-Oz-zah"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="width" secondItem="BFd-Dn-pn9" secondAttribute="width" id="b6s-H9-8Zo"/>
                             <constraint firstAttribute="centerX" secondItem="GMI-XU-9tE" secondAttribute="centerX" id="cBo-rL-nn4"/>
-                            <constraint firstItem="xtb-lh-3SO" firstAttribute="top" secondItem="b1I-9j-dBR" secondAttribute="bottom" constant="8" symbolic="YES" id="ctL-lx-rOx"/>
+                            <constraint firstItem="xtb-lh-3SO" firstAttribute="top" secondItem="b1I-9j-dBR" secondAttribute="bottom" constant="30" id="ctL-lx-rOx"/>
                             <constraint firstAttribute="trailing" secondItem="EUr-W8-hMi" secondAttribute="trailing" constant="38" id="mVY-2X-zSO"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="centerY" secondItem="BFd-Dn-pn9" secondAttribute="centerY" id="nt6-Ru-SPY"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="centerX" secondItem="BFd-Dn-pn9" secondAttribute="centerX" id="qGa-U3-TZn"/>
