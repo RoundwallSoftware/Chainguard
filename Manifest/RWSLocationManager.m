@@ -20,6 +20,9 @@
 - (void)updateLocation
 {
     CLLocationManager *manager = [[CLLocationManager alloc] init];
+    manager.activityType = CLActivityTypeOther;
+    manager.desiredAccuracy = 500.0;
+    
     manager.delegate = self;
     self.manager = manager;
 
