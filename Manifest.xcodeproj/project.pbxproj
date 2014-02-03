@@ -28,7 +28,7 @@
 		9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579EC189699BA008E3C0A /* Model.xcdatamodeld */; };
 		9B59DC811895AA27000530EF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B59DC801895AA27000530EF /* Storyboard.storyboard */; };
 		9B59DC831895D1C6000530EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B59DC821895D1C6000530EF /* MapKit.framework */; };
-		9B59DC861895D6BF000530EF /* RWSDummyDismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */; };
+		9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B59DC851895D6BF000530EF /* RWSMapViewController.m */; };
 		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
 		9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
@@ -92,8 +92,8 @@
 		9B5579ED189699BA008E3C0A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9B59DC801895AA27000530EF /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		9B59DC821895D1C6000530EF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSDummyDismissViewController.h; sourceTree = "<group>"; };
-		9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSDummyDismissViewController.m; sourceTree = "<group>"; };
+		9B59DC841895D6BF000530EF /* RWSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSMapViewController.h; sourceTree = "<group>"; };
+		9B59DC851895D6BF000530EF /* RWSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSMapViewController.m; sourceTree = "<group>"; };
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 				9B079635189A914B0026D489 /* RWSPriceFormatter.m */,
 				9B88C853189CFA7400941A99 /* RWSLocationManager.h */,
 				9B88C854189CFA7400941A99 /* RWSLocationManager.m */,
-				9B59DC841895D6BF000530EF /* RWSDummyDismissViewController.h */,
-				9B59DC851895D6BF000530EF /* RWSDummyDismissViewController.m */,
+				9B59DC841895D6BF000530EF /* RWSMapViewController.h */,
+				9B59DC851895D6BF000530EF /* RWSMapViewController.m */,
 				9B59DC801895AA27000530EF /* Storyboard.storyboard */,
 				9BD6B14E1895A1CC006E02D0 /* Supporting Files */,
 			);
@@ -402,7 +402,7 @@
 			files = (
 				9B5579E218969361008E3C0A /* RWSProjectCell.m in Sources */,
 				9BD6B1541895A1CC006E02D0 /* main.m in Sources */,
-				9B59DC861895D6BF000530EF /* RWSDummyDismissViewController.m in Sources */,
+				9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */,
 				9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */,
 				9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */,
 				9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */,

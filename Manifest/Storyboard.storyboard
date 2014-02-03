@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="636" y="-541"/>
         </scene>
-        <!--Dummy Dismiss View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="Z8o-cv-NSF">
             <objects>
-                <viewController id="RtL-Lj-wqq" customClass="RWSDummyDismissViewController" sceneMemberID="viewController">
+                <viewController id="RtL-Lj-wqq" customClass="RWSMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kRx-OE-QRh"/>
                         <viewControllerLayoutGuide type="bottom" id="qel-H8-ZNh"/>
@@ -138,6 +138,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-Ts-Pa6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RtL-Lj-wqq" id="EoE-Jp-qdJ"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-50-pXX">
                                 <rect key="frame" x="240" y="20" width="80" height="50"/>
@@ -153,6 +156,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="8u7-50-pXX" id="ePi-Pa-hJe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiH-T4-R0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

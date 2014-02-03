@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-@interface RWSDummyDismissViewController : UIViewController
+@import MapKit;
+
+@interface RWSMapViewController : UIViewController<MKMapViewDelegate>
+@property (nonatomic, weak) IBOutlet UIButton *closeButton;
+
 - (IBAction)close:(id)sender;
 @end
