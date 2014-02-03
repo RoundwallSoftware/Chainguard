@@ -39,6 +39,8 @@
 
 - (IBAction)setCurrentLocation:(id)sender
 {
+    [sender setHidden:YES];
+    
     [self.locationManager updateLocation];
     self.locationLabel.text = @"Finding location...";
 }
