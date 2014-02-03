@@ -35,7 +35,9 @@
 
             NSArray *stringChunks = [text componentsSeparatedByString:currencySymbol];
             self.name = [[stringChunks firstObject] stringByTrimmingCharactersInSet:charSet];
-            self.price = [NSDecimalNumber decimalNumberWithString:[[stringChunks lastObject] stringByTrimmingCharactersInSet:charSet]];
+            if([[stringChunks lastObject] length]){
+                self.price = [NSDecimalNumber decimalNumberWithString:[[stringChunks lastObject] stringByTrimmingCharactersInSet:charSet]];
+            }
 
             [delegate parserDidFinishParsing:self];
             return;

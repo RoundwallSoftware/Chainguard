@@ -46,4 +46,13 @@
     assertThat(parser.currencyCode, equalTo(@"USD"));
 }
 
+- (void)testParserDoesNotPickUpNanDollars
+{
+    [parser setText:@"Something $"];
+
+    assertThat(parser.name, equalTo(@"Something"));
+    assertThat(parser.price, nilValue());
+    assertThat(parser.currencyCode, equalTo(@"USD"));
+}
+
 @end
