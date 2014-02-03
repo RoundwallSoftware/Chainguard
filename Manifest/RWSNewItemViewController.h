@@ -24,6 +24,7 @@
 
 - (IBAction)save:(id)sender;
 - (IBAction)setCurrentLocation:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 @end
 
 @protocol RWSNewItemDelegate

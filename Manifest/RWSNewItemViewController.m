@@ -45,6 +45,11 @@
     self.locationLabel.text = @"Finding location...";
 }
 
+- (IBAction)dismissKeyboard:(id)sender
+{
+    [self.view endEditing:NO];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];

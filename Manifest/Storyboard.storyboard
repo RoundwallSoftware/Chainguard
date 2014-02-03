@@ -447,8 +447,9 @@ Saul Mora</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-mc-8lp">
-                                <rect key="frame" x="137" y="161" width="47" height="20"/>
+                                <rect key="frame" x="20" y="161" width="280" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.89524406934306566" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -456,10 +457,11 @@ Saul Mora</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GMI-XU-9tE">
-                                <rect key="frame" x="140" y="189" width="41" height="20"/>
+                                <rect key="frame" x="20" y="189" width="280" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.89524406934306566" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="hlH-PG-fMP" id="COu-Gi-azf"/>
                                 </connections>
@@ -479,6 +481,17 @@ Saul Mora</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-9j-dBR" userLabel="Location Label">
+                                <rect key="frame" x="61" y="217" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.89524406934306566" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="JWC-Ta-hBt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-Dn-pn9">
                                 <rect key="frame" x="61" y="217" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -489,18 +502,9 @@ Saul Mora</string>
                                     <action selector="setCurrentLocation:" destination="hlH-PG-fMP" eventType="touchUpInside" id="OJ7-Hc-EgR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-9j-dBR" userLabel="Location Label">
-                                <rect key="frame" x="61" y="217" width="200" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="JWC-Ta-hBt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="gcO-3x-Ml4" secondAttribute="centerX" id="19D-am-SlW"/>
                             <constraint firstAttribute="trailing" secondItem="kAI-kh-bl8" secondAttribute="trailing" id="1rB-Y7-AXe"/>
@@ -510,8 +514,10 @@ Saul Mora</string>
                             <constraint firstAttribute="centerX" secondItem="xtb-lh-3SO" secondAttribute="centerX" constant="-0.5" id="Bfd-IM-7VC"/>
                             <constraint firstItem="kAI-kh-bl8" firstAttribute="top" secondItem="xtb-lh-3SO" secondAttribute="bottom" constant="8" symbolic="YES" id="CkP-RL-z9z"/>
                             <constraint firstAttribute="centerX" secondItem="b1I-9j-dBR" secondAttribute="centerX" constant="-0.5" id="Epe-wZ-l8B"/>
+                            <constraint firstItem="Ra9-mc-8lp" firstAttribute="width" secondItem="gcO-3x-Ml4" secondAttribute="width" id="FXA-Jz-uSN"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="height" secondItem="BFd-Dn-pn9" secondAttribute="height" id="GtM-oD-viR"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="top" secondItem="GMI-XU-9tE" secondAttribute="bottom" constant="8" symbolic="YES" id="OmF-Oz-zah"/>
+                            <constraint firstItem="GMI-XU-9tE" firstAttribute="width" secondItem="Ra9-mc-8lp" secondAttribute="width" id="PhD-kh-OL3"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="width" secondItem="BFd-Dn-pn9" secondAttribute="width" id="b6s-H9-8Zo"/>
                             <constraint firstAttribute="centerX" secondItem="GMI-XU-9tE" secondAttribute="centerX" id="cBo-rL-nn4"/>
                             <constraint firstItem="xtb-lh-3SO" firstAttribute="top" secondItem="b1I-9j-dBR" secondAttribute="bottom" constant="30" id="ctL-lx-rOx"/>
@@ -523,6 +529,9 @@ Saul Mora</string>
                             <constraint firstItem="kAI-kh-bl8" firstAttribute="leading" secondItem="YAw-dh-vbJ" secondAttribute="leading" id="vp8-4f-F0I"/>
                             <constraint firstItem="Ra9-mc-8lp" firstAttribute="top" secondItem="gcO-3x-Ml4" secondAttribute="bottom" multiplier="1.5" constant="8" symbolic="YES" id="ywd-NC-ul6"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5Ll-n0-3HS" appends="YES" id="GwA-eJ-b00"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -546,6 +555,11 @@ Saul Mora</string>
                         <outlet property="delegate" destination="hlH-PG-fMP" id="kTk-xW-aiO"/>
                     </connections>
                 </customObject>
+                <tapGestureRecognizer id="5Ll-n0-3HS">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="hlH-PG-fMP" id="jYI-kB-ZCq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1615" y="144"/>
         </scene>
