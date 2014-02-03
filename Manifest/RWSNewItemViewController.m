@@ -51,7 +51,9 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    [self.parser setText:[[textField text] stringByReplacingCharactersInRange:range withString:string]];
+    if(textField == self.quickInputField){
+        [self.parser setText:[[textField text] stringByReplacingCharactersInRange:range withString:string]];
+    }
 
     return YES;
 }

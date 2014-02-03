@@ -41,17 +41,32 @@
     [verify(mockField) resignFirstResponder];
 }
 
-- (void)testControllerFeedsTextToParser
+- (void)testControllerFeedsQuickInputTextToParser
 {
     RWSItemParser *parser = mock([RWSItemParser class]);
     controller.parser = parser;
     UITextField *mockField = mock([UITextField class]);
+    controller.quickInputField = mockField;
 
     [given([mockField text]) willReturn:@"Item Name"];
 
     [controller textField:mockField shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"I"];
 
     [verify(parser) setText:@"Item Name"];
+}
+
+- (void)testControllerDoesNotFeedOtherInputToParser
+{
+    RWSItemParser *parser = mock([RWSItemParser class]);
+    controller.parser = parser;
+    UITextField *mockField = mock([UITextField class]);
+    controller.nameField = mockField;
+
+    [given([mockField text]) willReturn:@"Item Name"];
+
+    [controller textField:mockField shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"I"];
+
+    [verifyCount(parser, never()) setText:@"Item Name"];
 }
 
 - (void)testControllerUsesParserToPopulateNameField
