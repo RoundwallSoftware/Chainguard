@@ -10,6 +10,9 @@
 
 @implementation RWSManagedItem
 
-// Custom logic goes here.
+- (CLLocationCoordinate2D)coordinates
+{
+    return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);
+}
 
 @end

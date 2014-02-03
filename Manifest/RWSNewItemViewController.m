@@ -14,6 +14,8 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSDecimalNumber *price;
 @property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinates;
+@property (nonatomic, copy) NSString *addressString;
 @end
 
 @implementation RWSDumbItem
@@ -90,7 +92,15 @@
     NSMutableDictionary *addressDictionary = [placemark.addressDictionary mutableCopy];
     [addressDictionary removeObjectForKey:@"Country"];
 
-    self.locationLabel.text = ABCreateStringWithAddressDictionary(addressDictionary, NO);
+    NSString *addressString = ABCreateStringWithAddressDictionary(addressDictionary, NO);
+    self.locationLabel.text = addressString;
+
+    if(!self.item){
+        self.item = [[RWSDumbItem alloc] init];
+    }
+
+    self.item.addressString = addressString;
+    self.item.coordinates = placemark.location.coordinate;
 }
 
 @end

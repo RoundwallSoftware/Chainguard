@@ -7,11 +7,15 @@
 //
 
 @import Foundation;
+@import CoreLocation;
 
 @protocol RWSItem <NSObject>
 - (NSString *)name;
 - (NSDecimalNumber *)price;
 - (NSString *)currencyCode;
+
+- (CLLocationCoordinate2D)coordinates;
+- (NSString *)addressString;
 @end
 
 @protocol RWSProject <NSObject>

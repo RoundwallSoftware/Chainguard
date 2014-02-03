@@ -70,6 +70,9 @@
     managedItem.name = item.name;
     managedItem.price = item.price;
     managedItem.currencyCode = item.currencyCode;
+    managedItem.latitudeValue = item.coordinates.latitude;
+    managedItem.longitudeValue = item.coordinates.longitude;
+    managedItem.addressString = item.addressString;
 
     NSMutableOrderedSet *items = self.itemsSet;
     [items addObject:managedItem];

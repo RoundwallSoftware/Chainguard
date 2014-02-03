@@ -4,7 +4,10 @@
 #import "_RWSManagedItem.h"
 
 const struct RWSManagedItemAttributes RWSManagedItemAttributes = {
+	.addressString = @"addressString",
 	.currencyCode = @"currencyCode",
+	.latitude = @"latitude",
+	.longitude = @"longitude",
 	.name = @"name",
 	.price = @"price",
 };
@@ -42,6 +45,16 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
+	if ([key isEqualToString:@"latitudeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"latitude"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"longitudeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"longitude"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 
 	return keyPaths;
 }
@@ -49,8 +62,67 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 
 
 
+@dynamic addressString;
+
+
+
+
+
+
 @dynamic currencyCode;
 
+
+
+
+
+
+@dynamic latitude;
+
+
+
+- (double)latitudeValue {
+	NSNumber *result = [self latitude];
+	return [result doubleValue];
+}
+
+- (void)setLatitudeValue:(double)value_ {
+	[self setLatitude:[NSNumber numberWithDouble:value_]];
+}
+
+- (double)primitiveLatitudeValue {
+	NSNumber *result = [self primitiveLatitude];
+	return [result doubleValue];
+}
+
+- (void)setPrimitiveLatitudeValue:(double)value_ {
+	[self setPrimitiveLatitude:[NSNumber numberWithDouble:value_]];
+}
+
+
+
+
+
+@dynamic longitude;
+
+
+
+- (double)longitudeValue {
+	NSNumber *result = [self longitude];
+	return [result doubleValue];
+}
+
+- (void)setLongitudeValue:(double)value_ {
+	[self setLongitude:[NSNumber numberWithDouble:value_]];
+}
+
+- (double)primitiveLongitudeValue {
+	NSNumber *result = [self primitiveLongitude];
+	return [result doubleValue];
+}
+
+- (void)setPrimitiveLongitudeValue:(double)value_ {
+	[self setPrimitiveLongitude:[NSNumber numberWithDouble:value_]];
+}
 
 
 

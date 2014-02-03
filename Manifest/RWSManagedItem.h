@@ -2,5 +2,6 @@
 #import "RWSProject.h"
 
 @interface RWSManagedItem : _RWSManagedItem<RWSItem> {}
-// Custom logic goes here.
+
+- (CLLocationCoordinate2D)coordinates;
 @end
