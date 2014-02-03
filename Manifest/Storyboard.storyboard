@@ -481,19 +481,16 @@ Saul Mora</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-9j-dBR" userLabel="Location Label">
-                                <rect key="frame" x="61" y="217" width="200" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-9j-dBR" userLabel="Location Label">
+                                <rect key="frame" x="21" y="217" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.89524406934306566" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="JWC-Ta-hBt"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-Dn-pn9">
-                                <rect key="frame" x="61" y="217" width="200" height="30"/>
+                                <rect key="frame" x="21" y="217" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -522,6 +519,7 @@ Saul Mora</string>
                             <constraint firstAttribute="centerX" secondItem="GMI-XU-9tE" secondAttribute="centerX" id="cBo-rL-nn4"/>
                             <constraint firstItem="xtb-lh-3SO" firstAttribute="top" secondItem="b1I-9j-dBR" secondAttribute="bottom" constant="30" id="ctL-lx-rOx"/>
                             <constraint firstAttribute="trailing" secondItem="EUr-W8-hMi" secondAttribute="trailing" constant="38" id="mVY-2X-zSO"/>
+                            <constraint firstItem="b1I-9j-dBR" firstAttribute="width" secondItem="GMI-XU-9tE" secondAttribute="width" id="nne-Ut-IxL"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="centerY" secondItem="BFd-Dn-pn9" secondAttribute="centerY" id="nt6-Ru-SPY"/>
                             <constraint firstItem="b1I-9j-dBR" firstAttribute="centerX" secondItem="BFd-Dn-pn9" secondAttribute="centerX" id="qGa-U3-TZn"/>
                             <constraint firstItem="gcO-3x-Ml4" firstAttribute="top" secondItem="EUr-W8-hMi" secondAttribute="bottom" constant="8" symbolic="YES" id="r1j-lc-8D5"/>
