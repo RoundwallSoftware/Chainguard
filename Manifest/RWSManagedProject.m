@@ -37,7 +37,7 @@
         return @"Untitled";
     }
 
-    return [NSString stringWithFormat:@"Untitled %i", [results count]+1];
+    return [NSString stringWithFormat:@"Untitled %@", @([results count]+1)];
 }
 
 + (NSArray *)allProjectsInContext:(NSManagedObjectContext *)context
