@@ -7,12 +7,16 @@
 //
 
 #import "RWSProjectCell.h"
+#import "RWSPriceFormatter.h"
 
 @implementation RWSProjectCell
 
 - (void)setList:(id<RWSProject>)list
 {
     self.textLabel.text = [list title];
+
+    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+    self.detailTextLabel.text = [formatter stringFromNumber:[list totalRemainingPriceWithCurrencyCode:@"USD"] currency:@"USD"];
 }
 
 @end
