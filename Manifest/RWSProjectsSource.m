@@ -52,7 +52,7 @@
 
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath
 {
-    RWSManagedProject *project = [self projectAtIndexPath:indexPath];
+    RWSManagedProject *project = (RWSManagedProject*)[self projectAtIndexPath:indexPath];
 
     [self.context deleteObject:project];
 }

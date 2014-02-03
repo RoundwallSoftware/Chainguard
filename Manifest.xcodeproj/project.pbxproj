@@ -94,6 +94,7 @@
 		9B59DC821895D1C6000530EF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9B59DC841895D6BF000530EF /* RWSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSMapViewController.h; sourceTree = "<group>"; };
 		9B59DC851895D6BF000530EF /* RWSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSMapViewController.m; sourceTree = "<group>"; };
+		9B7A6785189FA80C001E6629 /* RWSMapItemSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSMapItemSource.h; sourceTree = "<group>"; };
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
@@ -196,6 +197,7 @@
 				9BDED6041897D175006E8E5C /* RWSManagedProject.h */,
 				9BDED6051897D175006E8E5C /* RWSManagedProject.m */,
 				9B5579DF18969070008E3C0A /* RWSProject.h */,
+				9B7A6785189FA80C001E6629 /* RWSMapItemSource.h */,
 				9BD6B1561895A1CC006E02D0 /* RWSAppDelegate.h */,
 				9BD6B1571895A1CC006E02D0 /* RWSAppDelegate.m */,
 				9BD6B1781895A4C4006E02D0 /* RWSProjectsViewController.h */,

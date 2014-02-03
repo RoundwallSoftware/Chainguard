@@ -7,9 +7,10 @@
 //
 
 #import "RWSProject.h"
+#import "RWSMapItemSource.h"
 @class RWSCoreDataController;
 
-@interface RWSProjectsSource : NSObject
+@interface RWSProjectsSource : NSObject<RWSMapItemSource>
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
 - (NSUInteger)count;
