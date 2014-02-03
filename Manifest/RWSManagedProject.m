@@ -93,7 +93,9 @@
 {
     NSDecimalNumber *total = [NSDecimalNumber zero];
     for(RWSManagedItem *item in self.items){
-        total = [total decimalNumberByAdding:[item price]];
+        if([item price]){
+            total = [total decimalNumberByAdding:[item price]];
+        }
     }
     return total;
 }
