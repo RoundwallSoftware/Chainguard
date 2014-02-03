@@ -8,6 +8,7 @@
 
 #import "RWSProjectsSource.h"
 #import "RWSManagedProject.h"
+#import "RWSManagedItem.h"
 #import "RWSCoreDataController.h"
 
 @interface RWSProjectsSource()
@@ -55,6 +56,20 @@
     RWSManagedProject *project = (RWSManagedProject*)[self projectAtIndexPath:indexPath];
 
     [self.context deleteObject:project];
+}
+
+- (NSArray *)annotations
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[RWSManagedItem entityName]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"latitude != 0 AND longitude != 0"]];
+
+    NSError *fetchError;
+    NSArray *results = [[self context] executeFetchRequest:request error:&fetchError];
+    if(!results){
+        abort();
+    }
+
+    return results;
 }
 
 @end

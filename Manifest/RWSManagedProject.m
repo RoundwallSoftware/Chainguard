@@ -70,8 +70,8 @@
     managedItem.name = item.name;
     managedItem.price = item.price;
     managedItem.currencyCode = item.currencyCode;
-    managedItem.latitudeValue = item.coordinates.latitude;
-    managedItem.longitudeValue = item.coordinates.longitude;
+    managedItem.latitudeValue = item.coordinate.latitude;
+    managedItem.longitudeValue = item.coordinate.longitude;
     managedItem.addressString = item.addressString;
 
     NSMutableOrderedSet *items = self.itemsSet;
@@ -81,7 +81,7 @@
 
 - (void)removeItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    RWSManagedItem *item = [self itemAtIndexPath:indexPath];
+    RWSManagedItem *item = (RWSManagedItem*)[self itemAtIndexPath:indexPath];
 
     NSMutableOrderedSet *items = [self itemsSet];
     [items removeObject:item];
@@ -98,6 +98,19 @@
         }
     }
     return total;
+}
+
+- (NSArray *)annotations
+{
+    NSOrderedSet *items = [self items];
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[items count]];
+//    for(RWSManagedItem *item in items){
+//        if([item latitude] && [item longitude]){
+//            [annotations addObject:item];
+//        }
+//    }
+
+    return annotations;
 }
 
 @end

@@ -8,18 +8,8 @@
 
 #import "RWSNewItemViewController.h"
 #import "RWSPriceFormatter.h"
+#import "RWSDumbItem.h"
 @import AddressBookUI;
-
-@interface RWSDumbItem : NSObject<RWSItem>
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSDecimalNumber *price;
-@property (nonatomic, copy) NSString *currencyCode;
-@property (nonatomic, assign) CLLocationCoordinate2D coordinates;
-@property (nonatomic, copy) NSString *addressString;
-@end
-
-@implementation RWSDumbItem
-@end
 
 @interface RWSNewItemViewController ()
 @property (nonatomic, strong) RWSDumbItem *item;
@@ -100,7 +90,7 @@
     }
 
     self.item.addressString = addressString;
-    self.item.coordinates = placemark.location.coordinate;
+    self.item.coordinate = placemark.location.coordinate;
 }
 
 @end

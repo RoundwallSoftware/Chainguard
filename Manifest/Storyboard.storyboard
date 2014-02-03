@@ -94,7 +94,7 @@
                     <toolbarItems>
                         <barButtonItem title="Map" id="lr9-2n-WFP">
                             <connections>
-                                <segue destination="RtL-Lj-wqq" kind="modal" id="nKY-6n-VL9"/>
+                                <segue destination="RtL-Lj-wqq" kind="modal" identifier="toMap" id="nKY-6n-VL9"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -158,11 +158,10 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="8u7-50-pXX" id="ePi-Pa-hJe"/>
-                        <outlet property="itemSource" destination="2G1-Io-nAd" id="7Ps-UY-0Bi"/>
+                        <outlet property="mapView" destination="pLr-Ts-Pa6" id="2Uq-9g-qXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiH-T4-R0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="2G1-Io-nAd" customClass="RWSMapItemSource"/>
             </objects>
             <point key="canvasLocation" x="1615" y="-1220"/>
         </scene>

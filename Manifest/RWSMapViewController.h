@@ -10,6 +10,7 @@
 #import "RWSMapItemSource.h"
 
 @interface RWSMapViewController : UIViewController<MKMapViewDelegate>
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) id<RWSMapItemSource> itemSource;
 @property (nonatomic, weak) IBOutlet UIButton *closeButton;
 

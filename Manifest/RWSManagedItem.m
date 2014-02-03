@@ -10,9 +10,14 @@
 
 @implementation RWSManagedItem
 
-- (CLLocationCoordinate2D)coordinates
+- (CLLocationCoordinate2D)coordinate
 {
     return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);
+}
+
+- (NSString *)title
+{
+    return self.name;
 }
 
 @end

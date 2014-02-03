@@ -14,7 +14,7 @@
 - (NSDecimalNumber *)price;
 - (NSString *)currencyCode;
 
-- (CLLocationCoordinate2D)coordinates;
+- (CLLocationCoordinate2D)coordinate;
 - (NSString *)addressString;
 @end
 

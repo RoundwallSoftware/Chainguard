@@ -19,6 +19,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [self.mapView addAnnotations:[self.itemSource annotations]];
+}
+
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     self.closeButton.alpha = 1.0;

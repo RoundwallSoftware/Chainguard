@@ -13,6 +13,7 @@
 #import "RWSProjectCell.h"
 #import "RWSProjectViewController.h"
 #import "RWSPriceFormatter.h"
+#import "RWSMapViewController.h"
 
 @interface RWSProjectsViewController ()
 
@@ -120,6 +121,11 @@
 
         RWSProjectViewController *controller = [segue destinationViewController];
         controller.project = project;
+    }
+
+    if([identifier isEqualToString:@"toMap"]){
+        RWSMapViewController *mapController = [segue destinationViewController];
+        mapController.itemSource = self.projectSource;
     }
 }
 

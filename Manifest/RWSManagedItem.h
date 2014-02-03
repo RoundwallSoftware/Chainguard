@@ -1,7 +1,6 @@
 #import "_RWSManagedItem.h"
 #import "RWSProject.h"
+@import MapKit;
 
-@interface RWSManagedItem : _RWSManagedItem<RWSItem> {}
-
-- (CLLocationCoordinate2D)coordinates;
+@interface RWSManagedItem : _RWSManagedItem<RWSItem, MKAnnotation> {}
 @end
