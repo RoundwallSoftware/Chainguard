@@ -210,7 +210,7 @@
                     <toolbarItems>
                         <barButtonItem title="Map" id="oeH-Gq-Bf4">
                             <connections>
-                                <segue destination="RtL-Lj-wqq" kind="modal" id="VOf-k2-mXb"/>
+                                <segue destination="RtL-Lj-wqq" kind="modal" identifier="toMap" id="VOf-k2-mXb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="9am-kI-hGo"/>
@@ -227,6 +227,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addItem" destination="ZHa-fC-cBU" id="lq8-sl-zpx"/>
+                        <outlet property="mapItem" destination="oeH-Gq-Bf4" id="Rni-Sw-ZsO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyF-sp-Lur" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,6 +590,6 @@ Saul Mora</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="NDp-5W-szv"/>
-        <segue reference="nKY-6n-VL9"/>
+        <segue reference="VOf-k2-mXb"/>
     </inferredMetricsTieBreakers>
 </document>

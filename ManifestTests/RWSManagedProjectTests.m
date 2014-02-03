@@ -8,7 +8,9 @@
 
 @import XCTest;
 @import CoreData;
+@import MapKit;
 #import "RWSManagedProject.h"
+#import "RWSDumbItem.h"
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
@@ -102,6 +104,27 @@
     [project removeItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 
     assertThatInteger([project count], equalToInteger(0));
+}
+
+- (void)testProjectSourceHasAnnotations
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    assertThatInteger([[project annotations] count], equalToInteger(0));
+
+    RWSDumbItem *item = [[RWSDumbItem alloc] init];
+    item.coordinate = CLLocationCoordinate2DMake(32.03, -114.32);
+    item.name = @"Map Item";
+
+    [project addItemToList:item];
+
+    RWSDumbItem *item2 = [[RWSDumbItem alloc] init];
+    item.name = @"Map Item 2";
+
+    [project addItemToList:item2];
+
+    NSArray *annotations = [project annotations];
+    assertThat(annotations, hasCountOf(1));
+    assertThatBool([[annotations firstObject] conformsToProtocol:@protocol(MKAnnotation)], equalToBool(YES));
 }
 
 @end

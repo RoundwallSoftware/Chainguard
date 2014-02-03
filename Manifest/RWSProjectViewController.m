@@ -8,10 +8,12 @@
 
 #import "RWSProjectViewController.h"
 #import "RWSPriceFormatter.h"
+#import "RWSMapViewController.h"
 
 @interface RWSProjectViewController ()
 @property (nonatomic, strong) UIBarButtonItem *priceItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *addItem;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *mapItem;
 @end
 
 @implementation RWSProjectViewController
@@ -24,7 +26,7 @@
 
     UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
-    return @[self.addItem, flexibleItem, self.priceItem];
+    return @[self.mapItem, flexibleItem, self.addItem, flexibleItem, self.priceItem];
 }
 
 - (void)recalculatePrice
@@ -129,6 +131,11 @@
     if([identifier isEqualToString:@"newItem"]){
         RWSNewItemViewController *controller = [segue destinationViewController];
         controller.delegate = self;
+    }
+
+    if([identifier isEqualToString:@"toMap"]){
+        RWSMapViewController *controller = [segue destinationViewController];
+        controller.itemSource = self.project;
     }
 }
 

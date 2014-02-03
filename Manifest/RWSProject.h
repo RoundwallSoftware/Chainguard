@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
+#import "RWSMapItemSource.h"
 @import Foundation;
 @import CoreLocation;
 
@@ -18,7 +19,7 @@
 - (NSString *)addressString;
 @end
 
-@protocol RWSProject <NSObject>
+@protocol RWSProject <RWSMapItemSource>
 @property (nonatomic, copy) NSString *title;
 
 - (NSUInteger)count;

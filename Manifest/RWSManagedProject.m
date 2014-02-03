@@ -104,11 +104,11 @@
 {
     NSOrderedSet *items = [self items];
     NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[items count]];
-//    for(RWSManagedItem *item in items){
-//        if([item latitude] && [item longitude]){
-//            [annotations addObject:item];
-//        }
-//    }
+    for(RWSManagedItem *item in items){
+        if([item latitudeValue] != 0 && [item longitudeValue] != 0){
+            [annotations addObject:item];
+        }
+    }
 
     return annotations;
 }
