@@ -40,6 +40,8 @@
     [super viewDidLoad];
 
     [self setupTitleTextField];
+
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidAppear:(BOOL)animated
