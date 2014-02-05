@@ -27,6 +27,7 @@
     if(!_projectSource){
         self.projectSource = [[RWSProjectsSource alloc] init];
 
+        // This is all gross and goes away soon as the app stops using in-memory contexts
         NSManagedObjectContext *context = self.projectSource.context;
         RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:context];
         project.title = @"Example Project";
