@@ -113,4 +113,12 @@
     return annotations;
 }
 
+- (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath
+{
+    NSMutableOrderedSet *set = [self itemsSet];
+    [set moveObjectsAtIndexes:[NSIndexSet indexSetWithIndex:sourcePath.row] toIndex:destinationPath.row];
+
+    self.items = set;
+}
+
 @end

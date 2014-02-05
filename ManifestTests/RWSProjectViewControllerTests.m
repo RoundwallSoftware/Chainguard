@@ -37,9 +37,6 @@
     [given([project title]) willReturn:title];
 
     controller.project = project;
-    [controller viewDidLoad];
-
-    [verify(project) title];
 }
 
 - (void)testControllerAsksProjectForItemCount
@@ -110,6 +107,19 @@
     [controller tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
 
     [verify(project) removeItemAtIndexPath:indexPath];
+}
+
+- (void)testReorderingItems
+{
+    NSIndexPath *originalPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *destinationPath = [NSIndexPath indexPathForRow:1 inSection:0];
+
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    controller.project = project;
+
+    [controller tableView:nil moveRowAtIndexPath:originalPath toIndexPath:destinationPath];
+
+    [verify(project) moveItemAtIndexPath:originalPath toIndexPath:destinationPath];
 }
 
 @end

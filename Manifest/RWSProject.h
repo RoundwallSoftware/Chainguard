@@ -29,4 +29,5 @@
 
 - (void)addItemToList:(id<RWSItem>)item;
 - (void)removeItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath;
 @end

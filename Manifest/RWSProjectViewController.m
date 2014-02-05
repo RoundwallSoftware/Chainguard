@@ -40,8 +40,6 @@
     [super viewDidLoad];
 
     [self setupTitleTextField];
-
-    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, self.addItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -49,6 +47,7 @@
     [super viewDidAppear:animated];
 
     [self recalculatePrice];
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, self.addItem];
 }
 
 - (void)setupTitleTextField
@@ -100,7 +99,7 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-
+    [self.project moveItemAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
 }
 
 #pragma mark - UITextFieldDelegate
