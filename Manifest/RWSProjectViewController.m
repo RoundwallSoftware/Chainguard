@@ -52,7 +52,7 @@
 
 - (void)setupTitleTextField
 {
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 100.0, 40.0)];
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 40.0)];
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleRoundedRect;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
@@ -61,7 +61,12 @@
     textField.delegate = self;
     textField.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.1];
 
-    self.tableView.tableHeaderView = textField;
+    UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 50.0)];
+    [background addSubview:textField];
+
+    textField.center = background.center;
+
+    self.tableView.tableHeaderView = background;
 }
 
 #pragma mark - Table view data source
