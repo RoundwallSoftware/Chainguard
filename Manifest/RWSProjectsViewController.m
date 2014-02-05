@@ -10,6 +10,7 @@
 #import "RWSCoreDataController.h"
 #import "RWSProjectsSource.h"
 #import "RWSManagedProject.h"
+#import "RWSManagedItem.h"
 #import "RWSProjectCell.h"
 #import "RWSProjectViewController.h"
 #import "RWSPriceFormatter.h"
@@ -26,8 +27,32 @@
     if(!_projectSource){
         self.projectSource = [[RWSProjectsSource alloc] init];
 
-        RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:self.projectSource.context];
+        NSManagedObjectContext *context = self.projectSource.context;
+        RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:context];
         project.title = @"Example Project";
+
+        RWSManagedItem *cog = [RWSManagedItem insertInManagedObjectContext:context];
+        cog.name = @"Dura Ace Cog";
+        cog.price = [NSDecimalNumber decimalNumberWithString:@"30.99"];
+        cog.currencyCode = @"USD";
+
+        RWSManagedItem *crankset = [RWSManagedItem insertInManagedObjectContext:context];
+        crankset.name = @"Dura Ace Crankset";
+        crankset.price = [NSDecimalNumber decimalNumberWithString:@"350.99"];
+        crankset.currencyCode = @"USD";
+
+        RWSManagedItem *chain = [RWSManagedItem insertInManagedObjectContext:context];
+        chain.name = @"Pearl Izumi Chain";
+        chain.price = [NSDecimalNumber decimalNumberWithString:@"12.99"];
+        chain.currencyCode = @"USD";
+
+        RWSManagedItem *pedal = [RWSManagedItem insertInManagedObjectContext:context];
+        pedal.name = @"Shimano SPD-SL Pedal";
+        pedal.price = [NSDecimalNumber decimalNumberWithString:@"60.99"];
+        pedal.currencyCode = @"USD";
+
+        NSOrderedSet *set = [NSOrderedSet orderedSetWithObjects:cog, crankset, chain, pedal, nil];
+        project.items = set;
 
         NSError *saveError;
         BOOL saved = [self.projectSource.context save:&saveError];

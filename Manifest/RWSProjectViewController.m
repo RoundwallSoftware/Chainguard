@@ -26,7 +26,7 @@
 
     UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
-    return @[self.mapItem, flexibleItem, self.addItem, flexibleItem, self.priceItem];
+    return @[flexibleItem, self.priceItem, flexibleItem];
 }
 
 - (void)recalculatePrice
@@ -41,7 +41,7 @@
 
     [self setupTitleTextField];
 
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, self.addItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -62,7 +62,7 @@
     textField.delegate = self;
     textField.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.1];
 
-    self.navigationItem.titleView = textField;
+    self.tableView.tableHeaderView = textField;
 }
 
 #pragma mark - Table view data source
@@ -96,6 +96,11 @@
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
         [self recalculatePrice];
     }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+
 }
 
 #pragma mark - UITextFieldDelegate
