@@ -8,6 +8,7 @@
 
 #import "RWSAppDelegate.h"
 #import "RWSProjectsViewController.h"
+#import "UIColor+iOS7Colors.h"
 
 @interface RWSAppDelegate()
 @end
@@ -24,13 +25,17 @@
 
     [self.window makeKeyAndVisible];
 
-    UIColor *someKindOfBlue = [UIColor colorWithRed:59.0/255.0 green:104.0/255.0 blue:153.0/255.0 alpha:1.0];
-    self.window.tintColor = someKindOfBlue;
-    self.window.backgroundColor = [UIColor blackColor];
-    
-    UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: someKindOfBlue, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
+    [self setupTheme];
     return YES;
+}
+
+- (void)setupTheme
+{
+    UIColor *tintColor = [UIColor iOS7darkBlueColor];
+    self.window.tintColor = tintColor;
+
+    UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: tintColor, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
 }
 
 @end

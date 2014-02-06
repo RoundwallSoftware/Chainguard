@@ -92,11 +92,13 @@
                         </prototypes>
                     </tableView>
                     <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jvd-ZE-m4S"/>
                         <barButtonItem title="Map" id="lr9-2n-WFP">
                             <connections>
                                 <segue destination="RtL-Lj-wqq" kind="modal" identifier="toMap" id="nKY-6n-VL9"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="P3R-9k-bKn"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Projects" id="Cvf-uC-x3k">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="B6u-S3-Ktr"/>
@@ -575,6 +577,6 @@ Saul Mora</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="NDp-5W-szv"/>
-        <segue reference="VOf-k2-mXb"/>
+        <segue reference="nKY-6n-VL9"/>
     </inferredMetricsTieBreakers>
 </document>
