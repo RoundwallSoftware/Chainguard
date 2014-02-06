@@ -18,19 +18,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    UIColor *someKindOfPurple = [UIColor colorWithRed:113.0/255.0 green:60.0/255.0 blue:179.0/255.0 alpha:1.0];
-
-    self.window.tintColor = someKindOfPurple;
-
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
 
     self.window.rootViewController = [storyboard instantiateInitialViewController];
 
     [self.window makeKeyAndVisible];
 
-
+    UIColor *someKindOfBlue = [UIColor colorWithRed:59.0/255.0 green:104.0/255.0 blue:153.0/255.0 alpha:1.0];
+    self.window.tintColor = someKindOfBlue;
+    self.window.backgroundColor = [UIColor blackColor];
+    
     UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: someKindOfPurple, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: someKindOfBlue, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
     return YES;
 }
 
