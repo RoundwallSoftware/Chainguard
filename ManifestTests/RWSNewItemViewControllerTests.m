@@ -129,4 +129,14 @@
     [verify(manager) placemark];
 }
 
+- (void)testControllerMakesSureCurrencySymbolInPlace
+{
+    UITextField *textField = [[UITextField alloc] init];
+    controller.priceField = textField;
+
+    [controller textFieldDidBeginEditing:textField];
+
+    assertThat(textField.text, equalTo(@"$"));
+}
+
 @end

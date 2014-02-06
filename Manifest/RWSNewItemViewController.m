@@ -9,6 +9,7 @@
 #import "RWSNewItemViewController.h"
 #import "RWSPriceFormatter.h"
 #import "RWSDumbItem.h"
+#import "RWSPriceInputManager.h"
 @import AddressBookUI;
 
 @interface RWSNewItemViewController ()
@@ -16,6 +17,14 @@
 @end
 
 @implementation RWSNewItemViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.priceField.inputAccessoryView = toolbar;
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -43,6 +52,13 @@
 - (IBAction)dismissKeyboard:(id)sender
 {
     [self.view endEditing:NO];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if(textField == self.priceField){
+        setCurrencyOnTextField(@"USD", textField);
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -99,6 +115,11 @@
 - (void)locationManagerDidFailToDetermineLocation:(RWSLocationManager *)manager
 {
     [self.locationButton setTitle:@"Unable to determine location." forState:UIControlStateNormal];
+}
+
+- (IBAction)setUSD:(id)sender
+{
+    setCurrencyOnTextField(@"USD", self.priceField);
 }
 
 @end

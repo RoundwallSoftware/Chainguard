@@ -19,6 +19,9 @@
 		9B079638189A9FDB0026D489 /* RWSPriceFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */; };
 		9B0DECD018970290007C80A6 /* RWSManagedProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */; };
 		9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */; };
+		9B466C4418A38503008AE3FF /* CurrencyToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B466C4318A38503008AE3FF /* CurrencyToolbar.xib */; };
+		9B466C4618A385F1008AE3FF /* RWSPriceInputManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B466C4518A385F1008AE3FF /* RWSPriceInputManagerTests.m */; };
+		9B466C4918A385FE008AE3FF /* RWSPriceInputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B466C4818A385FE008AE3FF /* RWSPriceInputManager.m */; };
 		9B5579DE18968370008E3C0A /* RWSProjectsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579DD18968370008E3C0A /* RWSProjectsSource.m */; };
 		9B5579E218969361008E3C0A /* RWSProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579E118969361008E3C0A /* RWSProjectCell.m */; };
 		9B5579E41896977F008E3C0A /* RWSProjectSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5579E31896977F008E3C0A /* RWSProjectSourceTests.m */; };
@@ -81,6 +84,10 @@
 		9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedProjectTests.m; sourceTree = "<group>"; };
 		9B0DECD11897096B007C80A6 /* RWSProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSProjectViewController.h; sourceTree = "<group>"; };
 		9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectViewController.m; sourceTree = "<group>"; };
+		9B466C4318A38503008AE3FF /* CurrencyToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyToolbar.xib; sourceTree = "<group>"; };
+		9B466C4518A385F1008AE3FF /* RWSPriceInputManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPriceInputManagerTests.m; sourceTree = "<group>"; };
+		9B466C4718A385FE008AE3FF /* RWSPriceInputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPriceInputManager.h; sourceTree = "<group>"; };
+		9B466C4818A385FE008AE3FF /* RWSPriceInputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPriceInputManager.m; sourceTree = "<group>"; };
 		9B5579DC18968370008E3C0A /* RWSProjectsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSProjectsSource.h; sourceTree = "<group>"; };
 		9B5579DD18968370008E3C0A /* RWSProjectsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectsSource.m; sourceTree = "<group>"; };
 		9B5579DF18969070008E3C0A /* RWSProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSProject.h; sourceTree = "<group>"; };
@@ -231,6 +238,9 @@
 				9B7A6789189FB131001E6629 /* RWSDumbItem.m */,
 				9B59DC801895AA27000530EF /* Storyboard.storyboard */,
 				9BD6B14E1895A1CC006E02D0 /* Supporting Files */,
+				9B466C4318A38503008AE3FF /* CurrencyToolbar.xib */,
+				9B466C4718A385FE008AE3FF /* RWSPriceInputManager.h */,
+				9B466C4818A385FE008AE3FF /* RWSPriceInputManager.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -262,6 +272,7 @@
 				9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */,
 				9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */,
 				9B7A6786189FABBE001E6629 /* RWSMapViewControllerTests.m */,
+				9B466C4518A385F1008AE3FF /* RWSPriceInputManagerTests.m */,
 			);
 			path = ManifestTests;
 			sourceTree = "<group>";
@@ -358,6 +369,7 @@
 			files = (
 				9BD6B1521895A1CC006E02D0 /* InfoPlist.strings in Resources */,
 				9BD6B15A1895A1CC006E02D0 /* Images.xcassets in Resources */,
+				9B466C4418A38503008AE3FF /* CurrencyToolbar.xib in Resources */,
 				9B59DC811895AA27000530EF /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +429,7 @@
 				9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */,
 				9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */,
 				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,
+				9B466C4918A385FE008AE3FF /* RWSPriceInputManager.m in Sources */,
 				9B5579E71896989D008E3C0A /* RWSCoreDataController.m in Sources */,
 				9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */,
 				9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */,
@@ -438,6 +451,7 @@
 			files = (
 				9B7A6787189FABBE001E6629 /* RWSMapViewControllerTests.m in Sources */,
 				9B0DECD018970290007C80A6 /* RWSManagedProjectTests.m in Sources */,
+				9B466C4618A385F1008AE3FF /* RWSPriceInputManagerTests.m in Sources */,
 				9B079638189A9FDB0026D489 /* RWSPriceFormatterTests.m in Sources */,
 				9B5579E9189698BC008E3C0A /* RWSCoreDataControllerTests.m in Sources */,
 				9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */,

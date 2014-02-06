@@ -26,6 +26,8 @@
 - (IBAction)dismiss:(id)sender;
 - (IBAction)setCurrentLocation:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
+
+- (IBAction)setUSD:(id)sender;
 @end
 
 @protocol RWSNewItemDelegate
