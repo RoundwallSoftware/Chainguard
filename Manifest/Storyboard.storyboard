@@ -225,9 +225,14 @@
                         <barButtonItem title="$32.21" id="hmj-Nc-5Ju"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="hft-KQ-kc6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Jyb-sr-G0Z"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Jyb-sr-G0Z">
+                            <connections>
+                                <action selector="share:" destination="qi8-Yz-TGC" id="O1d-5Q-uBx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="actionItem" destination="Jyb-sr-G0Z" id="vmA-S4-ZDd"/>
                         <outlet property="addItem" destination="ZHa-fC-cBU" id="lq8-sl-zpx"/>
                         <outlet property="mapItem" destination="oeH-Gq-Bf4" id="Rni-Sw-ZsO"/>
                     </connections>
@@ -577,6 +582,6 @@ Saul Mora</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="NDp-5W-szv"/>
-        <segue reference="nKY-6n-VL9"/>
+        <segue reference="VOf-k2-mXb"/>
     </inferredMetricsTieBreakers>
 </document>

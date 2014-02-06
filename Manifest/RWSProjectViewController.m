@@ -13,6 +13,7 @@
 @interface RWSProjectViewController ()
 @property (nonatomic, strong) UIBarButtonItem *priceItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *addItem;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *actionItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *mapItem;
 @end
 
@@ -40,6 +41,8 @@
     [super viewDidLoad];
 
     [self setupTitleTextField];
+
+    self.navigationItem.rightBarButtonItems = @[self.addItem, self.actionItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -47,7 +50,6 @@
     [super viewDidAppear:animated];
 
     [self recalculatePrice];
-    self.navigationItem.rightBarButtonItems = @[self.editButtonItem, self.addItem];
 }
 
 - (void)setupTitleTextField
@@ -148,6 +150,12 @@
         RWSMapViewController *controller = [segue destinationViewController];
         controller.itemSource = self.project;
     }
+}
+
+- (IBAction)share:(id)sender
+{
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[self.project] applicationActivities:nil];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

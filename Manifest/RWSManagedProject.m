@@ -1,5 +1,6 @@
 #import "RWSManagedProject.h"
 #import "RWSManagedItem.h"
+#import "RWSPriceFormatter.h"
 
 @implementation RWSManagedProject
 
@@ -100,6 +101,16 @@
     return total;
 }
 
+- (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath
+{
+    NSMutableOrderedSet *set = [self itemsSet];
+    [set moveObjectsAtIndexes:[NSIndexSet indexSetWithIndex:sourcePath.row] toIndex:destinationPath.row];
+
+    self.items = set;
+}
+
+#pragma mark - RWSMapItemSource
+
 - (NSArray *)annotations
 {
     NSOrderedSet *items = [self items];
@@ -113,12 +124,22 @@
     return annotations;
 }
 
-- (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath
-{
-    NSMutableOrderedSet *set = [self itemsSet];
-    [set moveObjectsAtIndexes:[NSIndexSet indexSetWithIndex:sourcePath.row] toIndex:destinationPath.row];
+#pragma mark - UIActivityItemSource
 
-    self.items = set;
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
+{
+    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+
+    NSString *titleString = [@"Project: " stringByAppendingString:self.title];
+    NSString *priceString = [@"Total: " stringByAppendingString:[formatter stringFromNumber:[self totalRemainingPriceWithCurrencyCode:@"USD"] currency:@"USD"]];
+    NSString *itemString = [[[[self items] valueForKey:@"lineItemString"] array] componentsJoinedByString:@"\n"];
+
+    return [@[titleString, @"", itemString, @"", priceString] componentsJoinedByString:@"\n"];
+}
+
+- (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController
+{
+    return @"Project";
 }
 
 @end

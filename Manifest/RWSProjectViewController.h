@@ -11,4 +11,6 @@
 
 @interface RWSProjectViewController : UITableViewController<UITextFieldDelegate, RWSNewItemDelegate>
 @property (nonatomic, strong) id<RWSProject> project;
+
+- (IBAction)share:(id)sender;
 @end

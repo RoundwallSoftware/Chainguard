@@ -1,5 +1,5 @@
 #import "RWSManagedItem.h"
-
+#import "RWSPriceFormatter.h"
 
 @interface RWSManagedItem ()
 
@@ -17,7 +17,14 @@
 
 - (NSString *)title
 {
-    return self.name;
+    return [self lineItemString];
+}
+
+- (NSString *)lineItemString
+{
+    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+
+    return [@[self.name, @": ", [formatter stringFromNumber:[self price] currency:@"USD"]] componentsJoinedByString:@""];
 }
 
 @end

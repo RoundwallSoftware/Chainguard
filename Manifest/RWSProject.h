@@ -19,7 +19,7 @@
 - (NSString *)addressString;
 @end
 
-@protocol RWSProject <RWSMapItemSource>
+@protocol RWSProject <RWSMapItemSource, UIActivityItemSource>
 @property (nonatomic, copy) NSString *title;
 
 - (NSUInteger)count;
