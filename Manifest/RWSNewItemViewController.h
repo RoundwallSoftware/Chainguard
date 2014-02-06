@@ -31,5 +31,5 @@
 @end
 
 @protocol RWSNewItemDelegate
-- (void)newItemController:(RWSNewItemViewController *)controller didMakeItem:(id<RWSItem>)item;
+- (void)newItemController:(RWSNewItemViewController *)controller didMakeItem:(id<RWSItem>)itemOrNil;
 @end

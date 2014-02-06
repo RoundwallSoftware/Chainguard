@@ -124,10 +124,10 @@
 
 #pragma mark - RWSNewItemDelegate
 
-- (void)newItemController:(RWSNewItemViewController *)controller didMakeItem:(id<RWSItem>)item
+- (void)newItemController:(RWSNewItemViewController *)controller didMakeItem:(id<RWSItem>)itemOrNil
 {
-    if(item){
-        [self.project addItemToList:item];
+    if(itemOrNil){
+        [self.project addItemToList:itemOrNil];
     }
 
     [self dismissViewControllerAnimated:YES completion:^{
