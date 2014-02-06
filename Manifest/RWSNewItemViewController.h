@@ -18,11 +18,12 @@
 @property (nonatomic, weak) IBOutlet UITextField *quickInputField;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
-@property (nonatomic, weak) IBOutlet UILabel *locationLabel;
+@property (nonatomic, weak) IBOutlet UIButton *locationButton;
 
 @property (nonatomic, weak) id<RWSNewItemDelegate> delegate;
 
 - (IBAction)save:(id)sender;
+- (IBAction)dismiss:(id)sender;
 - (IBAction)setCurrentLocation:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
 @end

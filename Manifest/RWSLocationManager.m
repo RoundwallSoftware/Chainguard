@@ -35,9 +35,14 @@
 
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        self.placemark = [placemarks firstObject];
-
-        [self.delegate locationManagerDidDetermineLocation:self];
+        id<RWSLocationManagerDelegate> delegate = self.delegate;
+        if(!placemarks){
+            self.placemark = nil;
+            [delegate locationManagerDidFailToDetermineLocation:self];
+        }else{
+            self.placemark = [placemarks firstObject];
+            [delegate locationManagerDidDetermineLocation:self];
+        }
     }];
 
     self.geocoder = geocoder;

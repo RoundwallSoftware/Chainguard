@@ -29,12 +29,15 @@
     [self.delegate newItemController:self didMakeItem:self.item];
 }
 
+- (IBAction)dismiss:(id)sender
+{
+    [self.delegate newItemController:self didMakeItem:nil];
+}
+
 - (IBAction)setCurrentLocation:(id)sender
 {
-    [sender setHidden:YES];
-    
     [self.locationManager updateLocation];
-    self.locationLabel.text = @"Finding location...";
+    [sender setTitle:@"Finding location..." forState:UIControlStateNormal];
 }
 
 - (IBAction)dismissKeyboard:(id)sender
@@ -83,7 +86,7 @@
     [addressDictionary removeObjectForKey:@"Country"];
 
     NSString *addressString = ABCreateStringWithAddressDictionary(addressDictionary, NO);
-    self.locationLabel.text = addressString;
+    [self.locationButton setTitle:addressString forState:UIControlStateNormal];
 
     if(!self.item){
         self.item = [[RWSDumbItem alloc] init];
@@ -91,6 +94,11 @@
 
     self.item.addressString = addressString;
     self.item.coordinate = placemark.location.coordinate;
+}
+
+- (void)locationManagerDidFailToDetermineLocation:(RWSLocationManager *)manager
+{
+    [self.locationButton setTitle:@"Unable to determine location." forState:UIControlStateNormal];
 }
 
 @end

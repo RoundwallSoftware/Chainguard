@@ -112,22 +112,12 @@
 {
     RWSLocationManager *manager = mock([RWSLocationManager class]);
     controller.locationManager = manager;
-    UILabel *label = mock([UILabel class]);
-    controller.locationLabel = label;
-
-    [controller setCurrentLocation:nil];
-
-    [verify(manager) updateLocation];
-    [verify(label) setText:@"Finding location..."];
-}
-
-- (void)testControllerHidesButtonOnGetLocationAction
-{
     UIButton *button = mock([UIButton class]);
 
     [controller setCurrentLocation:button];
 
-    [verify(button) setHidden:YES];
+    [verify(manager) updateLocation];
+    [verify(button) setTitle:@"Finding location..." forState:UIControlStateNormal];
 }
 
 - (void)testControllerRespondsWhenLocationManagerFindsPlaces

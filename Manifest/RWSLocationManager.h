@@ -18,4 +18,5 @@
 
 @protocol RWSLocationManagerDelegate <NSObject>
 - (void)locationManagerDidDetermineLocation:(RWSLocationManager *)manager;
+- (void)locationManagerDidFailToDetermineLocation:(RWSLocationManager *)manager;
 @end
