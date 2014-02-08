@@ -50,6 +50,8 @@
 		9BD6B1771895A3A1006E02D0 /* RWSProjectsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD6B1761895A3A1006E02D0 /* RWSProjectsViewControllerTests.m */; };
 		9BD6B17A1895A4C4006E02D0 /* RWSProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD6B1791895A4C4006E02D0 /* RWSProjectsViewController.m */; };
 		9BDECA4A18A64BE500CE7C3C /* RWSItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDECA4918A64BE500CE7C3C /* RWSItemCell.m */; };
+		9BDECA4C18A6990900CE7C3C /* RWSReverseItemParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDECA4B18A6990900CE7C3C /* RWSReverseItemParserTests.m */; };
+		9BDECA4F18A6994100CE7C3C /* RWSReverseItemParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDECA4E18A6994100CE7C3C /* RWSReverseItemParser.m */; };
 		9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6001897CB0E006E8E5C /* RWSProjectViewControllerTests.m */; };
 		9BDED6061897D175006E8E5C /* _RWSManagedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6031897D175006E8E5C /* _RWSManagedProject.m */; };
 		9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6051897D175006E8E5C /* RWSManagedProject.m */; };
@@ -134,6 +136,9 @@
 		9BD6B1791895A4C4006E02D0 /* RWSProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectsViewController.m; sourceTree = "<group>"; };
 		9BDECA4818A64BE500CE7C3C /* RWSItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSItemCell.h; sourceTree = "<group>"; };
 		9BDECA4918A64BE500CE7C3C /* RWSItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemCell.m; sourceTree = "<group>"; };
+		9BDECA4B18A6990900CE7C3C /* RWSReverseItemParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSReverseItemParserTests.m; sourceTree = "<group>"; };
+		9BDECA4D18A6994100CE7C3C /* RWSReverseItemParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSReverseItemParser.h; sourceTree = "<group>"; };
+		9BDECA4E18A6994100CE7C3C /* RWSReverseItemParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSReverseItemParser.m; sourceTree = "<group>"; };
 		9BDED6001897CB0E006E8E5C /* RWSProjectViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectViewControllerTests.m; sourceTree = "<group>"; };
 		9BDED6021897D175006E8E5C /* _RWSManagedProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _RWSManagedProject.h; sourceTree = "<group>"; };
 		9BDED6031897D175006E8E5C /* _RWSManagedProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RWSManagedProject.m; sourceTree = "<group>"; };
@@ -252,6 +257,8 @@
 				9B466C4818A385FE008AE3FF /* RWSPriceInputManager.m */,
 				9BDECA4818A64BE500CE7C3C /* RWSItemCell.h */,
 				9BDECA4918A64BE500CE7C3C /* RWSItemCell.m */,
+				9BDECA4D18A6994100CE7C3C /* RWSReverseItemParser.h */,
+				9BDECA4E18A6994100CE7C3C /* RWSReverseItemParser.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 				9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */,
 				9B7A6786189FABBE001E6629 /* RWSMapViewControllerTests.m */,
 				9B466C4518A385F1008AE3FF /* RWSPriceInputManagerTests.m */,
+				9BDECA4B18A6990900CE7C3C /* RWSReverseItemParserTests.m */,
 			);
 			path = ManifestTests;
 			sourceTree = "<group>";
@@ -468,6 +476,7 @@
 				9B5579E218969361008E3C0A /* RWSProjectCell.m in Sources */,
 				9BD6B1541895A1CC006E02D0 /* main.m in Sources */,
 				9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */,
+				9BDECA4F18A6994100CE7C3C /* RWSReverseItemParser.m in Sources */,
 				9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */,
 				9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */,
 				9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */,
@@ -498,6 +507,7 @@
 				9B466C4618A385F1008AE3FF /* RWSPriceInputManagerTests.m in Sources */,
 				9B079638189A9FDB0026D489 /* RWSPriceFormatterTests.m in Sources */,
 				9B5579E9189698BC008E3C0A /* RWSCoreDataControllerTests.m in Sources */,
+				9BDECA4C18A6990900CE7C3C /* RWSReverseItemParserTests.m in Sources */,
 				9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */,
 				9B07962B189A86600026D489 /* RWSNewItemViewControllerTests.m in Sources */,
 				9B079630189A8D2B0026D489 /* RWSItemParserTests.m in Sources */,
