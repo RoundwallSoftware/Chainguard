@@ -430,7 +430,7 @@ Saul Mora</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Quick entry" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcO-3x-Ml4">
-                                <rect key="frame" x="20" y="117" width="280" height="44"/>
+                                <rect key="frame" x="20" y="72" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IT0-SQ-x7a"/>
@@ -443,7 +443,7 @@ Saul Mora</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-mc-8lp">
-                                <rect key="frame" x="20" y="217" width="280" height="44"/>
+                                <rect key="frame" x="20" y="159" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.89524406934306566" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -456,7 +456,7 @@ Saul Mora</string>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GMI-XU-9tE">
-                                <rect key="frame" x="20" y="269" width="280" height="44"/>
+                                <rect key="frame" x="20" y="211" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.89524406934306566" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -469,7 +469,7 @@ Saul Mora</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFd-Dn-pn9">
-                                <rect key="frame" x="21" y="321" width="280" height="44"/>
+                                <rect key="frame" x="21" y="263" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.8952440693" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -508,7 +508,7 @@ Saul Mora</string>
                             <constraint firstItem="BjZ-Kg-KxI" firstAttribute="leading" secondItem="YAw-dh-vbJ" secondAttribute="leading" constant="1" id="8JQ-Aj-sDE"/>
                             <constraint firstItem="GMI-XU-9tE" firstAttribute="top" secondItem="Ra9-mc-8lp" secondAttribute="bottom" constant="8" symbolic="YES" id="8ha-Vk-XrW"/>
                             <constraint firstItem="Ra9-mc-8lp" firstAttribute="width" secondItem="gcO-3x-Ml4" secondAttribute="width" id="FXA-Jz-uSN"/>
-                            <constraint firstItem="gcO-3x-Ml4" firstAttribute="top" secondItem="BjZ-Kg-KxI" secondAttribute="bottom" constant="53" id="HmC-w5-SIf"/>
+                            <constraint firstItem="gcO-3x-Ml4" firstAttribute="top" secondItem="BjZ-Kg-KxI" secondAttribute="bottom" constant="8" id="HmC-w5-SIf"/>
                             <constraint firstItem="BFd-Dn-pn9" firstAttribute="top" secondItem="GMI-XU-9tE" secondAttribute="bottom" constant="8" symbolic="YES" id="N19-Wy-LcD"/>
                             <constraint firstItem="GMI-XU-9tE" firstAttribute="width" secondItem="Ra9-mc-8lp" secondAttribute="width" id="PhD-kh-OL3"/>
                             <constraint firstAttribute="centerX" secondItem="GMI-XU-9tE" secondAttribute="centerX" id="cBo-rL-nn4"/>
