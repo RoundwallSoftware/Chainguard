@@ -200,7 +200,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Kve-nE-LY8" kind="push" id="N1R-hW-VjY"/>
+                                    <segue destination="Kve-nE-LY8" kind="push" identifier="toItem" id="N1R-hW-VjY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

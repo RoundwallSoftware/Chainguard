@@ -121,6 +121,12 @@
     [self.project moveItemAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self performSegueWithIdentifier:@"toItem" sender:self];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
