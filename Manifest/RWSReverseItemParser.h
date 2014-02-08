@@ -11,8 +11,7 @@
 @interface RWSReverseItemParser : NSObject
 
 - (void)setName:(NSString *)name;
-- (void)setPrice:(NSDecimalNumber *)price;
-- (void)setCurrencyCode:(NSString *)code;
+- (void)setPriceInput:(NSString *)priceInput;
 
 - (NSString *)inputString;
 

@@ -11,8 +11,7 @@
 
 @interface RWSReverseItemParser()
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *currencyCode;
-@property (nonatomic, strong) NSDecimalNumber *price;
+@property (nonatomic, copy) NSString *priceInput;
 @end
 
 @implementation RWSReverseItemParser
@@ -24,13 +23,12 @@
         [string appendString:self.name];
     }
 
-    if(self.name && self.price && self.currencyCode){
+    if(self.name && self.priceInput){
         [string appendString:@" "];
     }
 
-    if(self.price && self.currencyCode){
-        RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-        [string appendString:[formatter stringFromNumber:self.price currency:self.currencyCode]];
+    if(self.priceInput){
+        [string appendString:self.priceInput];
     }
 
     return string;

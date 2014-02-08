@@ -534,9 +534,11 @@ Saul Mora</string>
                         <outlet property="parser" destination="7qX-ZQ-wsl" id="GB3-XI-Wty"/>
                         <outlet property="priceField" destination="GMI-XU-9tE" id="mzG-Q9-yhH"/>
                         <outlet property="quickInputField" destination="gcO-3x-Ml4" id="pBW-eB-8DU"/>
+                        <outlet property="reverseParser" destination="ukt-c6-YKD" id="iJO-Sn-Iim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEx-Ff-U0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="ukt-c6-YKD" customClass="RWSReverseItemParser"/>
                 <customObject id="tNU-Oa-CHI" customClass="RWSLocationManager">
                     <connections>
                         <outlet property="delegate" destination="hlH-PG-fMP" id="eXv-ec-Jh4"/>

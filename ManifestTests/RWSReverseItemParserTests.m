@@ -39,10 +39,17 @@
 
 - (void)testParserGeneratesJustPrice
 {
-    [parser setPrice:[NSDecimalNumber decimalNumberWithString:@"2"]];
-    [parser setCurrencyCode:@"USD"];
+    [parser setPriceInput:@"$2"];
 
     assertThat([parser inputString], equalTo(@"$2"));
+}
+
+- (void)testParserGeneratesTogether
+{
+    [parser setPriceInput:@"$43.21"];
+    [parser setName:@"Dude"];
+
+    assertThat([parser inputString], equalTo(@"Dude $43.21"));
 }
 
 @end

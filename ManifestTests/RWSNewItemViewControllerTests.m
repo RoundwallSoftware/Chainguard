@@ -108,6 +108,32 @@
     assertThat([[controller priceField] text], equalTo(@""));
 }
 
+- (void)testControllerUsesReverseParserForNameField
+{
+    RWSReverseItemParser *mockParser = mock([RWSReverseItemParser class]);
+    controller.reverseParser = mockParser;
+    UITextField *field = [[UITextField alloc] init];
+    field.text = @"Name Of Something";
+    controller.nameField = field;
+
+    [controller textField:field shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"N"];
+
+    [verify(mockParser) setName:@"Name Of Something"];
+}
+
+- (void)testControllerUsesReverseParserForPriceField
+{
+    RWSReverseItemParser *mockParser = mock([RWSReverseItemParser class]);
+    controller.reverseParser = mockParser;
+    UITextField *field = [[UITextField alloc] init];
+    field.text = @"$4";
+    controller.priceField = field;
+
+    [controller textField:field shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"N"];
+
+    [verify(mockParser) setPriceInput:@"$4"];
+}
+
 - (void)testControllerRespondsToGetLocationAction
 {
     RWSLocationManager *manager = mock([RWSLocationManager class]);

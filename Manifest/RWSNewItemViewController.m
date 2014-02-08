@@ -69,8 +69,23 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if(textField == self.quickInputField){
-        [self.parser setText:[[textField text] stringByReplacingCharactersInRange:range withString:string]];
+    NSString *totalString = [[textField text] stringByReplacingCharactersInRange:range withString:string];
+
+    UITextField *quickInputField = self.quickInputField;
+    if(textField == quickInputField){
+        [self.parser setText:totalString];
+    }
+
+    if(textField == self.nameField){
+        [self.reverseParser setName:totalString];
+
+        quickInputField.text = self.reverseParser.inputString;
+    }
+
+    if(textField == self.priceField){
+        [self.reverseParser setPriceInput:totalString];
+
+        quickInputField.text = self.reverseParser.inputString;
     }
 
     return YES;
