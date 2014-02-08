@@ -74,6 +74,7 @@
     managedItem.latitudeValue = item.coordinate.latitude;
     managedItem.longitudeValue = item.coordinate.longitude;
     managedItem.addressString = item.addressString;
+    managedItem.purchasedValue = [item isPurchased];
 
     NSMutableOrderedSet *items = self.itemsSet;
     [items addObject:managedItem];
@@ -94,7 +95,7 @@
 {
     NSDecimalNumber *total = [NSDecimalNumber zero];
     for(RWSManagedItem *item in self.items){
-        if([item price]){
+        if([item price] && ![item isPurchased]){
             total = [total decimalNumberByAdding:[item price]];
         }
     }

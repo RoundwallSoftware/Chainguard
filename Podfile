@@ -3,6 +3,7 @@ platform :ios, "7.1"
 
 target "Manifest" do
   pod 'iOS7Colors', '~> 2.0.0'
+  pod 'SWTableViewCell'
 end
 
 target "ManifestTests" do

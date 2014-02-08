@@ -17,6 +17,9 @@
 
 - (CLLocationCoordinate2D)coordinate;
 - (NSString *)addressString;
+
+- (BOOL)isPurchased;
+- (void)togglePurchased;
 @end
 
 @protocol RWSProject <RWSMapItemSource, UIActivityItemSource>

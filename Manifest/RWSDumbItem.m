@@ -9,4 +9,10 @@
 #import "RWSDumbItem.h"
 
 @implementation RWSDumbItem
+
+- (void)togglePurchased
+{
+    self.purchased = !self.purchased;
+}
+
 @end

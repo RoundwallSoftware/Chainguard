@@ -27,4 +27,14 @@
     return [@[self.name, @": ", [formatter stringFromNumber:[self price] currency:@"USD"]] componentsJoinedByString:@""];
 }
 
+- (BOOL)isPurchased
+{
+    return self.purchasedValue;
+}
+
+- (void)togglePurchased
+{
+    self.purchasedValue = !self.purchasedValue;
+}
+
 @end

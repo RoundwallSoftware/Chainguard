@@ -3,14 +3,17 @@ PODS:
   - OCHamcrest (3.0.1)
   - OCMockito (1.1.0):
     - OCHamcrest (~> 3.0)
+  - SWTableViewCell (0.2.3)
 
 DEPENDENCIES:
   - iOS7Colors (~> 2.0.0)
   - OCMockito
+  - SWTableViewCell
 
 SPEC CHECKSUMS:
   iOS7Colors: 80d700ca0fe4415eeea1cfb74d4d790ffa0375ab
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
+  SWTableViewCell: 270c3758a84547b1cad43d70b72203b3003ce27b
 
 COCOAPODS: 0.29.0

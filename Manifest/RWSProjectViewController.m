@@ -80,28 +80,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
-
     id<RWSItem> item = [self.project itemAtIndexPath:indexPath];
+    RWSItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.containingTableView = tableView;
 
-    cell.textLabel.text = item.name;
+    [cell setItem:item];
 
-    if(item.price){
-        RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-        cell.detailTextLabel.text = [formatter stringFromNumber:item.price currency:item.currencyCode];
-    }
-
+    [cell setCellHeight:self.tableView.rowHeight];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index
 {
-    if(editingStyle == UITableViewCellEditingStyleDelete){
-        [self.project removeItemAtIndexPath:indexPath];
+    [cell hideUtilityButtonsAnimated:YES];
 
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-        [self recalculatePrice];
-    }
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    id<RWSItem>item = [self.project itemAtIndexPath:indexPath];
+    [item togglePurchased];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+    [self recalculatePrice];
+}
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    [self.project removeItemAtIndexPath:indexPath];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self recalculatePrice];
+}
+
+- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
+{
+    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath

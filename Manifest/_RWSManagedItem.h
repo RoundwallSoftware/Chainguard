@@ -11,6 +11,7 @@ extern const struct RWSManagedItemAttributes {
 	__unsafe_unretained NSString *longitude;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *price;
+	__unsafe_unretained NSString *purchased;
 } RWSManagedItemAttributes;
 
 extern const struct RWSManagedItemRelationships {
@@ -21,6 +22,7 @@ extern const struct RWSManagedItemFetchedProperties {
 } RWSManagedItemFetchedProperties;
 
 @class RWSManagedProject;
+
 
 
 
@@ -110,6 +112,20 @@ extern const struct RWSManagedItemFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSNumber* purchased;
+
+
+
+@property BOOL purchasedValue;
+- (BOOL)purchasedValue;
+- (void)setPurchasedValue:(BOOL)value_;
+
+//- (BOOL)validatePurchased:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
 @property (nonatomic, strong) RWSManagedProject *project;
 
 //- (BOOL)validateProject:(id*)value_ error:(NSError**)error_;
@@ -171,6 +187,15 @@ extern const struct RWSManagedItemFetchedProperties {
 
 - (NSDecimalNumber*)primitivePrice;
 - (void)setPrimitivePrice:(NSDecimalNumber*)value;
+
+
+
+
+- (NSNumber*)primitivePurchased;
+- (void)setPrimitivePurchased:(NSNumber*)value;
+
+- (BOOL)primitivePurchasedValue;
+- (void)setPrimitivePurchasedValue:(BOOL)value_;
 
 
 

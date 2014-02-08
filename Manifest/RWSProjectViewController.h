@@ -8,8 +8,9 @@
 
 #import "RWSProject.h"
 #import "RWSNewItemViewController.h"
+#import "RWSItemCell.h"
 
-@interface RWSProjectViewController : UITableViewController<UITextFieldDelegate, RWSNewItemDelegate>
+@interface RWSProjectViewController : UITableViewController<UITextFieldDelegate, RWSNewItemDelegate, SWTableViewCellDelegate>
 @property (nonatomic, strong) id<RWSProject> project;
 
 - (IBAction)share:(id)sender;

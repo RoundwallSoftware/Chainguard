@@ -93,6 +93,20 @@
     assertThat([project totalRemainingPriceWithCurrencyCode:@"USD"], equalTo(@5.21));
 }
 
+- (void)testProjectsKnowTheirPriceTotalsButNotPurchasedItems
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    id<RWSItem> item = mockProtocol(@protocol(RWSItem));
+    [given([item name]) willReturn:@"Something"];
+    [given([item price]) willReturn:@5.21];
+    [given([item currencyCode]) willReturn:@"USD"];
+    [given([item isPurchased]) willReturnBool:YES];
+
+    [project addItemToList:item];
+
+    assertThat([project totalRemainingPriceWithCurrencyCode:@"USD"], equalTo(@0));
+}
+
 - (void)testDeletingItemsFromAList
 {
     RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];

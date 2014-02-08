@@ -1,5 +1,5 @@
 #include "Pods-Manifest-iOS7Colors.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/iOS7Colors" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/OCHamcrest" "${PODS_ROOT}/Headers/OCMockito" "${PODS_ROOT}/Headers/iOS7Colors"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/iOS7Colors" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/OCHamcrest" "${PODS_ROOT}/Headers/OCMockito" "${PODS_ROOT}/Headers/SWTableViewCell" "${PODS_ROOT}/Headers/iOS7Colors"
 OTHER_LDFLAGS = -ObjC
 PODS_ROOT = ${SRCROOT}

@@ -14,4 +14,5 @@
 @property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *addressString;
+@property (nonatomic, assign, getter = isPurchased) BOOL purchased;
 @end

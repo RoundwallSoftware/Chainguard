@@ -174,8 +174,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="item" textLabel="4Gf-sO-Q94" detailTextLabel="5Hx-0o-46S" rowHeight="52" style="IBUITableViewCellStyleValue1" id="NHr-Or-BHK">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="item" textLabel="4Gf-sO-Q94" detailTextLabel="5Hx-0o-46S" rowHeight="52" style="IBUITableViewCellStyleValue1" id="NHr-Or-BHK" customClass="RWSItemCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NHr-Or-BHK" id="o3y-zY-e5v">
@@ -581,6 +582,6 @@ Saul Mora</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="NDp-5W-szv"/>
-        <segue reference="nKY-6n-VL9"/>
+        <segue reference="VOf-k2-mXb"/>
     </inferredMetricsTieBreakers>
 </document>

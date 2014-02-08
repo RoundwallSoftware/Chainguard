@@ -10,6 +10,7 @@ const struct RWSManagedItemAttributes RWSManagedItemAttributes = {
 	.longitude = @"longitude",
 	.name = @"name",
 	.price = @"price",
+	.purchased = @"purchased",
 };
 
 const struct RWSManagedItemRelationships RWSManagedItemRelationships = {
@@ -52,6 +53,11 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 	}
 	if ([key isEqualToString:@"longitudeValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"longitude"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"purchasedValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"purchased"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -137,6 +143,32 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 
 @dynamic price;
 
+
+
+
+
+
+@dynamic purchased;
+
+
+
+- (BOOL)purchasedValue {
+	NSNumber *result = [self purchased];
+	return [result boolValue];
+}
+
+- (void)setPurchasedValue:(BOOL)value_ {
+	[self setPurchased:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitivePurchasedValue {
+	NSNumber *result = [self primitivePurchased];
+	return [result boolValue];
+}
+
+- (void)setPrimitivePurchasedValue:(BOOL)value_ {
+	[self setPrimitivePurchased:[NSNumber numberWithBool:value_]];
+}
 
 
 
