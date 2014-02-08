@@ -52,7 +52,7 @@
 
     [controller textField:mockField shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"I"];
 
-    [verify(parser) setText:@"Item Name"];
+    [verify(parser) itemFromText:@"Item Name"];
 }
 
 - (void)testControllerDoesNotFeedOtherInputToParser
@@ -66,46 +66,7 @@
 
     [controller textField:mockField shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"I"];
 
-    [verifyCount(parser, never()) setText:@"Item Name"];
-}
-
-- (void)testControllerUsesParserToPopulateNameField
-{
-    UITextField *field = [[UITextField alloc] init];
-    controller.nameField = field;
-
-    RWSItemParser *parser = mock([RWSItemParser class]);
-    [given([parser name]) willReturn:@"Something"];
-
-    [controller parserDidFinishParsing:parser];
-
-    assertThat([[controller nameField] text], equalTo(@"Something"));
-}
-
-- (void)testControllerUsesParserToPopulatePriceField
-{
-    UITextField *field = [[UITextField alloc] init];
-    controller.priceField = field;
-
-    RWSItemParser *parser = [[RWSItemParser alloc] init];
-    parser.delegate = controller;
-    [parser setText:@"Something $5"];
-
-    assertThat([[controller priceField] text], equalTo(@"$5"));
-}
-
-- (void)testControllerEmptiesPriceFieldWhenParserHasNoPrice
-{
-    UITextField *field = [[UITextField alloc] init];
-    controller.priceField = field;
-
-    RWSItemParser *parser = mock([RWSItemParser class]);
-    [given([parser price]) willReturn:nil];
-    [given([parser currencyCode]) willReturn:@"USD"];
-
-    [controller parserDidFinishParsing:parser];
-
-    assertThat([[controller priceField] text], equalTo(@""));
+    [verifyCount(parser, never()) itemFromText:@"Item Name"];
 }
 
 - (void)testControllerUsesReverseParserForNameField
@@ -129,7 +90,7 @@
     field.text = @"$4";
     controller.priceField = field;
 
-    [controller textField:field shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"N"];
+    [controller textField:field shouldChangeCharactersInRange:NSMakeRange(1, 1) replacementString:@"4"];
 
     [verify(mockParser) setPriceInput:@"$4"];
 }

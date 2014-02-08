@@ -7,13 +7,13 @@
 //
 
 #import "RWSProject.h"
-#import "RWSItemParser.h"
 #import "RWSLocationManager.h"
 #import "RWSReverseItemParser.h"
 
 @protocol RWSNewItemDelegate;
+@class RWSItemParser;
 
-@interface RWSNewItemViewController : UIViewController<UITextFieldDelegate, RWSItemParserDelegate, RWSLocationManagerDelegate>
+@interface RWSNewItemViewController : UIViewController<UITextFieldDelegate, RWSLocationManagerDelegate>
 @property (nonatomic, strong) IBOutlet RWSItemParser *parser;
 @property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet RWSReverseItemParser *reverseParser;

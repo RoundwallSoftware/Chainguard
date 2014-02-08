@@ -32,27 +32,27 @@
 
 - (void)testParserPicksUpName
 {
-    [parser setText:@"Something"];
+    id<RWSItem> item = [parser itemFromText:@"Something"];
 
-    assertThat(parser.name, equalTo(@"Something"));
+    assertThat(item.name, equalTo(@"Something"));
 }
 
 - (void)testParserPicksUpDollars
 {
-    [parser setText:@"Something $5"];
+    id<RWSItem> item = [parser itemFromText:@"Something $5"];
 
-    assertThat(parser.name, equalTo(@"Something"));
-    assertThat(parser.price, equalTo(@5));
-    assertThat(parser.currencyCode, equalTo(@"USD"));
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, equalTo(@5));
+    assertThat(item.currencyCode, equalTo(@"USD"));
 }
 
 - (void)testParserDoesNotPickUpNanDollars
 {
-    [parser setText:@"Something $"];
+    id<RWSItem> item = [parser itemFromText:@"Something $"];
 
-    assertThat(parser.name, equalTo(@"Something"));
-    assertThat(parser.price, nilValue());
-    assertThat(parser.currencyCode, equalTo(@"USD"));
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, nilValue());
+    assertThat(item.currencyCode, equalTo(@"USD"));
 }
 
 @end

@@ -544,11 +544,7 @@ Saul Mora</string>
                         <outlet property="delegate" destination="hlH-PG-fMP" id="eXv-ec-Jh4"/>
                     </connections>
                 </customObject>
-                <customObject id="7qX-ZQ-wsl" customClass="RWSItemParser">
-                    <connections>
-                        <outlet property="delegate" destination="hlH-PG-fMP" id="kTk-xW-aiO"/>
-                    </connections>
-                </customObject>
+                <customObject id="7qX-ZQ-wsl" customClass="RWSItemParser"/>
                 <tapGestureRecognizer id="5Ll-n0-3HS">
                     <connections>
                         <action selector="dismissKeyboard:" destination="hlH-PG-fMP" id="jYI-kB-ZCq"/>

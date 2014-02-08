@@ -7,21 +7,17 @@
 //
 
 #import "RWSItemParser.h"
+#import "RWSDumbItem.h"
 #import "NSLocale+RWSCurrency.h"
 
 @interface RWSItemParser()
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSDecimalNumber *price;
-@property (nonatomic, copy) NSString *currencyCode;
 @end
 
 @implementation RWSItemParser
 
-- (void)setText:(NSString *)text
+- (id<RWSItem>)itemFromText:(NSString *)text
 {
-    id<RWSItemParserDelegate> delegate = self.delegate;
-    self.name = nil;
-    self.price = nil;
+    RWSDumbItem *item = [[RWSDumbItem alloc] init];
 
     NSArray *currencyCodes = @[@"USD"];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -33,21 +29,20 @@
         NSString *currencySymbol = [locale objectForKey:NSLocaleCurrencySymbol];
 
         if([text rangeOfString:currencySymbol].location != NSNotFound){
-            self.currencyCode = currencyCode;
+            item.currencyCode = currencyCode;
 
             NSArray *stringChunks = [text componentsSeparatedByString:currencySymbol];
-            self.name = [[stringChunks firstObject] stringByTrimmingCharactersInSet:charSet];
+            item.name = [[stringChunks firstObject] stringByTrimmingCharactersInSet:charSet];
             if([[stringChunks lastObject] length]){
-                self.price = [NSDecimalNumber decimalNumberWithString:[[stringChunks lastObject] stringByTrimmingCharactersInSet:charSet]];
+                item.price = [NSDecimalNumber decimalNumberWithString:[[stringChunks lastObject] stringByTrimmingCharactersInSet:charSet]];
             }
 
-            [delegate parserDidFinishParsing:self];
-            return;
+            return item;
         }
     }
 
-    self.name = [text stringByTrimmingCharactersInSet:charSet];
-    [delegate parserDidFinishParsing:self];
+    item.name = [text stringByTrimmingCharactersInSet:charSet];
+    return item;
 }
 
 @end

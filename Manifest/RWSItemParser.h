@@ -6,18 +6,12 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-@protocol RWSItemParserDelegate;
+#import "RWSProject.h"
 
 @interface RWSItemParser : NSObject
-@property (nonatomic, weak) IBOutlet id<RWSItemParserDelegate> delegate;
-
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, strong) NSDecimalNumber *price;
 @property (nonatomic, readonly, copy) NSString *currencyCode;
 
-- (void)setText:(NSString *)text;
-@end
-
-@protocol RWSItemParserDelegate
-- (void)parserDidFinishParsing:(RWSItemParser *)parser;
+- (id<RWSItem>)itemFromText:(NSString *)text;
 @end

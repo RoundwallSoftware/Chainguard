@@ -10,6 +10,7 @@
 #import "RWSPriceFormatter.h"
 #import "RWSDumbItem.h"
 #import "RWSPriceInputManager.h"
+#import "RWSItemParser.h"
 @import AddressBookUI;
 
 @interface RWSNewItemViewController ()
@@ -67,49 +68,75 @@
     return NO;
 }
 
+- (RWSDumbItem *)item
+{
+    if(_item){
+        return _item;
+    }
+
+    _item = [[RWSDumbItem alloc] init];
+    return _item;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    RWSItemParser *parser = self.parser;
     NSString *totalString = [[textField text] stringByReplacingCharactersInRange:range withString:string];
 
     UITextField *quickInputField = self.quickInputField;
     if(textField == quickInputField){
-        [self.parser setText:totalString];
+        id<RWSItem> item = [parser itemFromText:totalString];
+        self.item.price = item.price;
+        self.item.name = item.name;
+        self.item.currencyCode = item.currencyCode;
+        [self updateNameAndPriceFieldsForItem];
+
+        [self.reverseParser setName:item.name];
+        if(item.price){
+            RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+            [self.reverseParser setPriceInput:[formatter stringFromNumber:item.price currency:item.currencyCode]];
+        }
     }
+
+    if(textField == self.priceField){
+        if([[textField text] length] == 1 && [string length] == 0){
+            return NO;
+        }
+
+        [self.reverseParser setPriceInput:totalString];
+
+        quickInputField.text = self.reverseParser.inputString;
+
+        id<RWSItem> item = [parser itemFromText:self.reverseParser.inputString];
+        self.item.price = item.price;
+        self.item.currencyCode = item.currencyCode;
+    }
+
 
     if(textField == self.nameField){
         [self.reverseParser setName:totalString];
 
         quickInputField.text = self.reverseParser.inputString;
+        id<RWSItem> item = [parser itemFromText:self.reverseParser.inputString];
+        self.item.name = item.name;
     }
-
-    if(textField == self.priceField){
-        [self.reverseParser setPriceInput:totalString];
-
-        quickInputField.text = self.reverseParser.inputString;
-    }
-
+    
     return YES;
 }
 
-- (void)parserDidFinishParsing:(RWSItemParser *)parser
+- (void)updateNameAndPriceFieldsForItem
 {
-    if(!self.item){
-        self.item = [[RWSDumbItem alloc] init];
-    }
-    
-    self.nameField.text = parser.name;
+    self.nameField.text = self.item.name;
+    //[self.reverseParser setName:parser.name];
     UITextField *priceField = self.priceField;
-    if(parser.price){
+    if(self.item.price){
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-        NSString *text = [formatter stringFromNumber:[parser price] currency:[parser currencyCode]];
+        NSString *text = [formatter stringFromNumber:[self.item price] currency:[self.item currencyCode]];
         priceField.text = text;
+        //[self.reverseParser setPriceInput:text];
     }else{
         priceField.text = nil;
     }
-
-    self.item.name = parser.name;
-    self.item.price = parser.price;
-    self.item.currencyCode = parser.currencyCode;
 }
 
 -(void)locationManagerDidDetermineLocation:(RWSLocationManager *)manager
@@ -121,10 +148,6 @@
 
     NSString *addressString = ABCreateStringWithAddressDictionary(addressDictionary, NO);
     [self.locationButton setTitle:addressString forState:UIControlStateNormal];
-
-    if(!self.item){
-        self.item = [[RWSDumbItem alloc] init];
-    }
 
     self.item.addressString = addressString;
     self.item.coordinate = placemark.location.coordinate;
