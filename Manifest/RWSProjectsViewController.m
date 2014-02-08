@@ -71,6 +71,13 @@
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
