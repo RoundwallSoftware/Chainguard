@@ -81,12 +81,15 @@
     if(!self.item){
         self.item = [[RWSDumbItem alloc] init];
     }
-
+    
     self.nameField.text = parser.name;
+    UITextField *priceField = self.priceField;
     if(parser.price){
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
         NSString *text = [formatter stringFromNumber:[parser price] currency:[parser currencyCode]];
-        self.priceField.text = text;
+        priceField.text = text;
+    }else{
+        priceField.text = nil;
     }
 
     self.item.name = parser.name;

@@ -41,8 +41,6 @@
     [super viewDidLoad];
 
     [self setupTitleTextField];
-
-    self.navigationItem.rightBarButtonItems = @[self.addItem, self.actionItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -50,6 +48,8 @@
     [super viewDidAppear:animated];
 
     [self recalculatePrice];
+
+    self.navigationItem.rightBarButtonItems = @[self.addItem, self.actionItem];
 }
 
 - (void)setupTitleTextField

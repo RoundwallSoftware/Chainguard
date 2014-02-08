@@ -20,6 +20,8 @@
 - (void)setText:(NSString *)text
 {
     id<RWSItemParserDelegate> delegate = self.delegate;
+    self.name = nil;
+    self.price = nil;
 
     NSArray *currencyCodes = @[@"USD"];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
