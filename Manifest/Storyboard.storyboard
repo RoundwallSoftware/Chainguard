@@ -101,7 +101,6 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="P3R-9k-bKn"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Projects" id="Cvf-uC-x3k">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="B6u-S3-Ktr"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zPZ-OQ-u0m">
                             <connections>
                                 <segue destination="qi8-Yz-TGC" kind="push" identifier="addList" id="SPm-kw-cRD"/>
@@ -582,6 +581,6 @@ Saul Mora</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="NDp-5W-szv"/>
-        <segue reference="VOf-k2-mXb"/>
+        <segue reference="nKY-6n-VL9"/>
     </inferredMetricsTieBreakers>
 </document>
