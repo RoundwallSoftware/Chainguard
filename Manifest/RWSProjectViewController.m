@@ -127,6 +127,13 @@
     [self performSegueWithIdentifier:@"toItem" sender:self];
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    for(RWSItemCell *cell in [self.tableView visibleCells]){
+        [cell hideUtilityButtonsAnimated:YES];
+    }
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
