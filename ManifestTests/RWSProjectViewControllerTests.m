@@ -75,6 +75,14 @@
     [verify(project) setTitle:@"Title Now"];
 }
 
+- (void)testControllerSelectsTextWhenTextFieldStartsEditing
+{
+    UITextField *mockField = mock([UITextField class]);
+    [controller textFieldDidBeginEditing:mockField];
+
+    [verify(mockField) selectAll:nil];
+}
+
 - (void)testControllerRenamesProjectOnOtherTextViewDelegateMethod
 {
     id<RWSProject> project = mockProtocol(@protocol(RWSProject));

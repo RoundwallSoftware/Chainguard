@@ -34,6 +34,11 @@
 {
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
     self.priceItem.title = [formatter stringFromNumber:[self.project totalRemainingPriceWithCurrencyCode:@"USD"] currency:@"USD"];
+
+    self.priceItem.tintColor = [UIColor clearColor];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.priceItem.tintColor = self.view.tintColor;
+    }];
 }
 
 - (void)viewDidLoad
@@ -43,13 +48,18 @@
     [self setupTitleTextField];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    self.navigationItem.rightBarButtonItems = @[self.addItem, self.actionItem];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 
     [self recalculatePrice];
-
-    self.navigationItem.rightBarButtonItems = @[self.addItem, self.actionItem];
 }
 
 - (void)setupTitleTextField
@@ -147,6 +157,11 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     self.project.title = textField.text;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [textField selectAll:nil];
 }
 
 #pragma mark - RWSNewItemDelegate
