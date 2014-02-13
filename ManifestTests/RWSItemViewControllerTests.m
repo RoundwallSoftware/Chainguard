@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "RWSNewItemViewController.h"
+#import "RWSItemViewController.h"
 #import "RWSItemParser.h"
 #import "RWSLocationManager.h"
 
@@ -17,18 +17,18 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-@interface RWSNewItemViewControllerTests : XCTestCase{
-    RWSNewItemViewController *controller;
+@interface RWSItemViewControllerTests : XCTestCase{
+    RWSItemViewController *controller;
 }
 @end
 
-@implementation RWSNewItemViewControllerTests
+@implementation RWSItemViewControllerTests
 
 - (void)setUp
 {
     [super setUp];
 
-    controller = [[RWSNewItemViewController alloc] init];
+    controller = [[RWSItemViewController alloc] init];
 }
 
 - (void)testControllerJustDismissesKeyboardOnReturn

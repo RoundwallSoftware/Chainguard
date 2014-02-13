@@ -94,7 +94,7 @@
 
     id<RWSItem> item = mockProtocol(@protocol(RWSItem));
 
-    [controller newItemController:nil didMakeItem:item];
+    [controller itemController:nil didMakeItem:item];
 
     [verify(project) addItemToList:item];
 }

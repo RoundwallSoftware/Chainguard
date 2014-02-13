@@ -151,23 +151,31 @@
 
 #pragma mark - RWSNewItemDelegate
 
-- (void)newItemController:(RWSNewItemViewController *)controller didMakeItem:(id<RWSItem>)itemOrNil
+- (void)itemController:(RWSItemViewController *)controller didMakeItem:(id<RWSItem>)itemOrNil
 {
     if(itemOrNil){
         [self.project addItemToList:itemOrNil];
     }
 
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-        [self recalculatePrice];
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
+
+
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self recalculatePrice];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"newItem"]){
-        RWSNewItemViewController *controller = [segue destinationViewController];
+        RWSItemViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
+        controller.existingItem = NO;
+    }
+
+    if([identifier isEqualToString:@"toItem"]){
+        RWSItemViewController *controller = [segue destinationViewController];
+        controller.existingItem = YES;
         controller.delegate = self;
     }
 

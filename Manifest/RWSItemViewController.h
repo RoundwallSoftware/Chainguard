@@ -10,10 +10,10 @@
 #import "RWSLocationManager.h"
 #import "RWSReverseItemParser.h"
 
-@protocol RWSNewItemDelegate;
+@protocol RWSItemDelegate;
 @class RWSItemParser;
 
-@interface RWSNewItemViewController : UIViewController<UITextFieldDelegate, RWSLocationManagerDelegate>
+@interface RWSItemViewController : UITableViewController<UITextFieldDelegate, RWSLocationManagerDelegate>
 @property (nonatomic, strong) IBOutlet RWSItemParser *parser;
 @property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet RWSReverseItemParser *reverseParser;
@@ -21,17 +21,18 @@
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;
-
-@property (nonatomic, weak) id<RWSNewItemDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UIButton *deleteButton;
+@property (nonatomic, assign, getter = isExistingItem) BOOL existingItem;
+@property (nonatomic, weak) id<RWSItemDelegate> delegate;
 
 - (IBAction)save:(id)sender;
-- (IBAction)dismiss:(id)sender;
+- (IBAction)delete:(id)sender;
 - (IBAction)setCurrentLocation:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
 
 - (IBAction)setUSD:(id)sender;
 @end
 
-@protocol RWSNewItemDelegate
-- (void)newItemController:(RWSNewItemViewController *)controller didMakeItem:(id<RWSItem>)itemOrNil;
+@protocol RWSItemDelegate
+- (void)itemController:(RWSItemViewController *)controller didMakeItem:(id<RWSItem>)itemOrNil;
 @end

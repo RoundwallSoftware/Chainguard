@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		745C2B8D6429406091C897BB /* libPods-ManifestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */; };
-		9B079623189A57E40026D489 /* RWSNewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079622189A57E40026D489 /* RWSNewItemViewController.m */; };
+		9B079623189A57E40026D489 /* RWSItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079622189A57E40026D489 /* RWSItemViewController.m */; };
 		9B079628189A59B20026D489 /* _RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079625189A59B20026D489 /* _RWSManagedItem.m */; };
 		9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079627189A59B20026D489 /* RWSManagedItem.m */; };
-		9B07962B189A86600026D489 /* RWSNewItemViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07962A189A86600026D489 /* RWSNewItemViewControllerTests.m */; };
+		9B07962B189A86600026D489 /* RWSItemViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07962A189A86600026D489 /* RWSItemViewControllerTests.m */; };
 		9B07962E189A892F0026D489 /* RWSItemParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07962D189A892F0026D489 /* RWSItemParser.m */; };
 		9B079630189A8D2B0026D489 /* RWSItemParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B07962F189A8D2B0026D489 /* RWSItemParserTests.m */; };
 		9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079632189A90020026D489 /* NSLocale+RWSCurrency.m */; };
@@ -72,13 +72,13 @@
 		05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManifestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD53355709849A0876261FA /* libPods-Manifest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Manifest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Manifest.xcconfig"; path = "Pods/Pods-Manifest.xcconfig"; sourceTree = "<group>"; };
-		9B079621189A57E40026D489 /* RWSNewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSNewItemViewController.h; sourceTree = "<group>"; };
-		9B079622189A57E40026D489 /* RWSNewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNewItemViewController.m; sourceTree = "<group>"; };
+		9B079621189A57E40026D489 /* RWSItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSItemViewController.h; sourceTree = "<group>"; };
+		9B079622189A57E40026D489 /* RWSItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemViewController.m; sourceTree = "<group>"; };
 		9B079624189A59B20026D489 /* _RWSManagedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _RWSManagedItem.h; sourceTree = "<group>"; };
 		9B079625189A59B20026D489 /* _RWSManagedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RWSManagedItem.m; sourceTree = "<group>"; };
 		9B079626189A59B20026D489 /* RWSManagedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSManagedItem.h; sourceTree = "<group>"; };
 		9B079627189A59B20026D489 /* RWSManagedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedItem.m; sourceTree = "<group>"; };
-		9B07962A189A86600026D489 /* RWSNewItemViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNewItemViewControllerTests.m; sourceTree = "<group>"; };
+		9B07962A189A86600026D489 /* RWSItemViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemViewControllerTests.m; sourceTree = "<group>"; };
 		9B07962C189A892F0026D489 /* RWSItemParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSItemParser.h; sourceTree = "<group>"; };
 		9B07962D189A892F0026D489 /* RWSItemParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemParser.m; sourceTree = "<group>"; };
 		9B07962F189A8D2B0026D489 /* RWSItemParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemParserTests.m; sourceTree = "<group>"; };
@@ -236,8 +236,8 @@
 				9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */,
 				9B5579E51896989D008E3C0A /* RWSCoreDataController.h */,
 				9B5579E61896989D008E3C0A /* RWSCoreDataController.m */,
-				9B079621189A57E40026D489 /* RWSNewItemViewController.h */,
-				9B079622189A57E40026D489 /* RWSNewItemViewController.m */,
+				9B079621189A57E40026D489 /* RWSItemViewController.h */,
+				9B079622189A57E40026D489 /* RWSItemViewController.m */,
 				9B07962C189A892F0026D489 /* RWSItemParser.h */,
 				9B07962D189A892F0026D489 /* RWSItemParser.m */,
 				9B079631189A90020026D489 /* NSLocale+RWSCurrency.h */,
@@ -285,7 +285,7 @@
 				9B5579E8189698BC008E3C0A /* RWSCoreDataControllerTests.m */,
 				9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */,
 				9BDED6001897CB0E006E8E5C /* RWSProjectViewControllerTests.m */,
-				9B07962A189A86600026D489 /* RWSNewItemViewControllerTests.m */,
+				9B07962A189A86600026D489 /* RWSItemViewControllerTests.m */,
 				9B07962F189A8D2B0026D489 /* RWSItemParserTests.m */,
 				9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */,
 				9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */,
@@ -491,7 +491,7 @@
 				9BD6B17A1895A4C4006E02D0 /* RWSProjectsViewController.m in Sources */,
 				9BDED6061897D175006E8E5C /* _RWSManagedProject.m in Sources */,
 				9B07962E189A892F0026D489 /* RWSItemParser.m in Sources */,
-				9B079623189A57E40026D489 /* RWSNewItemViewController.m in Sources */,
+				9B079623189A57E40026D489 /* RWSItemViewController.m in Sources */,
 				9B7A678A189FB131001E6629 /* RWSDumbItem.m in Sources */,
 				9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */,
 				9BD6B1581895A1CC006E02D0 /* RWSAppDelegate.m in Sources */,
@@ -509,7 +509,7 @@
 				9B5579E9189698BC008E3C0A /* RWSCoreDataControllerTests.m in Sources */,
 				9BDECA4C18A6990900CE7C3C /* RWSReverseItemParserTests.m in Sources */,
 				9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */,
-				9B07962B189A86600026D489 /* RWSNewItemViewControllerTests.m in Sources */,
+				9B07962B189A86600026D489 /* RWSItemViewControllerTests.m in Sources */,
 				9B079630189A8D2B0026D489 /* RWSItemParserTests.m in Sources */,
 				9BD6B1771895A3A1006E02D0 /* RWSProjectsViewControllerTests.m in Sources */,
 				9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */,

@@ -6,18 +6,19 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-#import "RWSNewItemViewController.h"
+#import "RWSItemViewController.h"
 #import "RWSPriceFormatter.h"
 #import "RWSDumbItem.h"
 #import "RWSPriceInputManager.h"
 #import "RWSItemParser.h"
+#import "UIColor+iOS7Colors.h"
 @import AddressBookUI;
 
-@interface RWSNewItemViewController ()
+@interface RWSItemViewController ()
 @property (nonatomic, strong) RWSDumbItem *item;
 @end
 
-@implementation RWSNewItemViewController
+@implementation RWSItemViewController
 
 - (void)viewDidLoad
 {
@@ -25,23 +26,31 @@
 
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.priceField.inputAccessoryView = toolbar;
+
+    if(self.isExistingItem){
+        self.deleteButton.backgroundColor = [UIColor iOS7redColor];
+    }else{
+        self.tableView.tableFooterView = nil;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 
-    [self.quickInputField becomeFirstResponder];
+    if(!self.isExistingItem){
+        [self.quickInputField becomeFirstResponder];
+    }
 }
 
 - (IBAction)save:(id)sender
 {
-    [self.delegate newItemController:self didMakeItem:self.item];
+    [self.delegate itemController:self didMakeItem:self.item];
 }
 
-- (IBAction)dismiss:(id)sender
+- (IBAction)delete:(id)sender
 {
-    [self.delegate newItemController:self didMakeItem:nil];
+    [self.delegate itemController:self didMakeItem:nil];
 }
 
 - (IBAction)setCurrentLocation:(id)sender
