@@ -25,11 +25,25 @@
     [super viewDidLoad];
 
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    self.priceField.inputAccessoryView = toolbar;
+    UITextField *priceField = self.priceField;
+    priceField.inputAccessoryView = toolbar;
 
     if(self.item){
+        self.navigationItem.rightBarButtonItem = nil;
         self.existingItem = YES;
         self.deleteButton.tintColor = [UIColor iOS7redColor];
+
+        RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+        self.nameField.text = self.item.name;
+        priceField.text = [formatter stringFromNumber:self.item.price currency:self.item.currencyCode];
+
+        [self.reverseParser setName:self.item.name];
+        [self.reverseParser setPriceInput:priceField.text];
+        self.quickInputField.text = [self.reverseParser inputString];
+
+        if(self.item.addressString){
+            [self.locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
+        }
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
