@@ -90,6 +90,7 @@
 - (void)removeItemFromList:(id<RWSItem>)item
 {
     NSMutableOrderedSet *items = [self itemsSet];
+    NSParameterAssert([items indexOfObject:item] != NSNotFound);
     [items removeObject:item];
 
     self.items = items;

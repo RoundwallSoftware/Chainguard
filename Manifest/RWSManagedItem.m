@@ -15,6 +15,12 @@
     return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);
 }
 
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
+{
+    self.latitudeValue = newCoordinate.latitude;
+    self.longitudeValue = newCoordinate.longitude;
+}
+
 - (NSString *)title
 {
     return [self lineItemString];

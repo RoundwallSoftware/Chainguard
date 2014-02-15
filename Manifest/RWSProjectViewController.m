@@ -183,6 +183,12 @@
 {
     [self.navigationController popToViewController:self animated:YES];
     [self.project removeItemFromList:itemOrNil];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (id<RWSItem>)selectedItem
+{
+    return [self.project itemAtIndexPath:[self.tableView indexPathForSelectedRow]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -191,12 +197,12 @@
     if([identifier isEqualToString:@"newItem"]){
         RWSItemViewController *controller = [segue destinationViewController];
         controller.delegate = self;
-        controller.existingItem = NO;
     }
 
     if([identifier isEqualToString:@"toItem"]){
         RWSItemViewController *controller = [segue destinationViewController];
-        controller.existingItem = YES;
+        controller.item = [self selectedItem];
+        NSParameterAssert(controller.item);
         controller.delegate = self;
     }
 

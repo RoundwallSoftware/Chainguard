@@ -11,12 +11,12 @@
 @import CoreLocation;
 
 @protocol RWSItem <NSObject>
-- (NSString *)name;
-- (NSDecimalNumber *)price;
-- (NSString *)currencyCode;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSDecimalNumber *price;
+@property (nonatomic, copy) NSString *currencyCode;
 
-- (CLLocationCoordinate2D)coordinate;
-- (NSString *)addressString;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, copy) NSString *addressString;
 
 - (BOOL)isPurchased;
 - (void)togglePurchased;

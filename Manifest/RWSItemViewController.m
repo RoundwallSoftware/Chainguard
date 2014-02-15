@@ -15,7 +15,7 @@
 @import AddressBookUI;
 
 @interface RWSItemViewController ()
-@property (nonatomic, strong) RWSDumbItem *item;
+@property (nonatomic, assign, getter = isExistingItem) BOOL existingItem;
 @end
 
 @implementation RWSItemViewController
@@ -27,10 +27,12 @@
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.priceField.inputAccessoryView = toolbar;
 
-    if(self.isExistingItem){
+    if(self.item){
+        self.existingItem = YES;
         self.deleteButton.tintColor = [UIColor iOS7redColor];
     }else{
         self.tableView.tableFooterView = nil;
+        self.item = [[RWSDumbItem alloc] init];
     }
 }
 
@@ -75,16 +77,6 @@
 {
     [textField resignFirstResponder];
     return NO;
-}
-
-- (RWSDumbItem *)item
-{
-    if(_item){
-        return _item;
-    }
-
-    _item = [[RWSDumbItem alloc] init];
-    return _item;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string

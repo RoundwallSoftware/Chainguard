@@ -22,8 +22,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;
 @property (nonatomic, weak) IBOutlet UIButton *deleteButton;
-@property (nonatomic, assign, getter = isExistingItem) BOOL existingItem;
 @property (nonatomic, weak) id<RWSItemDelegate> delegate;
+@property (nonatomic, strong) id<RWSItem> item;
 
 - (IBAction)save:(id)sender;
 - (IBAction)delete:(id)sender;
