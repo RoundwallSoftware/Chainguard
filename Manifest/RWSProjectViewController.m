@@ -60,6 +60,8 @@
     [super viewDidAppear:animated];
 
     [self recalculatePrice];
+
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)setupTitleTextField
@@ -173,9 +175,6 @@
     }
 
     [self.navigationController popViewControllerAnimated:YES];
-
-
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self recalculatePrice];
 }
 
@@ -183,7 +182,6 @@
 {
     [self.navigationController popToViewController:self animated:YES];
     [self.project removeItemFromList:itemOrNil];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (id<RWSItem>)selectedItem
