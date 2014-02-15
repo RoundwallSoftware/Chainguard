@@ -107,6 +107,18 @@
     [verify(project) addItemToList:item];
 }
 
+- (void)testControllerDeletesItemWhenModalDeletes
+{
+    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
+    controller.project = project;
+
+    id<RWSItem> item = mockProtocol(@protocol(RWSItem));
+
+    [controller itemController:nil didDeleteItem:item];
+
+    [verify(project) removeItemFromList:item];
+}
+
 - (void)testDeletingAnItem
 {
     SWTableViewCell *cell = mock([SWTableViewCell class]);

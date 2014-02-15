@@ -28,7 +28,7 @@
     self.priceField.inputAccessoryView = toolbar;
 
     if(self.isExistingItem){
-        self.deleteButton.backgroundColor = [UIColor iOS7redColor];
+        self.deleteButton.tintColor = [UIColor iOS7redColor];
     }else{
         self.tableView.tableFooterView = nil;
     }
@@ -50,7 +50,7 @@
 
 - (IBAction)delete:(id)sender
 {
-    [self.delegate itemController:self didMakeItem:nil];
+    [self.delegate itemController:self didDeleteItem:self.item];
 }
 
 - (IBAction)setCurrentLocation:(id)sender

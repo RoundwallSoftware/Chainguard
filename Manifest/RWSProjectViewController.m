@@ -179,6 +179,12 @@
     [self recalculatePrice];
 }
 
+- (void)itemController:(RWSItemViewController *)controller didDeleteItem:(id<RWSItem>)itemOrNil
+{
+    [self.navigationController popToViewController:self animated:YES];
+    [self.project removeItemFromList:itemOrNil];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *identifier = [segue identifier];

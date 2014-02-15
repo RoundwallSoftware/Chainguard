@@ -35,4 +35,5 @@
 
 @protocol RWSItemDelegate
 - (void)itemController:(RWSItemViewController *)controller didMakeItem:(id<RWSItem>)itemOrNil;
+- (void)itemController:(RWSItemViewController *)controller didDeleteItem:(id<RWSItem>)itemOrNil;
 @end

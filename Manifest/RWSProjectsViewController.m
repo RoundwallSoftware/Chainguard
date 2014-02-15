@@ -29,6 +29,8 @@
 
         // This is all gross and goes away soon as the app stops using in-memory contexts
         NSManagedObjectContext *context = self.projectSource.context;
+        NSParameterAssert(context);
+        
         RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:context];
         project.title = @"Example Project";
 

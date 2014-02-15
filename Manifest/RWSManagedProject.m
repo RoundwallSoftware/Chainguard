@@ -84,7 +84,11 @@
 - (void)removeItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RWSManagedItem *item = (RWSManagedItem*)[self itemAtIndexPath:indexPath];
+    [self removeItemFromList:item];
+}
 
+- (void)removeItemFromList:(id<RWSItem>)item
+{
     NSMutableOrderedSet *items = [self itemsSet];
     [items removeObject:item];
 
