@@ -75,6 +75,7 @@
     managedItem.longitudeValue = item.coordinate.longitude;
     managedItem.addressString = item.addressString;
     managedItem.purchasedValue = [item isPurchased];
+    managedItem.notes = item.notes;
 
     NSMutableOrderedSet *items = self.itemsSet;
     [items addObject:managedItem];

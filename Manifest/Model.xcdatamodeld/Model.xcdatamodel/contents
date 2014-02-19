@@ -6,6 +6,7 @@
         <attribute name="latitude" optional="YES" attributeType="Double" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
         <attribute name="purchased" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="items" inverseEntity="Project" syncable="YES"/>
@@ -15,7 +16,7 @@
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Item" inverseName="project" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-9" width="128" height="165"/>
+        <element name="Item" positionX="-63" positionY="-9" width="128" height="180"/>
         <element name="Project" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

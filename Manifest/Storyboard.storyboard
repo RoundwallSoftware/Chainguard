@@ -306,12 +306,12 @@
         <scene sceneID="a6K-9J-57d">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="8tF-J3-HnI" customClass="RWSItemViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="kiD-iv-7GJ">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="kiD-iv-7GJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="SEZ-n7-PRg">
-                            <rect key="frame" x="0.0" y="334" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="454" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4r-S2-bi7">
@@ -391,23 +391,51 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="WJJ-df-KFX">
-                                        <rect key="frame" x="0.0" y="274" width="320" height="50"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="" id="k4g-xg-exJ">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="mTT-zC-2I2">
+                                        <rect key="frame" x="0.0" y="294" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WJJ-df-KFX" id="E7e-RK-TX0">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mTT-zC-2I2" id="Nfz-aM-VQe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxd-nL-s46">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvo-6d-vdx">
                                                     <rect key="frame" x="0.0" y="3" width="320" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Add Location">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="setCurrentLocation:" destination="8tF-J3-HnI" eventType="touchUpInside" id="DL6-4A-X4C"/>
+                                                        <action selector="setCurrentLocation:" destination="8tF-J3-HnI" eventType="touchUpInside" id="MFm-8P-6T3"/>
                                                     </connections>
                                                 </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="" id="z8c-G4-rDt">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notes" rowHeight="80" id="hby-vK-rrR">
+                                        <rect key="frame" x="0.0" y="364" width="320" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hby-vK-rrR" id="gyW-dd-sAQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XkK-5G-qXJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="8tF-J3-HnI" id="chQ-L2-BPV"/>
+                                                    </connections>
+                                                </textView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -429,9 +457,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deleteButton" destination="O4r-S2-bi7" id="fwE-pk-ZtT"/>
-                        <outlet property="locationButton" destination="Cxd-nL-s46" id="5R2-Cf-isf"/>
                         <outlet property="locationManager" destination="2BQ-g1-h28" id="EGO-mM-MkV"/>
                         <outlet property="nameField" destination="uhP-Il-BPo" id="n9z-af-eX7"/>
+                        <outlet property="notesField" destination="XkK-5G-qXJ" id="LGe-S6-1II"/>
                         <outlet property="parser" destination="ccg-FT-LDg" id="yyB-aG-fhT"/>
                         <outlet property="priceField" destination="8ef-h6-xGU" id="lat-AA-yGR"/>
                         <outlet property="quickInputField" destination="XtE-s3-VTS" id="0ba-1q-9kl"/>

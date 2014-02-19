@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSDecimalNumber *price;
 @property (nonatomic, copy) NSString *currencyCode;
 
+@property (nonatomic, copy) NSString *notes;
+
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *addressString;
 

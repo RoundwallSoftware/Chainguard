@@ -38,11 +38,13 @@
         cog.name = @"Dura Ace Cog";
         cog.price = [NSDecimalNumber decimalNumberWithString:@"30.99"];
         cog.currencyCode = @"USD";
+        cog.notes = @"15T, forged steel";
 
         RWSManagedItem *crankset = [RWSManagedItem insertInManagedObjectContext:context];
         crankset.name = @"Dura Ace Crankset";
         crankset.price = [NSDecimalNumber decimalNumberWithString:@"350.99"];
         crankset.currencyCode = @"USD";
+        crankset.notes = @"48T big ring";
 
         RWSManagedItem *chain = [RWSManagedItem insertInManagedObjectContext:context];
         chain.name = @"Pearl Izumi Chain";

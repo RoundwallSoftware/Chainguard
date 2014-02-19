@@ -9,6 +9,7 @@ const struct RWSManagedItemAttributes RWSManagedItemAttributes = {
 	.latitude = @"latitude",
 	.longitude = @"longitude",
 	.name = @"name",
+	.notes = @"notes",
 	.price = @"price",
 	.purchased = @"purchased",
 };
@@ -135,6 +136,13 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 
 
 @dynamic name;
+
+
+
+
+
+
+@dynamic notes;
 
 
 

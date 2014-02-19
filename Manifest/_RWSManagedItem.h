@@ -10,6 +10,7 @@ extern const struct RWSManagedItemAttributes {
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
 	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *notes;
 	__unsafe_unretained NSString *price;
 	__unsafe_unretained NSString *purchased;
 } RWSManagedItemAttributes;
@@ -22,6 +23,7 @@ extern const struct RWSManagedItemFetchedProperties {
 } RWSManagedItemFetchedProperties;
 
 @class RWSManagedProject;
+
 
 
 
@@ -97,6 +99,16 @@ extern const struct RWSManagedItemFetchedProperties {
 
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* notes;
+
+
+
+//- (BOOL)validateNotes:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -181,6 +193,12 @@ extern const struct RWSManagedItemFetchedProperties {
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveNotes;
+- (void)setPrimitiveNotes:(NSString*)value;
 
 
 

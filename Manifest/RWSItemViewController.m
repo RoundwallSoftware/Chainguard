@@ -44,6 +44,8 @@
         if(self.item.addressString){
             [self.locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
         }
+
+        self.notesField.text = self.item.notes;
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
@@ -152,6 +154,11 @@
     }else{
         priceField.text = nil;
     }
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.item.notes = textView.text;
 }
 
 -(void)locationManagerDidDetermineLocation:(RWSLocationManager *)manager
