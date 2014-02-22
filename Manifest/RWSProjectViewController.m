@@ -59,6 +59,12 @@
 {
     [super viewDidAppear:animated];
 
+    BOOL openedAnEmptyProject = ![self.project count] && [self isMovingToParentViewController];
+    if(openedAnEmptyProject){
+        [self performSegueWithIdentifier:@"newItem" sender:self];
+        return;
+    }
+
     [self recalculatePrice];
 
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -194,11 +200,13 @@
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"newItem"]){
         RWSItemViewController *controller = [segue destinationViewController];
+        controller.title = @"New Item";
         controller.delegate = self;
     }
 
     if([identifier isEqualToString:@"toItem"]){
         RWSItemViewController *controller = [segue destinationViewController];
+        controller.title = @"Item";
         controller.item = [self selectedItem];
         NSParameterAssert(controller.item);
         controller.delegate = self;
