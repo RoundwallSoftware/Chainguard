@@ -12,6 +12,7 @@
 #import "RWSPriceInputManager.h"
 #import "RWSItemParser.h"
 #import "UIColor+iOS7Colors.h"
+#import "RWSNotesViewController.h"
 @import AddressBookUI;
 
 @interface RWSItemViewController ()
@@ -189,9 +190,10 @@
 {
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"toNotes"]){
-        UIViewController *controller = [segue destinationViewController];
+        RWSNotesViewController *controller = [segue destinationViewController];
         controller.title = @"Notes";
         controller.navigationItem.prompt = self.quickInputField.text;
+        controller.textView.text = self.item.notes;
     }
 }
 

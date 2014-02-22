@@ -250,10 +250,10 @@
             </objects>
             <point key="canvasLocation" x="2063" y="-553"/>
         </scene>
-        <!--View Controller-->
+        <!--Notes View Controller-->
         <scene sceneID="D5D-5d-o4x">
             <objects>
-                <viewController id="RfN-Xs-wzI" sceneMemberID="viewController">
+                <viewController id="RfN-Xs-wzI" customClass="RWSNotesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x0q-BK-aAT"/>
                         <viewControllerLayoutGuide type="bottom" id="BwA-CT-h73"/>
@@ -274,6 +274,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="PKK-08-Gjm"/>
+                    <connections>
+                        <outlet property="textView" destination="mHP-Y7-pEE" id="Q5d-qr-u5A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89G-VZ-jn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

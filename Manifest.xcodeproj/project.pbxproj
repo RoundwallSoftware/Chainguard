@@ -36,6 +36,7 @@
 		9B7A678A189FB131001E6629 /* RWSDumbItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A6789189FB131001E6629 /* RWSDumbItem.m */; };
 		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
 		9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */; };
+		9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
 		9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */; };
 		9BD6B14C1895A1CC006E02D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B14B1895A1CC006E02D0 /* UIKit.framework */; };
@@ -116,6 +117,8 @@
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
+		9BBEB02A18B8AE84000B7DF6 /* RWSNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSNotesViewController.h; sourceTree = "<group>"; };
+		9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNotesViewController.m; sourceTree = "<group>"; };
 		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD6B1471895A1CC006E02D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -259,6 +262,8 @@
 				9BDECA4918A64BE500CE7C3C /* RWSItemCell.m */,
 				9BDECA4D18A6994100CE7C3C /* RWSReverseItemParser.h */,
 				9BDECA4E18A6994100CE7C3C /* RWSReverseItemParser.m */,
+				9BBEB02A18B8AE84000B7DF6 /* RWSNotesViewController.h */,
+				9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,
 				9B466C4918A385FE008AE3FF /* RWSPriceInputManager.m in Sources */,
 				9B5579E71896989D008E3C0A /* RWSCoreDataController.m in Sources */,
+				9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */,
 				9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */,
 				9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */,
 				9B5579DE18968370008E3C0A /* RWSProjectsSource.m in Sources */,
@@ -581,7 +587,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_PROFILING_CODE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -616,7 +622,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_PROFILING_CODE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -690,7 +697,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Manifest.app/Manifest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -701,7 +708,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Manifest/Manifest-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "ManifestTests/ManifestTests-Info.plist";
+				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -713,7 +722,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Manifest.app/Manifest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -723,7 +732,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Manifest/Manifest-Prefix.pch";
+				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "ManifestTests/ManifestTests-Info.plist";
+				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
