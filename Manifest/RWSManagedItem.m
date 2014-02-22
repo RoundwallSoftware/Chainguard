@@ -1,5 +1,6 @@
 #import "RWSManagedItem.h"
 #import "RWSPriceFormatter.h"
+#import "RWSManagedPhoto.h"
 
 @interface RWSManagedItem ()
 
@@ -41,6 +42,27 @@
 - (void)togglePurchased
 {
     self.purchasedValue = !self.purchasedValue;
+}
+
+- (NSUInteger)photoCount
+{
+    return [self.photos count];
+}
+
+- (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.photos objectAtIndex:indexPath.item];
+}
+
+- (void)addPhotoWithImage:(UIImage *)image
+{
+    RWSManagedPhoto *photo = [RWSManagedPhoto insertInManagedObjectContext:self.managedObjectContext];
+    NSData *data = UIImagePNGRepresentation(image);
+    photo.imageData = data;
+
+    NSMutableOrderedSet *photos = self.photosSet;
+    [photos addObject:photo];
+    self.photos = photos;
 }
 
 @end

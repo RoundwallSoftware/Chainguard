@@ -10,6 +10,11 @@
 @import Foundation;
 @import CoreLocation;
 
+@protocol RWSPhoto <NSObject>
+- (void)setImageData:(NSData *)data;
+- (UIImage *)image;
+@end
+
 @protocol RWSItem <NSObject>
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSDecimalNumber *price;
@@ -22,6 +27,10 @@
 
 - (BOOL)isPurchased;
 - (void)togglePurchased;
+
+- (NSUInteger)photoCount;
+- (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath;
+- (void)addPhotoWithImage:(UIImage *)image;
 @end
 
 @protocol RWSProject <RWSMapItemSource, UIActivityItemSource>

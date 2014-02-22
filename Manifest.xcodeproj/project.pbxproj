@@ -36,6 +36,13 @@
 		9B7A678A189FB131001E6629 /* RWSDumbItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A6789189FB131001E6629 /* RWSDumbItem.m */; };
 		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
 		9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */; };
+		9B99A1C018B91BCF0075389A /* RWSPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */; };
+		9B99A1C318B91BF60075389A /* RWSPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1C218B91BF60075389A /* RWSPhotosViewController.m */; };
+		9B99A1C618B91F940075389A /* RWSPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1C518B91F940075389A /* RWSPhotoCell.m */; };
+		9B99A1C818B920A90075389A /* RWSManagedItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1C718B920A90075389A /* RWSManagedItemTests.m */; };
+		9B99A1CA18B9216B0075389A /* Pokemon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B99A1C918B9216B0075389A /* Pokemon.jpg */; };
+		9B99A1CF18B922050075389A /* _RWSManagedPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1CC18B922050075389A /* _RWSManagedPhoto.m */; };
+		9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1CE18B922050075389A /* RWSManagedPhoto.m */; };
 		9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
 		9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */; };
@@ -117,6 +124,17 @@
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
+		9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPhotosViewControllerTests.m; sourceTree = "<group>"; };
+		9B99A1C118B91BF60075389A /* RWSPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPhotosViewController.h; sourceTree = "<group>"; };
+		9B99A1C218B91BF60075389A /* RWSPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPhotosViewController.m; sourceTree = "<group>"; };
+		9B99A1C418B91F940075389A /* RWSPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPhotoCell.h; sourceTree = "<group>"; };
+		9B99A1C518B91F940075389A /* RWSPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPhotoCell.m; sourceTree = "<group>"; };
+		9B99A1C718B920A90075389A /* RWSManagedItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedItemTests.m; sourceTree = "<group>"; };
+		9B99A1C918B9216B0075389A /* Pokemon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pokemon.jpg; sourceTree = "<group>"; };
+		9B99A1CB18B922050075389A /* _RWSManagedPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _RWSManagedPhoto.h; sourceTree = "<group>"; };
+		9B99A1CC18B922050075389A /* _RWSManagedPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RWSManagedPhoto.m; sourceTree = "<group>"; };
+		9B99A1CD18B922050075389A /* RWSManagedPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSManagedPhoto.h; sourceTree = "<group>"; };
+		9B99A1CE18B922050075389A /* RWSManagedPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedPhoto.m; sourceTree = "<group>"; };
 		9BBEB02A18B8AE84000B7DF6 /* RWSNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSNotesViewController.h; sourceTree = "<group>"; };
 		9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNotesViewController.m; sourceTree = "<group>"; };
 		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +235,10 @@
 		9BD6B14D1895A1CC006E02D0 /* Manifest */ = {
 			isa = PBXGroup;
 			children = (
+				9B99A1CB18B922050075389A /* _RWSManagedPhoto.h */,
+				9B99A1CC18B922050075389A /* _RWSManagedPhoto.m */,
+				9B99A1CD18B922050075389A /* RWSManagedPhoto.h */,
+				9B99A1CE18B922050075389A /* RWSManagedPhoto.m */,
 				9B079624189A59B20026D489 /* _RWSManagedItem.h */,
 				9B079625189A59B20026D489 /* _RWSManagedItem.m */,
 				9B079626189A59B20026D489 /* RWSManagedItem.h */,
@@ -264,6 +286,10 @@
 				9BDECA4E18A6994100CE7C3C /* RWSReverseItemParser.m */,
 				9BBEB02A18B8AE84000B7DF6 /* RWSNotesViewController.h */,
 				9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */,
+				9B99A1C118B91BF60075389A /* RWSPhotosViewController.h */,
+				9B99A1C218B91BF60075389A /* RWSPhotosViewController.m */,
+				9B99A1C418B91F940075389A /* RWSPhotoCell.h */,
+				9B99A1C518B91F940075389A /* RWSPhotoCell.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -297,6 +323,8 @@
 				9B7A6786189FABBE001E6629 /* RWSMapViewControllerTests.m */,
 				9B466C4518A385F1008AE3FF /* RWSPriceInputManagerTests.m */,
 				9BDECA4B18A6990900CE7C3C /* RWSReverseItemParserTests.m */,
+				9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */,
+				9B99A1C718B920A90075389A /* RWSManagedItemTests.m */,
 			);
 			path = ManifestTests;
 			sourceTree = "<group>";
@@ -304,6 +332,7 @@
 		9BD6B1671895A1CC006E02D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9B99A1C918B9216B0075389A /* Pokemon.jpg */,
 				9BD6B1681895A1CC006E02D0 /* ManifestTests-Info.plist */,
 				9BD6B1691895A1CC006E02D0 /* InfoPlist.strings */,
 			);
@@ -404,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B99A1CA18B9216B0075389A /* Pokemon.jpg in Resources */,
 				9BD6B16B1895A1CC006E02D0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,17 +509,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B5579E218969361008E3C0A /* RWSProjectCell.m in Sources */,
+				9B99A1CF18B922050075389A /* _RWSManagedPhoto.m in Sources */,
+				9B99A1C618B91F940075389A /* RWSPhotoCell.m in Sources */,
 				9BD6B1541895A1CC006E02D0 /* main.m in Sources */,
 				9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */,
 				9BDECA4F18A6994100CE7C3C /* RWSReverseItemParser.m in Sources */,
 				9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */,
 				9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */,
 				9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */,
+				9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */,
 				9BDECA4A18A64BE500CE7C3C /* RWSItemCell.m in Sources */,
 				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,
 				9B466C4918A385FE008AE3FF /* RWSPriceInputManager.m in Sources */,
 				9B5579E71896989D008E3C0A /* RWSCoreDataController.m in Sources */,
 				9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */,
+				9B99A1C318B91BF60075389A /* RWSPhotosViewController.m in Sources */,
 				9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */,
 				9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */,
 				9B5579DE18968370008E3C0A /* RWSProjectsSource.m in Sources */,
@@ -511,8 +545,10 @@
 				9B7A6787189FABBE001E6629 /* RWSMapViewControllerTests.m in Sources */,
 				9B0DECD018970290007C80A6 /* RWSManagedProjectTests.m in Sources */,
 				9B466C4618A385F1008AE3FF /* RWSPriceInputManagerTests.m in Sources */,
+				9B99A1C818B920A90075389A /* RWSManagedItemTests.m in Sources */,
 				9B079638189A9FDB0026D489 /* RWSPriceFormatterTests.m in Sources */,
 				9B5579E9189698BC008E3C0A /* RWSCoreDataControllerTests.m in Sources */,
+				9B99A1C018B91BCF0075389A /* RWSPhotosViewControllerTests.m in Sources */,
 				9BDECA4C18A6990900CE7C3C /* RWSReverseItemParserTests.m in Sources */,
 				9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */,
 				9B07962B189A86600026D489 /* RWSItemViewControllerTests.m in Sources */,

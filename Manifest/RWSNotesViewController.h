@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-@interface RWSNotesViewController : UIViewController
+#import "RWSProject.h"
+
+@interface RWSNotesViewController : UIViewController<UITextViewDelegate>
 @property (nonatomic, weak) IBOutlet UITextView *textView;
-@property (nonatomic, copy) NSString *initialText;
+@property (nonatomic, strong) id<RWSItem> item;
 @end

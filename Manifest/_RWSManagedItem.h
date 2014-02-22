@@ -16,12 +16,14 @@ extern const struct RWSManagedItemAttributes {
 } RWSManagedItemAttributes;
 
 extern const struct RWSManagedItemRelationships {
+	__unsafe_unretained NSString *photos;
 	__unsafe_unretained NSString *project;
 } RWSManagedItemRelationships;
 
 extern const struct RWSManagedItemFetchedProperties {
 } RWSManagedItemFetchedProperties;
 
+@class RWSManagedPhoto;
 @class RWSManagedProject;
 
 
@@ -138,6 +140,13 @@ extern const struct RWSManagedItemFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSOrderedSet *photos;
+
+- (NSMutableOrderedSet*)photosSet;
+
+
+
+
 @property (nonatomic, strong) RWSManagedProject *project;
 
 //- (BOOL)validateProject:(id*)value_ error:(NSError**)error_;
@@ -149,12 +158,21 @@ extern const struct RWSManagedItemFetchedProperties {
 #if TARGET_OS_IPHONE
 
 
+- (NSFetchedResultsController*)newPhotosFetchedResultsControllerWithSortDescriptors:(NSArray*)sortDescriptors;
+
+
+
 
 #endif
 
 @end
 
 @interface _RWSManagedItem (CoreDataGeneratedAccessors)
+
+- (void)addPhotos:(NSOrderedSet*)value_;
+- (void)removePhotos:(NSOrderedSet*)value_;
+- (void)addPhotosObject:(RWSManagedPhoto*)value_;
+- (void)removePhotosObject:(RWSManagedPhoto*)value_;
 
 @end
 
@@ -216,6 +234,11 @@ extern const struct RWSManagedItemFetchedProperties {
 - (void)setPrimitivePurchasedValue:(BOOL)value_;
 
 
+
+
+
+- (NSMutableOrderedSet*)primitivePhotos;
+- (void)setPrimitivePhotos:(NSMutableOrderedSet*)value;
 
 
 

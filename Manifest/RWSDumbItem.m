@@ -15,4 +15,19 @@
     self.purchased = !self.purchased;
 }
 
+- (NSUInteger)photoCount
+{
+    return 0;
+}
+
+- (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (void)addPhotoWithImage:(UIImage *)image
+{
+    return;
+}
+
 @end

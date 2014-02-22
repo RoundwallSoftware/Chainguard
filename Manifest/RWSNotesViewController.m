@@ -18,7 +18,7 @@
 {
     [super viewDidLoad];
 
-    self.textView.text = self.initialText;
+    self.textView.text = self.item.notes;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -26,6 +26,11 @@
     [super viewDidAppear:animated];
 
     [self.textView becomeFirstResponder];
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.item.notes = textView.text;
 }
 
 @end

@@ -15,6 +15,7 @@ const struct RWSManagedItemAttributes RWSManagedItemAttributes = {
 };
 
 const struct RWSManagedItemRelationships RWSManagedItemRelationships = {
+	.photos = @"photos",
 	.project = @"project",
 };
 
@@ -182,6 +183,19 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 
 
 
+@dynamic photos;
+
+	
+- (NSMutableOrderedSet*)photosSet {
+	[self willAccessValueForKey:@"photos"];
+  
+	NSMutableOrderedSet *result = (NSMutableOrderedSet*)[self mutableOrderedSetValueForKey:@"photos"];
+  
+	[self didAccessValueForKey:@"photos"];
+	return result;
+}
+	
+
 @dynamic project;
 
 	
@@ -192,6 +206,21 @@ const struct RWSManagedItemFetchedProperties RWSManagedItemFetchedProperties = {
 
 
 #if TARGET_OS_IPHONE
+
+
+- (NSFetchedResultsController*)newPhotosFetchedResultsControllerWithSortDescriptors:(NSArray*)sortDescriptors {
+	NSFetchRequest *fetchRequest = [NSFetchRequest new];
+	
+	fetchRequest.entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
+	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"item == %@", self];
+	fetchRequest.sortDescriptors = sortDescriptors;
+	
+	return [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+											   managedObjectContext:self.managedObjectContext
+												 sectionNameKeyPath:nil
+														  cacheName:nil];
+}
+
 
 
 

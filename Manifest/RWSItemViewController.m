@@ -13,6 +13,7 @@
 #import "RWSItemParser.h"
 #import "UIColor+iOS7Colors.h"
 #import "RWSNotesViewController.h"
+#import "RWSPhotosViewController.h"
 @import AddressBookUI;
 
 @interface RWSItemViewController ()
@@ -193,7 +194,12 @@
         RWSNotesViewController *controller = [segue destinationViewController];
         controller.title = @"Notes";
         controller.navigationItem.prompt = self.quickInputField.text;
-        controller.initialText = self.item.notes;
+        controller.item = self.item;
+    }
+
+    if([identifier isEqualToString:@"toPhotos"]){
+        RWSPhotosViewController *controller = [segue destinationViewController];
+        controller.item = self.item;
     }
 }
 
