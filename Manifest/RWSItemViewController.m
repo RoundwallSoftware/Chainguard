@@ -185,4 +185,14 @@
     setCurrencyOnTextField(@"USD", self.priceField);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *identifier = [segue identifier];
+    if([identifier isEqualToString:@"toNotes"]){
+        UIViewController *controller = [segue destinationViewController];
+        controller.title = @"Notes";
+        controller.navigationItem.prompt = self.quickInputField.text;
+    }
+}
+
 @end
