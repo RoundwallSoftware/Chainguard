@@ -11,8 +11,9 @@
 @import CoreLocation;
 
 @protocol RWSPhoto <NSObject>
-- (void)setImageData:(NSData *)data;
-- (UIImage *)image;
+- (void)setImage:(UIImage *)image;
+- (UIImage *)fullImage;
+- (UIImage *)thumbnailImage;
 @end
 
 @protocol RWSItem <NSObject>

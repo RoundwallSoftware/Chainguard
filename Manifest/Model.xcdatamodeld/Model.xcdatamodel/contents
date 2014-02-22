@@ -14,6 +14,7 @@
     </entity>
     <entity name="Photo" representedClassName="RWSManagedPhoto" syncable="YES">
         <attribute name="imageData" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="thumbnailData" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="photos" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="RWSManagedProject" syncable="YES">

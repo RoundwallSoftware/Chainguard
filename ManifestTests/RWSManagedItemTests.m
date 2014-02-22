@@ -56,7 +56,8 @@
     assertThatInteger([item photoCount], equalToInteger(count+1));
     id<RWSPhoto> photo = [item photoAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     assertThat(photo, notNilValue());
-    assertThat([photo image], notNilValue());
+    assertThat([photo fullImage], notNilValue());
+    assertThat([photo thumbnailImage], notNilValue());
 }
 
 - (UIImage *)pokemonImage

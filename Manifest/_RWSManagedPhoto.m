@@ -5,6 +5,7 @@
 
 const struct RWSManagedPhotoAttributes RWSManagedPhotoAttributes = {
 	.imageData = @"imageData",
+	.thumbnailData = @"thumbnailData",
 };
 
 const struct RWSManagedPhotoRelationships RWSManagedPhotoRelationships = {
@@ -48,6 +49,13 @@ const struct RWSManagedPhotoFetchedProperties RWSManagedPhotoFetchedProperties =
 
 
 @dynamic imageData;
+
+
+
+
+
+
+@dynamic thumbnailData;
 
 
 

@@ -6,6 +6,7 @@
 
 extern const struct RWSManagedPhotoAttributes {
 	__unsafe_unretained NSString *imageData;
+	__unsafe_unretained NSString *thumbnailData;
 } RWSManagedPhotoAttributes;
 
 extern const struct RWSManagedPhotoRelationships {
@@ -16,6 +17,7 @@ extern const struct RWSManagedPhotoFetchedProperties {
 } RWSManagedPhotoFetchedProperties;
 
 @class RWSManagedItem;
+
 
 
 
@@ -37,6 +39,16 @@ extern const struct RWSManagedPhotoFetchedProperties {
 
 
 //- (BOOL)validateImageData:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSData* thumbnailData;
+
+
+
+//- (BOOL)validateThumbnailData:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -67,6 +79,12 @@ extern const struct RWSManagedPhotoFetchedProperties {
 
 - (NSData*)primitiveImageData;
 - (void)setPrimitiveImageData:(NSData*)value;
+
+
+
+
+- (NSData*)primitiveThumbnailData;
+- (void)setPrimitiveThumbnailData:(NSData*)value;
 
 
 

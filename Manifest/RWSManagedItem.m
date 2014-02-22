@@ -57,8 +57,7 @@
 - (void)addPhotoWithImage:(UIImage *)image
 {
     RWSManagedPhoto *photo = [RWSManagedPhoto insertInManagedObjectContext:self.managedObjectContext];
-    NSData *data = UIImagePNGRepresentation(image);
-    photo.imageData = data;
+    [photo setImage:image];
 
     NSMutableOrderedSet *photos = self.photosSet;
     [photos addObject:photo];

@@ -17,7 +17,7 @@
 
 - (void)setPhoto:(id<RWSPhoto>)photo
 {
-    self.imageView.image = [photo image];
+    self.imageView.image = [photo thumbnailImage];
 }
 
 @end
