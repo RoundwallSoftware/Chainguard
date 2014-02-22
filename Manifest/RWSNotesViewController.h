@@ -8,4 +8,5 @@
 
 @interface RWSNotesViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITextView *textView;
+@property (nonatomic, copy) NSString *initialText;
 @end

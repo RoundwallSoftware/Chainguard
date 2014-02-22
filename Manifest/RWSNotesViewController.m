@@ -14,6 +14,18 @@
 
 @implementation RWSNotesViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 
+    self.textView.text = self.initialText;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    [self.textView becomeFirstResponder];
+}
 
 @end

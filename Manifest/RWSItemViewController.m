@@ -193,7 +193,7 @@
         RWSNotesViewController *controller = [segue destinationViewController];
         controller.title = @"Notes";
         controller.navigationItem.prompt = self.quickInputField.text;
-        controller.textView.text = self.item.notes;
+        controller.initialText = self.item.notes;
     }
 }
 
