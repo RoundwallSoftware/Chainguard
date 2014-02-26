@@ -13,12 +13,11 @@
 @protocol RWSItemDelegate;
 @class RWSItemParser;
 
-@interface RWSItemViewController : UITableViewController<UITextFieldDelegate, RWSLocationManagerDelegate, UITextViewDelegate>
+@interface RWSItemViewController : UITableViewController<UITextFieldDelegate, RWSLocationManagerDelegate, UITextViewDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) IBOutlet RWSItemParser *parser;
 @property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet RWSReverseItemParser *reverseParser;
 @property (nonatomic, weak) IBOutlet UITextField *quickInputField;
-@property (nonatomic, weak) IBOutlet UITextView *notesField;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;

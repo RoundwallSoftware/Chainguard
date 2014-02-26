@@ -16,6 +16,8 @@
 #import "RWSPhotosViewController.h"
 @import AddressBookUI;
 
+NSString *const AYIUserDidAddLocationPreference = @"AYIUserDidAddLocationPreference";
+
 @interface RWSItemViewController ()
 @property (nonatomic, assign, getter = isExistingItem) BOOL existingItem;
 @end
@@ -26,6 +28,7 @@
 {
     [super viewDidLoad];
 
+    UIButton *locationButton = self.locationButton;
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     UITextField *priceField = self.priceField;
     priceField.inputAccessoryView = toolbar;
@@ -44,13 +47,12 @@
         self.quickInputField.text = [self.reverseParser inputString];
 
         if(self.item.addressString){
-            [self.locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
+            [locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
         }
-
-        self.notesField.text = self.item.notes;
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
+        [self setCurrentLocation:locationButton];
     }
 }
 
@@ -75,8 +77,26 @@
 
 - (IBAction)setCurrentLocation:(id)sender
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL didPreviouslyAddLocation = [defaults boolForKey:AYIUserDidAddLocationPreference];
+    if(didPreviouslyAddLocation && ![self.locationManager isAutoLocationEnabled]){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Auto-add Location" message:@"Do you want to always add location to new items?\n(This can be disabled in settings.)" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        [alertView show];
+    }else{
+        [defaults setBool:YES forKey:AYIUserDidAddLocationPreference];
+    }
+
     [self.locationManager updateLocation];
     [sender setTitle:@"Finding location..." forState:UIControlStateNormal];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == [alertView cancelButtonIndex]){
+        return;
+    }
+
+    [self.locationManager enableAutoUpdates];
 }
 
 - (IBAction)dismissKeyboard:(id)sender

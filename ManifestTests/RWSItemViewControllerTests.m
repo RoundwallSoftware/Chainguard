@@ -126,4 +126,15 @@
     assertThat(textField.text, equalTo(@"$"));
 }
 
+- (void)testControllerEnablesAutoLocationWhenUserRespondsYesToAlertView
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"stuff" delegate:nil cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    RWSLocationManager *manager = mock([RWSLocationManager class]);
+    controller.locationManager = manager;
+
+    [controller alertView:alertView didDismissWithButtonIndex:[alertView firstOtherButtonIndex]];
+
+    [verify(manager) enableAutoUpdates];
+}
+
 @end

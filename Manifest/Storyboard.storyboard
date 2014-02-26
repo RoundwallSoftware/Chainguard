@@ -575,6 +575,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deleteButton" destination="O4r-S2-bi7" id="fwE-pk-ZtT"/>
+                        <outlet property="locationButton" destination="vvo-6d-vdx" id="Ohr-iP-bew"/>
                         <outlet property="locationManager" destination="2BQ-g1-h28" id="EGO-mM-MkV"/>
                         <outlet property="nameField" destination="uhP-Il-BPo" id="n9z-af-eX7"/>
                         <outlet property="parser" destination="ccg-FT-LDg" id="yyB-aG-fhT"/>

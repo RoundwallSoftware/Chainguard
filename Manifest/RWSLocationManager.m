@@ -9,6 +9,8 @@
 
 #import "RWSLocationManager.h"
 
+NSString *const AYIAutoLocationEnabled = @"AYIAutoLocationEnabled";
+
 @interface RWSLocationManager()
 @property (nonatomic, strong) CLLocationManager *manager;
 @property (nonatomic, strong) CLGeocoder *geocoder;
@@ -46,6 +48,16 @@
     }];
 
     self.geocoder = geocoder;
+}
+
+- (BOOL)isAutoLocationEnabled
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:AYIAutoLocationEnabled];
+}
+
+- (void)enableAutoUpdates
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:AYIAutoLocationEnabled];
 }
 
 @end

@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet id<RWSLocationManagerDelegate> delegate;
 
 - (void)updateLocation;
+- (BOOL)isAutoLocationEnabled;
+- (void)enableAutoUpdates;
 @end
 
 @protocol RWSLocationManagerDelegate <NSObject>
