@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import MessageUI;
 
-@interface RWSSettingsViewController : UITableViewController
+@interface RWSSettingsViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 @end
