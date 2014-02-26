@@ -31,7 +31,7 @@
 
 - (void)setupTheme
 {
-    UIColor *tintColor = [UIColor iOS7darkBlueColor];
+    UIColor *tintColor = [UIColor iOS7purpleColor];
     self.window.tintColor = tintColor;
 
     UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
