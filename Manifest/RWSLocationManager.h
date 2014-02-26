@@ -8,13 +8,15 @@
 
 @import CoreLocation;
 
+extern NSString *const RWSAutoLocationEnabled;
+
 @protocol RWSLocationManagerDelegate;
 @interface RWSLocationManager : NSObject<CLLocationManagerDelegate>
 @property (nonatomic, strong, readonly) CLPlacemark *placemark;
 @property (nonatomic, weak) IBOutlet id<RWSLocationManagerDelegate> delegate;
 
 - (void)updateLocation;
-- (BOOL)isAutoLocationEnabled;
++ (BOOL)isAutoLocationEnabled;
 - (void)enableAutoUpdates;
 @end
 

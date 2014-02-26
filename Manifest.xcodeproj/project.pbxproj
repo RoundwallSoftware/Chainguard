@@ -45,6 +45,7 @@
 		9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1CE18B922050075389A /* RWSManagedPhoto.m */; };
 		9B99A1D318B929BB0075389A /* UIImage+CODImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */; };
 		9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */; };
+		9BCDD52E18BE07D000CF2F3B /* RWSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
 		9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */; };
 		9BD6B14C1895A1CC006E02D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B14B1895A1CC006E02D0 /* UIKit.framework */; };
@@ -140,6 +141,8 @@
 		9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CODImageScaling.m"; sourceTree = "<group>"; };
 		9BBEB02A18B8AE84000B7DF6 /* RWSNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSNotesViewController.h; sourceTree = "<group>"; };
 		9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNotesViewController.m; sourceTree = "<group>"; };
+		9BCDD52C18BE07D000CF2F3B /* RWSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSettingsViewController.h; sourceTree = "<group>"; };
+		9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSettingsViewController.m; sourceTree = "<group>"; };
 		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD6B1471895A1CC006E02D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -295,6 +298,8 @@
 				9B99A1C218B91BF60075389A /* RWSPhotosViewController.m */,
 				9B99A1C418B91F940075389A /* RWSPhotoCell.h */,
 				9B99A1C518B91F940075389A /* RWSPhotoCell.m */,
+				9BCDD52C18BE07D000CF2F3B /* RWSSettingsViewController.h */,
+				9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */,
 				9BDECA4A18A64BE500CE7C3C /* RWSItemCell.m in Sources */,
 				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,
+				9BCDD52E18BE07D000CF2F3B /* RWSSettingsViewController.m in Sources */,
 				9B466C4918A385FE008AE3FF /* RWSPriceInputManager.m in Sources */,
 				9B5579E71896989D008E3C0A /* RWSCoreDataController.m in Sources */,
 				9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */,

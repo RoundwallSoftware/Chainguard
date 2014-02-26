@@ -17,6 +17,7 @@
 @import AddressBookUI;
 
 NSString *const AYIUserDidAddLocationPreference = @"AYIUserDidAddLocationPreference";
+NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnAutoLocationPreference";
 
 @interface RWSItemViewController ()
 @property (nonatomic, assign, getter = isExistingItem) BOOL existingItem;
@@ -79,7 +80,8 @@ NSString *const AYIUserDidAddLocationPreference = @"AYIUserDidAddLocationPrefere
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL didPreviouslyAddLocation = [defaults boolForKey:AYIUserDidAddLocationPreference];
-    if(didPreviouslyAddLocation && ![self.locationManager isAutoLocationEnabled]){
+    BOOL didPreviouslyChooseAutoLocation = [defaults boolForKey:AYIUserDidDecideOnAutoLocationPreference];
+    if(didPreviouslyAddLocation && ![RWSLocationManager isAutoLocationEnabled] && !didPreviouslyChooseAutoLocation){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Auto-add Location" message:@"Do you want to always add location to new items?\n(This can be disabled in settings.)" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [alertView show];
     }else{
@@ -92,6 +94,7 @@ NSString *const AYIUserDidAddLocationPreference = @"AYIUserDidAddLocationPrefere
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:AYIUserDidDecideOnAutoLocationPreference];
     if(buttonIndex == [alertView cancelButtonIndex]){
         return;
     }

@@ -9,7 +9,7 @@
 
 #import "RWSLocationManager.h"
 
-NSString *const AYIAutoLocationEnabled = @"AYIAutoLocationEnabled";
+NSString *const RWSAutoLocationEnabled = @"AYIAutoLocationEnabled";
 
 @interface RWSLocationManager()
 @property (nonatomic, strong) CLLocationManager *manager;
@@ -50,14 +50,14 @@ NSString *const AYIAutoLocationEnabled = @"AYIAutoLocationEnabled";
     self.geocoder = geocoder;
 }
 
-- (BOOL)isAutoLocationEnabled
++ (BOOL)isAutoLocationEnabled
 {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:AYIAutoLocationEnabled];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:RWSAutoLocationEnabled];
 }
 
 - (void)enableAutoUpdates
 {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:AYIAutoLocationEnabled];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:RWSAutoLocationEnabled];
 }
 
 @end
