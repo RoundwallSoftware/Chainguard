@@ -17,7 +17,9 @@
 
 - (void)setPhoto:(id<RWSPhoto>)photo
 {
-    self.imageView.image = [photo thumbnailImage];
+    UIImage *thumbnailImage = [photo thumbnailImage];
+    NSParameterAssert(thumbnailImage);
+    self.imageView.image = thumbnailImage;
 }
 
 @end
