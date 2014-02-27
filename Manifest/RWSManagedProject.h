@@ -1,8 +1,7 @@
 #import "_RWSManagedProject.h"
 #import "RWSProject.h"
-#import "RWSMapItemSource.h"
 
-@interface RWSManagedProject : _RWSManagedProject<RWSProject, RWSMapItemSource> {}
+@interface RWSManagedProject : _RWSManagedProject<RWSProject> {}
 + (instancetype)makeUntitledProjectInContext:(NSManagedObjectContext *)context;
 + (NSArray *)allProjectsInContext:(NSManagedObjectContext *)context;
 

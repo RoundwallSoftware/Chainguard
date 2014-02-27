@@ -34,7 +34,7 @@
 - (void)addPhotoWithImage:(UIImage *)image;
 @end
 
-@protocol RWSProject <RWSMapItemSource, UIActivityItemSource>
+@protocol RWSProject <UIActivityItemSource>
 @property (nonatomic, copy) NSString *title;
 
 - (NSUInteger)count;

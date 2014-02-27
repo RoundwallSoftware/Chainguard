@@ -116,21 +116,6 @@
     self.items = set;
 }
 
-#pragma mark - RWSMapItemSource
-
-- (NSArray *)annotations
-{
-    NSOrderedSet *items = [self items];
-    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[items count]];
-    for(RWSManagedItem *item in items){
-        if([item latitudeValue] != 0 && [item longitudeValue] != 0){
-            [annotations addObject:item];
-        }
-    }
-
-    return annotations;
-}
-
 #pragma mark - UIActivityItemSource
 
 - (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType

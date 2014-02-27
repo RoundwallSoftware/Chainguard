@@ -211,11 +211,6 @@
         NSParameterAssert(controller.item);
         controller.delegate = self;
     }
-
-    if([identifier isEqualToString:@"toMap"]){
-        RWSMapViewController *controller = [segue destinationViewController];
-        controller.itemSource = self.project;
-    }
 }
 
 - (IBAction)share:(id)sender
