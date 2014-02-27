@@ -134,4 +134,9 @@
     return @"Project";
 }
 
+- (NSString *)projectIdentifier
+{
+    return [[[self objectID] URIRepresentation] absoluteString];
+}
+
 @end

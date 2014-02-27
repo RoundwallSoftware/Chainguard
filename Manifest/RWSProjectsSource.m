@@ -41,8 +41,19 @@
         return nil;
     }
 
-    NSArray *allLists = [RWSManagedProject allProjectsInContext:self.context];
-    return allLists[indexPath.row];
+    NSArray *allProjects = [RWSManagedProject allProjectsInContext:self.context];
+    return allProjects[indexPath.row];
+}
+
+- (NSIndexPath *)indexPathForProjectWithIdentifier:(NSString *)identifier
+{
+    NSArray *allProjects = [RWSManagedProject allProjectsInContext:self.context];
+    for(RWSManagedProject *project in allProjects){
+        if([[project projectIdentifier] isEqualToString:identifier]){
+            return [NSIndexPath indexPathForRow:[allProjects indexOfObject:project] inSection:0];
+        }
+    }
+    return nil;
 }
 
 - (id<RWSProject>)makeUntitledList

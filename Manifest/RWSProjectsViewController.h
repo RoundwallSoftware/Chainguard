@@ -9,6 +9,6 @@
 @class RWSCoreDataController;
 @class RWSProjectsSource;
 
-@interface RWSProjectsViewController : UITableViewController
+@interface RWSProjectsViewController : UITableViewController<UIDataSourceModelAssociation>
 @property (nonatomic, strong) RWSProjectsSource *projectSource;
 @end

@@ -166,4 +166,35 @@
     }
 }
 
+#pragma mark - UIDataSourceModelAssociation
+
+- (NSString *)modelIdentifierForElementAtIndexPath:(NSIndexPath *)indexPath inView:(UIView *)view
+{
+    if(indexPath.section == 0){
+        id<RWSProject> project = [self.projectSource projectAtIndexPath:indexPath];
+        return [project projectIdentifier];
+    }
+
+    if(indexPath.row == 0) {
+        return @"settings";
+    }
+    if(indexPath.row == 1) {
+        return @"credits";
+    }
+
+    return nil;
+}
+
+- (NSIndexPath *)indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view
+{
+    if([identifier isEqualToString:@"settings"]){
+        return [NSIndexPath indexPathForRow:0 inSection:1];
+    }
+    if([identifier isEqualToString:@"credits"]){
+        return [NSIndexPath indexPathForRow:1 inSection:1];
+    }
+
+    return [self.projectSource indexPathForProjectWithIdentifier:identifier];
+}
+
 @end

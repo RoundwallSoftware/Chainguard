@@ -8,7 +8,7 @@
         <scene sceneID="NXk-XA-OHx">
             <objects>
                 <tableViewController storyboardIdentifier="projects" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9LJ-iZ-foi" customClass="RWSProjectsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="72z-6F-efM">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="projectsTable" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="72z-6F-efM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,7 +65,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="iy5-Wd-r6V" kind="push" id="pLs-dt-ZkA"/>
+                                    <segue destination="iy5-Wd-r6V" kind="push" identifier="toSettings" id="pLs-dt-ZkA"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="credits" textLabel="JWn-JY-AqV" style="IBUITableViewCellStyleDefault" id="HOu-PD-uCx">
@@ -85,7 +85,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="d0C-FY-N1N" kind="push" id="wcm-54-ZQf"/>
+                                    <segue destination="d0C-FY-N1N" kind="push" identifier="toCredits" id="wcm-54-ZQf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -135,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-Ts-Pa6">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLr-Ts-Pa6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
@@ -564,7 +564,7 @@
         <!--Settings View Controller - Settings-->
         <scene sceneID="sOx-WH-5qz">
             <objects>
-                <tableViewController id="iy5-Wd-r6V" customClass="RWSSettingsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iy5-Wd-r6V" customClass="RWSSettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" id="yse-Lo-WfQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -654,7 +654,7 @@
         <!--View Controller - Credits-->
         <scene sceneID="nVf-Tv-brK">
             <objects>
-                <viewController id="d0C-FY-N1N" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="credits" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d0C-FY-N1N" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f6O-09-R9q"/>
                         <viewControllerLayoutGuide type="bottom" id="ZKV-TX-msQ"/>
@@ -716,7 +716,7 @@ Hristo Hristov</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="SPm-kw-cRD"/>
         <segue reference="zyL-ze-Vbw"/>
-        <segue reference="NDp-5W-szv"/>
     </inferredMetricsTieBreakers>
 </document>

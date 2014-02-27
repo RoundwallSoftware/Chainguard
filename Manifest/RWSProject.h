@@ -36,6 +36,7 @@
 
 @protocol RWSProject <UIActivityItemSource>
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) NSString *projectIdentifier;
 
 - (NSUInteger)count;
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
