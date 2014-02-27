@@ -38,6 +38,8 @@ NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
     [coder encodeDouble:region.center.longitude forKey:RWSMapCenterLongitude];
     [coder encodeDouble:region.span.latitudeDelta forKey:RWSMapCenterLatitudeDelta];
     [coder encodeDouble:region.span.longitudeDelta forKey:RWSMapCenterLongitudeDelta];
+
+    [super encodeRestorableStateWithCoder:coder];
 }
 
 - (void)decodeRestorableStateWithCoder:(NSCoder *)coder
@@ -53,6 +55,8 @@ NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
     region.span = span;
 
     self.mapView.region = region;
+
+    [super decodeRestorableStateWithCoder:coder];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
