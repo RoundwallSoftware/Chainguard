@@ -61,7 +61,7 @@
 - (NSArray *)annotations
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:[RWSManagedItem entityName]];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"latitude != 0 AND longitude != 0"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"latitude != nil AND longitude != nil"]];
 
     NSError *fetchError;
     NSArray *results = [[self context] executeFetchRequest:request error:&fetchError];
