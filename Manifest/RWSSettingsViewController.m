@@ -38,19 +38,40 @@
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(indexPath.row == 1){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://google.com"]];
+        [self showAppRatingView];
     }
     if(indexPath.row == 0){
-        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-        mailController.mailComposeDelegate = self;
-        [mailController setToRecipients:@[@"samuel@roundwallsoftare.com"]];
-        [mailController setSubject:@"Manifest Feedback"];
-
-        [self presentViewController:mailController animated:YES completion:nil];
+        [self showMessageView];
     }
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)showMessageView
+{
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    mailController.mailComposeDelegate = self;
+    [mailController setToRecipients:@[@"samuel@roundwallsoftare.com"]];
+    [mailController setSubject:@"Manifest Feedback"];
+
+    [self presentViewController:mailController animated:YES completion:nil];
+}
+
+- (void)showAppRatingView
+{
+    SKStoreProductViewController *controller = [[SKStoreProductViewController alloc] init];
+    controller.delegate = self;
+    [controller loadProductWithParameters:@{ SKStoreProductParameterITunesItemIdentifier: @"364709193" } completionBlock:^(BOOL result, NSError *error) {
+        NSLog(@"result: %@, error: %@", result ? @"YES":@"NO", error);
+    }];
+
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

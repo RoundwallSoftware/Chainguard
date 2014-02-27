@@ -7,7 +7,8 @@
 //
 
 @import MessageUI;
+@import StoreKit;
 
-@interface RWSSettingsViewController : UITableViewController <MFMailComposeViewControllerDelegate>
+@interface RWSSettingsViewController : UITableViewController <MFMailComposeViewControllerDelegate, SKStoreProductViewControllerDelegate>
 
 @end
