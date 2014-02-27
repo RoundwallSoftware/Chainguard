@@ -15,16 +15,8 @@
 
 @implementation RWSAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-
-    self.window.rootViewController = [storyboard instantiateInitialViewController];
-
-    [self.window makeKeyAndVisible];
-
     [self setupTheme];
     return YES;
 }
@@ -36,6 +28,20 @@
 
     UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: tintColor, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
+}
+
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    NSLog(@"Saving state");
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    NSString *buildNumberString = [coder decodeObjectForKey:UIApplicationStateRestorationBundleVersionKey];
+    NSDate *timestamp = [coder decodeObjectForKey:UIApplicationStateRestorationTimestampKey];
+    NSLog(@"Should restore with bundle version: %@, %@", buildNumberString, timestamp);
+    return YES;
 }
 
 @end

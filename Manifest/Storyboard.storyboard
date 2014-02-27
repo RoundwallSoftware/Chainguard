@@ -7,7 +7,7 @@
         <!--Projects View Controller - Projects-->
         <scene sceneID="NXk-XA-OHx">
             <objects>
-                <tableViewController id="9LJ-iZ-foi" customClass="RWSProjectsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="projects" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9LJ-iZ-foi" customClass="RWSProjectsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="72z-6F-efM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,7 @@
         <!--Map View Controller-->
         <scene sceneID="Z8o-cv-NSF">
             <objects>
-                <viewController id="RtL-Lj-wqq" customClass="RWSMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RtL-Lj-wqq" customClass="RWSMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kRx-OE-QRh"/>
                         <viewControllerLayoutGuide type="bottom" id="qel-H8-ZNh"/>
@@ -163,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiH-T4-R0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615" y="-1220"/>
+            <point key="canvasLocation" x="1131" y="-1220"/>
         </scene>
         <!--Photos View Controller - Photos-->
         <scene sceneID="k3a-pL-Yxt">
@@ -260,12 +260,6 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Map" id="oeH-Gq-Bf4">
-                            <connections>
-                                <segue destination="RtL-Lj-wqq" kind="modal" identifier="toMap" id="VOf-k2-mXb"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9am-kI-hGo"/>
                         <barButtonItem systemItem="add" id="ZHa-fC-cBU">
                             <connections>
                                 <segue destination="8tF-J3-HnI" kind="push" identifier="newItem" id="XQj-Vc-jA0"/>
@@ -284,7 +278,6 @@
                     <connections>
                         <outlet property="actionItem" destination="Jyb-sr-G0Z" id="vmA-S4-ZDd"/>
                         <outlet property="addItem" destination="ZHa-fC-cBU" id="lq8-sl-zpx"/>
-                        <outlet property="mapItem" destination="oeH-Gq-Bf4" id="Rni-Sw-ZsO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyF-sp-Lur" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -700,7 +693,7 @@ Hristo Hristov</string>
         <!--Navigation Controller-->
         <scene sceneID="zXS-og-UXM">
             <objects>
-                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="G7Q-rn-GWp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="root" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" toolbarHidden="NO" id="G7Q-rn-GWp" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4pe-Br-Ult">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -723,8 +716,7 @@ Hristo Hristov</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NDp-5W-szv"/>
-        <segue reference="nKY-6n-VL9"/>
         <segue reference="zyL-ze-Vbw"/>
+        <segue reference="NDp-5W-szv"/>
     </inferredMetricsTieBreakers>
 </document>
