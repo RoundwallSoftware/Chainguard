@@ -52,7 +52,7 @@
 {
     [super viewWillAppear:animated];
 
-    self.navigationItem.rightBarButtonItems = @[self.addItem, self.actionItem];
+    self.navigationItem.rightBarButtonItems = @[self.actionItem, self.addItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated

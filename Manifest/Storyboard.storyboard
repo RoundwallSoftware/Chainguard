@@ -100,7 +100,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="P3R-9k-bKn"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Projects" id="Cvf-uC-x3k">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zPZ-OQ-u0m">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="zPZ-OQ-u0m">
                             <connections>
                                 <segue destination="qi8-Yz-TGC" kind="push" identifier="addList" id="SPm-kw-cRD"/>
                             </connections>
