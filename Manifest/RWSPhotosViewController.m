@@ -8,6 +8,7 @@
 
 #import "RWSPhotosViewController.h"
 #import "RWSPhotoCell.h"
+#import "RWSPagedPhotosViewController.h"
 @import AssetsLibrary;
 
 @import MobileCoreServices;
@@ -102,6 +103,12 @@
         }];
 
     } failureBlock:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    RWSPagedPhotosViewController *controller = [segue destinationViewController];
+    controller.item = self.item;
 }
 
 @end

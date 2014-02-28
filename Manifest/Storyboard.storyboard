@@ -121,7 +121,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="636" y="-541"/>
+            <point key="canvasLocation" x="596" y="-553"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Z8o-cv-NSF">
@@ -168,7 +168,7 @@
         <!--Photos View Controller - Photos-->
         <scene sceneID="k3a-pL-Yxt">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="WCg-sO-Cdn" customClass="RWSPhotosViewController" sceneMemberID="viewController">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" id="WCg-sO-Cdn" customClass="RWSPhotosViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Uk8-b3-joc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,6 +196,7 @@
                                 <size key="customSize" width="160" height="160"/>
                                 <connections>
                                     <outlet property="imageView" destination="XnW-wq-NeV" id="c8g-l4-Zru"/>
+                                    <segue destination="JHp-QN-qGR" kind="push" id="yTI-KT-0gn"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -214,7 +215,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZR-i0-zlk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="-1220"/>
+            <point key="canvasLocation" x="2155" y="-922"/>
         </scene>
         <!--Project View Controller-->
         <scene sceneID="NG8-An-tgX">
@@ -282,17 +283,63 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyF-sp-Lur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="-541"/>
+            <point key="canvasLocation" x="1131" y="-553"/>
+        </scene>
+        <!--Paged Photos View Controller-->
+        <scene sceneID="S7d-xx-Z7O">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="JHp-QN-qGR" customClass="RWSPagedPhotosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gsm-OK-4gP"/>
+                        <viewControllerLayoutGuide type="bottom" id="hFT-DC-CVJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KUV-gX-qZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34T-02-XLw">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="XV3-SF-Np2" kind="embed" id="2hv-Bi-KMf"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="hFT-DC-CVJ" firstAttribute="top" secondItem="34T-02-XLw" secondAttribute="bottom" id="TYj-j4-bKF"/>
+                            <constraint firstItem="34T-02-XLw" firstAttribute="top" secondItem="gsm-OK-4gP" secondAttribute="bottom" id="WeE-9j-O65"/>
+                            <constraint firstAttribute="trailing" secondItem="34T-02-XLw" secondAttribute="trailing" id="cHW-WX-Grf"/>
+                            <constraint firstItem="34T-02-XLw" firstAttribute="leading" secondItem="KUV-gX-qZJ" secondAttribute="leading" id="jP1-L6-laE"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hWV-bN-4hn" appends="YES" id="giC-Wk-CPA"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="IzU-ot-84d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LdX-46-gLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hWV-bN-4hn">
+                    <connections>
+                        <action selector="tapOnScreen:" destination="JHp-QN-qGR" id="FO1-Bi-WNF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2613" y="-922"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="v41-V8-8Yg">
             <objects>
-                <pageViewController storyboardIdentifier="pagecontroller" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="XV3-SF-Np2" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                <pageViewController storyboardIdentifier="pagecontroller" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="20" navigationOrientation="horizontal" spineLocation="none" id="XV3-SF-Np2" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xq3-1k-ZIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="-553"/>
+            <point key="canvasLocation" x="3045" y="-890"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="D5D-5d-o4x">
@@ -327,12 +374,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89G-VZ-jn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="144"/>
+            <point key="canvasLocation" x="2155" y="-158"/>
         </scene>
-        <!--View Controller-->
+        <!--Big Image View Controller-->
         <scene sceneID="ltu-1C-ydh">
             <objects>
-                <viewController storyboardIdentifier="imageview" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jcN-xD-sLx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bigImage" id="jcN-xD-sLx" customClass="RWSBigImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fLU-qU-uAt"/>
                         <viewControllerLayoutGuide type="bottom" id="lbg-VX-FIz"/>
@@ -341,18 +388,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0D9-HO-tQD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0D9-HO-tQD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0D9-HO-tQD" firstAttribute="top" secondItem="fLU-qU-uAt" secondAttribute="bottom" id="Wcl-a8-axQ"/>
+                            <constraint firstItem="0D9-HO-tQD" firstAttribute="leading" secondItem="owr-OH-8pH" secondAttribute="leading" id="YQO-wl-bLH"/>
+                            <constraint firstItem="lbg-VX-FIz" firstAttribute="top" secondItem="0D9-HO-tQD" secondAttribute="bottom" id="cbs-jF-2Br"/>
+                            <constraint firstAttribute="trailing" secondItem="0D9-HO-tQD" secondAttribute="trailing" id="sqz-Nh-97k"/>
+                        </constraints>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="0D9-HO-tQD" id="iYf-oF-YkQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nnl-wv-vPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487" y="-553"/>
+            <point key="canvasLocation" x="3435" y="-922"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="a6K-9J-57d">
@@ -707,7 +765,7 @@ Hristo Hristov</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7e-3U-b6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="-541"/>
+            <point key="canvasLocation" x="126" y="-553"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

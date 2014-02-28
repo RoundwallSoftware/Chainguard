@@ -41,7 +41,7 @@
     NSString *buildNumberString = [coder decodeObjectForKey:UIApplicationStateRestorationBundleVersionKey];
     NSDate *timestamp = [coder decodeObjectForKey:UIApplicationStateRestorationTimestampKey];
     NSLog(@"Should restore with bundle version: %@, %@", buildNumberString, timestamp);
-    return YES;
+    return NO;
 }
 
 @end
