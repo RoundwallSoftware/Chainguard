@@ -109,6 +109,9 @@
 {
     RWSPagedPhotosViewController *controller = [segue destinationViewController];
     controller.item = self.item;
+
+    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    controller.initialIndex = [selectedIndexPath item];
 }
 
 @end

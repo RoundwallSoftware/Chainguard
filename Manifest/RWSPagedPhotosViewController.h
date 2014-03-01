@@ -10,6 +10,7 @@
 
 @interface RWSPagedPhotosViewController : UIViewController<UIPageViewControllerDataSource>
 @property (nonatomic, strong) id<RWSItem> item;
+@property (nonatomic, assign) NSInteger initialIndex;
 
 - (IBAction)tapOnScreen:(id)sender;
 @end

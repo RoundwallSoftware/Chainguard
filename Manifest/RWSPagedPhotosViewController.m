@@ -25,8 +25,8 @@
     self.pageController = controller;
 
     RWSBigImageViewController *imageController = [self.storyboard instantiateViewControllerWithIdentifier:@"bigImage"];
-    id<RWSPhoto> photo = [self.item photoAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
-    imageController.index = 0;
+    id<RWSPhoto> photo = [self.item photoAtIndexPath:[NSIndexPath indexPathForItem:self.initialIndex inSection:0]];
+    imageController.index = self.initialIndex;
     imageController.photo = photo;
     [controller setViewControllers:@[imageController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
@@ -52,7 +52,7 @@
     RWSBigImageViewController *previousController = (RWSBigImageViewController *)viewController;
     NSInteger index = previousController.index-1;
 
-    if(index <= 0){
+    if(index < 0){
         return nil;
     }
 
