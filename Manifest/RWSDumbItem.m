@@ -20,6 +20,11 @@
     return 0;
 }
 
+- (BOOL)isValid
+{
+    return [self.name length] > 0;
+}
+
 - (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;

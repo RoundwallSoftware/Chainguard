@@ -34,6 +34,11 @@
     return [@[self.name, @": ", [formatter stringFromNumber:[self price] currency:@"USD"]] componentsJoinedByString:@""];
 }
 
+- (BOOL)isValid
+{
+    return [self.name length] > 0;
+}
+
 - (BOOL)isPurchased
 {
     return self.purchasedValue;

@@ -599,7 +599,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="c0b-Wy-0h1">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="j8B-J1-Ufo">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="j8B-J1-Ufo">
                             <connections>
                                 <action selector="save:" destination="8tF-J3-HnI" id="ai0-GF-o6X"/>
                             </connections>

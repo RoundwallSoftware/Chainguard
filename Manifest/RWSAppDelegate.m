@@ -28,6 +28,7 @@
 
     UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: tintColor, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor darkGrayColor], NSFontAttributeName: headingFont} forState:UIControlStateDisabled];
 }
 
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder

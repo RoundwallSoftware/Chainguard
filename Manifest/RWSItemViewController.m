@@ -162,6 +162,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         id<RWSItem> item = [parser itemFromText:self.reverseParser.inputString];
         self.item.name = item.name;
     }
+
+    self.navigationItem.rightBarButtonItem.enabled = [self.item isValid];
     
     return YES;
 }
@@ -169,13 +171,11 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (void)updateNameAndPriceFieldsForItem
 {
     self.nameField.text = self.item.name;
-    //[self.reverseParser setName:parser.name];
     UITextField *priceField = self.priceField;
     if(self.item.price){
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
         NSString *text = [formatter stringFromNumber:[self.item price] currency:[self.item currencyCode]];
         priceField.text = text;
-        //[self.reverseParser setPriceInput:text];
     }else{
         priceField.text = nil;
     }

@@ -29,6 +29,8 @@
 - (BOOL)isPurchased;
 - (void)togglePurchased;
 
+- (BOOL)isValid;
+
 - (NSUInteger)photoCount;
 - (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath;
 - (void)addPhotoWithImage:(UIImage *)image;
