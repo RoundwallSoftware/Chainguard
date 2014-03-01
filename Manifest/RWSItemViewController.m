@@ -31,6 +31,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
     UIButton *locationButton = self.locationButton;
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    UITextField *quickInputField = self.quickInputField;
     UITextField *priceField = self.priceField;
     priceField.inputAccessoryView = toolbar;
 
@@ -45,7 +46,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
         [self.reverseParser setName:self.item.name];
         [self.reverseParser setPriceInput:priceField.text];
-        self.quickInputField.text = [self.reverseParser inputString];
+        quickInputField.text = [self.reverseParser inputString];
 
         if(self.item.addressString){
             [locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
