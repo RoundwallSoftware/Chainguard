@@ -14,6 +14,8 @@
 #import "UIColor+iOS7Colors.h"
 #import "RWSNotesViewController.h"
 #import "RWSPhotosViewController.h"
+#import "RWSExchangeRates.h"
+#import "NSLocale+RWSCurrency.h"
 @import AddressBookUI;
 
 NSString *const AYIUserDidAddLocationPreference = @"AYIUserDidAddLocationPreference";
@@ -111,7 +113,9 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     if(textField == self.priceField){
-        setCurrencyOnTextField(@"USD", textField);
+        if([textField.text length] == 0){
+            setCurrencyOnTextField([[NSLocale currentLocale] currencyCode], textField);
+        }
     }
 }
 

@@ -23,4 +23,14 @@
     return [NSLocale localeWithLocaleIdentifier:identifier];
 }
 
+- (NSString *)currencySymbol
+{
+    return [self objectForKey:NSLocaleCurrencySymbol];
+}
+
+- (NSString *)currencyCode
+{
+    return [self objectForKey:NSLocaleCurrencyCode];
+}
+
 @end

@@ -56,4 +56,31 @@
     assertThat(textField.text, equalTo(@"$32"));
 }
 
+- (void)testInputtingEuroSignOnBlankField
+{
+    textField.text = nil;
+
+    setCurrencyOnTextField(@"EUR", textField);
+
+    assertThat(textField.text, equalTo(@"€"));
+}
+
+- (void)testChangingCurrencyToEuro
+{
+    textField.text = @"$32.32";
+
+    setCurrencyOnTextField(@"EUR", textField);
+
+    assertThat(textField.text, equalTo(@"€32.32"));
+}
+
+- (void)testChangingCurrencyToEurosWithDecimalAtEnd
+{
+    textField.text = @"£32.";
+
+    setCurrencyOnTextField(@"EUR", textField);
+
+    assertThat(textField.text, equalTo(@"€32"));
+}
+
 @end

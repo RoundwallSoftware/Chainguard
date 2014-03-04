@@ -49,6 +49,7 @@
 		9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */; };
 		9BC959FF18C6042500CAE84E /* RWSExchangeRates.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */; };
 		9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BC95A0018C60F1600CAE84E /* Settings.bundle */; };
+		9BC95A0318C6145E00CAE84E /* RWSExchangeRatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC95A0218C6145E00CAE84E /* RWSExchangeRatesTests.m */; };
 		9BCDD52E18BE07D000CF2F3B /* RWSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
 		9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */; };
@@ -152,6 +153,7 @@
 		9BC959FD18C6042500CAE84E /* RWSExchangeRates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSExchangeRates.h; sourceTree = "<group>"; };
 		9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSExchangeRates.m; sourceTree = "<group>"; };
 		9BC95A0018C60F1600CAE84E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		9BC95A0218C6145E00CAE84E /* RWSExchangeRatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSExchangeRatesTests.m; sourceTree = "<group>"; };
 		9BCDD52C18BE07D000CF2F3B /* RWSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSettingsViewController.h; sourceTree = "<group>"; };
 		9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSettingsViewController.m; sourceTree = "<group>"; };
 		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,6 +355,7 @@
 				9BDECA4B18A6990900CE7C3C /* RWSReverseItemParserTests.m */,
 				9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */,
 				9B99A1C718B920A90075389A /* RWSManagedItemTests.m */,
+				9BC95A0218C6145E00CAE84E /* RWSExchangeRatesTests.m */,
 			);
 			path = ManifestTests;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */,
 				9B07962B189A86600026D489 /* RWSItemViewControllerTests.m in Sources */,
 				9B079630189A8D2B0026D489 /* RWSItemParserTests.m in Sources */,
+				9BC95A0318C6145E00CAE84E /* RWSExchangeRatesTests.m in Sources */,
 				9BD6B1771895A3A1006E02D0 /* RWSProjectsViewControllerTests.m in Sources */,
 				9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */,
 				9B5579E41896977F008E3C0A /* RWSProjectSourceTests.m in Sources */,

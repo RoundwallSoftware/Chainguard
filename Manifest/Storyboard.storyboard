@@ -614,10 +614,12 @@
                         <outlet property="parser" destination="ccg-FT-LDg" id="yyB-aG-fhT"/>
                         <outlet property="priceField" destination="8ef-h6-xGU" id="lat-AA-yGR"/>
                         <outlet property="quickInputField" destination="XtE-s3-VTS" id="0ba-1q-9kl"/>
+                        <outlet property="rates" destination="eYi-kB-Le3" id="y3s-Bl-6DQ"/>
                         <outlet property="reverseParser" destination="iXj-i9-lL4" id="Fy4-0y-7hB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUc-eZ-DbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="eYi-kB-Le3" customClass="RWSExchangeRates"/>
                 <customObject id="ccg-FT-LDg" customClass="RWSItemParser"/>
                 <customObject id="iXj-i9-lL4" customClass="RWSReverseItemParser"/>
                 <customObject id="2BQ-g1-h28" customClass="RWSLocationManager">

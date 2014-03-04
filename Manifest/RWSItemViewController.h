@@ -12,11 +12,13 @@
 
 @protocol RWSItemDelegate;
 @class RWSItemParser;
+@class RWSExchangeRates;
 
 @interface RWSItemViewController : UITableViewController<UITextFieldDelegate, RWSLocationManagerDelegate, UITextViewDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) IBOutlet RWSItemParser *parser;
 @property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet RWSReverseItemParser *reverseParser;
+@property (nonatomic, strong) IBOutlet RWSExchangeRates *rates;
 @property (nonatomic, weak) IBOutlet UITextField *quickInputField;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;

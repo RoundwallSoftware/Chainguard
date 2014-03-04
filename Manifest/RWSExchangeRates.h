@@ -11,6 +11,7 @@ extern NSString *const RWSFormattedLastTimeExchangeRateUpdated;
 @interface RWSExchangeRates : NSObject
 
 - (void)updateRatesWithCompletionHandler:(void (^)(UIBackgroundFetchResult))block;
+
 //- (NSArray *)supportedCurrencyCodes;
 //- (NSDecimalNumber *)convertPrice:(NSDecimalNumber *)price fromCurrencyCode:(NSString *)fromCode toCurrencyCode:(NSString *)toCode;
 
