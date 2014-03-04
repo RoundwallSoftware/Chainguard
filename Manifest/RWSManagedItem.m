@@ -31,7 +31,7 @@
 {
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
 
-    return [@[self.name, @": ", [formatter stringFromNumber:[self price] currency:@"USD"]] componentsJoinedByString:@""];
+    return [@[self.name, @": ", [formatter stringFromNumber:[self price] currency:self.currencyCode]] componentsJoinedByString:@""];
 }
 
 - (BOOL)isValid
