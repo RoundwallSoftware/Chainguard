@@ -9,6 +9,7 @@
 #import "RWSAppDelegate.h"
 #import "RWSProjectsViewController.h"
 #import "UIColor+iOS7Colors.h"
+#import "RWSExchangeRates.h"
 
 @interface RWSAppDelegate()
 @end
@@ -17,8 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application setMinimumBackgroundFetchInterval:60.0*60.0];
+
     [self setupTheme];
     return YES;
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    RWSExchangeRates *rates = [[RWSExchangeRates alloc] init];
+    [rates updateRatesWithCompletionHandler:completionHandler];
 }
 
 - (void)setupTheme

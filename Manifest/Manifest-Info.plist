@@ -26,6 +26,10 @@
 	<true/>
 	<key>NSLocationUsageDescription</key>
 	<string>${PRODUCT_NAME} uses your location to make sure you don't forget where you found this item.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Storyboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
