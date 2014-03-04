@@ -9,6 +9,7 @@
 #import "RWSProjectViewController.h"
 #import "RWSPriceFormatter.h"
 #import "RWSMapViewController.h"
+#import "NSLocale+RWSCurrency.h"
 
 @interface RWSProjectViewController ()
 @property (nonatomic, strong) UIBarButtonItem *priceItem;
@@ -33,7 +34,8 @@
 - (void)recalculatePrice
 {
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-    self.priceItem.title = [formatter stringFromNumber:[self.project totalRemainingPriceWithCurrencyCode:@"USD"] currency:@"USD"];
+    NSLocale *locale = [NSLocale currentLocale];
+    self.priceItem.title = [formatter stringFromNumber:[self.project totalRemainingPriceWithCurrencyCode:[locale currencyCode]] currency:[locale currencyCode]];
 
     self.priceItem.tintColor = [UIColor clearColor];
     [UIView animateWithDuration:0.3 animations:^{

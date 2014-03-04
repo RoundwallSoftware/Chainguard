@@ -66,4 +66,20 @@
     return [UIImage imageWithContentsOfFile:path];
 }
 
+- (void)testPriceInCurrencyUSDtoEUR
+{
+    item.price = [NSDecimalNumber decimalNumberWithString:@"1"];
+    item.currencyCode = @"USD";
+
+    assertThat([item priceInCurrency:@"EUR"], equalTo([NSDecimalNumber decimalNumberWithString:@"0.73"]));
+}
+
+- (void)testPriceInCurrencyGBPtoEUR
+{
+    item.price = [NSDecimalNumber decimalNumberWithString:@"2"];
+    item.currencyCode = @"GBP";
+
+    assertThat([item priceInCurrency:@"EUR"], equalTo([NSDecimalNumber decimalNumberWithString:@"2.43"]));
+}
+
 @end

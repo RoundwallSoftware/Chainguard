@@ -1,6 +1,7 @@
 #import "RWSManagedItem.h"
 #import "RWSPriceFormatter.h"
 #import "RWSManagedPhoto.h"
+#import "RWSExchangeRates.h"
 
 @interface RWSManagedItem ()
 
@@ -37,6 +38,12 @@
 - (BOOL)isValid
 {
     return [self.name length] > 0;
+}
+
+- (NSDecimalNumber *)priceInCurrency:(NSString *)currencyCode
+{
+    RWSExchangeRates *rates = [[RWSExchangeRates alloc] init];
+    return [rates convertPrice:self.price fromCurrencyCode:self.currencyCode toCurrencyCode:currencyCode];
 }
 
 - (BOOL)isPurchased
