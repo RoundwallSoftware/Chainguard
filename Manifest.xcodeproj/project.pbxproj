@@ -48,6 +48,7 @@
 		9B99A1D318B929BB0075389A /* UIImage+CODImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */; };
 		9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */; };
 		9BC959FF18C6042500CAE84E /* RWSExchangeRates.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */; };
+		9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BC95A0018C60F1600CAE84E /* Settings.bundle */; };
 		9BCDD52E18BE07D000CF2F3B /* RWSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */; };
 		9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1471895A1CC006E02D0 /* Foundation.framework */; };
 		9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */; };
@@ -150,6 +151,7 @@
 		9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNotesViewController.m; sourceTree = "<group>"; };
 		9BC959FD18C6042500CAE84E /* RWSExchangeRates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSExchangeRates.h; sourceTree = "<group>"; };
 		9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSExchangeRates.m; sourceTree = "<group>"; };
+		9BC95A0018C60F1600CAE84E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9BCDD52C18BE07D000CF2F3B /* RWSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSettingsViewController.h; sourceTree = "<group>"; };
 		9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSettingsViewController.m; sourceTree = "<group>"; };
 		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,6 +330,7 @@
 				9BD6B1531895A1CC006E02D0 /* main.m */,
 				9BD6B1551895A1CC006E02D0 /* Manifest-Prefix.pch */,
 				9B5579EC189699BA008E3C0A /* Model.xcdatamodeld */,
+				9BC95A0018C60F1600CAE84E /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			files = (
 				9BD6B1521895A1CC006E02D0 /* InfoPlist.strings in Resources */,
 				9BD6B15A1895A1CC006E02D0 /* Images.xcassets in Resources */,
+				9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */,
 				9B466C4418A38503008AE3FF /* CurrencyToolbar.xib in Resources */,
 				9B59DC811895AA27000530EF /* Storyboard.storyboard in Resources */,
 			);

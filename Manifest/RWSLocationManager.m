@@ -9,7 +9,7 @@
 
 #import "RWSLocationManager.h"
 
-NSString *const RWSAutoLocationEnabled = @"AYIAutoLocationEnabled";
+NSString *const RWSAutoLocationEnabled = @"RWSAutoLocationEnabled";
 
 @interface RWSLocationManager()
 @property (nonatomic, strong) CLLocationManager *manager;

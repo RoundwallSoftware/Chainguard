@@ -20,7 +20,11 @@
 {
     [application setMinimumBackgroundFetchInterval:60.0*60.0];
 
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{  RWSFormattedLastTimeExchangeRateUpdated: @"Not Yet" }];
+
     [self setupTheme];
+
+
     return YES;
 }
 

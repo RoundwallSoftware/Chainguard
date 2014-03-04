@@ -8,7 +8,7 @@
 
 #import "RWSExchangeRates.h"
 
-NSString *const RWSLastTimeExchangeRateUpdated = @"RWSLastTimeExchangeRateUpdated";
+NSString *const RWSFormattedLastTimeExchangeRateUpdated = @"RWSFormattedLastTimeExchangeRateUpdated";
 
 @interface RWSExchangeRates()
 @property (nonatomic, copy) NSDictionary *rates;
@@ -38,7 +38,11 @@ NSString *const RWSLastTimeExchangeRateUpdated = @"RWSLastTimeExchangeRateUpdate
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://manifestsupport.roundwallsoftware.com"]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [self parseData:data];
-        [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:RWSLastTimeExchangeRateUpdated];
+
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle] forKey:RWSFormattedLastTimeExchangeRateUpdated];
+        [defaults synchronize];
+        NSLog(@"Committed the save date");
         if(block){
             block(UIBackgroundFetchResultNewData);
         }

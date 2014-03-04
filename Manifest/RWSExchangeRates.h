@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
+extern NSString *const RWSFormattedLastTimeExchangeRateUpdated;
+
 @interface RWSExchangeRates : NSObject
 
 - (void)updateRatesWithCompletionHandler:(void (^)(UIBackgroundFetchResult))block;
