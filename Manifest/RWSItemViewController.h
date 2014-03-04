@@ -33,6 +33,9 @@
 - (IBAction)dismissKeyboard:(id)sender;
 
 - (IBAction)setUSD:(id)sender;
+- (IBAction)setEUR:(id)sender;
+- (IBAction)setGBP:(id)sender;
+- (IBAction)setYEN:(id)sender;
 @end
 
 @protocol RWSItemDelegate

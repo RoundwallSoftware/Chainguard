@@ -215,6 +215,21 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     setCurrencyOnTextField(@"USD", self.priceField);
 }
 
+- (IBAction)setGBP:(id)sender
+{
+    setCurrencyOnTextField(@"GBP", self.priceField);
+}
+
+- (IBAction)setEUR:(id)sender
+{
+    setCurrencyOnTextField(@"EUR", self.priceField);
+}
+
+- (IBAction)setYEN:(id)sender
+{
+    setCurrencyOnTextField(@"YEN", self.priceField);
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *identifier = [segue identifier];
