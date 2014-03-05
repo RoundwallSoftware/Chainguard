@@ -55,4 +55,40 @@
     assertThat(item.currencyCode, equalTo(@"USD"));
 }
 
+- (void)testParserPicksUpEuros
+{
+    id<RWSItem> item = [parser itemFromText:@"Something €5"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, equalTo(@5));
+    assertThat(item.currencyCode, equalTo(@"EUR"));
+}
+
+- (void)testParserDoesNotPickUpNanEuros
+{
+    id<RWSItem> item = [parser itemFromText:@"Something €"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, nilValue());
+    assertThat(item.currencyCode, equalTo(@"EUR"));
+}
+
+- (void)testParserPicksUpPounds
+{
+    id<RWSItem> item = [parser itemFromText:@"Something £5"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, equalTo(@5));
+    assertThat(item.currencyCode, equalTo(@"GBP"));
+}
+
+- (void)testParserDoesNotPickUpNanPounds
+{
+    id<RWSItem> item = [parser itemFromText:@"Something £"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, nilValue());
+    assertThat(item.currencyCode, equalTo(@"GBP"));
+}
+
 @end

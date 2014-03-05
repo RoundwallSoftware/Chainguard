@@ -9,6 +9,7 @@
 #import "RWSItemParser.h"
 #import "RWSDumbItem.h"
 #import "NSLocale+RWSCurrency.h"
+#import "RWSExchangeRates.h"
 
 @interface RWSItemParser()
 @end
@@ -18,8 +19,9 @@
 - (id<RWSItem>)itemFromText:(NSString *)text
 {
     RWSDumbItem *item = [[RWSDumbItem alloc] init];
+    RWSExchangeRates *rates = [[RWSExchangeRates alloc] init];
 
-    NSArray *currencyCodes = @[@"USD"];
+    NSArray *currencyCodes = [rates supportedCurrencyCodes];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
