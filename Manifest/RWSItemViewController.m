@@ -57,7 +57,13 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
-        [self setCurrentLocation:locationButton];
+
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        BOOL didPreviouslyAddLocation = [defaults boolForKey:AYIUserDidAddLocationPreference];
+        BOOL didPreviouslyChooseAutoLocation = [defaults boolForKey:AYIUserDidDecideOnAutoLocationPreference];
+        if(didPreviouslyAddLocation && didPreviouslyChooseAutoLocation){
+            [self setCurrentLocation:locationButton];
+        }
     }
 }
 
@@ -253,19 +259,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     UITextField *quickInputField = self.quickInputField;
     if([quickInputField isFirstResponder]){
         [self addCurrencyCodeToQuickInput:@"EUR"];
-    }
-}
-
-- (IBAction)setYEN:(id)sender
-{
-    UITextField *priceField = self.priceField;
-    if([priceField isFirstResponder]){
-        setCurrencyOnTextField(@"YEN", priceField);
-    }
-
-    UITextField *quickInputField = self.quickInputField;
-    if([quickInputField isFirstResponder]){
-        [self addCurrencyCodeToQuickInput:@"YEN"];
     }
 }
 
