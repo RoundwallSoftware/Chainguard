@@ -39,8 +39,35 @@
 
         _mainContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_mainContext setPersistentStoreCoordinator:_storeCoordinator];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
+}
+
+- (void)applicationWillResignActive:(NSNotification* )notification
+{
+    NSManagedObjectContext *context = [self mainContext];
+    UIBackgroundTaskIdentifier task = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        NSException *backgroundException = [NSException exceptionWithName:@"Failed to finish background saving" reason:@"Probably took too long" userInfo:nil];
+        [backgroundException raise];
+    }];
+
+    [context performBlock:^{
+        NSError *saveError;
+        BOOL saved = [context save:&saveError];
+        if(!saved){
+            NSException *saveException = [NSException exceptionWithName:@"Failed to save in background" reason:[saveError localizedDescription] userInfo:[saveError userInfo]];
+            [saveException raise];
+        }
+
+        [[UIApplication sharedApplication] endBackgroundTask:task];
+    }];
 }
 
 @end
