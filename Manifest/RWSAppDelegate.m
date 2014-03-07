@@ -24,7 +24,6 @@
 
     [self setupTheme];
 
-
     return YES;
 }
 
