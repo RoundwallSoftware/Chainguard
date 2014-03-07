@@ -24,11 +24,15 @@
 
         NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:url];
         NSParameterAssert(model);
+
+        NSString *sqlFilePath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        sqlFilePath = [sqlFilePath stringByAppendingPathComponent:@"Database.coredata"];
+        NSURL *sqlFileURL = [NSURL fileURLWithPath:sqlFilePath];
         
         _storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
 
         NSError *storeError;
-        NSPersistentStore *store = [_storeCoordinator addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:nil error:&storeError];
+        NSPersistentStore *store = [_storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqlFileURL options:nil error:&storeError];
         if(!store){
             abort();
         }
