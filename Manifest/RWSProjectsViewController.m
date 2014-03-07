@@ -26,44 +26,6 @@
 {
     if(!_projectSource){
         self.projectSource = [[RWSProjectsSource alloc] init];
-
-        // This is all gross and goes away soon as the app stops using in-memory contexts
-        NSManagedObjectContext *context = self.projectSource.context;
-        NSParameterAssert(context);
-        
-        RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:context];
-        project.title = @"Example Project";
-
-        RWSManagedItem *cog = [RWSManagedItem insertInManagedObjectContext:context];
-        cog.name = @"Dura Ace Cog";
-        cog.price = [NSDecimalNumber decimalNumberWithString:@"30.99"];
-        cog.currencyCode = @"USD";
-        cog.notes = @"15T, forged steel";
-
-        RWSManagedItem *crankset = [RWSManagedItem insertInManagedObjectContext:context];
-        crankset.name = @"Dura Ace Crankset";
-        crankset.price = [NSDecimalNumber decimalNumberWithString:@"350.99"];
-        crankset.currencyCode = @"USD";
-        crankset.notes = @"48T big ring";
-
-        RWSManagedItem *chain = [RWSManagedItem insertInManagedObjectContext:context];
-        chain.name = @"Pearl Izumi Chain";
-        chain.price = [NSDecimalNumber decimalNumberWithString:@"12.99"];
-        chain.currencyCode = @"USD";
-
-        RWSManagedItem *pedal = [RWSManagedItem insertInManagedObjectContext:context];
-        pedal.name = @"Shimano SPD-SL Pedal";
-        pedal.price = [NSDecimalNumber decimalNumberWithString:@"60.99"];
-        pedal.currencyCode = @"USD";
-
-        NSOrderedSet *set = [NSOrderedSet orderedSetWithObjects:cog, crankset, chain, pedal, nil];
-        project.items = set;
-
-        NSError *saveError;
-        BOOL saved = [self.projectSource.context save:&saveError];
-        if(!saved){
-            abort();
-        }
     }
     return _projectSource;
 }
