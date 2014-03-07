@@ -92,12 +92,15 @@
             return;
         }
 
+        [group setAssetsFilter:[ALAssetsFilter allPhotos]];
+
         NSIndexSet *indexes = [NSIndexSet indexSetWithIndex:assetCount-1];
-        [group enumerateAssetsAtIndexes:indexes options:NSEnumerationReverse usingBlock:^(ALAsset *result, NSUInteger index, BOOL *groupStop) {
-            if(result){
-                ALAssetRepresentation *imageRep = [result defaultRepresentation];
+        [group enumerateAssetsAtIndexes:indexes options:NSEnumerationReverse usingBlock:^(ALAsset *asset, NSUInteger index, BOOL *groupStop) {
+            if(asset){
+                ALAssetRepresentation *imageRep = [asset defaultRepresentation];
                 CGImageRef imageRef = [imageRep fullResolutionImage];
-                [self.item addPhotoWithImage:[UIImage imageWithCGImage:imageRef scale:[imageRep scale] orientation:(UIImageOrientation)[imageRep orientation]]];
+
+                [self.item addPhotoWithImage:[UIImage imageWithCGImage:imageRef]];
 
                 [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
             }
