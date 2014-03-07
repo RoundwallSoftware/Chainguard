@@ -95,8 +95,9 @@
         NSIndexSet *indexes = [NSIndexSet indexSetWithIndex:assetCount-1];
         [group enumerateAssetsAtIndexes:indexes options:NSEnumerationReverse usingBlock:^(ALAsset *result, NSUInteger index, BOOL *groupStop) {
             if(result){
-                CGImageRef imageRef = [[result defaultRepresentation] fullResolutionImage];
-                [self.item addPhotoWithImage:[UIImage imageWithCGImage:imageRef]];
+                ALAssetRepresentation *imageRep = [result defaultRepresentation];
+                CGImageRef imageRef = [imageRep fullResolutionImage];
+                [self.item addPhotoWithImage:[UIImage imageWithCGImage:imageRef scale:[imageRep scale] orientation:(UIImageOrientation)[imageRep orientation]]];
 
                 [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
             }
