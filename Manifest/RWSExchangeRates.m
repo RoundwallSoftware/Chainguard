@@ -245,7 +245,7 @@ NSString *const RWSFormattedLastTimeExchangeRateUpdated = @"RWSFormattedLastTime
 - (NSDecimalNumber *)convertPrice:(NSDecimalNumber *)price fromCurrencyCode:(NSString *)fromCode toCurrencyCode:(NSString *)toCode
 {
     NSDecimalNumberHandler *roundUp = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundUp scale:2
-                                       raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:YES];
+                                       raiseOnExactness:NO raiseOnOverflow:YES raiseOnUnderflow:YES raiseOnDivideByZero:YES];
     NSDecimalNumber *fromRate = [NSDecimalNumber decimalNumberWithString:self.rates[fromCode]];
     NSDecimalNumber *toRate = [NSDecimalNumber decimalNumberWithString:self.rates[toCode]];
 
