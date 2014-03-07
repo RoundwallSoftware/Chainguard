@@ -38,9 +38,8 @@
     UIColor *tintColor = [UIColor iOS7purpleColor];
     self.window.tintColor = tintColor;
 
-    UIFont *headingFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: tintColor, NSFontAttributeName: headingFont} forState:UIControlStateNormal];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor iOS7lightGrayColor], NSFontAttributeName: headingFont} forState:UIControlStateDisabled];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: tintColor } forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor iOS7lightGrayColor]} forState:UIControlStateDisabled];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.01]];
 }
 
