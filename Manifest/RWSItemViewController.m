@@ -36,6 +36,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     UITextField *quickInputField = self.quickInputField;
     UITextField *priceField = self.priceField;
     priceField.inputAccessoryView = toolbar;
+    quickInputField.inputAccessoryView = toolbar;
 
     if(self.item){
         self.navigationItem.rightBarButtonItem = nil;
@@ -173,6 +174,12 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     return YES;
 }
 
+- (void)addCurrencyCodeToQuickInput:(NSString *)currencyCode
+{
+    NSString *symbol = [[NSLocale currentLocaleWithCurrency:currencyCode] currencySymbol];
+    [self.quickInputField insertText:symbol];
+}
+
 - (void)updateNameAndPriceFieldsForItem
 {
     self.nameField.text = self.item.name;
@@ -212,22 +219,54 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
 - (IBAction)setUSD:(id)sender
 {
-    setCurrencyOnTextField(@"USD", self.priceField);
+    UITextField *priceField = self.priceField;
+    if([priceField isFirstResponder]){
+        setCurrencyOnTextField(@"USD", priceField);
+    }
+
+    UITextField *quickInputField = self.quickInputField;
+    if([quickInputField isFirstResponder]){
+        [self addCurrencyCodeToQuickInput:@"USD"];
+    }
 }
 
 - (IBAction)setGBP:(id)sender
 {
-    setCurrencyOnTextField(@"GBP", self.priceField);
+    UITextField *priceField = self.priceField;
+    if([priceField isFirstResponder]){
+        setCurrencyOnTextField(@"GBP", priceField);
+    }
+
+    UITextField *quickInputField = self.quickInputField;
+    if([quickInputField isFirstResponder]){
+        [self addCurrencyCodeToQuickInput:@"GBP"];
+    }
 }
 
 - (IBAction)setEUR:(id)sender
 {
-    setCurrencyOnTextField(@"EUR", self.priceField);
+    UITextField *priceField = self.priceField;
+    if([priceField isFirstResponder]){
+        setCurrencyOnTextField(@"EUR", priceField);
+    }
+
+    UITextField *quickInputField = self.quickInputField;
+    if([quickInputField isFirstResponder]){
+        [self addCurrencyCodeToQuickInput:@"EUR"];
+    }
 }
 
 - (IBAction)setYEN:(id)sender
 {
-    setCurrencyOnTextField(@"YEN", self.priceField);
+    UITextField *priceField = self.priceField;
+    if([priceField isFirstResponder]){
+        setCurrencyOnTextField(@"YEN", priceField);
+    }
+
+    UITextField *quickInputField = self.quickInputField;
+    if([quickInputField isFirstResponder]){
+        [self addCurrencyCodeToQuickInput:@"YEN"];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
