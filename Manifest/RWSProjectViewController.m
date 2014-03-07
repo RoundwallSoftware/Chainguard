@@ -15,7 +15,6 @@
 @property (nonatomic, strong) UIBarButtonItem *priceItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *addItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *actionItem;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *mapItem;
 @end
 
 @implementation RWSProjectViewController
