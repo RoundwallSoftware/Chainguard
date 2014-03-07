@@ -1,6 +1,7 @@
 #import "RWSManagedProject.h"
 #import "RWSManagedItem.h"
 #import "RWSPriceFormatter.h"
+#import "NSLocale+RWSCurrency.h"
 
 @implementation RWSManagedProject
 
@@ -123,7 +124,9 @@
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
 
     NSString *titleString = [@"Project: " stringByAppendingString:self.title];
-    NSString *priceString = [@"Total: " stringByAppendingString:[formatter stringFromNumber:[self totalRemainingPriceWithCurrencyCode:@"USD"] currency:@"USD"]];
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *currencyCode = [locale currencyCode];
+    NSString *priceString = [@"Total: " stringByAppendingString:[formatter stringFromNumber:[self totalRemainingPriceWithCurrencyCode:currencyCode] currency:currencyCode]];
     NSString *itemString = [[[[self items] valueForKey:@"lineItemString"] array] componentsJoinedByString:@"\n"];
 
     return [@[titleString, @"", itemString, @"", priceString] componentsJoinedByString:@"\n"];
