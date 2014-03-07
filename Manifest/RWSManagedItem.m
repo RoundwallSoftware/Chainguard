@@ -4,11 +4,7 @@
 #import "RWSExchangeRates.h"
 
 @interface RWSManagedItem ()
-
-// Private interface goes here.
-
 @end
-
 
 @implementation RWSManagedItem
 
