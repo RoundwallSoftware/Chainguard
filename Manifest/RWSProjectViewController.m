@@ -54,6 +54,8 @@
     [super viewWillAppear:animated];
 
     self.navigationItem.rightBarButtonItems = @[self.actionItem, self.addItem];
+
+    self.title = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -69,6 +71,13 @@
     [self recalculatePrice];
 
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+
+    self.title = @"Project";
 }
 
 - (void)setupTitleTextField
