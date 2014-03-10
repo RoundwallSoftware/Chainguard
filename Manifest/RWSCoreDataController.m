@@ -41,6 +41,7 @@
         [_mainContext setPersistentStoreCoordinator:_storeCoordinator];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidReceiveMemoryWarning:) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
 }
@@ -48,6 +49,20 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
+}
+
+- (void)applicationDidReceiveMemoryWarning:(NSNotification *)notification
+{
+    NSManagedObjectContext *context = self.mainContext;
+    [context performBlock:^{
+        NSError *savingError;
+        BOOL saved = [context save:&savingError];
+        if(!saved){
+            NSException *saveException = [NSException exceptionWithName:@"Failed to save for memory warning" reason:[saveError localizedDescription] userInfo:[saveError userInfo]];
+            [saveException raise];
+        }
+
+    }];
 }
 
 - (void)applicationWillResignActive:(NSNotification* )notification
