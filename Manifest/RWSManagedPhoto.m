@@ -13,7 +13,7 @@
 
 - (void)setImage:(UIImage *)image
 {
-    UIImage *fullImage = [image cod_imageScaledToFitSize:[image size]];
+    UIImage *fullImage = [image cod_imageScaledToFitSize:CGSizeMake(848.0, 1136.0)];
     NSData *fullData = UIImagePNGRepresentation(fullImage);
     self.imageData = fullData;
 

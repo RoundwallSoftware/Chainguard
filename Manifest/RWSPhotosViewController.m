@@ -99,8 +99,9 @@
             if(asset){
                 ALAssetRepresentation *imageRep = [asset defaultRepresentation];
                 CGImageRef imageRef = [imageRep fullScreenImage];
-
-                [self.item addPhotoWithImage:[UIImage imageWithCGImage:imageRef]];// scale:[imageRep scale] orientation:(UIImageOrientation)[imageRep orientation]]];
+                UIImage *image = [UIImage imageWithCGImage:imageRef];
+                
+                [self.item addPhotoWithImage:image];
 
                 [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
             }
