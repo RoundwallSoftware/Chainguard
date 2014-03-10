@@ -58,7 +58,7 @@
         NSError *savingError;
         BOOL saved = [context save:&savingError];
         if(!saved){
-            NSException *saveException = [NSException exceptionWithName:@"Failed to save for memory warning" reason:[saveError localizedDescription] userInfo:[saveError userInfo]];
+            NSException *saveException = [NSException exceptionWithName:@"Failed to save for memory warning" reason:[savingError localizedDescription] userInfo:[savingError userInfo]];
             [saveException raise];
         }
 
