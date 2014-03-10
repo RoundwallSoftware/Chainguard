@@ -239,7 +239,7 @@ NSString *const RWSFormattedLastTimeExchangeRateUpdated = @"RWSFormattedLastTime
 
 - (NSString *)debugDescription
 {
-    return [[NSString alloc] initWithFormat:@"[%@] Supporting %i currencies.", [self class], [[self supportedCurrencyCodes] count]];
+    return [[NSString alloc] initWithFormat:@"[%@] Supporting %lu currencies.", [self class], (unsigned long)[[self supportedCurrencyCodes] count]];
 }
 
 - (NSDecimalNumber *)convertPrice:(NSDecimalNumber *)price fromCurrencyCode:(NSString *)fromCode toCurrencyCode:(NSString *)toCode
