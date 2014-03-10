@@ -14,7 +14,7 @@
 @import MobileCoreServices;
 
 @interface RWSPhotosViewController ()
-
+@property (nonatomic, strong) ALAssetsLibrary *library;
 @end
 
 @implementation RWSPhotosViewController
@@ -60,7 +60,7 @@
     }
 
     if(buttonIndex == 0){
-        [self addLatestPhotoFromCameraRoll];
+        [self useLatestPhotoFromCameraRoll];
         return;
     }
 
@@ -83,10 +83,10 @@
     [sheet showInView:self.view];
 }
 
-- (void)addLatestPhotoFromCameraRoll
+- (void)useLatestPhotoFromCameraRoll
 {
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-    [library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *libraryStop) {
+    self.library = [[ALAssetsLibrary alloc] init];
+    [self.library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *libraryStop) {
         NSInteger assetCount = [group numberOfAssets];
         if(assetCount <= 0){
             return;
@@ -98,9 +98,9 @@
         [group enumerateAssetsAtIndexes:indexes options:NSEnumerationReverse usingBlock:^(ALAsset *asset, NSUInteger index, BOOL *groupStop) {
             if(asset){
                 ALAssetRepresentation *imageRep = [asset defaultRepresentation];
-                CGImageRef imageRef = [imageRep fullResolutionImage];
+                CGImageRef imageRef = [imageRep fullScreenImage];
 
-                [self.item addPhotoWithImage:[UIImage imageWithCGImage:imageRef]];
+                [self.item addPhotoWithImage:[UIImage imageWithCGImage:imageRef]];// scale:[imageRep scale] orientation:(UIImageOrientation)[imageRep orientation]]];
 
                 [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
             }
