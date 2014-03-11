@@ -32,9 +32,9 @@
 
 - (void)testFormatterFormatsWholeNumbersAndDollars
 {
-    assertThat([formatter stringFromNumber:@5 currency:@"USD"], equalTo(@"$5"));
-    assertThat([formatter stringFromNumber:@25 currency:@"USD"], equalTo(@"$25"));
-    assertThat([formatter stringFromNumber:@15 currency:@"USD"], equalTo(@"$15"));
+    assertThat([formatter stringFromNumber:@5 currency:@"USD"], equalTo(@"$5.00"));
+    assertThat([formatter stringFromNumber:@25 currency:@"USD"], equalTo(@"$25.00"));
+    assertThat([formatter stringFromNumber:@15 currency:@"USD"], equalTo(@"$15.00"));
 }
 
 - (void)testFormatterFormatsFractionNumbersAndDollars

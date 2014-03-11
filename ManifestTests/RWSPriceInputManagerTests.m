@@ -53,7 +53,7 @@
 
     setCurrencyOnTextField(@"USD", textField);
 
-    assertThat(textField.text, equalTo(@"$32"));
+    assertThat(textField.text, equalTo(@"$32.00"));
 }
 
 - (void)testInputtingEuroSignOnBlankField
@@ -80,7 +80,7 @@
 
     setCurrencyOnTextField(@"EUR", textField);
 
-    assertThat(textField.text, equalTo(@"€32"));
+    assertThat(textField.text, equalTo(@"€32.00"));
 }
 
 @end

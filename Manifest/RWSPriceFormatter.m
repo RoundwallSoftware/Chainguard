@@ -20,7 +20,7 @@
 
     formatter.locale = locale;
     formatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    formatter.minimumFractionDigits = 0;
+    formatter.minimumFractionDigits = 2;
 
     return [formatter stringFromNumber:value];
 }
