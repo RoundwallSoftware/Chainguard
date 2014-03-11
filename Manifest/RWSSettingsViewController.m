@@ -54,7 +54,7 @@
 {
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
-    [mailController setToRecipients:@[@"samuel@roundwallsoftare.com"]];
+    [mailController setToRecipients:@[@"samuel@roundwallsoftware.com"]];
     [mailController setSubject:@"Manifest Feedback"];
 
     [self presentViewController:mailController animated:YES completion:nil];
