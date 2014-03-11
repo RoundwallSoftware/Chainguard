@@ -720,8 +720,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ecy-SR-CCQ">
-                                <rect key="frame" x="0.0" y="73" width="320" height="441"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ecy-SR-CCQ">
+                                <rect key="frame" x="0.0" y="73" width="320" height="451"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Written by:
@@ -743,6 +743,12 @@ Cesare Rocchi</string>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ecy-SR-CCQ" firstAttribute="leading" secondItem="ewn-Xr-hdU" secondAttribute="leading" id="6Ci-1l-FSn"/>
+                            <constraint firstAttribute="trailing" secondItem="Ecy-SR-CCQ" secondAttribute="trailing" id="JkU-of-eGF"/>
+                            <constraint firstItem="Ecy-SR-CCQ" firstAttribute="top" secondItem="f6O-09-R9q" secondAttribute="bottom" constant="9" id="jhB-6j-6du"/>
+                            <constraint firstItem="ZKV-TX-msQ" firstAttribute="top" secondItem="Ecy-SR-CCQ" secondAttribute="bottom" id="qMt-Ec-zYc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Credits" id="DsK-eu-17Z"/>
                 </viewController>
