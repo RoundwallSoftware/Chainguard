@@ -13,6 +13,8 @@
 
 - (NSString *)stringFromNumber:(NSNumber *)value currency:(NSString *)currency
 {
+    NSParameterAssert(currency);
+    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     NSLocale *locale = [NSLocale currentLocaleWithCurrency:currency];
 
