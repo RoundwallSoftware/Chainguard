@@ -78,6 +78,11 @@
     managedItem.purchasedValue = [item isPurchased];
     managedItem.notes = item.notes;
 
+    for(NSUInteger i = 0;i < [item photoCount];i++){
+        id<RWSPhoto> photo = [item photoAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
+        [managedItem addPhotoWithImage:[photo fullImage]];
+    }
+
     NSMutableOrderedSet *items = self.itemsSet;
     [items addObject:managedItem];
     [self setItems:items];

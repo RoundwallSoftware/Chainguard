@@ -8,6 +8,29 @@
 
 #import "RWSDumbItem.h"
 
+@interface RWSDumbPhoto : NSObject<RWSPhoto>
+@property (nonatomic, strong) UIImage *image;
+@end
+
+@implementation RWSDumbPhoto
+
+- (UIImage *)thumbnailImage
+{
+    return self.image;
+}
+
+- (UIImage *)fullImage
+{
+    return self.image;
+}
+
+@end
+
+@interface RWSDumbItem()
+@property (nonatomic, strong) NSMutableArray *photos;
+@property (nonatomic, strong) UIImage *image;
+@end
+
 @implementation RWSDumbItem
 
 - (void)togglePurchased
@@ -17,7 +40,7 @@
 
 - (NSUInteger)photoCount
 {
-    return 0;
+    return [self.photos count];
 }
 
 - (BOOL)isValid
@@ -27,12 +50,18 @@
 
 - (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    return self.photos[indexPath.row];
 }
 
 - (void)addPhotoWithImage:(UIImage *)image
 {
-    return;
+    if(!self.photos){
+        self.photos = [NSMutableArray array];
+    }
+
+    RWSDumbPhoto *photo = [[RWSDumbPhoto alloc] init];
+    photo.image = image;
+    [self.photos addObject:photo];
 }
 
 @end
