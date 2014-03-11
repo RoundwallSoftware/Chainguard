@@ -45,15 +45,11 @@
 
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
 {
-    NSLog(@"Saving state");
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
 {
-    NSString *buildNumberString = [coder decodeObjectForKey:UIApplicationStateRestorationBundleVersionKey];
-    NSDate *timestamp = [coder decodeObjectForKey:UIApplicationStateRestorationTimestampKey];
-    NSLog(@"Should restore with bundle version: %@, %@", buildNumberString, timestamp);
     return YES;
 }
 
