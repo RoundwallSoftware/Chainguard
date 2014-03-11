@@ -12,17 +12,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="izo-zm-RXa">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="9LJ-iZ-foi" id="Vs8-Mz-aeg"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="list" textLabel="HAq-bd-4hN" detailTextLabel="git-TP-UJn" style="IBUITableViewCellStyleValue1" id="vm7-jv-zBf" customClass="RWSProjectCell">
-                                <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vm7-jv-zBf" id="dVa-Kj-Qig">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -49,7 +41,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settings" textLabel="s5Q-XQ-mSr" style="IBUITableViewCellStyleDefault" id="eUn-fV-0GI">
-                                <rect key="frame" x="0.0" y="207" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="163" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eUn-fV-0GI" id="HGU-px-UUC">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -69,7 +61,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="credits" textLabel="JWn-JY-AqV" style="IBUITableViewCellStyleDefault" id="HOu-PD-uCx">
-                                <rect key="frame" x="0.0" y="251" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="207" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HOu-PD-uCx" id="RDD-p8-qQi">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -106,20 +98,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="Hwm-w0-we9" id="fZ5-8u-GYV"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7U-rc-j5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Hwm-w0-we9">
-                    <connections>
-                        <outlet property="delegate" destination="9LJ-iZ-foi" id="Ywf-cn-LtF"/>
-                        <outlet property="searchBar" destination="izo-zm-RXa" id="6EJ-1t-nyk"/>
-                        <outlet property="searchContentsController" destination="9LJ-iZ-foi" id="29x-DA-g3y"/>
-                        <outlet property="searchResultsDataSource" destination="9LJ-iZ-foi" id="skT-Vi-6Zj"/>
-                        <outlet property="searchResultsDelegate" destination="9LJ-iZ-foi" id="Bv5-29-o51"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="596" y="-553"/>
         </scene>
