@@ -86,6 +86,7 @@
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleRoundedRect;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    textField.returnKeyType = UIReturnKeyDone;
     textField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     textField.text = [self.project title];
     textField.delegate = self;
