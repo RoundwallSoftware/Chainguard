@@ -42,7 +42,11 @@
     }
 
     NSArray *allProjects = [RWSManagedProject allProjectsInContext:self.context];
-    return allProjects[indexPath.row];
+    if([allProjects count] > indexPath.row){
+        return allProjects[indexPath.row];
+    }
+
+    return nil;
 }
 
 - (NSIndexPath *)indexPathForProjectWithIdentifier:(NSString *)identifier
