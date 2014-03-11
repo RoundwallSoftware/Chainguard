@@ -10,6 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <items>
+                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="CGl-a6-N1c"/>
                 <barButtonItem title="$" id="GdV-Zn-BeB">
                     <connections>
                         <action selector="setUSD:" destination="-1" id="aXj-wL-ZF0"/>
