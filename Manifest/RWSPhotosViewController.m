@@ -19,15 +19,6 @@
 
 @implementation RWSPhotosViewController
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-
-    if(![self.item photoCount]){
-        [self addPhoto:nil];
-    }
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return [self.item photoCount];

@@ -550,7 +550,7 @@
                                             <segue destination="RfN-Xs-wzI" kind="push" identifier="toNotes" id="PqV-HQ-DcR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notes" textLabel="S0s-l6-H3v" rowHeight="44" style="IBUITableViewCellStyleDefault" id="JEo-yW-rUK">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photos" textLabel="S0s-l6-H3v" detailTextLabel="qXc-Cv-a5V" rowHeight="44" style="IBUITableViewCellStyleValue1" id="JEo-yW-rUK">
                                         <rect key="frame" x="0.0" y="408" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEo-yW-rUK" id="9Zu-KI-3h2">
@@ -558,10 +558,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Photos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S0s-l6-H3v">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <rect key="frame" x="15" y="12" width="53" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qXc-Cv-a5V">
+                                                    <rect key="frame" x="248" y="14" width="37" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -592,6 +599,7 @@
                         <outlet property="locationManager" destination="2BQ-g1-h28" id="EGO-mM-MkV"/>
                         <outlet property="nameField" destination="uhP-Il-BPo" id="n9z-af-eX7"/>
                         <outlet property="parser" destination="ccg-FT-LDg" id="yyB-aG-fhT"/>
+                        <outlet property="photosCell" destination="JEo-yW-rUK" id="HMP-cg-IaD"/>
                         <outlet property="priceField" destination="8ef-h6-xGU" id="lat-AA-yGR"/>
                         <outlet property="quickInputField" destination="XtE-s3-VTS" id="0ba-1q-9kl"/>
                         <outlet property="rates" destination="eYi-kB-Le3" id="y3s-Bl-6DQ"/>

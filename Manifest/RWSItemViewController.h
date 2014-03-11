@@ -19,6 +19,7 @@
 @property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet RWSReverseItemParser *reverseParser;
 @property (nonatomic, strong) IBOutlet RWSExchangeRates *rates;
+@property (nonatomic, weak) IBOutlet UITableViewCell *photosCell;
 @property (nonatomic, weak) IBOutlet UITextField *quickInputField;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;

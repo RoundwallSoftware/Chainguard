@@ -74,6 +74,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     if(!self.isExistingItem){
         [self.quickInputField becomeFirstResponder];
     }
+
+    self.photosCell.detailTextLabel.text = [@([self.item photoCount]) description];
 }
 
 - (IBAction)save:(id)sender
