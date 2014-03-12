@@ -530,18 +530,25 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="z8c-G4-rDt">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notes" textLabel="dan-Qs-KRO" rowHeight="44" style="IBUITableViewCellStyleDefault" id="hby-vK-rrR">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notes" textLabel="dan-Qs-KRO" detailTextLabel="tnn-lG-dyb" rowHeight="44" style="IBUITableViewCellStyleValue1" id="hby-vK-rrR">
                                         <rect key="frame" x="0.0" y="364" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hby-vK-rrR" id="gyW-dd-sAQ">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dan-Qs-KRO">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dan-Qs-KRO">
+                                                    <rect key="frame" x="15" y="12" width="44" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalCompressionResistancePriority="749" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tnn-lG-dyb">
+                                                    <rect key="frame" x="248" y="14" width="37" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -598,6 +605,7 @@
                         <outlet property="locationButton" destination="vvo-6d-vdx" id="Ohr-iP-bew"/>
                         <outlet property="locationManager" destination="2BQ-g1-h28" id="EGO-mM-MkV"/>
                         <outlet property="nameField" destination="uhP-Il-BPo" id="n9z-af-eX7"/>
+                        <outlet property="notesCell" destination="hby-vK-rrR" id="stM-Xa-FKO"/>
                         <outlet property="parser" destination="ccg-FT-LDg" id="yyB-aG-fhT"/>
                         <outlet property="photosCell" destination="JEo-yW-rUK" id="HMP-cg-IaD"/>
                         <outlet property="priceField" destination="8ef-h6-xGU" id="lat-AA-yGR"/>

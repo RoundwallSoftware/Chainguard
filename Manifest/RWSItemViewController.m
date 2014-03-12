@@ -76,6 +76,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     }
 
     self.photosCell.detailTextLabel.text = [@([self.item photoCount]) description];
+    self.notesCell.detailTextLabel.text = [self.item notes];
 }
 
 - (IBAction)save:(id)sender
