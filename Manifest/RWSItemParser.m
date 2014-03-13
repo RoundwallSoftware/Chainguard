@@ -22,28 +22,40 @@
     RWSExchangeRates *rates = [[RWSExchangeRates alloc] init];
 
     NSArray *currencyCodes = [rates supportedCurrencyCodes];
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 
     for(NSString *currencyCode in currencyCodes){
         NSLocale *locale = [NSLocale currentLocaleWithCurrency:currencyCode];
-        NSString *currencySymbol = [locale objectForKey:NSLocaleCurrencySymbol];
+        NSString *currencySymbol = [locale currencySymbol];
+        NSUInteger currencySymbolIndex = [text rangeOfString:currencySymbol].location;
 
-        if([text rangeOfString:currencySymbol].location != NSNotFound){
-            item.currencyCode = currencyCode;
-
-            NSArray *stringChunks = [text componentsSeparatedByString:currencySymbol];
-            item.name = [[stringChunks firstObject] stringByTrimmingCharactersInSet:charSet];
-            if([[stringChunks lastObject] length]){
-                item.price = [NSDecimalNumber decimalNumberWithString:[[stringChunks lastObject] stringByTrimmingCharactersInSet:charSet]];
-            }
-
-            return item;
+        if(currencySymbolIndex == NSNotFound){
+            continue;
         }
+
+        item.currencyCode = currencyCode;
+
+        NSScanner *scanner = [[NSScanner alloc] initWithString:text];
+        [scanner setScanLocation:currencySymbolIndex+1];
+
+        NSDecimal price;
+        BOOL foundCurrency = [scanner scanDecimal:&price];
+        if(!foundCurrency){
+            text = [text stringByReplacingOccurrencesOfString:currencySymbol withString:@""];
+            continue;
+        }
+
+        item.price = [NSDecimalNumber decimalNumberWithDecimal:price];
+        item.currencyCode = currencyCode;
+
+        NSRange priceRange = NSMakeRange(currencySymbolIndex, [scanner scanLocation]-currencySymbolIndex);
+
+        item.name = [[text stringByReplacingCharactersInRange:priceRange withString:@""] stringByTrimmingCharactersInSet:whiteSpace];
+
+        return item;
     }
 
-    item.name = [text stringByTrimmingCharactersInSet:charSet];
+    item.name = [text stringByTrimmingCharactersInSet:whiteSpace];
     return item;
 }
 

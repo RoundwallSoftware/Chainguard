@@ -55,6 +55,24 @@
     assertThat(item.currencyCode, equalTo(@"USD"));
 }
 
+- (void)testParserPicksUpDollarsReverseOrder
+{
+    id<RWSItem> item = [parser itemFromText:@"$5 Something"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, equalTo(@5));
+    assertThat(item.currencyCode, equalTo(@"USD"));
+}
+
+- (void)testParserDoesNotPickUpNanDollarsReverseOrder
+{
+    id<RWSItem> item = [parser itemFromText:@"$ Something"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, nilValue());
+    assertThat(item.currencyCode, equalTo(@"USD"));
+}
+
 - (void)testParserPicksUpEuros
 {
     id<RWSItem> item = [parser itemFromText:@"Something €5"];
@@ -85,6 +103,33 @@
 - (void)testParserDoesNotPickUpNanPounds
 {
     id<RWSItem> item = [parser itemFromText:@"Something £"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, nilValue());
+    assertThat(item.currencyCode, equalTo(@"GBP"));
+}
+
+- (void)testParserDoesNotPickUpNanEurosReverseOrder
+{
+    id<RWSItem> item = [parser itemFromText:@"€ Something"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, nilValue());
+    assertThat(item.currencyCode, equalTo(@"EUR"));
+}
+
+- (void)testParserPicksUpPoundsReverseOrder
+{
+    id<RWSItem> item = [parser itemFromText:@"£5 Something"];
+
+    assertThat(item.name, equalTo(@"Something"));
+    assertThat(item.price, equalTo(@5));
+    assertThat(item.currencyCode, equalTo(@"GBP"));
+}
+
+- (void)testParserDoesNotPickUpNanPoundsReverseOrder
+{
+    id<RWSItem> item = [parser itemFromText:@"£ Something"];
 
     assertThat(item.name, equalTo(@"Something"));
     assertThat(item.price, nilValue());
