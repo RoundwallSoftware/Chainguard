@@ -32,7 +32,8 @@
         _storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
 
         NSError *storeError;
-        NSPersistentStore *store = [_storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqlFileURL options:nil error:&storeError];
+        NSDictionary *options = @{ NSInferMappingModelAutomaticallyOption: @YES,NSMigratePersistentStoresAutomaticallyOption: @YES };
+        NSPersistentStore *store = [_storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqlFileURL options:options error:&storeError];
         if(!store){
             abort();
         }
