@@ -184,6 +184,7 @@
 		9BDED6031897D175006E8E5C /* _RWSManagedProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RWSManagedProject.m; sourceTree = "<group>"; };
 		9BDED6041897D175006E8E5C /* RWSManagedProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSManagedProject.h; sourceTree = "<group>"; };
 		9BDED6051897D175006E8E5C /* RWSManagedProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedProject.m; sourceTree = "<group>"; };
+		9BF18DA018D5D5D000C623F7 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManifestTests.xcconfig"; path = "Pods/Pods-ManifestTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -431,7 +432,7 @@
 						};
 					};
 					9BD6B15E1895A1CC006E02D0 = {
-						TestTargetID = 9BD6B1431895A1CC006E02D0 /* Manifest */;
+						TestTargetID = 9BD6B1431895A1CC006E02D0;
 					};
 				};
 			};
@@ -862,9 +863,10 @@
 		9B5579EC189699BA008E3C0A /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9BF18DA018D5D5D000C623F7 /* Model 2.xcdatamodel */,
 				9B5579ED189699BA008E3C0A /* Model.xcdatamodel */,
 			);
-			currentVersion = 9B5579ED189699BA008E3C0A /* Model.xcdatamodel */;
+			currentVersion = 9BF18DA018D5D5D000C623F7 /* Model 2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
