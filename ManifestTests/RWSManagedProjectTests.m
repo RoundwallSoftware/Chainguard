@@ -96,11 +96,11 @@
 - (void)testProjectsKnowTheirPriceTotalsButNotPurchasedItems
 {
     RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
-    id<RWSItem> item = mockProtocol(@protocol(RWSItem));
-    [given([item name]) willReturn:@"Something"];
-    [given([item price]) willReturn:@5.21];
-    [given([item currencyCode]) willReturn:@"USD"];
-    [given([item isPurchased]) willReturnBool:YES];
+    RWSDumbItem *item = [[RWSDumbItem alloc] init];
+    item.name = @"Something";
+    item.price = [NSDecimalNumber decimalNumberWithString:@"5.21"];
+    item.currencyCode = @"USD";
+    item.purchased = YES;
 
     [project addItemToList:item];
 
