@@ -247,7 +247,11 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="CIB-ol-RF4"/>
-                        <barButtonItem title="$32.21" id="hmj-Nc-5Ju"/>
+                        <barButtonItem title="$32.21" id="hmj-Nc-5Ju">
+                            <connections>
+                                <action selector="changePrice:" destination="qi8-Yz-TGC" id="TyT-6H-t0K"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="hft-KQ-kc6">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Jyb-sr-G0Z">

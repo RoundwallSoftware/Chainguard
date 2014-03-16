@@ -22,6 +22,8 @@
 {
     if(!self.priceItem){
         self.priceItem = [[UIBarButtonItem alloc] init];
+        self.priceItem.target = self;
+        self.priceItem.action = @selector(changePrice:);
     }
 
     UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -212,6 +214,35 @@
 {
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[self.project] applicationActivities:nil];
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)changePrice:(id)sender
+{
+    NSArray *currencyCodes = [self.project currencyCodesUsed];
+    if([currencyCodes count] <= 1){
+        return;
+    }
+
+    UIActionSheet *sheet = [[UIActionSheet alloc] init];
+    sheet.title = @"Change Display Currency";
+    sheet.delegate = self;
+
+    for(NSString *currencyCode in currencyCodes){
+        [sheet addButtonWithTitle:currencyCode];
+    }
+
+    sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
+
+    [sheet showFromToolbar:self.navigationController.toolbar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == [actionSheet cancelButtonIndex]){
+        return;
+    }
+
+    NSLog(@"Selected code: %@", [[self.project currencyCodesUsed] objectAtIndex:buttonIndex]);
 }
 
 @end

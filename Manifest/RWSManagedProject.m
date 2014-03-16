@@ -147,4 +147,9 @@
     return [[[self objectID] URIRepresentation] absoluteString];
 }
 
+- (NSArray *)currencyCodesUsed
+{
+    return [[self.items valueForKey:@"currencyCode"] allObjects];
+}
+
 @end

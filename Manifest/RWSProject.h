@@ -49,4 +49,6 @@
 - (void)removeItemAtIndexPath:(NSIndexPath *)indexPath;
 - (void)removeItemFromList:(id<RWSItem>)item;
 - (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath;
+
+- (NSArray *)currencyCodesUsed;
 @end

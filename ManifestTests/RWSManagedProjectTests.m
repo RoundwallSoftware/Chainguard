@@ -120,4 +120,41 @@
     assertThatInteger([project count], equalToInteger(0));
 }
 
+- (void)testProjectKnowsOnlyUSDIsUsedInList
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    RWSDumbItem *item = [[RWSDumbItem alloc] init];
+    item.name = @"Something";
+    item.price = [NSDecimalNumber decimalNumberWithString:@"5.21"];
+    item.currencyCode = @"USD";
+    item.purchased = YES;
+
+    [project addItemToList:item];
+
+    NSArray *currencyCodes = [project currencyCodesUsed];
+    assertThat(currencyCodes, contains(@"USD", nil));
+}
+
+- (void)testProjectKnowsUSDandEuroesIsUsedInList
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    RWSDumbItem *item = [[RWSDumbItem alloc] init];
+    item.name = @"Something";
+    item.price = [NSDecimalNumber decimalNumberWithString:@"5.21"];
+    item.currencyCode = @"USD";
+    item.purchased = YES;
+
+    RWSDumbItem *item2 = [[RWSDumbItem alloc] init];
+    item2.name = @"Something";
+    item2.price = [NSDecimalNumber decimalNumberWithString:@"99.99"];
+    item2.currencyCode = @"EUR";
+    item2.purchased = YES;
+
+    [project addItemToList:item];
+    [project addItemToList:item2];
+
+    NSArray *currencyCodes = [project currencyCodesUsed];
+    assertThat(currencyCodes, contains(@"USD", @"EUR", nil));
+}
+
 @end
