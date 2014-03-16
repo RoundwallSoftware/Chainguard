@@ -9,9 +9,6 @@
 #import "RWSProject.h"
 
 @interface RWSItemParser : NSObject
-@property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly, strong) NSDecimalNumber *price;
-@property (nonatomic, readonly, copy) NSString *currencyCode;
 
 - (id<RWSItem>)itemFromText:(NSString *)text;
 @end
