@@ -35,20 +35,20 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
     [request setPredicate:[NSPredicate predicateWithFormat:@"title BEGINSWITH %@", @"Untitled"]];
 
-    __block NSArray *results;
+    __block NSUInteger count;
     [context performBlockAndWait:^{
         NSError *fetchError;
-        results = [context executeFetchRequest:request error:&fetchError];
-        if(!results){
+        count = [context countForFetchRequest:request error:&fetchError];
+        if(count == NSNotFound){
             abort();
         }
     }];
 
-    if([results count] == 0){
+    if(count == 0){
         return @"Untitled";
     }
 
-    return [NSString stringWithFormat:@"Untitled %@", @([results count]+1)];
+    return [NSString stringWithFormat:@"Untitled %@", @(count+1)];
 }
 
 + (NSArray *)allProjectsInContext:(NSManagedObjectContext *)context
