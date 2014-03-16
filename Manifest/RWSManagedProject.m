@@ -7,6 +7,7 @@
 
 - (void)awakeFromFetch
 {
+    [super awakeFromFetch];
     if(!self.preferredCurrencyCode){
         self.preferredCurrencyCode = [[NSLocale currentLocale] currencyCode];
     }
