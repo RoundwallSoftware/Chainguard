@@ -7,7 +7,6 @@
 //
 
 #import "RWSReverseItemParser.h"
-#import "RWSPriceFormatter.h"
 
 @interface RWSReverseItemParser()
 @property (nonatomic, copy) NSString *name;

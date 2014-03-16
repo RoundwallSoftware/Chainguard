@@ -10,7 +10,6 @@
 #import "RWSBigImageViewController.h"
 
 @interface RWSPagedPhotosViewController ()
-@property (nonatomic, weak) IBOutlet UIPageViewController *pageController;
 @end
 
 @implementation RWSPagedPhotosViewController
@@ -21,8 +20,6 @@
 
     UIPageViewController *controller = [self.childViewControllers firstObject];
     controller.dataSource = self;
-
-    self.pageController = controller;
 
     RWSBigImageViewController *imageController = [self.storyboard instantiateViewControllerWithIdentifier:@"bigImage"];
     id<RWSPhoto> photo = [self.item photoAtIndexPath:[NSIndexPath indexPathForItem:self.initialIndex inSection:0]];

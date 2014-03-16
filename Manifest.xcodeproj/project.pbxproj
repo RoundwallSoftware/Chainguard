@@ -431,7 +431,7 @@
 						};
 					};
 					9BD6B15E1895A1CC006E02D0 = {
-						TestTargetID = 9BD6B1431895A1CC006E02D0;
+						TestTargetID = 9BD6B1431895A1CC006E02D0 /* Manifest */;
 					};
 				};
 			};

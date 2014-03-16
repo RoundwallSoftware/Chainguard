@@ -7,7 +7,6 @@
 //
 
 #import "RWSAppDelegate.h"
-#import "RWSProjectsViewController.h"
 #import "UIColor+iOS7Colors.h"
 #import "RWSExchangeRates.h"
 

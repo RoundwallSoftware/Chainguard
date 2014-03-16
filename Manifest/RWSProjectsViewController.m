@@ -9,11 +9,9 @@
 #import "RWSProjectsViewController.h"
 #import "RWSCoreDataController.h"
 #import "RWSProjectsSource.h"
-#import "RWSManagedProject.h"
 #import "RWSManagedItem.h"
 #import "RWSProjectCell.h"
 #import "RWSProjectViewController.h"
-#import "RWSPriceFormatter.h"
 #import "RWSMapViewController.h"
 
 @interface RWSProjectsViewController ()

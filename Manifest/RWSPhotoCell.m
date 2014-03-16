@@ -7,7 +7,6 @@
 //
 
 #import "RWSPhotoCell.h"
-#import "UIColor+iOS7Colors.h"
 
 @interface RWSPhotoCell()
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;

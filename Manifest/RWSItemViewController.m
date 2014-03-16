@@ -14,7 +14,6 @@
 #import "UIColor+iOS7Colors.h"
 #import "RWSNotesViewController.h"
 #import "RWSPhotosViewController.h"
-#import "RWSExchangeRates.h"
 #import "NSLocale+RWSCurrency.h"
 @import AddressBookUI;
 

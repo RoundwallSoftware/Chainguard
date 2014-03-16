@@ -8,7 +8,6 @@
 
 #import "RWSProjectViewController.h"
 #import "RWSPriceFormatter.h"
-#import "RWSMapViewController.h"
 #import "NSLocale+RWSCurrency.h"
 
 @interface RWSProjectViewController ()

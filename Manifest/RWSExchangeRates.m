@@ -210,7 +210,6 @@ NSString *const RWSFormattedLastTimeExchangeRateUpdated = @"RWSFormattedLastTime
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle] forKey:RWSFormattedLastTimeExchangeRateUpdated];
         [defaults synchronize];
-        NSLog(@"Committed the save date");
         if(block){
             block(UIBackgroundFetchResultNewData);
         }

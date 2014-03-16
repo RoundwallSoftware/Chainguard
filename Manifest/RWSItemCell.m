@@ -8,7 +8,6 @@
 
 #import "RWSItemCell.h"
 #import "RWSPriceFormatter.h"
-#import "NSMutableArray+SWUtilityButtons.h"
 #import "UIColor+iOS7Colors.h"
 
 @implementation RWSItemCell

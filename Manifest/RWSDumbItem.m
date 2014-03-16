@@ -28,7 +28,6 @@
 
 @interface RWSDumbItem()
 @property (nonatomic, strong) NSMutableArray *photos;
-@property (nonatomic, strong) UIImage *image;
 @end
 
 @implementation RWSDumbItem
