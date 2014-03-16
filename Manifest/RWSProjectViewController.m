@@ -33,9 +33,7 @@
 
 - (void)recalculatePrice
 {
-    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-    NSLocale *locale = [NSLocale currentLocale];
-    self.priceItem.title = [formatter stringFromNumber:[self.project totalRemainingPriceWithCurrencyCode:[locale currencyCode]] currency:[locale currencyCode]];
+    self.priceItem.title = [self.project formattedTotalRemainingPrice];
 
     self.priceItem.tintColor = [UIColor clearColor];
     [UIView animateWithDuration:0.3 animations:^{
@@ -242,7 +240,10 @@
         return;
     }
 
-    NSLog(@"Selected code: %@", [[self.project currencyCodesUsed] objectAtIndex:buttonIndex]);
+    NSString *selectedCurrencyCode = [[self.project currencyCodesUsed] objectAtIndex:buttonIndex];
+    [self.project setPreferredCurrencyCode:selectedCurrencyCode];
+
+    [self recalculatePrice];
 }
 
 @end

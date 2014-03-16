@@ -90,7 +90,7 @@
 
     [project addItemToList:item];
 
-    assertThat([project totalRemainingPriceWithCurrencyCode:@"USD"], equalTo(@5.21));
+    assertThat([project totalRemainingPrice], equalTo(@5.21));
 }
 
 - (void)testProjectsKnowTheirPriceTotalsButNotPurchasedItems
@@ -104,7 +104,7 @@
 
     [project addItemToList:item];
 
-    assertThat([project totalRemainingPriceWithCurrencyCode:@"USD"], equalTo(@0));
+    assertThat([project totalRemainingPrice], equalTo(@0));
 }
 
 - (void)testDeletingItemsFromAList
@@ -155,6 +155,14 @@
 
     NSArray *currencyCodes = [project currencyCodesUsed];
     assertThat(currencyCodes, contains(@"USD", @"EUR", nil));
+}
+
+- (void)testPreferredCurrencyCodeMatchesSystemDefaultInitially
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    NSString *code = [[NSLocale currentLocale] currencyCode];
+
+    assertThat([project preferredCurrencyCode], equalTo(code));
 }
 
 @end

@@ -5,6 +5,7 @@
 
 
 extern const struct RWSManagedProjectAttributes {
+	__unsafe_unretained NSString *preferredCurrencyCode;
 	__unsafe_unretained NSString *title;
 } RWSManagedProjectAttributes;
 
@@ -19,6 +20,7 @@ extern const struct RWSManagedProjectFetchedProperties {
 
 
 
+
 @interface RWSManagedProjectID : NSManagedObjectID {}
 @end
 
@@ -27,6 +29,16 @@ extern const struct RWSManagedProjectFetchedProperties {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (RWSManagedProjectID*)objectID;
+
+
+
+
+
+@property (nonatomic, strong) NSString* preferredCurrencyCode;
+
+
+
+//- (BOOL)validatePreferredCurrencyCode:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -70,6 +82,12 @@ extern const struct RWSManagedProjectFetchedProperties {
 @end
 
 @interface _RWSManagedProject (CoreDataGeneratedPrimitiveAccessors)
+
+
+- (NSString*)primitivePreferredCurrencyCode;
+- (void)setPrimitivePreferredCurrencyCode:(NSString*)value;
+
+
 
 
 - (NSString*)primitiveTitle;

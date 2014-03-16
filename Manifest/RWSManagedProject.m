@@ -5,10 +5,18 @@
 
 @implementation RWSManagedProject
 
-+ (instancetype)makeUntitledProjectInContext:(NSManagedObjectContext *)context
+- (void)awakeFromFetch
+{
+    if(!self.preferredCurrencyCode){
+        self.preferredCurrencyCode = [[NSLocale currentLocale] currencyCode];
+    }
+}
+
++ (instancetype)makeUntitledProjectInContext:(NSManagedObjectContext *)context // designated initializer
 {
     RWSManagedProject *project = [self insertInManagedObjectContext:context];
     project.title = [self nextAppropriateUntitledTitleInContext:context];
+    project.preferredCurrencyCode = [[NSLocale currentLocale] currencyCode];
 
     [context performBlockAndWait:^{
         NSError *saveError;
@@ -103,15 +111,21 @@
     self.items = items;
 }
 
-- (NSDecimalNumber *)totalRemainingPriceWithCurrencyCode:(NSString *)code
+- (NSDecimalNumber *)totalRemainingPrice
 {
     NSDecimalNumber *total = [NSDecimalNumber zero];
     for(RWSManagedItem *item in self.items){
         if([item price] && ![item isPurchased]){
-            total = [total decimalNumberByAdding:[item priceInCurrency:code]];
+            total = [total decimalNumberByAdding:[item priceInCurrency:[self preferredCurrencyCode]]];
         }
     }
     return total;
+}
+
+- (NSString *)formattedTotalRemainingPrice
+{
+    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+    return [formatter stringFromNumber:[self totalRemainingPrice] currency:[self preferredCurrencyCode]];
 }
 
 - (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath
@@ -126,12 +140,8 @@
 
 - (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
 {
-    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-
     NSString *titleString = [@"Project: " stringByAppendingString:self.title];
-    NSLocale *locale = [NSLocale currentLocale];
-    NSString *currencyCode = [locale currencyCode];
-    NSString *priceString = [@"Total: " stringByAppendingString:[formatter stringFromNumber:[self totalRemainingPriceWithCurrencyCode:currencyCode] currency:currencyCode]];
+    NSString *priceString = [@"Total: " stringByAppendingString:[self formattedTotalRemainingPrice]];
     NSString *itemString = [[[[self items] valueForKey:@"lineItemString"] array] componentsJoinedByString:@"\n"];
 
     return [@[titleString, @"", itemString, @"", priceString] componentsJoinedByString:@"\n"];

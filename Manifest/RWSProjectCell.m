@@ -7,18 +7,14 @@
 //
 
 #import "RWSProjectCell.h"
-#import "RWSPriceFormatter.h"
-#import "NSLocale+RWSCurrency.h"
 
 @implementation RWSProjectCell
 
-- (void)setList:(id<RWSProject>)list
+- (void)setList:(id<RWSProject>)project
 {
-    self.textLabel.text = [list title];
+    self.textLabel.text = [project title];
 
-    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-    NSString *currencyCode = [[NSLocale currentLocale] currencyCode];
-    self.detailTextLabel.text = [formatter stringFromNumber:[list totalRemainingPriceWithCurrencyCode:currencyCode] currency:currencyCode];
+    self.detailTextLabel.text = [project formattedTotalRemainingPrice];
 }
 
 @end

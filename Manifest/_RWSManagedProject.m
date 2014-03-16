@@ -4,6 +4,7 @@
 #import "_RWSManagedProject.h"
 
 const struct RWSManagedProjectAttributes RWSManagedProjectAttributes = {
+	.preferredCurrencyCode = @"preferredCurrencyCode",
 	.title = @"title",
 };
 
@@ -43,6 +44,13 @@ const struct RWSManagedProjectFetchedProperties RWSManagedProjectFetchedProperti
 
 	return keyPaths;
 }
+
+
+
+
+@dynamic preferredCurrencyCode;
+
+
 
 
 

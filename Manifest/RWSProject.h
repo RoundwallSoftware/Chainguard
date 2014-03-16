@@ -39,11 +39,13 @@
 @protocol RWSProject <UIActivityItemSource>
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) NSString *projectIdentifier;
+@property (nonatomic, copy) NSString *preferredCurrencyCode;
 
 - (NSUInteger)count;
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
 
-- (NSDecimalNumber *)totalRemainingPriceWithCurrencyCode:(NSString *)code;
+- (NSDecimalNumber *)totalRemainingPrice;
+- (NSString *)formattedTotalRemainingPrice;
 
 - (void)addItemToList:(id<RWSItem>)item;
 - (void)removeItemAtIndexPath:(NSIndexPath *)indexPath;
