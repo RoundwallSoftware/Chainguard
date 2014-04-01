@@ -11,6 +11,7 @@
 #import "RWSExchangeRates.h"
 
 @interface RWSAppDelegate()
+@property (nonatomic, strong) RWSExchangeRates *rates;
 @end
 
 @implementation RWSAppDelegate
@@ -28,8 +29,8 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    RWSExchangeRates *rates = [[RWSExchangeRates alloc] init];
-    [rates updateRatesWithCompletionHandler:completionHandler];
+    self.rates = [[RWSExchangeRates alloc] init];
+    [self.rates updateRatesWithCompletionHandler:completionHandler];
 }
 
 - (void)setupTheme
