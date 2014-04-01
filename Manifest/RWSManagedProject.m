@@ -144,8 +144,10 @@
     NSString *titleString = [@"Project: " stringByAppendingString:self.title];
     NSString *priceString = [@"Total: " stringByAppendingString:[self formattedTotalRemainingPrice]];
     NSString *itemString = [[[[self items] valueForKey:@"lineItemString"] array] componentsJoinedByString:@"\n"];
+    NSString *madeWithThisAppString = [NSString stringWithFormat:@"Made with %@.app", [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleExecutableKey]];
+    NSString *appURLString = @"itms://itunes.apple.com/us/app/garageband/id408709785?mt=8";
 
-    return [@[titleString, @"", itemString, @"", priceString] componentsJoinedByString:@"\n"];
+    return [@[titleString, @"", itemString, @"", priceString, @"", @"", madeWithThisAppString, appURLString] componentsJoinedByString:@"\n"];
 }
 
 - (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController
