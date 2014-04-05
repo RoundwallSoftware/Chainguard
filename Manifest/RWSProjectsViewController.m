@@ -15,7 +15,7 @@
 #import "RWSMapViewController.h"
 
 @interface RWSProjectsViewController ()
-
+@property (nonatomic, strong) UIView *emptyHeaderView;
 @end
 
 @implementation RWSProjectsViewController
@@ -33,6 +33,14 @@
     [super viewDidAppear:animated];
 
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+    if([self.projectSource count]){
+        self.tableView.tableHeaderView = nil;
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    } else {
+        self.tableView.tableHeaderView = [self emptyHeaderView];
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 - (void)viewDidLoad
@@ -103,17 +111,6 @@
     return NO;
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    if([identifier isEqualToString:@"showList"]){
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        id<RWSProject> project = [self.projectSource projectAtIndexPath:indexPath];
-        return [project isSelectable];
-    }
-
-    return YES;
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *identifier = [segue identifier];
@@ -166,6 +163,29 @@
     }
 
     return [self.projectSource indexPathForProjectWithIdentifier:identifier];
+}
+
+- (UIView *)emptyHeaderView
+{
+    if(_emptyHeaderView){
+        return _emptyHeaderView;
+    }
+
+    CGRect frame = CGRectMake(0.0, 0.0, CGRectGetWidth([self.tableView bounds]), 120.0);
+    UIView *header = [[UIView alloc] initWithFrame:frame];
+
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(frame, 10.0, 10.0)];
+    label.textColor = [UIColor darkGrayColor];
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    label.text = @"You have no projects yet. Make one and get started!";
+
+    [header addSubview:label];
+    label.center = header.center;
+
+    _emptyHeaderView = header;
+    return header;
 }
 
 @end

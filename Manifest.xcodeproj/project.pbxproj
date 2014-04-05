@@ -39,7 +39,6 @@
 		9B8352DD18EFEBAA00547269 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9B8352DB18EFEBAA00547269 /* dsym_upload.sh */; };
 		9B8352DE18EFEBAA00547269 /* libCrittercism_v4_3_3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */; };
 		9B8352E218EFEC0700547269 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8352E118EFEC0700547269 /* SystemConfiguration.framework */; };
-		9B8352E618EFEFCE00547269 /* RWSEmptyProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8352E518EFEFCE00547269 /* RWSEmptyProject.m */; };
 		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
 		9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */; };
 		9B99A1C018B91BCF0075389A /* RWSPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */; };
@@ -143,8 +142,6 @@
 		9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_3.a; sourceTree = "<group>"; };
 		9B8352DF18EFEBF700547269 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9B8352E118EFEC0700547269 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9B8352E418EFEFCE00547269 /* RWSEmptyProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSEmptyProject.h; sourceTree = "<group>"; };
-		9B8352E518EFEFCE00547269 /* RWSEmptyProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSEmptyProject.m; sourceTree = "<group>"; };
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
@@ -350,8 +347,6 @@
 				9B05B34118C0CC660060536F /* RWSBigImageViewController.m */,
 				9BC959FD18C6042500CAE84E /* RWSExchangeRates.h */,
 				9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */,
-				9B8352E418EFEFCE00547269 /* RWSEmptyProject.h */,
-				9B8352E518EFEFCE00547269 /* RWSEmptyProject.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -615,7 +610,6 @@
 				9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */,
 				9B05B34218C0CC660060536F /* RWSBigImageViewController.m in Sources */,
 				9BDECA4F18A6994100CE7C3C /* RWSReverseItemParser.m in Sources */,
-				9B8352E618EFEFCE00547269 /* RWSEmptyProject.m in Sources */,
 				9B99A1D318B929BB0075389A /* UIImage+CODImageScaling.m in Sources */,
 				9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */,
 				9B079636189A914B0026D489 /* RWSPriceFormatter.m in Sources */,

@@ -16,12 +16,6 @@
 
     NSString *priceString = [project formattedTotalRemainingPrice];
     self.detailTextLabel.text = priceString;
-
-    if([project isSelectable]){
-        self.selectionStyle = UITableViewCellSelectionStyleGray;
-    } else {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
 }
 
 @end
