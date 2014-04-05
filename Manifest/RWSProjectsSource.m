@@ -10,6 +10,7 @@
 #import "RWSManagedProject.h"
 #import "RWSManagedItem.h"
 #import "RWSCoreDataController.h"
+#import "RWSEmptyProject.h"
 
 @interface RWSProjectsSource()
 @property (nonatomic, strong) RWSCoreDataController *coreDataController;
@@ -32,7 +33,11 @@
 - (NSUInteger)count
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[RWSManagedProject entityName]];
-    return [self.context countForFetchRequest:request error:nil];
+    NSUInteger count =  [self.context countForFetchRequest:request error:nil];
+    if(count == 0u){
+        return 1u;
+    }
+    return count;
 }
 
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath
@@ -46,7 +51,8 @@
         return allProjects[indexPath.row];
     }
 
-    return nil;
+    RWSEmptyProject *project = [[RWSEmptyProject alloc] init];
+    return project;
 }
 
 - (NSIndexPath *)indexPathForProjectWithIdentifier:(NSString *)identifier

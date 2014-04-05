@@ -91,7 +91,7 @@
     if(editingStyle == UITableViewCellEditingStyleDelete){
         [self.projectSource deleteProjectAtIndexPath:indexPath];
 
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
@@ -101,6 +101,17 @@
         return YES;
     }
     return NO;
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([identifier isEqualToString:@"showList"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        id<RWSProject> project = [self.projectSource projectAtIndexPath:indexPath];
+        return [project isSelectable];
+    }
+
+    return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

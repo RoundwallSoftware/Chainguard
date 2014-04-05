@@ -53,4 +53,6 @@
 - (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath;
 
 - (NSArray *)currencyCodesUsed;
+
+- (BOOL)isSelectable;
 @end

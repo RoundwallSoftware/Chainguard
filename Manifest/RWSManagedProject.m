@@ -165,4 +165,9 @@
     return [[self.items valueForKey:@"currencyCode"] allObjects];
 }
 
+- (BOOL)isSelectable
+{
+    return YES;
+}
+
 @end
