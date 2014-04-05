@@ -15,7 +15,6 @@
 #import "RWSMapViewController.h"
 
 @interface RWSProjectsViewController ()
-@property (nonatomic, strong) UIView *emptyHeaderView;
 @end
 
 @implementation RWSProjectsViewController
@@ -34,13 +33,7 @@
 
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 
-    if([self.projectSource count]){
-        self.tableView.tableHeaderView = nil;
-        self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    } else {
-        self.tableView.tableHeaderView = [self emptyHeaderView];
-        self.navigationItem.rightBarButtonItem = nil;
-    }
+    [self showEmptyStateIfNecessary];
 }
 
 - (void)viewDidLoad
@@ -100,6 +93,8 @@
         [self.projectSource deleteProjectAtIndexPath:indexPath];
 
         [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+        [self showEmptyStateIfNecessary];
     }
 }
 
@@ -165,13 +160,20 @@
     return [self.projectSource indexPathForProjectWithIdentifier:identifier];
 }
 
+- (void)showEmptyStateIfNecessary
+{
+    if([self.projectSource count]){
+        self.tableView.tableHeaderView = nil;
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    } else {
+        self.tableView.tableHeaderView = [self emptyHeaderView];
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
+
 - (UIView *)emptyHeaderView
 {
-    if(_emptyHeaderView){
-        return _emptyHeaderView;
-    }
-
-    CGRect frame = CGRectMake(0.0, 0.0, CGRectGetWidth([self.tableView bounds]), 120.0);
+    CGRect frame = CGRectMake(0.0, 0.0, CGRectGetWidth([self.tableView bounds]), 180.0);
     UIView *header = [[UIView alloc] initWithFrame:frame];
 
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(frame, 10.0, 10.0)];
@@ -184,7 +186,6 @@
     [header addSubview:label];
     label.center = header.center;
 
-    _emptyHeaderView = header;
     return header;
 }
 

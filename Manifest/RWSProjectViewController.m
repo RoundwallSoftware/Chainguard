@@ -62,6 +62,8 @@
     [self recalculatePrice];
 
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+    [self showEmptyStateIfNecessary];
 }
 
 - (void)setupTitleTextField
@@ -122,6 +124,8 @@
     [self.project removeItemAtIndexPath:indexPath];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self recalculatePrice];
+
+    [self showEmptyStateIfNecessary];
 }
 
 - (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
@@ -244,6 +248,31 @@
     [self.project setPreferredCurrencyCode:selectedCurrencyCode];
 
     [self recalculatePrice];
+}
+
+- (void)showEmptyStateIfNecessary
+{
+    if([self.project count] > 0){
+        self.tableView.tableFooterView = nil;
+    } else {
+        self.tableView.tableFooterView = [self emptyFooterView];
+    }
+}
+
+- (UIView *)emptyFooterView
+{
+    CGRect frame = CGRectMake(0.0, 0.0, 320.0, 180.0);
+    UIView *header = [[UIView alloc] initWithFrame:frame];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(frame, 10.0, 10.0)];
+    label.textColor = [UIColor darkGrayColor];
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    label.text = @"You have no items yet. Make one and get started!";
+
+    [header addSubview:label];
+
+    return  header;
 }
 
 @end
