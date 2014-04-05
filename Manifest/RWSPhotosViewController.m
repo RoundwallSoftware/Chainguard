@@ -98,7 +98,13 @@
             }
         }];
 
-    } failureBlock:nil];
+    } failureBlock:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+        if([error code] == -3311){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"We aren't allowed to access your photos." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
