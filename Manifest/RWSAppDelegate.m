@@ -9,6 +9,7 @@
 #import "RWSAppDelegate.h"
 #import "UIColor+iOS7Colors.h"
 #import "RWSExchangeRates.h"
+#import "Crittercism.h"
 
 @interface RWSAppDelegate()
 @property (nonatomic, strong) RWSExchangeRates *rates;
@@ -23,6 +24,10 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{ RWSFormattedLastTimeExchangeRateUpdated: @"Not Yet" }];
 
     [self setupTheme];
+
+#ifndef DEBUG
+     [Crittercism enableWithAppID:@"533fb401a6d3d7064a000002"];
+#endif
 
     return YES;
 }

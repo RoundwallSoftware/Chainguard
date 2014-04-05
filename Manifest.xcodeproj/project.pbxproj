@@ -36,6 +36,9 @@
 		9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B59DC851895D6BF000530EF /* RWSMapViewController.m */; };
 		9B7A6787189FABBE001E6629 /* RWSMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A6786189FABBE001E6629 /* RWSMapViewControllerTests.m */; };
 		9B7A678A189FB131001E6629 /* RWSDumbItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A6789189FB131001E6629 /* RWSDumbItem.m */; };
+		9B8352DD18EFEBAA00547269 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9B8352DB18EFEBAA00547269 /* dsym_upload.sh */; };
+		9B8352DE18EFEBAA00547269 /* libCrittercism_v4_3_3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */; };
+		9B8352E218EFEC0700547269 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8352E118EFEC0700547269 /* SystemConfiguration.framework */; };
 		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
 		9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */; };
 		9B99A1C018B91BCF0075389A /* RWSPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */; };
@@ -132,6 +135,13 @@
 		9B7A6786189FABBE001E6629 /* RWSMapViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSMapViewControllerTests.m; sourceTree = "<group>"; };
 		9B7A6788189FB131001E6629 /* RWSDumbItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSDumbItem.h; sourceTree = "<group>"; };
 		9B7A6789189FB131001E6629 /* RWSDumbItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSDumbItem.m; sourceTree = "<group>"; };
+		9B8352D818EFEBAA00547269 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
+		9B8352D918EFEBAA00547269 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		9B8352DA18EFEBAA00547269 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		9B8352DB18EFEBAA00547269 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_3.a; sourceTree = "<group>"; };
+		9B8352DF18EFEBF700547269 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9B8352E118EFEC0700547269 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
@@ -193,11 +203,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8352E218EFEC0700547269 /* SystemConfiguration.framework in Frameworks */,
 				9B5579EB18969918008E3C0A /* CoreData.framework in Frameworks */,
 				9B59DC831895D1C6000530EF /* MapKit.framework in Frameworks */,
 				9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */,
 				9BD6B14C1895A1CC006E02D0 /* UIKit.framework in Frameworks */,
 				9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */,
+				9B8352DE18EFEBAA00547269 /* libCrittercism_v4_3_3.a in Frameworks */,
 				D0C0F52035EA4BE2B4BFC928 /* libPods-Manifest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +228,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B8352D718EFEBAA00547269 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9B8352D818EFEBAA00547269 /* CRFilter.h */,
+				9B8352D918EFEBAA00547269 /* Crittercism.h */,
+				9B8352DA18EFEBAA00547269 /* CrittercismDelegate.h */,
+				9B8352DB18EFEBAA00547269 /* dsym_upload.sh */,
+				9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */,
+			);
+			path = CrittercismSDK;
+			sourceTree = "<group>";
+		};
 		9BD6B13B1895A1CC006E02D0 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +264,8 @@
 		9BD6B1461895A1CC006E02D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B8352E118EFEC0700547269 /* SystemConfiguration.framework */,
+				9B8352DF18EFEBF700547269 /* Security.framework */,
 				9B5579EA18969918008E3C0A /* CoreData.framework */,
 				9B59DC821895D1C6000530EF /* MapKit.framework */,
 				9BD6B1471895A1CC006E02D0 /* Foundation.framework */,
@@ -255,6 +281,7 @@
 		9BD6B14D1895A1CC006E02D0 /* Manifest */ = {
 			isa = PBXGroup;
 			children = (
+				9B8352D718EFEBAA00547269 /* CrittercismSDK */,
 				9B99A1D118B929BB0075389A /* UIImage+CODImageScaling.h */,
 				9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */,
 				9B99A1CB18B922050075389A /* _RWSManagedPhoto.h */,
@@ -383,6 +410,7 @@
 				9BD6B1411895A1CC006E02D0 /* Frameworks */,
 				9BD6B1421895A1CC006E02D0 /* Resources */,
 				12FC78BBD76949CA83D47BEB /* Copy Pods Resources */,
+				9B8352E318EFEC2300547269 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -402,6 +430,7 @@
 				9BD6B15C1895A1CC006E02D0 /* Frameworks */,
 				9BD6B15D1895A1CC006E02D0 /* Resources */,
 				B560E261DAA94A9BAB36C387 /* Copy Pods Resources */,
+				9BBCF12118EFEA2900F7EF36 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -459,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8352DD18EFEBAA00547269 /* dsym_upload.sh in Resources */,
 				9BD6B1521895A1CC006E02D0 /* InfoPlist.strings in Resources */,
 				9BD6B15A1895A1CC006E02D0 /* Images.xcassets in Resources */,
 				9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */,
@@ -508,6 +538,32 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		9B8352E318EFEC2300547269 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_ID=\"533fb401a6d3d7064a000002\"\nAPI_KEY=\"nendfglqxbozyzcj6t8amhsh2uwxyrii\"\nsource ${SRCROOT}/Manifest/CrittercismSDK/dsym_upload.sh";
+		};
+		9BBCF12118EFEA2900F7EF36 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run b32ee7277fb185db1a11cfd2777d49323f977cff 3e331cd8423be2e9f86da8d4527675d12b9c263a732e9fa9497ae1e3440f1b8b";
 		};
 		B560E261DAA94A9BAB36C387 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -737,6 +793,10 @@
 				GCC_WARN_SHADOW = YES;
 				INFOPLIST_FILE = "Manifest/Manifest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Manifest/CrittercismSDK",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -771,6 +831,10 @@
 				GCC_WARN_SHADOW = YES;
 				INFOPLIST_FILE = "Manifest/Manifest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Manifest/CrittercismSDK",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
