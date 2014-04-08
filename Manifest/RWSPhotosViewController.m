@@ -78,12 +78,11 @@
 {
     self.library = [[ALAssetsLibrary alloc] init];
     [self.library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *libraryStop) {
+        [group setAssetsFilter:[ALAssetsFilter allPhotos]];
         NSInteger assetCount = [group numberOfAssets];
         if(assetCount <= 0){
             return;
         }
-
-        [group setAssetsFilter:[ALAssetsFilter allPhotos]];
 
         NSIndexSet *indexes = [NSIndexSet indexSetWithIndex:assetCount-1];
         [group enumerateAssetsAtIndexes:indexes options:NSEnumerationReverse usingBlock:^(ALAsset *asset, NSUInteger index, BOOL *groupStop) {
