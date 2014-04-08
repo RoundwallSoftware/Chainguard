@@ -430,7 +430,6 @@
 				9BD6B15C1895A1CC006E02D0 /* Frameworks */,
 				9BD6B15D1895A1CC006E02D0 /* Resources */,
 				B560E261DAA94A9BAB36C387 /* Copy Pods Resources */,
-				9BBCF12118EFEA2900F7EF36 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -551,19 +550,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "APP_ID=\"533fb401a6d3d7064a000002\"\nAPI_KEY=\"nendfglqxbozyzcj6t8amhsh2uwxyrii\"\nsource ${SRCROOT}/Manifest/CrittercismSDK/dsym_upload.sh";
-		};
-		9BBCF12118EFEA2900F7EF36 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run b32ee7277fb185db1a11cfd2777d49323f977cff 3e331cd8423be2e9f86da8d4527675d12b9c263a732e9fa9497ae1e3440f1b8b";
 		};
 		B560E261DAA94A9BAB36C387 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

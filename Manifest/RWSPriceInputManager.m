@@ -12,8 +12,9 @@
 
 void setCurrencyOnTextField(NSString *currencyCode, UITextField *textField)
 {
+    NSLocale *locale = [NSLocale currentLocaleWithCurrency:currencyCode];
     NSCharacterSet *symbolSet = [NSCharacterSet symbolCharacterSet];
-    NSCharacterSet *punctuationSet = [NSCharacterSet punctuationCharacterSet];
+    NSCharacterSet *punctuationSet = [NSCharacterSet characterSetWithCharactersInString:[locale objectForKey:NSLocaleDecimalSeparator]];
 
     NSString *justPrice = [[textField.text stringByTrimmingCharactersInSet:symbolSet] stringByTrimmingCharactersInSet:punctuationSet];
 
@@ -25,6 +26,6 @@ void setCurrencyOnTextField(NSString *currencyCode, UITextField *textField)
 
         [textField setText:[priceFormatter stringFromNumber:price currency:currencyCode]];
     } else {
-        [textField setText:[[NSLocale currentLocaleWithCurrency:currencyCode] currencySymbol]];
+        [textField setText:[locale currencySymbol]];
     }
 }
