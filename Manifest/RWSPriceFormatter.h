@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface RWSPriceFormatter : NSObject
+@property (nonatomic, strong) NSLocale *locale;
 - (NSString *)stringFromNumber:(NSNumber *)value currency:(NSString *)currency;
 @end

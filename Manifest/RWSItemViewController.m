@@ -123,7 +123,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     if(textField == self.priceField){
         if([textField.text length] == 0){
-            setCurrencyOnTextField([[NSLocale currentLocale] currencyCode], textField);
+            NSLocale *locale = [NSLocale currentLocale];
+            setCurrencyOnTextField([locale currencyCode], locale, textField);
         }
     }
 }
@@ -184,7 +185,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
 - (void)addCurrencyCodeToQuickInput:(NSString *)currencyCode
 {
-    NSString *symbol = [[NSLocale currentLocaleWithCurrency:currencyCode] currencySymbol];
+    NSString *symbol = [[[NSLocale currentLocale] localeWithCurrency:currencyCode] currencySymbol];
     [self.quickInputField insertText:symbol];
 }
 
@@ -229,7 +230,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     UITextField *priceField = self.priceField;
     if([priceField isFirstResponder]){
-        setCurrencyOnTextField(@"USD", priceField);
+        setCurrencyOnTextField(@"USD", [NSLocale currentLocale], priceField);
     }
 
     UITextField *quickInputField = self.quickInputField;
@@ -242,7 +243,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     UITextField *priceField = self.priceField;
     if([priceField isFirstResponder]){
-        setCurrencyOnTextField(@"GBP", priceField);
+        setCurrencyOnTextField(@"GBP", [NSLocale currentLocale], priceField);
     }
 
     UITextField *quickInputField = self.quickInputField;
@@ -255,7 +256,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     UITextField *priceField = self.priceField;
     if([priceField isFirstResponder]){
-        setCurrencyOnTextField(@"EUR", priceField);
+        setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], priceField);
     }
 
     UITextField *quickInputField = self.quickInputField;

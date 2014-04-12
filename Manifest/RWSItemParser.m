@@ -25,18 +25,19 @@
     NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 
     for(NSString *currencyCode in currencyCodes){
-        NSLocale *locale = [NSLocale currentLocaleWithCurrency:currencyCode];
+        NSLocale *locale = [self.locale localeWithCurrency:currencyCode];
         NSString *currencySymbol = [locale currencySymbol];
-        NSUInteger currencySymbolIndex = [text rangeOfString:currencySymbol].location;
+        NSRange currencySymbolRange = [text rangeOfString:currencySymbol];
+        NSString *decimalSeparator = [locale objectForKey:NSLocaleDecimalSeparator];
 
-        if(currencySymbolIndex == NSNotFound){
+        if(currencySymbolRange.location == NSNotFound){
             continue;
         }
 
         item.currencyCode = currencyCode;
 
-        NSScanner *scanner = [[NSScanner alloc] initWithString:text];
-        [scanner setScanLocation:currencySymbolIndex+1];
+        NSScanner *scanner = [[NSScanner alloc] initWithString:[text stringByReplacingOccurrencesOfString:decimalSeparator withString:@"."]];
+        [scanner setScanLocation:currencySymbolRange.location+currencySymbolRange.length];
 
         NSDecimal price;
         BOOL foundCurrency = [scanner scanDecimal:&price];
@@ -48,7 +49,7 @@
         item.price = [NSDecimalNumber decimalNumberWithDecimal:price];
         item.currencyCode = currencyCode;
 
-        NSRange priceRange = NSMakeRange(currencySymbolIndex, [scanner scanLocation]-currencySymbolIndex);
+        NSRange priceRange = NSMakeRange(currencySymbolRange.location, [scanner scanLocation]-currencySymbolRange.location);
 
         item.name = [[text stringByReplacingCharactersInRange:priceRange withString:@""] stringByTrimmingCharactersInSet:whiteSpace];
 

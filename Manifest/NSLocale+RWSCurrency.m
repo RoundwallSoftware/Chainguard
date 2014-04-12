@@ -10,17 +10,17 @@
 
 @implementation NSLocale (RWSCurrency)
 
-+ (NSLocale *)currentLocaleWithCurrency:(NSString *)currency
+- (NSLocale *)localeWithCurrency:(NSString *)currency
 {
-    NSLocale *currentLocale = [NSLocale currentLocale];
     NSDictionary *components = @{
                                  NSLocaleCurrencyCode: currency,
-                                 NSLocaleLanguageCode: [currentLocale objectForKey:NSLocaleLanguageCode],
-                                 NSLocaleCountryCode: [currentLocale objectForKey:NSLocaleCountryCode]
+                                 NSLocaleLanguageCode: [self objectForKey:NSLocaleLanguageCode],
+                                 NSLocaleCountryCode: [self objectForKey:NSLocaleCountryCode]
                                  };
 
-    NSString *identifier = [NSLocale localeIdentifierFromComponents:components];
-    return [NSLocale localeWithLocaleIdentifier:identifier];
+    NSString *identifier = [[self class] localeIdentifierFromComponents:components];
+    return [[self class] localeWithLocaleIdentifier:identifier];
+
 }
 
 - (NSString *)currencySymbol

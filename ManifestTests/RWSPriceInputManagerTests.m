@@ -33,7 +33,7 @@
 {
     textField.text = nil;
 
-    setCurrencyOnTextField(@"USD", textField);
+    setCurrencyOnTextField(@"USD", [NSLocale currentLocale], textField);
 
     assertThat(textField.text, equalTo(@"$"));
 }
@@ -42,7 +42,7 @@
 {
     textField.text = @"€32.32";
 
-    setCurrencyOnTextField(@"USD", textField);
+    setCurrencyOnTextField(@"USD", [NSLocale currentLocale], textField);
 
     assertThat(textField.text, equalTo(@"$32.32"));
 }
@@ -51,7 +51,7 @@
 {
     textField.text = @"€32.";
 
-    setCurrencyOnTextField(@"USD", textField);
+    setCurrencyOnTextField(@"USD", [NSLocale currentLocale], textField);
 
     assertThat(textField.text, equalTo(@"$32.00"));
 }
@@ -60,7 +60,7 @@
 {
     textField.text = nil;
 
-    setCurrencyOnTextField(@"EUR", textField);
+    setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], textField);
 
     assertThat(textField.text, equalTo(@"€"));
 }
@@ -69,7 +69,7 @@
 {
     textField.text = @"$32.32";
 
-    setCurrencyOnTextField(@"EUR", textField);
+    setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], textField);
 
     assertThat(textField.text, equalTo(@"€32.32"));
 }
@@ -78,7 +78,7 @@
 {
     textField.text = @"£32.";
 
-    setCurrencyOnTextField(@"EUR", textField);
+    setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], textField);
 
     assertThat(textField.text, equalTo(@"€32.00"));
 }

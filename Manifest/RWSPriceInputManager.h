@@ -6,4 +6,4 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-void setCurrencyOnTextField(NSString *currencyCode, UITextField *textField);
+void setCurrencyOnTextField(NSString *currencyCode, NSLocale *locale, UITextField *textField);

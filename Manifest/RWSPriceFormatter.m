@@ -18,7 +18,7 @@
     }
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    NSLocale *locale = [NSLocale currentLocaleWithCurrency:currency];
+    NSLocale *locale = [self.locale localeWithCurrency:currency];
 
     formatter.locale = locale;
     formatter.numberStyle = NSNumberFormatterCurrencyStyle;

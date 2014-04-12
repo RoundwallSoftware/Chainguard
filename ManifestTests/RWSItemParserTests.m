@@ -28,6 +28,7 @@
     [super setUp];
 
     parser = [[RWSItemParser alloc] init];
+    parser.locale = [NSLocale currentLocale];
 }
 
 - (void)testParserPicksUpName
@@ -134,6 +135,30 @@
     assertThat(item.name, equalTo(@"Something"));
     assertThat(item.price, nilValue());
     assertThat(item.currencyCode, equalTo(@"GBP"));
+}
+
+- (void)testParserPicksUpDollarsInDutch
+{
+    RWSItemParser *dutchParser = [[RWSItemParser alloc] init];
+    dutchParser.locale = [NSLocale localeWithLocaleIdentifier:@"en-NL"];
+
+    id<RWSItem> item = [dutchParser itemFromText:@"Item $5,32"];
+
+    assertThat(item.name, equalTo(@"Item"));
+    assertThat(item.price, equalTo(@5.32));
+    assertThat(item.currencyCode, equalTo(@"USD"));
+}
+
+- (void)testParserPicksUpDollarsInBelgium
+{
+    RWSItemParser *dutchParser = [[RWSItemParser alloc] init];
+    dutchParser.locale = [NSLocale localeWithLocaleIdentifier:@"en-BE"];
+
+    id<RWSItem> item = [dutchParser itemFromText:@"Item US$5,32"];
+
+    assertThat(item.name, equalTo(@"Item"));
+    assertThat(item.price, equalTo(@5.32));
+    assertThat(item.currencyCode, equalTo(@"USD"));
 }
 
 @end

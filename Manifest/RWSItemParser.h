@@ -9,6 +9,7 @@
 #import "RWSProject.h"
 
 @interface RWSItemParser : NSObject
+@property (nonatomic, strong) NSLocale *locale;
 
 - (id<RWSItem>)itemFromText:(NSString *)text;
 @end

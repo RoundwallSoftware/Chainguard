@@ -8,7 +8,7 @@
 
 @interface NSLocale (RWSCurrency)
 
-+ (NSLocale *)currentLocaleWithCurrency:(NSString *)currency;
+- (NSLocale *)localeWithCurrency:(NSString *)currency;
 - (NSString *)currencySymbol;
 - (NSString *)currencyCode;
 

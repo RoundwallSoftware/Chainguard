@@ -10,15 +10,16 @@
 #import "NSLocale+RWSCurrency.h"
 #import "RWSPriceFormatter.h"
 
-void setCurrencyOnTextField(NSString *currencyCode, UITextField *textField)
+void setCurrencyOnTextField(NSString *currencyCode, NSLocale *locale, UITextField *textField)
 {
-    NSLocale *locale = [NSLocale currentLocaleWithCurrency:currencyCode];
+    NSLocale *localeForCurrency = [locale localeWithCurrency:currencyCode];
     NSCharacterSet *symbolSet = [NSCharacterSet symbolCharacterSet];
-    NSCharacterSet *punctuationSet = [NSCharacterSet characterSetWithCharactersInString:[locale objectForKey:NSLocaleDecimalSeparator]];
+    NSCharacterSet *punctuationSet = [NSCharacterSet characterSetWithCharactersInString:[localeForCurrency objectForKey:NSLocaleDecimalSeparator]];
 
     NSString *justPrice = [[textField.text stringByTrimmingCharactersInSet:symbolSet] stringByTrimmingCharactersInSet:punctuationSet];
 
     RWSPriceFormatter *priceFormatter = [[RWSPriceFormatter alloc] init];
+    priceFormatter.locale = localeForCurrency;
 
     if([justPrice length]){
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
@@ -26,6 +27,6 @@ void setCurrencyOnTextField(NSString *currencyCode, UITextField *textField)
 
         [textField setText:[priceFormatter stringFromNumber:price currency:currencyCode]];
     } else {
-        [textField setText:[locale currencySymbol]];
+        [textField setText:[localeForCurrency currencySymbol]];
     }
 }
