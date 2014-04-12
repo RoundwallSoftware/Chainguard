@@ -28,6 +28,7 @@
     [super setUp];
 
     formatter = [[RWSPriceFormatter alloc] init];
+    formatter.locale = [NSLocale currentLocale];
 }
 
 - (void)testFormatterFormatsWholeNumbersAndDollars

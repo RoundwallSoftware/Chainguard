@@ -18,6 +18,8 @@
 
 - (id<RWSItem>)itemFromText:(NSString *)text
 {
+    NSParameterAssert(self.locale);
+    
     RWSDumbItem *item = [[RWSDumbItem alloc] init];
     RWSExchangeRates *rates = [[RWSExchangeRates alloc] init];
 
