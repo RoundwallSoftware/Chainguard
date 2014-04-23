@@ -22,7 +22,7 @@
 @property (nonatomic, weak) IBOutlet UITableViewCell *notesCell;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
-@property (nonatomic, weak) IBOutlet UIButton *locationButton;
+@property (nonatomic, strong) UIButton *locationButton;
 @property (nonatomic, weak) IBOutlet UIButton *deleteButton;
 @property (nonatomic, weak) id<RWSItemDelegate> delegate;
 @property (nonatomic, strong) id<RWSItem> item;

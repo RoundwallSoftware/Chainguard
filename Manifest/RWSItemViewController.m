@@ -32,7 +32,14 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
     self.parser.locale = [NSLocale currentLocale];
 
-    UIButton *locationButton = self.locationButton;
+    UIButton *locationButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
+    [locationButton setTitle:@"Set Location" forState:UIControlStateNormal];
+    locationButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+    [locationButton setTitleColor:[UIColor iOS7purpleColor] forState:UIControlStateNormal];
+    [locationButton addTarget:self action:@selector(setCurrentLocation:) forControlEvents:UIControlEventTouchUpInside];
+
+    self.locationButton = locationButton;
+
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     UITextField *priceField = self.priceField;
     priceField.inputAccessoryView = toolbar;
@@ -47,11 +54,10 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         self.nameField.text = self.item.name;
         priceField.text = [formatter stringFromNumber:self.item.price currency:self.item.currencyCode];
 
+        self.title = self.item.name;
         if(self.item.addressString){
             [locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
         }
-
-        self.title = self.item.name;
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
@@ -176,6 +182,24 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (void)textViewDidChange:(UITextView *)textView
 {
     self.item.notes = textView.text;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if(section != 0){
+        return nil;
+    }
+
+    return self.locationButton;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if(section != 0){
+        return 0.0;
+    }
+
+    return CGRectGetHeight(self.locationButton.bounds);
 }
 
 -(void)locationManagerDidDetermineLocation:(RWSLocationManager *)manager
