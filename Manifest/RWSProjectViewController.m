@@ -56,6 +56,7 @@
     [super viewWillAppear:animated];
 
     self.navigationItem.rightBarButtonItems = @[self.addItem];
+    self.title = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -199,8 +200,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    self.title = self.project.title;
+
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"newItem"]){
+
         RWSItemViewController *controller = [segue destinationViewController];
         controller.title = @"New Item";
         controller.delegate = self;

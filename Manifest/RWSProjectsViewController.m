@@ -114,7 +114,6 @@
 
         RWSProjectViewController *controller = [segue destinationViewController];
         controller.project = project;
-        controller.title = project.title;
     }
 
     if([identifier isEqualToString:@"showList"]){
@@ -122,7 +121,6 @@
 
         RWSProjectViewController *controller = [segue destinationViewController];
         controller.project = project;
-        controller.title = project.title;
     }
 
     if([identifier isEqualToString:@"toMap"]){
