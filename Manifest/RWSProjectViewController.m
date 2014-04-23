@@ -52,7 +52,7 @@
 {
     [super viewWillAppear:animated];
 
-    self.navigationItem.rightBarButtonItems = @[self.actionItem, self.addItem];
+    self.navigationItem.rightBarButtonItems = @[self.addItem];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -205,7 +205,6 @@
 
     if([identifier isEqualToString:@"toItem"]){
         RWSItemViewController *controller = [segue destinationViewController];
-        controller.title = @"Item";
         controller.item = [self selectedItem];
         NSParameterAssert(controller.item);
         controller.delegate = self;

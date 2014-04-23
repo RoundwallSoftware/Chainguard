@@ -34,10 +34,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
     UIButton *locationButton = self.locationButton;
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    UITextField *quickInputField = self.quickInputField;
     UITextField *priceField = self.priceField;
     priceField.inputAccessoryView = toolbar;
-    quickInputField.inputAccessoryView = toolbar;
 
     if(self.item){
         self.navigationItem.rightBarButtonItem = nil;
@@ -45,12 +43,9 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         self.deleteButton.tintColor = [UIColor iOS7redColor];
 
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+        formatter.locale = [NSLocale currentLocale];
         self.nameField.text = self.item.name;
         priceField.text = [formatter stringFromNumber:self.item.price currency:self.item.currencyCode];
-
-        [self.reverseParser setName:self.item.name];
-        [self.reverseParser setPriceInput:priceField.text];
-        quickInputField.text = [self.reverseParser inputString];
 
         if(self.item.addressString){
             [locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
@@ -73,7 +68,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     [super viewDidAppear:animated];
 
     if(!self.isExistingItem){
-        [self.quickInputField becomeFirstResponder];
+        [self.nameField becomeFirstResponder];
     }
 
     self.photosCell.detailTextLabel.text = [@([self.item photoCount]) description];
@@ -141,55 +136,26 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     RWSItemParser *parser = self.parser;
     NSString *totalString = [[textField text] stringByReplacingCharactersInRange:range withString:string];
-
-    UITextField *quickInputField = self.quickInputField;
-    if(textField == quickInputField){
-        id<RWSItem> item = [parser itemFromText:totalString];
-        self.item.price = item.price;
-        self.item.name = item.name;
-        self.item.currencyCode = item.currencyCode;
-        [self updateNameAndPriceFieldsForItem];
-
-        [self.reverseParser setName:item.name];
-        if(item.price){
-            RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-            formatter.locale = [NSLocale currentLocale];
-            [self.reverseParser setPriceInput:[formatter stringFromNumber:item.price currency:item.currencyCode]];
-        }
-    }
+    id<RWSItem> item = [parser itemFromText:totalString];
 
     if(textField == self.priceField){
         if([[textField text] length] == 1 && [string length] == 0){
             return NO;
         }
 
-        [self.reverseParser setPriceInput:totalString];
-
-        quickInputField.text = self.reverseParser.inputString;
-
-        id<RWSItem> item = [parser itemFromText:self.reverseParser.inputString];
         self.item.price = item.price;
         self.item.currencyCode = item.currencyCode;
     }
 
 
     if(textField == self.nameField){
-        [self.reverseParser setName:totalString];
-
-        quickInputField.text = self.reverseParser.inputString;
-        id<RWSItem> item = [parser itemFromText:self.reverseParser.inputString];
         self.item.name = item.name;
+        self.title = item.name;
     }
 
     self.navigationItem.rightBarButtonItem.enabled = [self.item isValid];
     
     return YES;
-}
-
-- (void)addCurrencyCodeToQuickInput:(NSString *)currencyCode
-{
-    NSString *symbol = [[[NSLocale currentLocale] localeWithCurrency:currencyCode] currencySymbol];
-    [self.quickInputField insertText:symbol];
 }
 
 - (void)updateNameAndPriceFieldsForItem
@@ -236,11 +202,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     if([priceField isFirstResponder]){
         setCurrencyOnTextField(@"USD", [NSLocale currentLocale], priceField);
     }
-
-    UITextField *quickInputField = self.quickInputField;
-    if([quickInputField isFirstResponder]){
-        [self addCurrencyCodeToQuickInput:@"USD"];
-    }
 }
 
 - (IBAction)setGBP:(id)sender
@@ -249,11 +210,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     if([priceField isFirstResponder]){
         setCurrencyOnTextField(@"GBP", [NSLocale currentLocale], priceField);
     }
-
-    UITextField *quickInputField = self.quickInputField;
-    if([quickInputField isFirstResponder]){
-        [self addCurrencyCodeToQuickInput:@"GBP"];
-    }
 }
 
 - (IBAction)setEUR:(id)sender
@@ -261,11 +217,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     UITextField *priceField = self.priceField;
     if([priceField isFirstResponder]){
         setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], priceField);
-    }
-
-    UITextField *quickInputField = self.quickInputField;
-    if([quickInputField isFirstResponder]){
-        [self addCurrencyCodeToQuickInput:@"EUR"];
     }
 }
 
