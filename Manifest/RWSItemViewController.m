@@ -149,7 +149,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         self.item.currencyCode = item.currencyCode;
     }
 
-
     if(textField == self.nameField){
         self.item.name = item.name;
         self.title = item.name;

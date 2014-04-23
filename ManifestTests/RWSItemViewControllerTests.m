@@ -41,21 +41,7 @@
     [verify(mockField) resignFirstResponder];
 }
 
-- (void)testControllerFeedsQuickInputTextToParser
-{
-    RWSItemParser *parser = mock([RWSItemParser class]);
-    controller.parser = parser;
-    UITextField *mockField = mock([UITextField class]);
-    controller.quickInputField = mockField;
-
-    [given([mockField text]) willReturn:@"Item Name"];
-
-    [controller textField:mockField shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"I"];
-
-    [verify(parser) itemFromText:@"Item Name"];
-}
-
-- (void)testControllerDoesNotFeedOtherInputToParser
+- (void)testControllerDoesFeedOtherInputToParser
 {
     RWSItemParser *parser = mock([RWSItemParser class]);
     controller.parser = parser;
@@ -66,33 +52,7 @@
 
     [controller textField:mockField shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"I"];
 
-    [verifyCount(parser, never()) itemFromText:@"Item Name"];
-}
-
-- (void)testControllerUsesReverseParserForNameField
-{
-    RWSReverseItemParser *mockParser = mock([RWSReverseItemParser class]);
-    controller.reverseParser = mockParser;
-    UITextField *field = [[UITextField alloc] init];
-    field.text = @"Name Of Something";
-    controller.nameField = field;
-
-    [controller textField:field shouldChangeCharactersInRange:NSMakeRange(0, 1) replacementString:@"N"];
-
-    [verify(mockParser) setName:@"Name Of Something"];
-}
-
-- (void)testControllerUsesReverseParserForPriceField
-{
-    RWSReverseItemParser *mockParser = mock([RWSReverseItemParser class]);
-    controller.reverseParser = mockParser;
-    UITextField *field = [[UITextField alloc] init];
-    field.text = @"$4";
-    controller.priceField = field;
-
-    [controller textField:field shouldChangeCharactersInRange:NSMakeRange(1, 1) replacementString:@"4"];
-
-    [verify(mockParser) setPriceInput:@"$4"];
+    [verifyCount(parser, times(1)) itemFromText:@"Item Name"];
 }
 
 - (void)testControllerRespondsToGetLocationAction
