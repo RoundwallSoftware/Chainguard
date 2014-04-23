@@ -26,9 +26,12 @@
         self.priceItem.action = @selector(changePrice:);
     }
 
+    UIBarButtonItem *actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+    self.actionItem = actionItem;
+
     UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
-    return @[flexibleItem, self.priceItem, flexibleItem];
+    return @[flexibleItem, self.priceItem, flexibleItem, actionItem ];
 }
 
 - (void)recalculatePrice

@@ -50,6 +50,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         if(self.item.addressString){
             [locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
         }
+
+        self.title = self.item.name;
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
@@ -223,13 +225,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *identifier = [segue identifier];
-    if([identifier isEqualToString:@"toNotes"]){
-        RWSNotesViewController *controller = [segue destinationViewController];
-        controller.title = @"Notes";
-        controller.navigationItem.prompt = self.quickInputField.text;
-        controller.item = self.item;
-    }
-
     if([identifier isEqualToString:@"toPhotos"]){
         RWSPhotosViewController *controller = [segue destinationViewController];
         controller.item = self.item;
