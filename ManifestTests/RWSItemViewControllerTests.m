@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "RWSItemViewController.h"
 #import "RWSItemParser.h"
-#import "RWSLocationManager.h"
+#import "RWSLocationManager.h"  
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>

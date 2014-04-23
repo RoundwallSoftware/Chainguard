@@ -35,6 +35,7 @@
 
     if(item.price){
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+        formatter.locale = [NSLocale currentLocale];
         NSString *priceString = [formatter stringFromNumber:item.price currency:item.currencyCode];
         self.detailTextLabel.text = priceString;
         if([item isPurchased]){

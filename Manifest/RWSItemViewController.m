@@ -30,6 +30,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     [super viewDidLoad];
 
+    self.parser.locale = [NSLocale currentLocale];
+
     UIButton *locationButton = self.locationButton;
     UIView *toolbar = [[[UINib nibWithNibName:@"CurrencyToolbar" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     UITextField *quickInputField = self.quickInputField;
@@ -151,6 +153,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         [self.reverseParser setName:item.name];
         if(item.price){
             RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+            formatter.locale = [NSLocale currentLocale];
             [self.reverseParser setPriceInput:[formatter stringFromNumber:item.price currency:item.currencyCode]];
         }
     }
@@ -195,6 +198,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     UITextField *priceField = self.priceField;
     if(self.item.price){
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+        formatter.locale = [NSLocale currentLocale];
         NSString *text = [formatter stringFromNumber:[self.item price] currency:[self.item currencyCode]];
         priceField.text = text;
     }else{

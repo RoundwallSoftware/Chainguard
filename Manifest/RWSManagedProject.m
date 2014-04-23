@@ -126,6 +126,7 @@
 - (NSString *)formattedTotalRemainingPrice
 {
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+    formatter.locale = [NSLocale currentLocale];
     return [formatter stringFromNumber:[self totalRemainingPrice] currency:[self preferredCurrencyCode]];
 }
 
