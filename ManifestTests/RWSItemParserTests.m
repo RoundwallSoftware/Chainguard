@@ -151,10 +151,10 @@
 
 - (void)testParserPicksUpDollarsInBelgium
 {
-    RWSItemParser *dutchParser = [[RWSItemParser alloc] init];
-    dutchParser.locale = [NSLocale localeWithLocaleIdentifier:@"en-BE"];
+    RWSItemParser *belgianParser = [[RWSItemParser alloc] init];
+    belgianParser.locale = [NSLocale localeWithLocaleIdentifier:@"en-BE"];
 
-    id<RWSItem> item = [dutchParser itemFromText:@"Item US$5,32"];
+    id<RWSItem> item = [belgianParser itemFromText:@"Item US$5,32"];
 
     assertThat(item.name, equalTo(@"Item"));
     assertThat(item.price, equalTo(@5.32));
