@@ -62,4 +62,13 @@
     return item;
 }
 
+- (NSLocale *)locale
+{
+    if(_locale){
+        return _locale;
+    }
+
+    return [NSLocale currentLocale];
+}
+
 @end

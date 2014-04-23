@@ -30,9 +30,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     [super viewDidLoad];
 
-    self.parser.locale = [NSLocale currentLocale];
-
-    UIButton *locationButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
+    UIButton *locationButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.bounds), 44.0)];
     [locationButton setTitle:@"Set Location" forState:UIControlStateNormal];
     locationButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
     [locationButton setTitleColor:[UIColor iOS7purpleColor] forState:UIControlStateNormal];
@@ -50,7 +48,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         self.deleteButton.tintColor = [UIColor iOS7redColor];
 
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-        formatter.locale = [NSLocale currentLocale];
         self.nameField.text = self.item.name;
         priceField.text = [formatter stringFromNumber:self.item.price currency:self.item.currencyCode];
 
@@ -176,7 +173,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     UITextField *priceField = self.priceField;
     if(self.item.price){
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-        formatter.locale = [NSLocale currentLocale];
         NSString *text = [formatter stringFromNumber:[self.item price] currency:[self.item currencyCode]];
         priceField.text = text;
     }else{

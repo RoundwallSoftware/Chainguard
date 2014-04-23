@@ -27,7 +27,6 @@
 - (NSString *)lineItemString
 {
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-    formatter.locale = [NSLocale currentLocale];
 
     return [@[self.name, @": ", [formatter stringFromNumber:[self price] currency:self.currencyCode]] componentsJoinedByString:@""];
 }
