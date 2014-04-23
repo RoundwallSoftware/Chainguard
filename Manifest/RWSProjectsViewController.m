@@ -27,6 +27,24 @@
     return _projectSource;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [self.navigationController setToolbarHidden:YES animated:YES];
+
+    self.title = nil;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    [self.navigationController setToolbarHidden:NO animated:YES];
+
+    self.title = @"Projects";
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -40,32 +58,28 @@
 {
     [super viewDidLoad];
 
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"map"] style:UIBarButtonItemStylePlain target:self action:@selector(showMap)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addProject)];
+
+    self.navigationItem.rightBarButtonItems = @[addButton, mapButton];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)showMap
 {
-    return 2;
+    [self performSegueWithIdentifier:@"toMap" sender:self];
+}
+
+- (void)addProject
+{
+    [self performSegueWithIdentifier:@"addList" sender:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(section == 0){
-        return [self.projectSource count];
-    }
-    return 2;
+    return [self.projectSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section == 0){
-        return [self tableView:tableView firstSectionCellAtIndexPath:indexPath];
-    }
-
-    return [self tableView:tableView secondSectionCellAtIndexPath:indexPath];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView firstSectionCellAtIndexPath:(NSIndexPath *)indexPath
 {
     RWSProjectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"list" forIndexPath:indexPath];
 
@@ -75,39 +89,22 @@
     return cell;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView secondSectionCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch(indexPath.row){
-        case 0:
-            return [tableView dequeueReusableCellWithIdentifier:@"settings" forIndexPath:indexPath];
-        case 1:
-            return [tableView dequeueReusableCellWithIdentifier:@"credits" forIndexPath:indexPath];
-    }
-
-    return nil;
-}
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(editingStyle == UITableViewCellEditingStyleDelete){
         [self.projectSource deleteProjectAtIndexPath:indexPath];
 
-        [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView reloadData];
 
-        [self showEmptyStateIfNecessary];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showEmptyStateIfNecessary];
+        });
     }
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section == 0){
-        return YES;
-    }
-    return NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"addList"]){
         id<RWSProject> project = [self.projectSource makeUntitledList];
@@ -133,28 +130,14 @@
 
 - (NSString *)modelIdentifierForElementAtIndexPath:(NSIndexPath *)indexPath inView:(UIView *)view
 {
-    if(indexPath.section == 0){
-        id<RWSProject> project = [self.projectSource projectAtIndexPath:indexPath];
-        return [project projectIdentifier];
-    }
-
-    if(indexPath.row == 0) {
-        return @"settings";
-    }
-    if(indexPath.row == 1) {
-        return @"credits";
-    }
-
-    return nil;
+    id<RWSProject> project = [self.projectSource projectAtIndexPath:indexPath];
+    return [project projectIdentifier];
 }
 
 - (NSIndexPath *)indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view
 {
     if([identifier isEqualToString:@"settings"]){
         return [NSIndexPath indexPathForRow:0 inSection:1];
-    }
-    if([identifier isEqualToString:@"credits"]){
-        return [NSIndexPath indexPathForRow:1 inSection:1];
     }
 
     return [self.projectSource indexPathForProjectWithIdentifier:identifier];
@@ -164,10 +147,14 @@
 {
     if([self.projectSource count]){
         self.tableView.tableHeaderView = nil;
-        self.navigationItem.rightBarButtonItem = self.editButtonItem;
     } else {
-        self.tableView.tableHeaderView = [self emptyHeaderView];
-        self.navigationItem.rightBarButtonItem = nil;
+        UIView *header = [self emptyHeaderView];
+        header.alpha = 0.0;
+        self.tableView.tableHeaderView = header;
+
+        [UIView animateWithDuration:0.3 animations:^{
+            header.alpha = 1.0;
+        }];
     }
 }
 

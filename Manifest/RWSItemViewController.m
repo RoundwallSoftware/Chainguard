@@ -30,7 +30,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 {
     [super viewDidLoad];
 
-    UIButton *locationButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.bounds), 44.0)];
+    UIButton *locationButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.bounds), 34.0)];
     [locationButton setTitle:@"Set Location" forState:UIControlStateNormal];
     locationButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
     [locationButton setTitleColor:[UIColor iOS7purpleColor] forState:UIControlStateNormal];
@@ -183,6 +183,22 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (void)textViewDidChange:(UITextView *)textView
 {
     self.item.notes = textView.text;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if(section == 1){
+        CGRect frame = CGRectMake(0.0, 0.0, 320.0, 44.0);
+        UIView *view = [[UIView alloc] initWithFrame:frame];
+        view.backgroundColor = [UIColor clearColor];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(frame, 15.0, 0.0)];
+        label.text = @"Notes";
+        label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+        [view addSubview:label];
+        return view;
+    }
+
+    return nil;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
