@@ -10,6 +10,8 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.roundwallsoftware.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -25,7 +27,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationUsageDescription</key>
-	<string>${PRODUCT_NAME} uses your location to make sure you don't forget where you found this item.</string>
+	<string>${PRODUCT_NAME} uses your location to make sure you don&apos;t forget where you found this item.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

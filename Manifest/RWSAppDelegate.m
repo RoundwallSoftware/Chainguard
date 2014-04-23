@@ -45,7 +45,6 @@
 
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: tintColor } forState:UIControlStateNormal];
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor iOS7lightGrayColor]} forState:UIControlStateDisabled];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.01]];
 }
 
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
