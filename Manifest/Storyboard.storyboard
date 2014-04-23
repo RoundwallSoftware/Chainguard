@@ -500,7 +500,6 @@
                         <outlet property="nameField" destination="uhP-Il-BPo" id="n9z-af-eX7"/>
                         <outlet property="notesCell" destination="hby-vK-rrR" id="stM-Xa-FKO"/>
                         <outlet property="parser" destination="ccg-FT-LDg" id="yyB-aG-fhT"/>
-                        <outlet property="photoCollectionView" destination="My1-tt-iD1" id="KJc-8T-L6t"/>
                         <outlet property="photosCell" destination="JEo-yW-rUK" id="HMP-cg-IaD"/>
                         <outlet property="priceField" destination="8ef-h6-xGU" id="lat-AA-yGR"/>
                         <outlet property="rates" destination="eYi-kB-Le3" id="y3s-Bl-6DQ"/>
