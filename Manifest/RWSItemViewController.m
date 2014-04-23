@@ -137,6 +137,11 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+
+    if(textField == self.nameField){
+        [self.priceField becomeFirstResponder];
+    }
+
     return NO;
 }
 
