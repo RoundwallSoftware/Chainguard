@@ -13,17 +13,17 @@
 @protocol RWSItemDelegate;
 @class RWSItemParser;
 @class RWSExchangeRates;
-
+@class RWSPhotosViewController;
 @interface RWSItemViewController : UITableViewController<UITextFieldDelegate, RWSLocationManagerDelegate, UITextViewDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) IBOutlet RWSItemParser *parser;
 @property (nonatomic, strong) IBOutlet RWSLocationManager *locationManager;
 @property (nonatomic, strong) IBOutlet RWSExchangeRates *rates;
-@property (nonatomic, weak) IBOutlet UITableViewCell *photosCell;
-@property (nonatomic, weak) IBOutlet UITableViewCell *notesCell;
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UITextField *priceField;
 @property (nonatomic, strong) UIButton *locationButton;
 @property (nonatomic, weak) IBOutlet UIButton *deleteButton;
+@property (nonatomic, strong) IBOutlet RWSPhotosViewController *photosController;
+@property (nonatomic, weak) IBOutlet UICollectionView *photosView;
 @property (nonatomic, weak) id<RWSItemDelegate> delegate;
 @property (nonatomic, strong) id<RWSItem> item;
 

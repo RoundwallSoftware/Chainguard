@@ -66,18 +66,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
             [self setCurrentLocation:locationButton];
         }
     }
-}
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-
-    if(!self.isExistingItem){
-        [self.nameField becomeFirstResponder];
-    }
-
-    self.photosCell.detailTextLabel.text = [@([self.item photoCount]) description];
-    self.notesCell.detailTextLabel.text = [self.item notes];
+    self.photosController.item = self.item;
 }
 
 - (IBAction)save:(id)sender

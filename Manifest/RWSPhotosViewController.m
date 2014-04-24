@@ -38,7 +38,7 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     [self.item addPhotoWithImage:image];
 
-    [self dismissViewControllerAnimated:YES completion:^{
+    [self.parentViewController dismissViewControllerAnimated:YES completion:^{
         [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
     }];
 }
@@ -65,13 +65,13 @@
         controller.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
 
-    [self presentViewController:controller animated:YES completion:nil];
+    [self.parentViewController presentViewController:controller animated:YES completion:nil];
 }
 
 - (IBAction)addPhoto:(id)sender
 {
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Use Latest Photo", @"Take Photo", @"Choose From Library", nil];
-    [sheet showInView:self.view];
+    [sheet showFromToolbar:self.parentViewController.navigationController.toolbar];
 }
 
 - (void)useLatestPhotoFromCameraRoll
