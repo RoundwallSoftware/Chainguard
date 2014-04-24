@@ -9,6 +9,7 @@
 #import "RWSProjectViewController.h"
 #import "RWSPriceFormatter.h"
 #import "NSLocale+RWSCurrency.h"
+#import <UIColor+iOS7Colors.h>
 
 @interface RWSProjectViewController ()
 @property (nonatomic, strong) UIBarButtonItem *priceItem;
@@ -72,22 +73,17 @@
 
 - (void)setupTitleTextField
 {
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 40.0)];
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0.0, 0.0, 255.0, 40.0)];
     textField.textAlignment = NSTextAlignmentCenter;
-    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.borderStyle = UITextBorderStyleNone;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
     textField.returnKeyType = UIReturnKeyDone;
+    textField.textColor = [UIColor iOS7purpleColor];
     textField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     textField.text = [self.project title];
     textField.delegate = self;
-    textField.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.1];
 
-    UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 50.0)];
-    [background addSubview:textField];
-
-    textField.center = background.center;
-
-    self.tableView.tableHeaderView = background;
+    self.navigationItem.titleView = textField;
 }
 
 #pragma mark - Table view data source
@@ -167,7 +163,13 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    self.project.title = textField.text;
+    NSString *title = textField.text;
+    if(![title length]){
+        title = @"Untitled";
+        textField.text = title;
+    }
+
+    self.project.title = title;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField

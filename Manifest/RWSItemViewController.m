@@ -55,6 +55,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         if(self.item.addressString){
             [locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
         }
+
+
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
@@ -67,6 +69,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         }
     }
 
+    self.notesField.text = self.item.notes;
     self.photosController.item = self.item;
 }
 
@@ -157,6 +160,11 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     return YES;
 }
 
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.item.notes = textView.text;
+}
+
 - (void)updateNameAndPriceFieldsForItem
 {
     self.nameField.text = self.item.name;
@@ -168,11 +176,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     }else{
         priceField.text = nil;
     }
-}
-
-- (void)textViewDidChange:(UITextView *)textView
-{
-    self.item.notes = textView.text;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

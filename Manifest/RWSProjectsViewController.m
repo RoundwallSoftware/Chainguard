@@ -32,8 +32,6 @@
     [super viewWillAppear:animated];
 
     [self.navigationController setToolbarHidden:YES animated:YES];
-
-    self.title = nil;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -41,8 +39,6 @@
     [super viewWillDisappear:animated];
 
     [self.navigationController setToolbarHidden:NO animated:YES];
-
-    self.title = @"Projects";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,6 +54,8 @@
 {
     [super viewDidLoad];
 
+    self.title = @"";
+    
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"map"] style:UIBarButtonItemStylePlain target:self action:@selector(showMap)];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addProject)];
 
