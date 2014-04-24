@@ -26,6 +26,20 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
 @implementation RWSItemViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [self.navigationController setToolbarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    [self.navigationController setToolbarHidden:NO animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
