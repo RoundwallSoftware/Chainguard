@@ -32,7 +32,7 @@
 
     UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
-    return @[flexibleItem, self.priceItem, flexibleItem, actionItem ];
+    return @[actionItem, flexibleItem, self.priceItem ];
 }
 
 - (void)recalculatePrice
