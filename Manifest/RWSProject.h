@@ -53,4 +53,5 @@
 - (void)moveItemAtIndexPath:(NSIndexPath *)sourcePath toIndexPath:(NSIndexPath *)destinationPath;
 
 - (NSArray *)currencyCodesUsed;
+- (UIImage *)imageFromParts;
 @end

@@ -2,6 +2,7 @@
 #import "RWSManagedItem.h"
 #import "RWSPriceFormatter.h"
 #import "NSLocale+RWSCurrency.h"
+#import "RWSManagedPhoto.h"
 
 @implementation RWSManagedProject
 
@@ -168,6 +169,13 @@
 - (BOOL)isSelectable
 {
     return YES;
+}
+
+- (UIImage *)imageFromParts
+{
+    RWSManagedItem *item = [self.items firstObject];
+    RWSManagedPhoto *photo = [[item photos] firstObject];
+    return [photo thumbnailImage];
 }
 
 @end
