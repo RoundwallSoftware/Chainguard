@@ -63,15 +63,10 @@ NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
 {
     self.closeButton.alpha = 1.0;
 }
-//
+
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
 {
     self.closeButton.alpha = 0.2;
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    [mapView setCenterCoordinate:userLocation.coordinate animated:YES];
 }
 
 @end
