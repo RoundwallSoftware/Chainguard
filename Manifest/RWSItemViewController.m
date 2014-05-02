@@ -223,6 +223,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         view.backgroundColor = [UIColor clearColor];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(frame, 15.0, 0.0)];
         label.text = @"Notes";
+        label.textColor = [UIColor iOS7darkGrayColor];
         label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
         [view addSubview:label];
         return view;
