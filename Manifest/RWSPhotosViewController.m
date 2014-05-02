@@ -56,7 +56,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = info[UIImagePickerControllerEditedImage];
     [self.item addPhotoWithImage:image];
 
     [self.parentViewController dismissViewControllerAnimated:YES completion:^{
@@ -77,6 +77,7 @@
     }
 
     UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+    controller.allowsEditing = YES;
     controller.delegate = self;
     controller.mediaTypes = @[(NSString *)kUTTypeImage];
     if(buttonIndex == 2){

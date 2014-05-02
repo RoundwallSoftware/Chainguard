@@ -288,7 +288,7 @@
         <!--Item View Controller-->
         <scene sceneID="a6K-9J-57d">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="8tF-J3-HnI" customClass="RWSItemViewController" sceneMemberID="viewController">
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="8tF-J3-HnI" customClass="RWSItemViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="10" sectionFooterHeight="10" id="kiD-iv-7GJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

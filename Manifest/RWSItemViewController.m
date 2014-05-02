@@ -105,6 +105,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     [self addChildViewController:controller];
 
     self.photosController = controller;
+
+    self.tableView.contentInset = UIEdgeInsetsMake(-88.0, 0.0, 0.0, 0.0);
 }
 
 - (IBAction)save:(id)sender
