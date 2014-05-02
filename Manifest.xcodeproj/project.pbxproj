@@ -52,6 +52,7 @@
 		9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1CE18B922050075389A /* RWSManagedPhoto.m */; };
 		9B99A1D318B929BB0075389A /* UIImage+CODImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */; };
 		9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */; };
+		9BBF5DC719142E0600C37AF8 /* UIColor+RWSAppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF5DC619142E0600C37AF8 /* UIColor+RWSAppColors.m */; };
 		9BC959FF18C6042500CAE84E /* RWSExchangeRates.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */; };
 		9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BC95A0018C60F1600CAE84E /* Settings.bundle */; };
 		9BC95A0318C6145E00CAE84E /* RWSExchangeRatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC95A0218C6145E00CAE84E /* RWSExchangeRatesTests.m */; };
@@ -164,13 +165,15 @@
 		9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CODImageScaling.m"; sourceTree = "<group>"; };
 		9BBEB02A18B8AE84000B7DF6 /* RWSNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSNotesViewController.h; sourceTree = "<group>"; };
 		9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNotesViewController.m; sourceTree = "<group>"; };
+		9BBF5DC519142E0600C37AF8 /* UIColor+RWSAppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RWSAppColors.h"; sourceTree = "<group>"; };
+		9BBF5DC619142E0600C37AF8 /* UIColor+RWSAppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RWSAppColors.m"; sourceTree = "<group>"; };
 		9BC959FD18C6042500CAE84E /* RWSExchangeRates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSExchangeRates.h; sourceTree = "<group>"; };
 		9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSExchangeRates.m; sourceTree = "<group>"; };
 		9BC95A0018C60F1600CAE84E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9BC95A0218C6145E00CAE84E /* RWSExchangeRatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSExchangeRatesTests.m; sourceTree = "<group>"; };
 		9BCDD52C18BE07D000CF2F3B /* RWSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSettingsViewController.h; sourceTree = "<group>"; };
 		9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSettingsViewController.m; sourceTree = "<group>"; };
-		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manifest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Manifest.app; path = Chainguard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD6B1471895A1CC006E02D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9BD6B14B1895A1CC006E02D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -353,6 +356,8 @@
 				9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */,
 				9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */,
 				9B1DA95E19139E9100B599CF /* RWSAddPhotoCell.xib */,
+				9BBF5DC519142E0600C37AF8 /* UIColor+RWSAppColors.h */,
+				9BBF5DC619142E0600C37AF8 /* UIColor+RWSAppColors.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 				9BC959FF18C6042500CAE84E /* RWSExchangeRates.m in Sources */,
 				9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */,
 				9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */,
+				9BBF5DC719142E0600C37AF8 /* UIColor+RWSAppColors.m in Sources */,
 				9BDECA4A18A64BE500CE7C3C /* RWSItemCell.m in Sources */,
 				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,
 				9BCDD52E18BE07D000CF2F3B /* RWSSettingsViewController.m in Sources */,

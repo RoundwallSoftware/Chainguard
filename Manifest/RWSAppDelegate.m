@@ -7,7 +7,7 @@
 //
 
 #import "RWSAppDelegate.h"
-#import "UIColor+iOS7Colors.h"
+#import "UIColor+RWSAppColors.h"
 #import "RWSExchangeRates.h"
 #import "Crittercism.h"
 
@@ -40,11 +40,10 @@
 
 - (void)setupTheme
 {
-    UIColor *tintColor = [UIColor iOS7purpleColor];
+    UIColor *tintColor = [UIColor tintColor];
     self.window.tintColor = tintColor;
 
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: tintColor } forState:UIControlStateNormal];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor iOS7lightGrayColor]} forState:UIControlStateDisabled];
 }
 
 - (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder

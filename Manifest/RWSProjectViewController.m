@@ -9,7 +9,7 @@
 #import "RWSProjectViewController.h"
 #import "RWSPriceFormatter.h"
 #import "NSLocale+RWSCurrency.h"
-#import <UIColor+iOS7Colors.h>
+#import "UIColor+RWSAppColors.h"
 
 @interface RWSProjectViewController ()
 @property (nonatomic, strong) UIBarButtonItem *priceItem;
@@ -78,7 +78,7 @@
     textField.borderStyle = UITextBorderStyleNone;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
     textField.returnKeyType = UIReturnKeyDone;
-    textField.textColor = [UIColor iOS7purpleColor];
+    textField.textColor = [UIColor tintColor];
     textField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
     textField.text = [self.project title];
     textField.delegate = self;

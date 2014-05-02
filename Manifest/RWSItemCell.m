@@ -8,7 +8,8 @@
 
 #import "RWSItemCell.h"
 #import "RWSPriceFormatter.h"
-#import "UIColor+iOS7Colors.h"
+#import "UIColor+RWSAppColors.h"
+#import <UIColor+iOS7Colors.h>
 
 @implementation RWSItemCell
 
@@ -16,9 +17,9 @@
 {
     NSMutableArray *leftButtons = [[NSMutableArray alloc] init];
     if([item isPurchased]){
-        [leftButtons sw_addUtilityButtonWithColor:[UIColor iOS7darkBlueColor] title:@"Undo"];
+        [leftButtons sw_addUtilityButtonWithColor:[UIColor secondaryColor] title:@"Undo"];
     }else{
-        [leftButtons sw_addUtilityButtonWithColor:[UIColor iOS7greenColor] title:@"Got it"];
+        [leftButtons sw_addUtilityButtonWithColor:[UIColor secondaryColor] title:@"Got it"];
     }
     self.leftUtilityButtons = leftButtons;
 

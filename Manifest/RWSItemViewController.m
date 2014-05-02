@@ -11,7 +11,8 @@
 #import "RWSDumbItem.h"
 #import "RWSPriceInputManager.h"
 #import "RWSItemParser.h"
-#import "UIColor+iOS7Colors.h"
+#import "UIColor+RWSAppColors.h"
+#import <UIColor+iOS7Colors.h>
 #import "RWSNotesViewController.h"
 #import "RWSPhotosViewController.h"
 #import "NSLocale+RWSCurrency.h"
@@ -47,7 +48,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     UIButton *locationButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.bounds), 34.0)];
     [locationButton setTitle:@"Set Location" forState:UIControlStateNormal];
     locationButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-    [locationButton setTitleColor:[UIColor iOS7purpleColor] forState:UIControlStateNormal];
+    [locationButton setTitleColor:[UIColor tintColor] forState:UIControlStateNormal];
     [locationButton addTarget:self action:@selector(setCurrentLocation:) forControlEvents:UIControlEventTouchUpInside];
 
     self.locationButton = locationButton;
