@@ -13,6 +13,7 @@
 
 @interface RWSProjectsSource()
 @property (nonatomic, strong) RWSCoreDataController *coreDataController;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 @end
 
 @implementation RWSProjectsSource
