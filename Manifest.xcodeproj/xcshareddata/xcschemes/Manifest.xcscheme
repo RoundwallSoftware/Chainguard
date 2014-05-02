@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9BD6B1431895A1CC006E02D0"
                BuildableName = "Manifest.app"
-               BlueprintName = "Manifest"
+               BlueprintName = "Chainguard"
                ReferencedContainer = "container:Manifest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BD6B1431895A1CC006E02D0"
             BuildableName = "Manifest.app"
-            BlueprintName = "Manifest"
+            BlueprintName = "Chainguard"
             ReferencedContainer = "container:Manifest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,7 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BD6B1431895A1CC006E02D0"
             BuildableName = "Manifest.app"
-            BlueprintName = "Manifest"
+            BlueprintName = "Chainguard"
             ReferencedContainer = "container:Manifest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -86,7 +86,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BD6B1431895A1CC006E02D0"
             BuildableName = "Manifest.app"
-            BlueprintName = "Manifest"
+            BlueprintName = "Chainguard"
             ReferencedContainer = "container:Manifest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

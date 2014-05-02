@@ -407,9 +407,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BD6B1431895A1CC006E02D0 /* Manifest */ = {
+		9BD6B1431895A1CC006E02D0 /* Chainguard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BD6B1701895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "Manifest" */;
+			buildConfigurationList = 9BD6B1701895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "Chainguard" */;
 			buildPhases = (
 				DD44227FAE2447B1B139D979 /* Check Pods Manifest.lock */,
 				9BD6B1401895A1CC006E02D0 /* Sources */,
@@ -422,7 +422,7 @@
 			);
 			dependencies = (
 			);
-			name = Manifest;
+			name = Chainguard;
 			productName = Manifest;
 			productReference = 9BD6B1441895A1CC006E02D0 /* Manifest.app */;
 			productType = "com.apple.product-type.application";
@@ -482,7 +482,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BD6B1431895A1CC006E02D0 /* Manifest */,
+				9BD6B1431895A1CC006E02D0 /* Chainguard */,
 				9BD6B15E1895A1CC006E02D0 /* ManifestTests */,
 			);
 		};
@@ -658,7 +658,7 @@
 /* Begin PBXTargetDependency section */
 		9BD6B1651895A1CC006E02D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9BD6B1431895A1CC006E02D0 /* Manifest */;
+			target = 9BD6B1431895A1CC006E02D0 /* Chainguard */;
 			targetProxy = 9BD6B1641895A1CC006E02D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -897,7 +897,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BD6B1701895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "Manifest" */ = {
+		9BD6B1701895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "Chainguard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BD6B1711895A1CC006E02D0 /* Debug */,
