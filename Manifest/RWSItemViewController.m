@@ -84,7 +84,27 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     }
 
     self.notesField.text = self.item.notes;
-    self.photosController.item = self.item;
+    [self setupPhotosController];
+}
+
+- (void)setupPhotosController
+{
+    CGFloat width = CGRectGetWidth(self.tableView.bounds);
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(width, width);
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+
+    RWSPhotosViewController *controller = [[RWSPhotosViewController alloc] initWithCollectionViewLayout:layout];
+    controller.item = self.item;
+
+    UIView *view = controller.view;
+    view.frame = CGRectMake(0.0, -120.0, 320.0, 320.0);
+    self.tableView.tableHeaderView = view;
+    [controller willMoveToParentViewController:self];
+
+    [self addChildViewController:controller];
+
+    self.photosController = controller;
 }
 
 - (IBAction)save:(id)sender

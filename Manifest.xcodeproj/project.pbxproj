@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		745C2B8D6429406091C897BB /* libPods-ManifestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */; };
+		9B03243D190A7ECD003D6506 /* RWSPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */; };
 		9B05B33F18C0C9780060536F /* RWSPagedPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */; };
 		9B05B34218C0CC660060536F /* RWSBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05B34118C0CC660060536F /* RWSBigImageViewController.m */; };
 		9B079623189A57E40026D489 /* RWSItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079622189A57E40026D489 /* RWSItemViewController.m */; };
@@ -21,6 +22,7 @@
 		9B079638189A9FDB0026D489 /* RWSPriceFormatterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079637189A9FDB0026D489 /* RWSPriceFormatterTests.m */; };
 		9B0DECD018970290007C80A6 /* RWSManagedProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */; };
 		9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */; };
+		9B1DA95F19139E9100B599CF /* RWSAddPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B1DA95E19139E9100B599CF /* RWSAddPhotoCell.xib */; };
 		9B466C4418A38503008AE3FF /* CurrencyToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B466C4318A38503008AE3FF /* CurrencyToolbar.xib */; };
 		9B466C4618A385F1008AE3FF /* RWSPriceInputManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B466C4518A385F1008AE3FF /* RWSPriceInputManagerTests.m */; };
 		9B466C4918A385FE008AE3FF /* RWSPriceInputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B466C4818A385FE008AE3FF /* RWSPriceInputManager.m */; };
@@ -90,6 +92,7 @@
 		05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManifestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD53355709849A0876261FA /* libPods-Manifest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Manifest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Manifest.xcconfig"; path = "Pods/Pods-Manifest.xcconfig"; sourceTree = "<group>"; };
+		9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWSPhotoCell.xib; sourceTree = "<group>"; };
 		9B05B33D18C0C9780060536F /* RWSPagedPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPagedPhotosViewController.h; sourceTree = "<group>"; };
 		9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPagedPhotosViewController.m; sourceTree = "<group>"; };
 		9B05B34018C0CC660060536F /* RWSBigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSBigImageViewController.h; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 		9B0DECCF18970290007C80A6 /* RWSManagedProjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedProjectTests.m; sourceTree = "<group>"; };
 		9B0DECD11897096B007C80A6 /* RWSProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSProjectViewController.h; sourceTree = "<group>"; };
 		9B0DECD21897096B007C80A6 /* RWSProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectViewController.m; sourceTree = "<group>"; };
+		9B1DA95E19139E9100B599CF /* RWSAddPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWSAddPhotoCell.xib; sourceTree = "<group>"; };
 		9B466C4318A38503008AE3FF /* CurrencyToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyToolbar.xib; sourceTree = "<group>"; };
 		9B466C4518A385F1008AE3FF /* RWSPriceInputManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPriceInputManagerTests.m; sourceTree = "<group>"; };
 		9B466C4718A385FE008AE3FF /* RWSPriceInputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPriceInputManager.h; sourceTree = "<group>"; };
@@ -347,6 +351,8 @@
 				9B05B34118C0CC660060536F /* RWSBigImageViewController.m */,
 				9BC959FD18C6042500CAE84E /* RWSExchangeRates.h */,
 				9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */,
+				9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */,
+				9B1DA95E19139E9100B599CF /* RWSAddPhotoCell.xib */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -490,8 +496,10 @@
 				9B8352DD18EFEBAA00547269 /* dsym_upload.sh in Resources */,
 				9BD6B1521895A1CC006E02D0 /* InfoPlist.strings in Resources */,
 				9BD6B15A1895A1CC006E02D0 /* Images.xcassets in Resources */,
+				9B1DA95F19139E9100B599CF /* RWSAddPhotoCell.xib in Resources */,
 				9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */,
 				9B466C4418A38503008AE3FF /* CurrencyToolbar.xib in Resources */,
+				9B03243D190A7ECD003D6506 /* RWSPhotoCell.xib in Resources */,
 				9B59DC811895AA27000530EF /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

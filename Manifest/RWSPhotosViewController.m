@@ -19,13 +19,34 @@
 
 @implementation RWSPhotosViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [self.collectionView registerNib:[UINib nibWithNibName:@"RWSPhotoCell" bundle:nil] forCellWithReuseIdentifier:@"photo"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"RWSAddPhotoCell" bundle:nil] forCellWithReuseIdentifier:@"add"];
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 2;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.item photoCount];
+    if(section == 0){
+        return [self.item photoCount];
+    }
+
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.section == 1){
+        return [collectionView dequeueReusableCellWithReuseIdentifier:@"add" forIndexPath:indexPath];
+    }
+
     RWSPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"photo" forIndexPath:indexPath];
 
     [cell setPhoto:[self.item photoAtIndexPath:indexPath]];
@@ -71,7 +92,7 @@
 - (IBAction)addPhoto:(id)sender
 {
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Use Latest Photo", @"Take Photo", @"Choose From Library", nil];
-    [sheet showFromToolbar:self.parentViewController.navigationController.toolbar];
+    [sheet showInView:self.parentViewController.view];
 }
 
 - (void)useLatestPhotoFromCameraRoll
@@ -104,6 +125,13 @@
             [alert show];
         }
     }];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 1){
+        [self addPhoto:nil];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

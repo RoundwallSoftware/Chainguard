@@ -8,10 +8,8 @@
 
 #import "RWSProject.h"
 
-@interface RWSPhotosViewController : NSObject<UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate>
+@interface RWSPhotosViewController : UICollectionViewController<UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) id<RWSItem> item;
-@property (nonatomic, weak) IBOutlet UIViewController *parentViewController;
-@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 - (IBAction)addPhoto:(id)sender;
 @end

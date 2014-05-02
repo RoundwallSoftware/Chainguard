@@ -294,7 +294,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="SEZ-n7-PRg">
-                            <rect key="frame" x="0.0" y="493" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="358" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4r-S2-bi7">
@@ -391,68 +391,6 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photos" rowHeight="135" id="JEo-yW-rUK">
-                                        <rect key="frame" x="0.0" y="348" width="320" height="135"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEo-yW-rUK" id="9Zu-KI-3h2">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="134"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="My1-tt-iD1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cFe-zf-VeS">
-                                                        <size key="itemSize" width="89" height="89"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photo" id="GGG-y8-0Zh" customClass="RWSPhotoCell">
-                                                            <rect key="frame" x="0.0" y="1" width="89" height="89"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BKO-mo-g5l">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            </view>
-                                                            <connections>
-                                                                <outlet property="imageView" destination="BKO-mo-g5l" id="BA4-zK-3fp"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="AhL-8H-L5T" id="Zxp-6R-Dkd"/>
-                                                        <outlet property="delegate" destination="AhL-8H-L5T" id="rSf-xi-oSh"/>
-                                                    </connections>
-                                                </collectionView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMK-6V-BLW">
-                                                    <rect key="frame" x="20" y="98" width="280" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <state key="normal" title="Add Photo">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="addPhoto:" destination="AhL-8H-L5T" eventType="touchUpInside" id="AU8-fN-V2h"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="XMK-6V-BLW" secondAttribute="bottom" constant="4" id="033-AA-r0L"/>
-                                                <constraint firstItem="XMK-6V-BLW" firstAttribute="leading" secondItem="9Zu-KI-3h2" secondAttribute="leading" constant="20" id="eqq-oN-Akg"/>
-                                                <constraint firstAttribute="trailing" secondItem="XMK-6V-BLW" secondAttribute="trailing" constant="20" id="maj-QR-v3h"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -483,7 +421,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUc-eZ-DbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="AhL-8H-L5T" customClass="RWSPhotosViewController">
                     <connections>
-                        <outlet property="collectionView" destination="My1-tt-iD1" id="Use-Ul-zgI"/>
                         <outlet property="parentViewController" destination="8tF-J3-HnI" id="bwa-gL-2g8"/>
                     </connections>
                 </customObject>
