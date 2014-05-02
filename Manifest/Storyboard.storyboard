@@ -2,22 +2,23 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G7Q-rn-GWp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Projects View Controller-->
         <scene sceneID="NXk-XA-OHx">
             <objects>
                 <tableViewController storyboardIdentifier="projects" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9LJ-iZ-foi" customClass="RWSProjectsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="projectsTable" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="72z-6F-efM">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="projectsTable" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="72z-6F-efM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="list" id="vm7-jv-zBf" customClass="RWSProjectCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vm7-jv-zBf" id="dVa-Kj-Qig">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-ED-tZi">
@@ -34,15 +35,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-Uu-xJc">
-                                            <rect key="frame" x="218" y="0.0" width="69" height="69"/>
+                                            <rect key="frame" x="208" y="0.0" width="79" height="79"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="69" id="kI3-y8-YJ0"/>
-                                                <constraint firstAttribute="height" constant="69" id="sID-uH-DCK"/>
+                                                <constraint firstAttribute="width" secondItem="PNg-Uu-xJc" secondAttribute="height" multiplier="1:1" id="3PA-L0-Ryo"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="PNg-Uu-xJc" secondAttribute="bottom" id="3QM-Pf-qEO"/>
+                                        <constraint firstItem="PNg-Uu-xJc" firstAttribute="top" secondItem="dVa-Kj-Qig" secondAttribute="top" id="Rm6-qg-bsf"/>
                                         <constraint firstAttribute="trailing" secondItem="PNg-Uu-xJc" secondAttribute="trailing" id="SwZ-W9-B1i"/>
                                         <constraint firstItem="72V-fR-rfv" firstAttribute="top" secondItem="XbR-ED-tZi" secondAttribute="bottom" id="isQ-Iw-WKT"/>
                                         <constraint firstItem="XbR-ED-tZi" firstAttribute="top" secondItem="dVa-Kj-Qig" secondAttribute="top" constant="15" id="na0-iQ-RvO"/>
