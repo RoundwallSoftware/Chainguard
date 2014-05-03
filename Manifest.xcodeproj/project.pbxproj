@@ -173,7 +173,7 @@
 		9BC95A0218C6145E00CAE84E /* RWSExchangeRatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSExchangeRatesTests.m; sourceTree = "<group>"; };
 		9BCDD52C18BE07D000CF2F3B /* RWSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSettingsViewController.h; sourceTree = "<group>"; };
 		9BCDD52D18BE07D000CF2F3B /* RWSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSettingsViewController.m; sourceTree = "<group>"; };
-		9BD6B1441895A1CC006E02D0 /* Manifest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Manifest.app; path = Chainguard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD6B1441895A1CC006E02D0 /* Chainguard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chainguard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD6B1471895A1CC006E02D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9BD6B1491895A1CC006E02D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9BD6B14B1895A1CC006E02D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -262,7 +262,7 @@
 		9BD6B1451895A1CC006E02D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BD6B1441895A1CC006E02D0 /* Manifest.app */,
+				9BD6B1441895A1CC006E02D0 /* Chainguard.app */,
 				9BD6B15F1895A1CC006E02D0 /* ManifestTests.xctest */,
 			);
 			name = Products;
@@ -429,7 +429,7 @@
 			);
 			name = Chainguard;
 			productName = Manifest;
-			productReference = 9BD6B1441895A1CC006E02D0 /* Manifest.app */;
+			productReference = 9BD6B1441895A1CC006E02D0 /* Chainguard.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9BD6B15E1895A1CC006E02D0 /* ManifestTests */ = {
