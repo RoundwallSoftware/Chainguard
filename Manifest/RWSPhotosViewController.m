@@ -23,6 +23,8 @@
 {
     [super viewDidLoad];
 
+    self.collectionView.pagingEnabled = YES;
+
     [self.collectionView registerNib:[UINib nibWithNibName:@"RWSPhotoCell" bundle:nil] forCellWithReuseIdentifier:@"photo"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"RWSAddPhotoCell" bundle:nil] forCellWithReuseIdentifier:@"add"];
 }

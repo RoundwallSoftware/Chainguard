@@ -16,6 +16,7 @@
 #import "RWSNotesViewController.h"
 #import "RWSPhotosViewController.h"
 #import "NSLocale+RWSCurrency.h"
+#import "RWSPagedLayout.h"
 @import AddressBookUI;
 
 NSString *const AYIUserDidAddLocationPreference = @"AYIUserDidAddLocationPreference";
@@ -91,15 +92,17 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (void)setupPhotosController
 {
     CGFloat width = CGRectGetWidth(self.tableView.bounds);
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    RWSPagedLayout *layout = [[RWSPagedLayout alloc] init];
     layout.itemSize = CGSizeMake(width, width);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.minimumInteritemSpacing = 0.0;
+    layout.minimumLineSpacing = 0.0;
 
     RWSPhotosViewController *controller = [[RWSPhotosViewController alloc] initWithCollectionViewLayout:layout];
     controller.item = self.item;
 
     UIView *view = controller.view;
-    view.frame = CGRectMake(0.0, -120.0, 320.0, 320.0);
+    view.frame = CGRectMake(0.0, 0.0, 320.0, 320.0);
     self.tableView.tableHeaderView = view;
     [controller willMoveToParentViewController:self];
 
@@ -107,7 +110,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
     self.photosController = controller;
 
-    self.tableView.contentInset = UIEdgeInsetsMake(-88.0, 0.0, 0.0, 0.0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-44.0, 0.0, 0.0, 0.0);
 }
 
 - (IBAction)save:(id)sender

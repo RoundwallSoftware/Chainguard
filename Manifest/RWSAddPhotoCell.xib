@@ -23,7 +23,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="0VW-5A-V45" secondAttribute="centerY" constant="0.5" id="1R3-kp-b4h"/>
                 <constraint firstAttribute="centerX" secondItem="0VW-5A-V45" secondAttribute="centerX" constant="-0.5" id="9mV-zE-zly"/>
