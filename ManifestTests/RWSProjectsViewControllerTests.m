@@ -38,40 +38,6 @@
     assertThat(controller, notNilValue());
 }
 
-- (void)testListHasTwoSections
-{
-    assertThatInteger([controller numberOfSectionsInTableView:nil], equalToInteger(2));
-}
-
-#pragma mark - Second Section
-
-- (void)testSecondSectionHasTwoCells
-{
-    assertThatInteger([controller tableView:nil numberOfRowsInSection:1], equalToInteger(2));
-}
-
-- (void)testSecondSectionUsesSettingsCell
-{
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    UITableView *mockTable = mock([UITableView class]);
-
-    [controller tableView:mockTable cellForRowAtIndexPath:indexPath];
-
-    [verify(mockTable) dequeueReusableCellWithIdentifier:@"settings" forIndexPath:indexPath];
-}
-
-- (void)testSecondSectionUsesCreditsCell
-{
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-    UITableView *mockTable = mock([UITableView class]);
-
-    [controller tableView:mockTable cellForRowAtIndexPath:indexPath];
-
-    [verify(mockTable) dequeueReusableCellWithIdentifier:@"credits" forIndexPath:indexPath];
-}
-
-#pragma mark - First Section
-
 - (void)testControllerAsksListSourceForFirstSectionCount
 {
     RWSProjectsSource *source = mock([RWSProjectsSource class]);
@@ -119,16 +85,6 @@
     [controller tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
 
     [verify(source) deleteProjectAtIndexPath:indexPath];
-}
-
-- (void)testDeletionOfFirstSectionIsOK
-{
-    assertThatBool([controller tableView:nil canEditRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], equalToBool(YES));
-}
-
-- (void)testDeletionOfSecondSectionIsNotOK
-{
-    assertThatBool([controller tableView:nil canEditRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]], equalToBool(NO));
 }
 
 @end

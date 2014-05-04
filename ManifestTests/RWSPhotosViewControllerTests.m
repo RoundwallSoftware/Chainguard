@@ -55,7 +55,7 @@
 - (void)testControllerGivesImageToItem
 {
     UIImage *image = [self pokemonImage];
-    NSDictionary *info = @{ UIImagePickerControllerOriginalImage: image };
+    NSDictionary *info = @{ UIImagePickerControllerEditedImage: image };
     id<RWSItem> item = mockProtocol(@protocol(RWSItem));
     controller.item = item;
 

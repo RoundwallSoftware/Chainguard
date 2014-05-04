@@ -11,6 +11,7 @@
 @class RWSCoreDataController;
 
 @interface RWSProjectsSource : NSObject<RWSMapItemSource>
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 - (NSUInteger)count;
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath;

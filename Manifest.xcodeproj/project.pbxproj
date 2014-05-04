@@ -195,7 +195,7 @@
 		9BD6B1561895A1CC006E02D0 /* RWSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWSAppDelegate.h; sourceTree = "<group>"; };
 		9BD6B1571895A1CC006E02D0 /* RWSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWSAppDelegate.m; sourceTree = "<group>"; };
 		9BD6B1591895A1CC006E02D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9BD6B15F1895A1CC006E02D0 /* ManifestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManifestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD6B15F1895A1CC006E02D0 /* ChainguardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChainguardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD6B1601895A1CC006E02D0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9BD6B1681895A1CC006E02D0 /* ManifestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ManifestTests-Info.plist"; sourceTree = "<group>"; };
 		9BD6B16A1895A1CC006E02D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				9BD6B1441895A1CC006E02D0 /* Chainguard.app */,
-				9BD6B15F1895A1CC006E02D0 /* ManifestTests.xctest */,
+				9BD6B15F1895A1CC006E02D0 /* ChainguardTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -450,9 +450,9 @@
 			productReference = 9BD6B1441895A1CC006E02D0 /* Chainguard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9BD6B15E1895A1CC006E02D0 /* ManifestTests */ = {
+		9BD6B15E1895A1CC006E02D0 /* ChainguardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BD6B1731895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "ManifestTests" */;
+			buildConfigurationList = 9BD6B1731895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "ChainguardTests" */;
 			buildPhases = (
 				2EE77E59B80149DFAEB2D8C4 /* Check Pods Manifest.lock */,
 				9BD6B15B1895A1CC006E02D0 /* Sources */,
@@ -465,9 +465,9 @@
 			dependencies = (
 				9BD6B1651895A1CC006E02D0 /* PBXTargetDependency */,
 			);
-			name = ManifestTests;
+			name = ChainguardTests;
 			productName = ManifestTests;
-			productReference = 9BD6B15F1895A1CC006E02D0 /* ManifestTests.xctest */;
+			productReference = 9BD6B15F1895A1CC006E02D0 /* ChainguardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -506,7 +506,7 @@
 			projectRoot = "";
 			targets = (
 				9BD6B1431895A1CC006E02D0 /* Chainguard */,
-				9BD6B15E1895A1CC006E02D0 /* ManifestTests */,
+				9BD6B15E1895A1CC006E02D0 /* ChainguardTests */,
 			);
 		};
 /* End PBXProject section */
@@ -869,7 +869,7 @@
 			baseConfigurationReference = B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Manifest.app/Manifest";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chainguard.app/Chainguard";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -894,7 +894,7 @@
 			baseConfigurationReference = B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Manifest.app/Manifest";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chainguard.app/Chainguard";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -934,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BD6B1731895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "ManifestTests" */ = {
+		9BD6B1731895A1CC006E02D0 /* Build configuration list for PBXNativeTarget "ChainguardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BD6B1741895A1CC006E02D0 /* Debug */,
