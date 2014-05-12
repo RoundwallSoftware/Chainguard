@@ -152,6 +152,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 - (IBAction)dismissKeyboard:(id)sender
 {
     [self.view endEditing:NO];
+
+    [self updateNameAndPriceFieldsForItem];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
