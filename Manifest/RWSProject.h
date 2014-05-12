@@ -34,6 +34,7 @@
 - (NSUInteger)photoCount;
 - (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath;
 - (void)addPhotoWithImage:(UIImage *)image;
+- (void)deletePhotoAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @protocol RWSProject <UIActivityItemSource>

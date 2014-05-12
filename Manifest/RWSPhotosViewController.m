@@ -7,7 +7,6 @@
 //
 
 #import "RWSPhotosViewController.h"
-#import "RWSPhotoCell.h"
 #import "RWSPagedPhotosViewController.h"
 @import AssetsLibrary;
 
@@ -27,6 +26,17 @@
 
     [self.collectionView registerNib:[UINib nibWithNibName:@"RWSPhotoCell" bundle:nil] forCellWithReuseIdentifier:@"photo"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"RWSAddPhotoCell" bundle:nil] forCellWithReuseIdentifier:@"add"];
+
+    [self.item addObserver:self forKeyPath:@"photos" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if([self presentedViewController]){
+        return;
+    }
+
+    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -52,6 +62,7 @@
     RWSPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"photo" forIndexPath:indexPath];
 
     [cell setPhoto:[self.item photoAtIndexPath:indexPath]];
+    cell.delegate = self;
 
     return cell;
 }
@@ -134,6 +145,7 @@
 {
     if(indexPath.section == 1){
         [self addPhoto:nil];
+        return;
     }
 }
 
@@ -144,6 +156,12 @@
 
     NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
     controller.initialIndex = [selectedIndexPath item];
+}
+
+- (void)cellDidChoseDeleteAction:(RWSPhotoCell *)cell
+{
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    [self.item deletePhotoAtIndexPath:indexPath];
 }
 
 @end

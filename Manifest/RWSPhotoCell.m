@@ -10,6 +10,8 @@
 
 @interface RWSPhotoCell()
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UIButton *deleteButton;
+@property (nonatomic, weak) IBOutlet UIButton *shareButton;
 @end
 
 @implementation RWSPhotoCell
@@ -19,6 +21,30 @@
     UIImage *thumbnailImage = [photo thumbnailImage];
     NSParameterAssert(thumbnailImage);
     self.imageView.image = thumbnailImage;
+}
+
+- (IBAction)delete:(id)sender
+{
+    [self.delegate cellDidChoseDeleteAction:self];
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    CGFloat opacityValue = 0.0f;
+    if(selected){
+        opacityValue = 1.0f;
+    }
+
+    [UIView animateWithDuration:0.3 animations:^{
+        self.deleteButton.alpha = opacityValue;
+        self.shareButton.alpha = opacityValue;
+    } completion:^(BOOL finished) {
+        if(selected){
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self setSelected:NO];
+            });
+        }
+    }];
 }
 
 @end

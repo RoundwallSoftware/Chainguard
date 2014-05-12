@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9BD6B15E1895A1CC006E02D0"
-               BuildableName = "ManifestTests.xctest"
+               BuildableName = "ChainguardTests.xctest"
                BlueprintName = "ChainguardTests"
                ReferencedContainer = "container:Manifest.xcodeproj">
             </BuildableReference>

@@ -63,4 +63,6 @@
     [self.photos addObject:photo];
 }
 
+- (void)deletePhotoAtIndexPath:(NSIndexPath *)indexPath{}
+
 @end

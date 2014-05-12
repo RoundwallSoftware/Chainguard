@@ -72,4 +72,12 @@
     self.photos = photos;
 }
 
+- (void)deletePhotoAtIndexPath:(NSIndexPath *)indexPath
+{
+    RWSManagedPhoto *photo = [self.photos objectAtIndex:indexPath.item];
+    [self willChangeValueForKey:@"photos"];
+    [self.managedObjectContext deleteObject:photo];
+    [self didChangeValueForKey:@"photos"];
+}
+
 @end

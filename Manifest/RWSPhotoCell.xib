@@ -13,15 +13,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7R-al-G0a">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i7R-al-G0a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
+                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4c-os-mHv">
+                        <rect key="frame" x="136" y="144" width="48" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.48999999999999999" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <state key="normal" title="Delete">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="delete:" destination="hRD-ft-PH2" eventType="touchUpInside" id="ddf-Gd-fBX"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="e4c-os-mHv" secondAttribute="centerX" id="7LT-ON-0vQ"/>
+                <constraint firstAttribute="centerY" secondItem="e4c-os-mHv" secondAttribute="centerY" id="KNe-tl-ob5"/>
+                <constraint firstItem="i7R-al-G0a" firstAttribute="top" secondItem="hRD-ft-PH2" secondAttribute="top" id="bOh-fj-q3C"/>
+                <constraint firstItem="i7R-al-G0a" firstAttribute="leading" secondItem="hRD-ft-PH2" secondAttribute="leading" id="gSf-7Z-0OP"/>
+                <constraint firstAttribute="bottom" secondItem="i7R-al-G0a" secondAttribute="bottom" id="omf-e6-xLI"/>
+                <constraint firstAttribute="trailing" secondItem="i7R-al-G0a" secondAttribute="trailing" id="yBX-Ea-2dK"/>
+            </constraints>
             <size key="customSize" width="192" height="172"/>
             <connections>
+                <outlet property="deleteButton" destination="e4c-os-mHv" id="HPa-bQ-8j8"/>
                 <outlet property="imageView" destination="i7R-al-G0a" id="ym0-K9-bZ8"/>
             </connections>
         </collectionViewCell>

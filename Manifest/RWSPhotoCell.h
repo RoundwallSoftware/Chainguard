@@ -8,6 +8,15 @@
 
 #import "RWSProject.h"
 
+@protocol RWSPhotoCellDelegate;
+
 @interface RWSPhotoCell : UICollectionViewCell
+@property (nonatomic, weak) id<RWSPhotoCellDelegate> delegate;
+
 - (void)setPhoto:(id<RWSPhoto>)photo;
+- (IBAction)delete:(id)sender;
+@end
+
+@protocol RWSPhotoCellDelegate
+- (void)cellDidChoseDeleteAction:(RWSPhotoCell *)cell;
 @end
