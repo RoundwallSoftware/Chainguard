@@ -4,7 +4,87 @@
 #import "NSLocale+RWSCurrency.h"
 #import "RWSManagedPhoto.h"
 
+NSString *const RWSProjectWasDeletedKey = @"RWSProjectWasDeletedKey";
+
 @implementation RWSManagedProject
+
++ (void)ensureDefaultProjectsInContext:(NSManagedObjectContext *)context
+{
+    NSString *title = @"Starting Guitar";
+    RWSManagedProject *project = [self existingProjectWithTitle:title inContext:context];
+    if(project || [[NSUserDefaults standardUserDefaults] boolForKey:RWSProjectWasDeletedKey]){
+        return;
+    }
+
+    RWSManagedProject *defaultProject = [RWSManagedProject insertInManagedObjectContext:context];
+    defaultProject.title = title;
+    defaultProject.preferredCurrencyCode = @"EUR";
+
+    RWSManagedItem *guitar = [RWSManagedItem insertInManagedObjectContext:context];
+    guitar.project = defaultProject;
+    guitar.name = @"Squire Jazzmaster";
+    guitar.currencyCode = @"EUR";
+    guitar.price = [NSDecimalNumber decimalNumberWithString:@"325"];
+    guitar.addressString = @"Rozengracht 115";
+    guitar.latitude = @52.37284440000001;
+    guitar.longitude = @4.8791261;
+    guitar.notes = @"If they don't have this one, any one you like will do.";
+    UIImage *guitarImage = [UIImage imageNamed:@"jazzmaster.jpg"];
+    [guitar addPhotoWithImage:guitarImage];
+
+    RWSManagedItem *gigBag = [RWSManagedItem insertInManagedObjectContext:context];
+    gigBag.project = defaultProject;
+    gigBag.name = @"Gig Bag";
+    gigBag.currencyCode = @"EUR";
+    gigBag.price = [NSDecimalNumber decimalNumberWithString:@"35"];
+    gigBag.addressString = @"Rozengracht 115";
+    gigBag.latitude = @52.37284440000001;
+    gigBag.longitude = @4.8791261;
+
+    RWSManagedItem *tuner = [RWSManagedItem insertInManagedObjectContext:context];
+    tuner.project = defaultProject;
+    tuner.name = @"Headstock Tuner";
+    tuner.currencyCode = @"EUR";
+    tuner.price = [NSDecimalNumber decimalNumberWithString:@"20"];
+    tuner.addressString = @"Rozengracht 115";
+    tuner.latitude = @52.37284440000001;
+    tuner.longitude = @4.8791261;
+    tuner.notes = @"Definitely need a tuner. Use it before you practice every time.";
+
+    RWSManagedItem *rocksmith = [RWSManagedItem insertInManagedObjectContext:context];
+    rocksmith.project = defaultProject;
+    rocksmith.name = @"Rocksmith 2014 with cable";
+    rocksmith.currencyCode = @"USD";
+    rocksmith.price = [NSDecimalNumber decimalNumberWithString:@"79.99"];
+    rocksmith.notes = @"Make sure you get it with the cable. Also make sure you get the right platform";
+
+    NSError *saveError;
+    BOOL saved = [context save:&saveError];
+    if(!saved){
+        NSAssert(saved, @"Saving error: %@", saveError);
+    }
+}
+
++ (void)makeNoteAProjectWasDeleted
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:RWSProjectWasDeletedKey];
+}
+
++ (instancetype)existingProjectWithTitle:(NSString *)title inContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"title = %@", title]];
+
+    NSError *fetchError;
+    NSArray *projects = [context executeFetchRequest:request error:&fetchError];
+    if(!projects){
+        NSAssert(projects, @"Error fetching project: %@", fetchError);
+    }
+
+    NSParameterAssert([projects count] <= 1);
+
+    return [projects firstObject];
+}
 
 - (void)awakeFromFetch
 {

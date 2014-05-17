@@ -25,6 +25,7 @@
     
     _coreDataController = [[RWSCoreDataController alloc] init];
     _context = _coreDataController.mainContext;
+    [RWSManagedProject ensureDefaultProjectsInContext:_context];
 
     return _context;
 }
@@ -32,7 +33,13 @@
 - (NSUInteger)count
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[RWSManagedProject entityName]];
-    return [self.context countForFetchRequest:request error:nil];;
+    NSError *fetchError;
+    NSUInteger count = [self.context countForFetchRequest:request error:&fetchError];
+    if(count == NSNotFound){
+        NSAssert(count != NSNotFound, @"Error fetching: %@", fetchError);
+    }
+
+    return count;
 }
 
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath
@@ -69,6 +76,7 @@
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath
 {
     RWSManagedProject *project = (RWSManagedProject*)[self projectAtIndexPath:indexPath];
+    [RWSManagedProject makeNoteAProjectWasDeleted];
 
     [self.context deleteObject:project];
 }
