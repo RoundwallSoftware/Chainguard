@@ -407,7 +407,6 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="j8B-J1-Ufo">
                             <connections>
                                 <action selector="save:" destination="8tF-J3-HnI" id="ai0-GF-o6X"/>
-                                <segue destination="RtL-Lj-wqq" kind="modal" identifier="toMap" modalTransitionStyle="crossDissolve" id="GeU-Oy-JLp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -421,6 +420,7 @@
                         <outlet property="photosController" destination="AhL-8H-L5T" id="7dt-JI-jRP"/>
                         <outlet property="priceField" destination="8ef-h6-xGU" id="lat-AA-yGR"/>
                         <outlet property="rates" destination="eYi-kB-Le3" id="y3s-Bl-6DQ"/>
+                        <segue destination="RtL-Lj-wqq" kind="modal" identifier="toMap" id="Flg-iV-hw1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUc-eZ-DbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,7 +437,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1615" y="-553"/>
+            <point key="canvasLocation" x="1645" y="-563"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="sOx-WH-5qz">
@@ -629,6 +629,6 @@ Diederick Hoogenboom</string>
     <inferredMetricsTieBreakers>
         <segue reference="fWF-X6-nz7"/>
         <segue reference="zyL-ze-Vbw"/>
-        <segue reference="GeU-Oy-JLp"/>
+        <segue reference="Flg-iV-hw1"/>
     </inferredMetricsTieBreakers>
 </document>
