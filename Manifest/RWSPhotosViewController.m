@@ -30,6 +30,11 @@
     [self.item addObserver:self forKeyPath:@"photos" options:NSKeyValueObservingOptionNew context:nil];
 }
 
+- (void)dealloc
+{
+    [_item removeObserver:self forKeyPath:@"photos"];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if([self presentedViewController]){
