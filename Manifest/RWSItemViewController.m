@@ -189,9 +189,13 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     RWSItemParser *parser = self.parser;
     NSString *totalString = [[textField text] stringByReplacingCharactersInRange:range withString:string];
     id<RWSItem> item = [parser itemFromText:totalString];
+    if([string length] == 0){
+        item = [parser itemFromText:[textField text]];
+    }
 
     if(textField == self.priceField){
-        if([[textField text] length] == 1 && [string length] == 0){
+        NSString *currencySymbol = [[[NSLocale currentLocale] localeWithCurrency:item.currencyCode] currencySymbol];
+        if([[textField text] length] == [currencySymbol length] && [string length] == 0){
             return NO;
         }
 

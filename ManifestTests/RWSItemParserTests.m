@@ -56,6 +56,15 @@
     assertThat(item.currencyCode, equalTo(@"USD"));
 }
 
+- (void)testParserReadsJustDollarSign
+{
+    id<RWSItem> item = [parser itemFromText:@"$"];
+
+    assertThat(item.name, equalTo(@""));
+    assertThat(item.price, nilValue());
+    assertThat(item.currencyCode, equalTo(@"USD"));
+}
+
 - (void)testParserPicksUpDollarsReverseOrder
 {
     id<RWSItem> item = [parser itemFromText:@"$5 Something"];
@@ -155,6 +164,18 @@
     belgianParser.locale = [NSLocale localeWithLocaleIdentifier:@"en-BE"];
 
     id<RWSItem> item = [belgianParser itemFromText:@"Item US$5,32"];
+
+    assertThat(item.name, equalTo(@"Item"));
+    assertThat(item.price, equalTo(@5.32));
+    assertThat(item.currencyCode, equalTo(@"USD"));
+}
+
+- (void)testParserPicksUpDollarsInCanada
+{
+    RWSItemParser *belgianParser = [[RWSItemParser alloc] init];
+    belgianParser.locale = [NSLocale localeWithLocaleIdentifier:@"en-CA"];
+
+    id<RWSItem> item = [belgianParser itemFromText:@"Item US$5.32"];
 
     assertThat(item.name, equalTo(@"Item"));
     assertThat(item.price, equalTo(@5.32));
