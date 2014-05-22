@@ -81,6 +81,7 @@
 		9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6001897CB0E006E8E5C /* RWSProjectViewControllerTests.m */; };
 		9BDED6061897D175006E8E5C /* _RWSManagedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6031897D175006E8E5C /* _RWSManagedProject.m */; };
 		9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6051897D175006E8E5C /* RWSManagedProject.m */; };
+		9BF7B75D192E393600956E4D /* RWSSingularItemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */; };
 		D0C0F52035EA4BE2B4BFC928 /* libPods-Manifest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD53355709849A0876261FA /* libPods-Manifest.a */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +216,8 @@
 		9BDED6041897D175006E8E5C /* RWSManagedProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSManagedProject.h; sourceTree = "<group>"; };
 		9BDED6051897D175006E8E5C /* RWSManagedProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedProject.m; sourceTree = "<group>"; };
 		9BF18DA018D5D5D000C623F7 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		9BF7B75B192E393600956E4D /* RWSSingularItemSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSingularItemSource.h; sourceTree = "<group>"; };
+		9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSingularItemSource.m; sourceTree = "<group>"; };
 		B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManifestTests.xcconfig"; path = "Pods/Pods-ManifestTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -379,6 +382,8 @@
 				9B12FA811914DAD80020BD43 /* RWSPageControlView.m */,
 				9B12FA831914DB480020BD43 /* RWSPageAttributes.h */,
 				9B12FA841914DB480020BD43 /* RWSPageAttributes.m */,
+				9BF7B75B192E393600956E4D /* RWSSingularItemSource.h */,
+				9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				9B7A678A189FB131001E6629 /* RWSDumbItem.m in Sources */,
 				9B0DECD31897096B007C80A6 /* RWSProjectViewController.m in Sources */,
 				9BD6B1581895A1CC006E02D0 /* RWSAppDelegate.m in Sources */,
+				9BF7B75D192E393600956E4D /* RWSSingularItemSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

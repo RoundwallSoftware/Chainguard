@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G7Q-rn-GWp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G7Q-rn-GWp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -113,6 +113,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ukd-SZ-khf"/>
                     <connections>
                         <outlet property="closeButton" destination="8u7-50-pXX" id="ePi-Pa-hJe"/>
                         <outlet property="mapView" destination="pLr-Ts-Pa6" id="2Uq-9g-qXv"/>
@@ -120,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiH-T4-R0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="-1220"/>
+            <point key="canvasLocation" x="1933" y="-1340"/>
         </scene>
         <!--Project View Controller-->
         <scene sceneID="NG8-An-tgX">
@@ -406,6 +407,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="j8B-J1-Ufo">
                             <connections>
                                 <action selector="save:" destination="8tF-J3-HnI" id="ai0-GF-o6X"/>
+                                <segue destination="RtL-Lj-wqq" kind="modal" identifier="toMap" modalTransitionStyle="crossDissolve" id="GeU-Oy-JLp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -627,5 +629,6 @@ Diederick Hoogenboom</string>
     <inferredMetricsTieBreakers>
         <segue reference="fWF-X6-nz7"/>
         <segue reference="zyL-ze-Vbw"/>
+        <segue reference="GeU-Oy-JLp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,7 @@
 #import "RWSItemViewController.h"
 #import "RWSPriceFormatter.h"
 #import "RWSDumbItem.h"
+#import "RWSMapViewController.h"
 #import "RWSPriceInputManager.h"
 #import "RWSItemParser.h"
 #import "UIColor+RWSAppColors.h"
@@ -17,6 +18,7 @@
 #import "RWSPhotosViewController.h"
 #import "NSLocale+RWSCurrency.h"
 #import "RWSPagedLayout.h"
+#import "RWSSingularItemSource.h"
 @import AddressBookUI;
 
 NSString *const AYIUserDidAddLocationPreference = @"AYIUserDidAddLocationPreference";
@@ -125,6 +127,11 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
 - (IBAction)setCurrentLocation:(id)sender
 {
+    if([self isExistingItem]){
+        [self performSegueWithIdentifier:@"toMap" sender:self];
+        return;
+    }
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL didPreviouslyAddLocation = [defaults boolForKey:AYIUserDidAddLocationPreference];
     BOOL didPreviouslyChooseAutoLocation = [defaults boolForKey:AYIUserDidDecideOnAutoLocationPreference];
@@ -304,6 +311,11 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     if([identifier isEqualToString:@"toPhotos"]){
         RWSPhotosViewController *controller = [segue destinationViewController];
         controller.item = self.item;
+    }
+
+    if([identifier isEqualToString:@"toMap"]){
+        RWSMapViewController *controller = [segue destinationViewController];
+        [controller setItemSource:[[RWSSingularItemSource alloc] initWithItem:self.item]];
     }
 }
 

@@ -24,6 +24,11 @@
     return [self lineItemString];
 }
 
+- (NSString *)subtitle
+{
+    return [self addressString];
+}
+
 - (NSString *)lineItemString
 {
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
