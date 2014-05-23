@@ -17,6 +17,7 @@
 
 @interface RWSPriceInputManagerTests : XCTestCase{
     UITextField *textField;
+    NSLocale *USLocale;
 }
 @end
 
@@ -27,22 +28,44 @@
     [super setUp];
 
     textField = [[UITextField alloc] init];
+    USLocale = [NSLocale localeWithLocaleIdentifier:@"en-US"];
 }
 
 - (void)testInputtingDollarSignOnBlankField
 {
     textField.text = nil;
 
-    setCurrencyOnTextField(@"USD", [NSLocale currentLocale], textField);
+    setCurrencyOnTextField(@"USD", USLocale, textField);
 
     assertThat(textField.text, equalTo(@"$"));
+}
+
+- (void)testInputtingDollarSignTwiceOnBlankField
+{
+    textField.text = nil;
+
+    setCurrencyOnTextField(@"USD", USLocale, textField);
+    setCurrencyOnTextField(@"USD", USLocale, textField);
+
+    assertThat(textField.text, equalTo(@"$"));
+}
+
+- (void)testInputtingDollarSignTwiceOnBlankFieldInCanada
+{
+    textField.text = nil;
+    NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"en-CA"];
+
+    setCurrencyOnTextField(@"USD", locale, textField);
+    setCurrencyOnTextField(@"USD", locale, textField);
+
+    assertThat(textField.text, equalTo(@"US$"));
 }
 
 - (void)testChangingCurrencyToDollars
 {
     textField.text = @"€32.32";
 
-    setCurrencyOnTextField(@"USD", [NSLocale currentLocale], textField);
+    setCurrencyOnTextField(@"USD", USLocale, textField);
 
     assertThat(textField.text, equalTo(@"$32.32"));
 }
@@ -51,7 +74,7 @@
 {
     textField.text = @"€32.";
 
-    setCurrencyOnTextField(@"USD", [NSLocale currentLocale], textField);
+    setCurrencyOnTextField(@"USD", USLocale, textField);
 
     assertThat(textField.text, equalTo(@"$32.00"));
 }
@@ -60,7 +83,7 @@
 {
     textField.text = nil;
 
-    setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], textField);
+    setCurrencyOnTextField(@"EUR", USLocale, textField);
 
     assertThat(textField.text, equalTo(@"€"));
 }
@@ -69,7 +92,7 @@
 {
     textField.text = @"$32.32";
 
-    setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], textField);
+    setCurrencyOnTextField(@"EUR", USLocale, textField);
 
     assertThat(textField.text, equalTo(@"€32.32"));
 }
@@ -78,7 +101,7 @@
 {
     textField.text = @"£32.";
 
-    setCurrencyOnTextField(@"EUR", [NSLocale currentLocale], textField);
+    setCurrencyOnTextField(@"EUR", USLocale, textField);
 
     assertThat(textField.text, equalTo(@"€32.00"));
 }

@@ -13,19 +13,22 @@
 void setCurrencyOnTextField(NSString *currencyCode, NSLocale *locale, UITextField *textField)
 {
     NSLocale *localeForCurrency = [locale localeWithCurrency:currencyCode];
-    NSCharacterSet *symbolSet = [NSCharacterSet symbolCharacterSet];
     NSCharacterSet *punctuationSet = [NSCharacterSet characterSetWithCharactersInString:[localeForCurrency objectForKey:NSLocaleDecimalSeparator]];
 
-    NSString *justPrice = [[textField.text stringByTrimmingCharactersInSet:symbolSet] stringByTrimmingCharactersInSet:punctuationSet];
+    NSString *strippedString = [textField.text stringByTrimmingCharactersInSet:punctuationSet];
+    NSScanner *scanner = [[NSScanner alloc] initWithString:strippedString];
+    NSMutableCharacterSet *exclusionSet = [NSMutableCharacterSet letterCharacterSet];
+    [exclusionSet formUnionWithCharacterSet:[NSCharacterSet symbolCharacterSet]];
+    [scanner setCharactersToBeSkipped:exclusionSet];
+
+    double price;
+    BOOL foundNumber = [scanner scanDouble:&price];
 
     RWSPriceFormatter *priceFormatter = [[RWSPriceFormatter alloc] init];
     priceFormatter.locale = localeForCurrency;
 
-    if([justPrice length]){
-        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-        NSNumber *price = [numberFormatter numberFromString:justPrice];
-
-        [textField setText:[priceFormatter stringFromNumber:price currency:currencyCode]];
+    if(foundNumber){
+        [textField setText:[priceFormatter stringFromNumber:@(price) currency:currencyCode]];
     } else {
         [textField setText:[localeForCurrency currencySymbol]];
     }

@@ -28,7 +28,7 @@
     [super setUp];
 
     parser = [[RWSItemParser alloc] init];
-    parser.locale = [NSLocale currentLocale];
+    parser.locale = [NSLocale localeWithLocaleIdentifier:@"en-US"];
 }
 
 - (void)testParserPicksUpName

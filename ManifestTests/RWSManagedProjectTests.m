@@ -83,6 +83,8 @@
 - (void)testProjectsKnowTheirPriceTotals
 {
     RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    project.preferredCurrencyCode = @"USD";
+    
     id<RWSItem> item = mockProtocol(@protocol(RWSItem));
     [given([item name]) willReturn:@"Something"];
     [given([item price]) willReturn:@5.21];
