@@ -73,8 +73,6 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
         if(self.item.addressString){
             [locationButton setTitle:self.item.addressString forState:UIControlStateNormal];
         }
-
-
     }else{
         self.tableView.tableFooterView = nil;
         self.item = [[RWSDumbItem alloc] init];
@@ -104,7 +102,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     controller.item = self.item;
 
     UIView *view = controller.view;
-    view.frame = CGRectMake(0.0, 0.0, 320.0, 320.0);
+    view.frame = CGRectMake(0.0, 0.0, width, width);
     self.tableView.tableHeaderView = view;
     [controller willMoveToParentViewController:self];
 
@@ -112,7 +110,7 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
     self.photosController = controller;
 
-    self.tableView.contentInset = UIEdgeInsetsMake(-44.0, 0.0, 0.0, 0.0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-12.0, 0.0, 0.0, 0.0);
 }
 
 - (IBAction)save:(id)sender
