@@ -7,6 +7,7 @@
 //
 
 #import "RWSMapViewController.h"
+#import "MKMapView+Centering.h"
 
 NSString *const RWSMapCenterLatitude = @"RWSMapCenterLatitude";
 NSString *const RWSMapCenterLongitude = @"RWSMapCenterLongitude";
@@ -28,7 +29,9 @@ NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
 {
     [super viewDidLoad];
 
-    [self.mapView addAnnotations:[self.itemSource annotations]];
+    MKMapView *map = self.mapView;
+    [map addAnnotations:[self.itemSource annotations]];
+    [map centerMapProperly];
 }
 
 - (void)encodeRestorableStateWithCoder:(NSCoder *)coder

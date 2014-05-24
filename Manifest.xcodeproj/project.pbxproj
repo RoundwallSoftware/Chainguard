@@ -81,6 +81,7 @@
 		9BDED6011897CB0E006E8E5C /* RWSProjectViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6001897CB0E006E8E5C /* RWSProjectViewControllerTests.m */; };
 		9BDED6061897D175006E8E5C /* _RWSManagedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6031897D175006E8E5C /* _RWSManagedProject.m */; };
 		9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6051897D175006E8E5C /* RWSManagedProject.m */; };
+		9BE3B3B81930871400B5D6CC /* MKMapView+Centering.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B3B71930871400B5D6CC /* MKMapView+Centering.m */; };
 		9BF7B75D192E393600956E4D /* RWSSingularItemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */; };
 		D0C0F52035EA4BE2B4BFC928 /* libPods-Manifest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD53355709849A0876261FA /* libPods-Manifest.a */; };
 /* End PBXBuildFile section */
@@ -215,6 +216,8 @@
 		9BDED6031897D175006E8E5C /* _RWSManagedProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _RWSManagedProject.m; sourceTree = "<group>"; };
 		9BDED6041897D175006E8E5C /* RWSManagedProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSManagedProject.h; sourceTree = "<group>"; };
 		9BDED6051897D175006E8E5C /* RWSManagedProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedProject.m; sourceTree = "<group>"; };
+		9BE3B3B61930871400B5D6CC /* MKMapView+Centering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+Centering.h"; sourceTree = "<group>"; };
+		9BE3B3B71930871400B5D6CC /* MKMapView+Centering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+Centering.m"; sourceTree = "<group>"; };
 		9BF18DA018D5D5D000C623F7 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		9BF7B75B192E393600956E4D /* RWSSingularItemSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSingularItemSource.h; sourceTree = "<group>"; };
 		9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSingularItemSource.m; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 		9BD6B14D1895A1CC006E02D0 /* Manifest */ = {
 			isa = PBXGroup;
 			children = (
+				9BE3B3B61930871400B5D6CC /* MKMapView+Centering.h */,
+				9BE3B3B71930871400B5D6CC /* MKMapView+Centering.m */,
 				9B079624189A59B20026D489 /* _RWSManagedItem.h */,
 				9B079625189A59B20026D489 /* _RWSManagedItem.m */,
 				9B99A1CB18B922050075389A /* _RWSManagedPhoto.h */,
@@ -656,6 +661,7 @@
 				9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */,
 				9B12FA391914D2640020BD43 /* RWSPagedLayout.m in Sources */,
 				9B5579DE18968370008E3C0A /* RWSProjectsSource.m in Sources */,
+				9BE3B3B81930871400B5D6CC /* MKMapView+Centering.m in Sources */,
 				9B079628189A59B20026D489 /* _RWSManagedItem.m in Sources */,
 				9BD6B17A1895A4C4006E02D0 /* RWSProjectsViewController.m in Sources */,
 				9BDED6061897D175006E8E5C /* _RWSManagedProject.m in Sources */,
