@@ -8,12 +8,9 @@
 
 #import "RWSPhotosViewController.h"
 #import "RWSPagedPhotosViewController.h"
-@import AssetsLibrary;
-
 @import MobileCoreServices;
 
 @interface RWSPhotosViewController ()
-@property (nonatomic, strong) ALAssetsLibrary *library;
 @end
 
 @implementation RWSPhotosViewController
@@ -89,19 +86,14 @@
         return;
     }
 
-    if(buttonIndex == 0){
-        [self useLatestPhotoFromCameraRoll];
-        return;
-    }
-
     UIImagePickerController *controller = [[UIImagePickerController alloc] init];
     controller.allowsEditing = YES;
     controller.delegate = self;
     controller.mediaTypes = @[(NSString *)kUTTypeImage];
-    if(buttonIndex == 2){
+    if(buttonIndex == 1){
         controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     } else {
-        NSParameterAssert(buttonIndex == 1);
+        NSParameterAssert(buttonIndex == 0);
         controller.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
 
@@ -110,40 +102,8 @@
 
 - (IBAction)addPhoto:(id)sender
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Use Latest Photo", @"Take Photo", @"Choose From Library", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose From Library", nil];
     [sheet showInView:self.parentViewController.view];
-}
-
-- (void)useLatestPhotoFromCameraRoll
-{
-    self.library = [[ALAssetsLibrary alloc] init];
-    [self.library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *libraryStop) {
-        [group setAssetsFilter:[ALAssetsFilter allPhotos]];
-        NSInteger assetCount = [group numberOfAssets];
-        if(assetCount <= 0){
-            return;
-        }
-
-        NSIndexSet *indexes = [NSIndexSet indexSetWithIndex:assetCount-1];
-        [group enumerateAssetsAtIndexes:indexes options:NSEnumerationReverse usingBlock:^(ALAsset *asset, NSUInteger index, BOOL *groupStop) {
-            if(asset){
-                ALAssetRepresentation *imageRep = [asset defaultRepresentation];
-                CGImageRef imageRef = [imageRep fullScreenImage];
-                UIImage *image = [UIImage imageWithCGImage:imageRef];
-                
-                [self.item addPhotoWithImage:image];
-
-                [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
-            }
-        }];
-
-    } failureBlock:^(NSError *error) {
-        NSLog(@"Error: %@", error);
-        if([error code] == -3311){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"We aren't allowed to access your photos." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
-        }
-    }];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
