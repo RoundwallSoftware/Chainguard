@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		745C2B8D6429406091C897BB /* libPods-ManifestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */; };
+		276A5CEFC1014B12A8A93EEF /* libPods-Chainguard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1EC37D79F44A2CB7B1490A /* libPods-Chainguard.a */; };
+		6486E211573F48398F36E13C /* libPods-ChainguardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */; };
 		9B03243D190A7ECD003D6506 /* RWSPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */; };
 		9B05B33F18C0C9780060536F /* RWSPagedPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */; };
 		9B05B34218C0CC660060536F /* RWSBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05B34118C0CC660060536F /* RWSBigImageViewController.m */; };
@@ -83,7 +84,6 @@
 		9BDED6071897D175006E8E5C /* RWSManagedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDED6051897D175006E8E5C /* RWSManagedProject.m */; };
 		9BE3B3B81930871400B5D6CC /* MKMapView+Centering.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE3B3B71930871400B5D6CC /* MKMapView+Centering.m */; };
 		9BF7B75D192E393600956E4D /* RWSSingularItemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */; };
-		D0C0F52035EA4BE2B4BFC928 /* libPods-Manifest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD53355709849A0876261FA /* libPods-Manifest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +99,10 @@
 /* Begin PBXFileReference section */
 		05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManifestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD53355709849A0876261FA /* libPods-Manifest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Manifest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36AE97F92E014C5DAD53FE08 /* Pods-ChainguardTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChainguardTests.xcconfig"; path = "Pods/Pods-ChainguardTests.xcconfig"; sourceTree = "<group>"; };
+		4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chainguard.xcconfig"; path = "Pods/Pods-Chainguard.xcconfig"; sourceTree = "<group>"; };
 		6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Manifest.xcconfig"; path = "Pods/Pods-Manifest.xcconfig"; sourceTree = "<group>"; };
+		910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChainguardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWSPhotoCell.xib; sourceTree = "<group>"; };
 		9B05B33D18C0C9780060536F /* RWSPagedPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPagedPhotosViewController.h; sourceTree = "<group>"; };
 		9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPagedPhotosViewController.m; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 		9BF7B75B192E393600956E4D /* RWSSingularItemSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSingularItemSource.h; sourceTree = "<group>"; };
 		9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSingularItemSource.m; sourceTree = "<group>"; };
 		B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManifestTests.xcconfig"; path = "Pods/Pods-ManifestTests.xcconfig"; sourceTree = "<group>"; };
+		EF1EC37D79F44A2CB7B1490A /* libPods-Chainguard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chainguard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +240,7 @@
 				9BD6B14C1895A1CC006E02D0 /* UIKit.framework in Frameworks */,
 				9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */,
 				9B8352DE18EFEBAA00547269 /* libCrittercism_v4_3_3.a in Frameworks */,
-				D0C0F52035EA4BE2B4BFC928 /* libPods-Manifest.a in Frameworks */,
+				276A5CEFC1014B12A8A93EEF /* libPods-Chainguard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +251,7 @@
 				9BD6B1611895A1CC006E02D0 /* XCTest.framework in Frameworks */,
 				9BD6B1631895A1CC006E02D0 /* UIKit.framework in Frameworks */,
 				9BD6B1621895A1CC006E02D0 /* Foundation.framework in Frameworks */,
-				745C2B8D6429406091C897BB /* libPods-ManifestTests.a in Frameworks */,
+				6486E211573F48398F36E13C /* libPods-ChainguardTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +279,8 @@
 				9BD6B1451895A1CC006E02D0 /* Products */,
 				B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */,
 				6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */,
+				4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */,
+				36AE97F92E014C5DAD53FE08 /* Pods-ChainguardTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +306,8 @@
 				9BD6B1601895A1CC006E02D0 /* XCTest.framework */,
 				05B08DA3CF7546009324F2B4 /* libPods-ManifestTests.a */,
 				0FD53355709849A0876261FA /* libPods-Manifest.a */,
+				EF1EC37D79F44A2CB7B1490A /* libPods-Chainguard.a */,
+				910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -566,7 +574,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Manifest-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-Chainguard-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2EE77E59B80149DFAEB2D8C4 /* Check Pods Manifest.lock */ = {
@@ -609,7 +617,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-ManifestTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-ChainguardTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DD44227FAE2447B1B139D979 /* Check Pods Manifest.lock */ = {
@@ -828,7 +836,7 @@
 		};
 		9BD6B1711895A1CC006E02D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */;
+			baseConfigurationReference = 4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -865,7 +873,7 @@
 		};
 		9BD6B1721895A1CC006E02D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */;
+			baseConfigurationReference = 4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -902,7 +910,7 @@
 		};
 		9BD6B1741895A1CC006E02D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */;
+			baseConfigurationReference = 36AE97F92E014C5DAD53FE08 /* Pods-ChainguardTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chainguard.app/Chainguard";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -926,7 +934,7 @@
 		};
 		9BD6B1751895A1CC006E02D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */;
+			baseConfigurationReference = 36AE97F92E014C5DAD53FE08 /* Pods-ChainguardTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chainguard.app/Chainguard";
 				FRAMEWORK_SEARCH_PATHS = (

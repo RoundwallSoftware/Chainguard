@@ -97,11 +97,8 @@
     id<RWSItem> item = [self.project itemAtIndexPath:indexPath];
     RWSItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
     cell.delegate = self;
-    cell.containingTableView = tableView;
 
     [cell setItem:item];
-
-    [cell setCellHeight:self.tableView.rowHeight];
     return cell;
 }
 
