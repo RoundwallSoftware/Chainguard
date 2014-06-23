@@ -11,6 +11,7 @@
 @import MapKit;
 #import "RWSManagedProject.h"
 #import "RWSDumbItem.h"
+#import "NSLocale+RWSCurrency.h"
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
