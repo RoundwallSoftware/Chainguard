@@ -87,6 +87,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9B74543D1957DD61007925EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BD6B13C1895A1CC006E02D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BD6B1431895A1CC006E02D0;
+			remoteInfo = Chainguard;
+		};
+		9B74543F1957DD61007925EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BD6B13C1895A1CC006E02D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BD6B1431895A1CC006E02D0;
+			remoteInfo = Chainguard;
+		};
 		9BD6B1641895A1CC006E02D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9BD6B13C1895A1CC006E02D0 /* Project object */;
@@ -101,7 +115,6 @@
 		0FD53355709849A0876261FA /* libPods-Manifest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Manifest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AE97F92E014C5DAD53FE08 /* Pods-ChainguardTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChainguardTests.xcconfig"; path = "Pods/Pods-ChainguardTests.xcconfig"; sourceTree = "<group>"; };
 		4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chainguard.xcconfig"; path = "Pods/Pods-Chainguard.xcconfig"; sourceTree = "<group>"; };
-		6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Manifest.xcconfig"; path = "Pods/Pods-Manifest.xcconfig"; sourceTree = "<group>"; };
 		910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChainguardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWSPhotoCell.xib; sourceTree = "<group>"; };
 		9B05B33D18C0C9780060536F /* RWSPagedPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPagedPhotosViewController.h; sourceTree = "<group>"; };
@@ -224,7 +237,6 @@
 		9BF18DA018D5D5D000C623F7 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		9BF7B75B192E393600956E4D /* RWSSingularItemSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSSingularItemSource.h; sourceTree = "<group>"; };
 		9BF7B75C192E393600956E4D /* RWSSingularItemSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSSingularItemSource.m; sourceTree = "<group>"; };
-		B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManifestTests.xcconfig"; path = "Pods/Pods-ManifestTests.xcconfig"; sourceTree = "<group>"; };
 		EF1EC37D79F44A2CB7B1490A /* libPods-Chainguard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chainguard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -277,8 +289,6 @@
 				9BD6B1661895A1CC006E02D0 /* ManifestTests */,
 				9BD6B1461895A1CC006E02D0 /* Frameworks */,
 				9BD6B1451895A1CC006E02D0 /* Products */,
-				B071A218B5B14777A7815B25 /* Pods-ManifestTests.xcconfig */,
-				6409BA987A694FB984033F6F /* Pods-Manifest.xcconfig */,
 				4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */,
 				36AE97F92E014C5DAD53FE08 /* Pods-ChainguardTests.xcconfig */,
 			);
@@ -485,6 +495,8 @@
 			);
 			dependencies = (
 				9BD6B1651895A1CC006E02D0 /* PBXTargetDependency */,
+				9B74543E1957DD61007925EF /* PBXTargetDependency */,
+				9B7454401957DD61007925EF /* PBXTargetDependency */,
 			);
 			name = ChainguardTests;
 			productName = ManifestTests;
@@ -708,6 +720,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9B74543E1957DD61007925EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BD6B1431895A1CC006E02D0 /* Chainguard */;
+			targetProxy = 9B74543D1957DD61007925EF /* PBXContainerItemProxy */;
+		};
+		9B7454401957DD61007925EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BD6B1431895A1CC006E02D0 /* Chainguard */;
+			targetProxy = 9B74543F1957DD61007925EF /* PBXContainerItemProxy */;
+		};
 		9BD6B1651895A1CC006E02D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9BD6B1431895A1CC006E02D0 /* Chainguard */;
