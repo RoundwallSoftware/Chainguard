@@ -14,7 +14,7 @@
 
 @implementation RWSSingularItemSource
 
-- (id)initWithItem:(id<RWSItem>)item
+- (instancetype)initWithItem:(id<RWSItem>)item
 {
     self = [super init];
     if(self){

@@ -16,7 +16,7 @@ NSString *const RWSFormattedLastTimeExchangeRateUpdated = @"RWSFormattedLastTime
 
 @implementation RWSExchangeRates
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if(self){

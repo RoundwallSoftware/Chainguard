@@ -3,6 +3,6 @@
 @import MapKit;
 
 @interface RWSManagedItem : _RWSManagedItem<RWSItem, MKAnnotation> {}
-- (NSString *)lineItemString;
+@property (readonly, copy) NSString *lineItemString;
 - (NSDecimalNumber *)priceInCurrency:(NSString *)currencyCode;
 @end

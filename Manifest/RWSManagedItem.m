@@ -64,7 +64,7 @@
 
 - (id<RWSPhoto>)photoAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.photos objectAtIndex:indexPath.item];
+    return self.photos[indexPath.item];
 }
 
 - (void)addPhotoWithImage:(UIImage *)image
@@ -79,7 +79,7 @@
 
 - (void)deletePhotoAtIndexPath:(NSIndexPath *)indexPath
 {
-    RWSManagedPhoto *photo = [self.photos objectAtIndex:indexPath.item];
+    RWSManagedPhoto *photo = (self.photos)[indexPath.item];
     [self willChangeValueForKey:@"photos"];
     [self.managedObjectContext deleteObject:photo];
     [self didChangeValueForKey:@"photos"];

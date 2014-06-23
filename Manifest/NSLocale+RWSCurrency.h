@@ -9,7 +9,7 @@
 @interface NSLocale (RWSCurrency)
 
 - (NSLocale *)localeWithCurrency:(NSString *)currency;
-- (NSString *)currencySymbol;
-- (NSString *)currencyCode;
+@property (readonly, copy) NSString *currencySymbol;
+@property (readonly, copy) NSString *currencyCode;
 
 @end

@@ -153,7 +153,7 @@ NSString *const RWSProjectWasDeletedKey = @"RWSProjectWasDeletedKey";
 
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.items objectAtIndex:indexPath.row];
+    return self.items[indexPath.row];
 }
 
 - (void)addItemToList:(id<RWSItem>)item
@@ -225,7 +225,7 @@ NSString *const RWSProjectWasDeletedKey = @"RWSProjectWasDeletedKey";
     NSString *titleString = [@"Project: " stringByAppendingString:self.title];
     NSString *priceString = [@"Total: " stringByAppendingString:[self formattedTotalRemainingPrice]];
     NSString *itemString = [[[[self items] valueForKey:@"lineItemString"] array] componentsJoinedByString:@"\n"];
-    NSString *madeWithThisAppString = [NSString stringWithFormat:@"Made with %@.app", [[[NSBundle mainBundle] infoDictionary] objectForKey:(__bridge NSString *)kCFBundleExecutableKey]];
+    NSString *madeWithThisAppString = [NSString stringWithFormat:@"Made with %@.app", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey]];
     NSString *appURLString = @"itms://itunes.apple.com/us/app/garageband/id408709785?mt=8";
 
     return [@[titleString, @"", itemString, @"", priceString, @"", @"", madeWithThisAppString, appURLString] componentsJoinedByString:@"\n"];

@@ -251,7 +251,7 @@
         return;
     }
 
-    NSString *selectedCurrencyCode = [[self.project currencyCodesUsed] objectAtIndex:buttonIndex];
+    NSString *selectedCurrencyCode = [self.project currencyCodesUsed][buttonIndex];
     [self.project setPreferredCurrencyCode:selectedCurrencyCode];
 
     [self recalculatePrice];

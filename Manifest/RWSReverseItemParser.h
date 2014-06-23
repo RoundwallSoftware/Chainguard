@@ -13,6 +13,6 @@
 - (void)setName:(NSString *)name;
 - (void)setPriceInput:(NSString *)priceInput;
 
-- (NSString *)inputString;
+@property (readonly, copy) NSString *inputString;
 
 @end

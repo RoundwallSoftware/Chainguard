@@ -10,5 +10,5 @@
 
 @interface RWSCoreDataController : NSObject
 
-- (NSManagedObjectContext *)mainContext;
+@property (readonly, strong) NSManagedObjectContext *mainContext;
 @end

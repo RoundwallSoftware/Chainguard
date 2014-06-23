@@ -13,9 +13,9 @@
 @interface RWSProjectsSource : NSObject<RWSMapItemSource>
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
-- (NSUInteger)count;
+@property (readonly) NSUInteger count;
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)indexPathForProjectWithIdentifier:(NSString *)identifier;
-- (id<RWSProject>)makeUntitledList;
+@property (readonly, strong) id<RWSProject> makeUntitledList;
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath;
 @end
