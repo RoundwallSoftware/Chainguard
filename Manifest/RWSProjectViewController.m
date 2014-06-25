@@ -76,6 +76,7 @@
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleNone;
     textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
     textField.returnKeyType = UIReturnKeyDone;
     textField.textColor = [UIColor tintColor];
     textField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
