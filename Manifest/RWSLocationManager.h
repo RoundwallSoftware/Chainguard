@@ -18,6 +18,7 @@ extern NSString *const RWSAutoLocationEnabled;
 - (void)updateLocation;
 + (BOOL)isAutoLocationEnabled;
 - (void)enableAutoUpdates;
+- (BOOL)canGetLocations;
 @end
 
 @protocol RWSLocationManagerDelegate <NSObject>

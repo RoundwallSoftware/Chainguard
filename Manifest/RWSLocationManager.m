@@ -50,6 +50,12 @@ NSString *const RWSAutoLocationEnabled = @"RWSAutoLocationEnabled";
     self.geocoder = geocoder;
 }
 
+- (BOOL)canGetLocations
+{
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    return status != kCLAuthorizationStatusDenied && status != kCLAuthorizationStatusRestricted;
+}
+
 + (BOOL)isAutoLocationEnabled
 {
     return [[NSUserDefaults standardUserDefaults] boolForKey:RWSAutoLocationEnabled];

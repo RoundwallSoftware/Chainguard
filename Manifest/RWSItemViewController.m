@@ -84,6 +84,9 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
             [self setCurrentLocation:locationButton];
         }
     }
+    
+    locationButton.enabled = [self.locationManager canGetLocations];
+    [locationButton setTitle:@"" forState:UIControlStateDisabled];
 
     self.notesField.text = self.item.notes;
     [self setupPhotosController];
