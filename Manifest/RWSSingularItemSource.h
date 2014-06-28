@@ -10,5 +10,5 @@
 #import "RWSProject.h"
 
 @interface RWSSingularItemSource : NSObject<RWSMapItemSource>
-- (instancetype)initWithItem:(id<RWSItem>)item NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithItem:(id<RWSItem>)item;
 @end

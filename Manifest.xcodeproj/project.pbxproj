@@ -615,7 +615,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_ID=\"533fb401a6d3d7064a000002\"\nAPI_KEY=\"nendfglqxbozyzcj6t8amhsh2uwxyrii\"\nsource ${SRCROOT}/Manifest/CrittercismSDK/dsym_upload.sh";
+			shellScript = "APP_ID=\"533fb401a6d3d7064a000002\"\nAPI_KEY=\"nendfglqxbozyzcj6t8amhsh2uwxyrii\"\n#source ${SRCROOT}/Manifest/CrittercismSDK/dsym_upload.sh";
 		};
 		B560E261DAA94A9BAB36C387 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
