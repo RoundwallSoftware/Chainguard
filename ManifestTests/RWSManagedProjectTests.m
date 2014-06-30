@@ -168,4 +168,45 @@
     assertThat([project preferredCurrencyCode], equalTo(code));
 }
 
+- (void)testProjectsUseItemImages
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    
+    RWSDumbItem *item = [[RWSDumbItem alloc] init];
+    item.name = @"One With An Image";
+    UIImage *image = [self pokemonImage];
+    [item addPhotoWithImage:image];
+    
+    [project addItemToList:item];
+    
+    UIImage *projectImage = [project imageFromParts];
+    assertThat(projectImage, isNot(nilValue()));
+}
+
+- (void)testProjectsUseItemImagesWhenFirstItemDoesntHaveOne
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    
+    RWSDumbItem *itemWithoutImage = [[RWSDumbItem alloc] init];
+    itemWithoutImage.name = @"One Without An Image";
+    
+    [project addItemToList:itemWithoutImage];
+    
+    RWSDumbItem *item = [[RWSDumbItem alloc] init];
+    item.name = @"One With An Image";
+    UIImage *image = [self pokemonImage];
+    [item addPhotoWithImage:image];
+    
+    [project addItemToList:item];
+    
+    UIImage *projectImage = [project imageFromParts];
+    assertThat(projectImage, isNot(nilValue()));
+}
+
+- (UIImage *)pokemonImage
+{
+    NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Pokemon" ofType:@"jpg"];
+    return [UIImage imageWithContentsOfFile:path];
+}
+
 @end

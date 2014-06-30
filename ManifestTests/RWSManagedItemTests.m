@@ -71,7 +71,7 @@
     item.price = [NSDecimalNumber decimalNumberWithString:@"1"];
     item.currencyCode = @"USD";
 
-    assertThat([item priceInCurrency:@"EUR"], equalTo([NSDecimalNumber decimalNumberWithString:@"0.74"]));
+    assertThat([item priceInCurrency:@"EUR"], equalTo([NSDecimalNumber decimalNumberWithString:@"0.73"]));
 }
 
 - (void)testPriceInCurrencyGBPtoEUR

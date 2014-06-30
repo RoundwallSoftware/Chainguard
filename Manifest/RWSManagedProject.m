@@ -253,7 +253,8 @@ NSString *const RWSProjectWasDeletedKey = @"RWSProjectWasDeletedKey";
 
 - (UIImage *)imageFromParts
 {
-    RWSManagedItem *item = [self.items firstObject];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"photoCount > 0"];
+    RWSManagedItem *item = [[self.items filteredOrderedSetUsingPredicate:predicate] firstObject];
     RWSManagedPhoto *photo = [[item photos] firstObject];
     return [photo thumbnailImage];
 }

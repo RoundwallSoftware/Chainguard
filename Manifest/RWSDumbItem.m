@@ -54,6 +54,7 @@
 
 - (void)addPhotoWithImage:(UIImage *)image
 {
+    NSParameterAssert(image);
     if(!self.photos){
         self.photos = [NSMutableArray array];
     }
