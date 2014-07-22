@@ -64,7 +64,7 @@
 {
     SKStoreProductViewController *controller = [[SKStoreProductViewController alloc] init];
     controller.delegate = self;
-    [controller loadProductWithParameters:@{ SKStoreProductParameterITunesItemIdentifier: @"364709193" } completionBlock:^(BOOL result, NSError *error) {
+    [controller loadProductWithParameters:@{ SKStoreProductParameterITunesItemIdentifier: @"895088117" } completionBlock:^(BOOL result, NSError *error) {
         NSLog(@"result: %@, error: %@", result ? @"YES":@"NO", error);
     }];
 

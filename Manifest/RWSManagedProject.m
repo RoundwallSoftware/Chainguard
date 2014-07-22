@@ -226,7 +226,7 @@ NSString *const RWSProjectWasDeletedKey = @"RWSProjectWasDeletedKey";
     NSString *priceString = [@"Total: " stringByAppendingString:[self formattedTotalRemainingPrice]];
     NSString *itemString = [[[[self items] valueForKey:@"lineItemString"] array] componentsJoinedByString:@"\n"];
     NSString *madeWithThisAppString = [NSString stringWithFormat:@"Made with %@.app", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey]];
-    NSString *appURLString = @"itms://itunes.apple.com/us/app/garageband/id408709785?mt=8";
+    NSString *appURLString = @"itms://itunes.com/apps/chainguard";
 
     return [@[titleString, @"", itemString, @"", priceString, @"", @"", madeWithThisAppString, appURLString] componentsJoinedByString:@"\n"];
 }
