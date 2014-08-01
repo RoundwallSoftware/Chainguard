@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
+#import "RWSProjectsSource.h"
 @class RWSCoreDataController;
-@class RWSProjectsSource;
 
-@interface RWSProjectsViewController : UITableViewController<UIDataSourceModelAssociation>
+@interface RWSProjectsViewController : UITableViewController<UIDataSourceModelAssociation, RWSProjectSourceDelegate>
 @property (nonatomic, strong) RWSProjectsSource *projectSource;
 @end

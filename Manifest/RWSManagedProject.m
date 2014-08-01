@@ -5,19 +5,28 @@
 #import "RWSManagedPhoto.h"
 
 NSString *const RWSProjectWasDeletedKey = @"RWSProjectWasDeletedKey";
+NSString *const RWSProjectHasAddedKey = @"RWSProjectHasAddedKey";
 
 @implementation RWSManagedProject
 
-+ (void)ensureDefaultProjectsInContext:(NSManagedObjectContext *)context
++ (BOOL)canAddDefaultProject
 {
-    NSString *title = @"Starting Guitar";
-    RWSManagedProject *project = [self existingProjectWithTitle:title inContext:context];
-    if(project || [[NSUserDefaults standardUserDefaults] boolForKey:RWSProjectWasDeletedKey]){
-        return;
-    }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    return ![defaults boolForKey:RWSProjectHasAddedKey] && ![defaults boolForKey:RWSProjectWasDeletedKey];
+}
+
++ (void)makeNoteProjectWasDeleted
+{
+    return [[NSUserDefaults standardUserDefaults] setBool:YES forKey:RWSProjectWasDeletedKey];
+}
+
++ (void)addDefaultProject:(NSManagedObjectContext *)context
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:RWSProjectHasAddedKey];
 
     RWSManagedProject *defaultProject = [RWSManagedProject insertInManagedObjectContext:context];
-    defaultProject.title = title;
+    defaultProject.title = @"Starting Guitar";
     defaultProject.preferredCurrencyCode = @"EUR";
 
     RWSManagedItem *guitar = [RWSManagedItem insertInManagedObjectContext:context];
@@ -63,11 +72,6 @@ NSString *const RWSProjectWasDeletedKey = @"RWSProjectWasDeletedKey";
     if(!saved){
         NSAssert(saved, @"Saving error: %@", saveError);
     }
-}
-
-+ (void)makeNoteAProjectWasDeleted
-{
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:RWSProjectWasDeletedKey];
 }
 
 + (instancetype)existingProjectWithTitle:(NSString *)title inContext:(NSManagedObjectContext *)context

@@ -10,12 +10,21 @@
 #import "RWSMapItemSource.h"
 @class RWSCoreDataController;
 
-@interface RWSProjectsSource : NSObject<RWSMapItemSource>
+@protocol RWSProjectSourceDelegate;
+
+@interface RWSProjectsSource : NSObject<RWSMapItemSource, UIAlertViewDelegate>
+@property (nonatomic, weak) id<RWSProjectSourceDelegate> delegate;
+
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
 @property (readonly) NSUInteger count;
+@property (readonly, strong) id<RWSProject> makeUntitledList;
+
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)indexPathForProjectWithIdentifier:(NSString *)identifier;
-@property (readonly, strong) id<RWSProject> makeUntitledList;
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
+@protocol RWSProjectSourceDelegate
+- (void)projectSourceDidAddProject:(RWSProjectsSource *)source;
 @end

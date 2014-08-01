@@ -17,6 +17,28 @@
 
 @implementation RWSProjectsSource
 
+- (id)init
+{
+    self = [super init];
+    if(self){
+        if([RWSManagedProject canAddDefaultProject]){
+            [[[UIAlertView alloc] initWithTitle:nil message:@"Would you like to see an example project?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Add Project", nil] show];
+        }
+    }
+    return self;
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == [alertView cancelButtonIndex]){
+        return;
+    }
+    
+    [RWSManagedProject addDefaultProject:[self context]];
+    
+    [self.delegate projectSourceDidAddProject:self];
+}
+
 - (NSManagedObjectContext *)context
 {
     if(_context){
@@ -25,7 +47,6 @@
     
     _coreDataController = [[RWSCoreDataController alloc] init];
     _context = _coreDataController.mainContext;
-    [RWSManagedProject ensureDefaultProjectsInContext:_context];
 
     return _context;
 }
@@ -76,9 +97,9 @@
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath
 {
     RWSManagedProject *project = (RWSManagedProject*)[self projectAtIndexPath:indexPath];
-    [RWSManagedProject makeNoteAProjectWasDeleted];
-
     [self.context deleteObject:project];
+    
+    [RWSManagedProject makeNoteProjectWasDeleted];
 }
 
 - (NSArray *)annotations

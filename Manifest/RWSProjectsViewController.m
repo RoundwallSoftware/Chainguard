@@ -23,8 +23,16 @@
 {
     if(!_projectSource){
         self.projectSource = [[RWSProjectsSource alloc] init];
+        self.projectSource.delegate = self;
     }
     return _projectSource;
+}
+
+- (void)projectSourceDidAddProject:(RWSProjectsSource *)source
+{
+    [self showEmptyStateIfNecessary];
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)viewWillAppear:(BOOL)animated
