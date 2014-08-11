@@ -12,11 +12,11 @@
 
 - (NSLocale *)localeWithCurrency:(NSString *)currency
 {
-    NSDictionary *components = @{
-                                 NSLocaleCurrencyCode: currency,
+    NSMutableDictionary *components = [@{
                                  NSLocaleLanguageCode: [self objectForKey:NSLocaleLanguageCode],
                                  NSLocaleCountryCode: [self objectForKey:NSLocaleCountryCode]
-                                 };
+                                 } mutableCopy];
+    components[NSLocaleCurrencyCode] = currency;
 
     NSString *identifier = [[self class] localeIdentifierFromComponents:components];
     return [[self class] localeWithLocaleIdentifier:identifier];
