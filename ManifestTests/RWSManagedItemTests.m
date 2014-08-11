@@ -82,4 +82,22 @@
     assertThatDouble([[item priceInCurrency:@"EUR"] doubleValue], closeTo([[NSDecimalNumber decimalNumberWithString:@"2.43"] doubleValue], 0.2));
 }
 
+- (void)testValidLineItemStringWithoutCurrency
+{
+    XCTAssertNoThrow(item.lineItemString, @"Generating a line item string should be ok without a price");
+}
+
+- (void)testValidLineItemString
+{
+    assertThat(item.lineItemString, is(equalTo(@"Sup")));
+}
+
+- (void)testValidLineItemStringWithCurrency
+{
+    item.price = [NSDecimalNumber decimalNumberWithString:@"2"];
+    item.currencyCode = @"USD";
+    
+    assertThat(item.lineItemString, is(equalTo(@"Sup: $2.00")));
+}
+
 @end

@@ -32,8 +32,16 @@
 - (NSString *)lineItemString
 {
     RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
-
-    return [@[self.name, @": ", [formatter stringFromNumber:[self price] currency:self.currencyCode]] componentsJoinedByString:@""];
+    
+    NSMutableArray *items = [NSMutableArray array];
+    [items addObject:self.name];
+    
+    if([self price] && [self currencyCode]){
+        [items addObject:@": "];
+        [items addObject:[formatter stringFromNumber:[self price] currency:self.currencyCode]];
+    }
+    
+    return [items componentsJoinedByString:@""];
 }
 
 - (BOOL)isValid
