@@ -28,6 +28,11 @@
     [self.delegate cellDidChoseDeleteAction:self];
 }
 
+- (IBAction)share:(id)sender
+{
+    [self.delegate cellDidChoseShareAction:self];
+}
+
 - (void)setSelected:(BOOL)selected
 {
     CGFloat opacityValue = 0.0f;

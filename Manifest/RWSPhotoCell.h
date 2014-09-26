@@ -15,8 +15,10 @@
 
 - (void)setPhoto:(id<RWSPhoto>)photo;
 - (IBAction)delete:(id)sender;
+- (IBAction)share:(id)sender;
 @end
 
 @protocol RWSPhotoCellDelegate
 - (void)cellDidChoseDeleteAction:(RWSPhotoCell *)cell;
+- (void)cellDidChoseShareAction:(RWSPhotoCell *)cell;
 @end

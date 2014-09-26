@@ -129,4 +129,13 @@
     [self.item deletePhotoAtIndexPath:indexPath];
 }
 
+- (void)cellDidChoseShareAction:(RWSPhotoCell *)cell
+{
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    id<RWSPhoto>photo = [self.item photoAtIndexPath:indexPath];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[[photo fullImage]] applicationActivities:nil];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
 @end
