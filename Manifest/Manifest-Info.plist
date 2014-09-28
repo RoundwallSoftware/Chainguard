@@ -30,6 +30,8 @@
 	<array>
 		<string>fetch</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>Storyboard</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Storyboard</string>
 	<key>UIRequiredDeviceCapabilities</key>

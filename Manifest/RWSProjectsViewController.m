@@ -166,10 +166,11 @@
 
 - (UIView *)emptyHeaderView
 {
-    CGRect frame = CGRectMake(0.0, 0.0, CGRectGetWidth([self.tableView bounds]), 180.0);
-    UIView *header = [[UIView alloc] initWithFrame:frame];
+    CGRect frame = self.tableView.bounds;
+    UIView *header = [[UIView alloc] initWithFrame:CGRectInset(frame, 0.0f, 40.0f)];
 
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(frame, 10.0, 10.0)];
+    UILabel *label = [[UILabel alloc] init];
+    label.translatesAutoresizingMaskIntoConstraints = NO;
     label.textColor = [UIColor darkGrayColor];
     label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
@@ -177,7 +178,11 @@
     label.text = @"You have no projects yet. Make one and get started!";
 
     [header addSubview:label];
-    label.center = header.center;
+    
+    [header addConstraint:[NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:header attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+    [header addConstraint:[NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:header attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f]];
+    [header addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[label]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
+    [header addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[label]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
 
     return header;
 }
