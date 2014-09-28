@@ -96,9 +96,9 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-50-pXX">
-                                <rect key="frame" x="524" y="20" width="60" height="38"/>
+                                <rect key="frame" x="504" y="20" width="80" height="58"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                 <state key="normal" title="Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -262,21 +262,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8d-L8-CvG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8d-L8-CvG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f22-j4-Rps">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="500" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="f22-j4-Rps">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="f22-j4-Rps" firstAttribute="leading" secondItem="F8d-L8-CvG" secondAttribute="leading" id="4nc-tp-5Y0"/>
+                                    <constraint firstItem="f22-j4-Rps" firstAttribute="top" secondItem="F8d-L8-CvG" secondAttribute="top" id="7gn-N3-wwV"/>
+                                    <constraint firstAttribute="trailing" secondItem="f22-j4-Rps" secondAttribute="trailing" id="ccn-zr-Bzd"/>
+                                    <constraint firstAttribute="bottom" secondItem="f22-j4-Rps" secondAttribute="bottom" id="pvM-eF-VIa"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="jcN-xD-sLx" id="ULX-yK-MML"/>
                                 </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="F8d-L8-CvG" secondAttribute="trailing" id="Owa-Bf-Sj0"/>
+                            <constraint firstItem="lbg-VX-FIz" firstAttribute="top" secondItem="F8d-L8-CvG" secondAttribute="bottom" id="QxJ-Ml-2qF"/>
+                            <constraint firstItem="F8d-L8-CvG" firstAttribute="top" secondItem="fLU-qU-uAt" secondAttribute="bottom" id="ZIt-iV-um6"/>
+                            <constraint firstItem="F8d-L8-CvG" firstAttribute="leading" secondItem="owr-OH-8pH" secondAttribute="leading" id="t0E-Dl-Umh"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
