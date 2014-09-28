@@ -1,22 +1,16 @@
 PODS:
   - iOS7Colors (2.0.0)
   - OCHamcrest (4.0.1)
-  - OCMockito (1.3.0):
+  - OCMockito (1.3.1):
     - OCHamcrest (~> 4.0)
-    - TPWeakProxy (~> 1.0)
-  - SWTableViewCell (0.3.0)
-  - TPWeakProxy (1.0.0)
 
 DEPENDENCIES:
   - iOS7Colors (~> 2.0.0)
   - OCMockito
-  - SWTableViewCell
 
 SPEC CHECKSUMS:
   iOS7Colors: 38fd2461757b55f44cde3fcb1667fdedd8470e0c
   OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
-  OCMockito: eca2670b3ce4a457d316b046a36d6f2b980a4da7
-  SWTableViewCell: 1725f7607ce4c154264c18aeb78e4636b11b0b29
-  TPWeakProxy: a23251ba7fbe268c93f809cc072ef834f5063798
+  OCMockito: 57b8c4bb54ff3a4a14eb2174f9e57faf9f56efb6
 
 COCOAPODS: 0.33.1
