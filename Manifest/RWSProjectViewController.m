@@ -10,11 +10,11 @@
 #import "RWSPriceFormatter.h"
 #import "NSLocale+RWSCurrency.h"
 #import "UIColor+RWSAppColors.h"
+#import <UIColor+iOS7Colors.h>
 
 @interface RWSProjectViewController ()
 @property (nonatomic, strong) UIBarButtonItem *priceItem;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *addItem;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *actionItem;
 @end
 
 @implementation RWSProjectViewController
@@ -28,7 +28,6 @@
     }
 
     UIBarButtonItem *actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-    self.actionItem = actionItem;
 
     UIBarButtonItem *flexibleItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
@@ -102,16 +101,38 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {}
+
+
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id<RWSItem> item = [self.project itemAtIndexPath:indexPath];
-    
     NSMutableArray *buttons = [[NSMutableArray alloc] init];
+    
+    UITableViewRowAction *delete = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
+        [self.project removeItemAtIndexPath:actionPath];
+        
+        [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        [self recalculatePrice];
+        
+        [self showEmptyStateIfNecessary];
+    }];
+    [buttons addObject:delete];
+    
+    UITableViewRowAction *share = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Share" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
+        
+        UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[item] applicationActivities:nil];
+        [self presentViewController:controller animated:YES completion:nil];
+        
+    }];
+    [buttons addObject:share];
+    
     if([item isPurchased]){
         UITableViewRowAction *undo = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Undo" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
             [item togglePurchased];
             
-            [tableView reloadRowsAtIndexPaths:@[actionPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
             
             [self recalculatePrice];
             
@@ -122,25 +143,16 @@
         UITableViewRowAction *purchase = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Got It" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
             [item togglePurchased];
             
-            [tableView reloadRowsAtIndexPaths:@[actionPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
             
             [self recalculatePrice];
             
             [self showEmptyStateIfNecessary];
         }];
         [buttons addObject:purchase];
+        
+        purchase.backgroundColor = [UIColor iOS7greenColor];
     }
-  
-    UITableViewRowAction *delete = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Got It" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
-        [self.project removeItemAtIndexPath:actionPath];
-        
-        [tableView reloadRowsAtIndexPaths:@[actionPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
-        [self recalculatePrice];
-        
-        [self showEmptyStateIfNecessary];
-    }];
-    [buttons addObject:delete];
     
     return buttons;
 }
@@ -148,12 +160,6 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [self.project moveItemAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-    [self performSegueWithIdentifier:@"toItem" sender:self];
 }
 
 #pragma mark - UITextFieldDelegate

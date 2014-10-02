@@ -66,4 +66,14 @@
 
 - (void)deletePhotoAtIndexPath:(NSIndexPath *)indexPath{}
 
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
+{
+    return nil;
+}
+
+- (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController
+{
+    return nil;
+}
+
 @end

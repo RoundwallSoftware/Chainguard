@@ -93,4 +93,14 @@
     [self didChangeValueForKey:@"photos"];
 }
 
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
+{
+    return [self lineItemString];
+}
+
+- (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController
+{
+    return [self lineItemString];
+}
+
 @end

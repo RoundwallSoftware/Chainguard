@@ -16,7 +16,7 @@
 - (UIImage *)thumbnailImage;
 @end
 
-@protocol RWSItem <NSObject>
+@protocol RWSItem <UIActivityItemSource>
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSDecimalNumber *price;
 @property (nonatomic, copy) NSString *currencyCode;

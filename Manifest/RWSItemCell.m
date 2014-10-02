@@ -25,7 +25,7 @@
     if(item.price){
         RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
         NSString *priceString = [formatter stringFromNumber:item.price currency:item.currencyCode];
-        self.detailTextLabel.text = priceString;
+        
         if([item isPurchased]){
             self.detailTextLabel.attributedText = [[NSAttributedString alloc] initWithString:priceString attributes:@{NSStrikethroughStyleAttributeName: @(NSUnderlineStyleSingle)}];
         }else{
