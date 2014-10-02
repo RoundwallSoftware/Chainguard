@@ -6,9 +6,8 @@
 //  Copyright (c) 2014 Roundwall Software. All rights reserved.
 //
 
-#import "SWTableViewCell.h"
 #import "RWSProject.h"
 
-@interface RWSItemCell : SWTableViewCell
+@interface RWSItemCell : UITableViewCell
 - (void)setItem:(id<RWSItem>)item;
 @end

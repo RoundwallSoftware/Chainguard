@@ -97,37 +97,52 @@
 {
     id<RWSItem> item = [self.project itemAtIndexPath:indexPath];
     RWSItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
-    cell.delegate = self;
 
     [cell setItem:item];
     return cell;
 }
 
-- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [cell hideUtilityButtonsAnimated:YES];
-
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    id<RWSItem>item = [self.project itemAtIndexPath:indexPath];
-    [item togglePurchased];
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-
-    [self recalculatePrice];
-}
-
-- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
-{
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    [self.project removeItemAtIndexPath:indexPath];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self recalculatePrice];
-
-    [self showEmptyStateIfNecessary];
-}
-
-- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell
-{
-    return YES;
+    id<RWSItem> item = [self.project itemAtIndexPath:indexPath];
+    
+    NSMutableArray *buttons = [[NSMutableArray alloc] init];
+    if([item isPurchased]){
+        UITableViewRowAction *undo = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Undo" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
+            [item togglePurchased];
+            
+            [tableView reloadRowsAtIndexPaths:@[actionPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            
+            [self recalculatePrice];
+            
+            [self showEmptyStateIfNecessary];
+        }];
+        [buttons addObject:undo];
+    } else {
+        UITableViewRowAction *purchase = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Got It" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
+            [item togglePurchased];
+            
+            [tableView reloadRowsAtIndexPaths:@[actionPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            
+            [self recalculatePrice];
+            
+            [self showEmptyStateIfNecessary];
+        }];
+        [buttons addObject:purchase];
+    }
+  
+    UITableViewRowAction *delete = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Got It" handler:^(UITableViewRowAction *action, NSIndexPath *actionPath) {
+        [self.project removeItemAtIndexPath:actionPath];
+        
+        [tableView reloadRowsAtIndexPaths:@[actionPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        [self recalculatePrice];
+        
+        [self showEmptyStateIfNecessary];
+    }];
+    [buttons addObject:delete];
+    
+    return buttons;
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
@@ -139,13 +154,6 @@
 {
     [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     [self performSegueWithIdentifier:@"toItem" sender:self];
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    for(RWSItemCell *cell in [self.tableView visibleCells]){
-        [cell hideUtilityButtonsAnimated:YES];
-    }
 }
 
 #pragma mark - UITextFieldDelegate

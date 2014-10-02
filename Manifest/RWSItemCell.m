@@ -15,18 +15,6 @@
 
 - (void)setItem:(id<RWSItem>)item
 {
-    NSMutableArray *leftButtons = [[NSMutableArray alloc] init];
-    if([item isPurchased]){
-        [leftButtons sw_addUtilityButtonWithColor:[UIColor secondaryColor] title:@"Undo"];
-    }else{
-        [leftButtons sw_addUtilityButtonWithColor:[UIColor secondaryColor] title:@"Got it"];
-    }
-    self.leftUtilityButtons = leftButtons;
-
-    NSMutableArray *rightButtons = [[NSMutableArray alloc] init];
-    [rightButtons sw_addUtilityButtonWithColor:[UIColor iOS7redColor] title:@"Delete"];
-    self.rightUtilityButtons = rightButtons;
-
     self.textLabel.text = item.name;
     if([item isPurchased]){
         self.textLabel.attributedText = [[NSAttributedString alloc] initWithString:item.name attributes:@{NSStrikethroughStyleAttributeName: @(NSUnderlineStyleSingle)}];

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		276A5CEFC1014B12A8A93EEF /* libPods-Chainguard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1EC37D79F44A2CB7B1490A /* libPods-Chainguard.a */; };
 		6486E211573F48398F36E13C /* libPods-ChainguardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */; };
 		9B03243D190A7ECD003D6506 /* RWSPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */; };
 		9B05B33F18C0C9780060536F /* RWSPagedPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */; };
@@ -43,11 +42,12 @@
 		9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B59DC851895D6BF000530EF /* RWSMapViewController.m */; };
 		9B7A6787189FABBE001E6629 /* RWSMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A6786189FABBE001E6629 /* RWSMapViewControllerTests.m */; };
 		9B7A678A189FB131001E6629 /* RWSDumbItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A6789189FB131001E6629 /* RWSDumbItem.m */; };
-		9B8352DD18EFEBAA00547269 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9B8352DB18EFEBAA00547269 /* dsym_upload.sh */; };
-		9B8352DE18EFEBAA00547269 /* libCrittercism_v4_3_3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */; };
 		9B8352E218EFEC0700547269 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8352E118EFEC0700547269 /* SystemConfiguration.framework */; };
 		9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C854189CFA7400941A99 /* RWSLocationManager.m */; };
 		9B88C857189D02A500941A99 /* RWSLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */; };
+		9B933CB219DD81760090970A /* libPods-Chainguard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933CB119DD81760090970A /* libPods-Chainguard.a */; };
+		9B933CB919DD82490090970A /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = 9B933CB719DD82490090970A /* dsym_upload.sh */; };
+		9B933CBA19DD82490090970A /* libCrittercism_v4_3_7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B933CB819DD82490090970A /* libCrittercism_v4_3_7.a */; };
 		9B99A1C018B91BCF0075389A /* RWSPhotosViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */; };
 		9B99A1C318B91BF60075389A /* RWSPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1C218B91BF60075389A /* RWSPhotosViewController.m */; };
 		9B99A1C618B91F940075389A /* RWSPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1C518B91F940075389A /* RWSPhotoCell.m */; };
@@ -170,16 +170,17 @@
 		9B7A6786189FABBE001E6629 /* RWSMapViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSMapViewControllerTests.m; sourceTree = "<group>"; };
 		9B7A6788189FB131001E6629 /* RWSDumbItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSDumbItem.h; sourceTree = "<group>"; };
 		9B7A6789189FB131001E6629 /* RWSDumbItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSDumbItem.m; sourceTree = "<group>"; };
-		9B8352D818EFEBAA00547269 /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
-		9B8352D918EFEBAA00547269 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
-		9B8352DA18EFEBAA00547269 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
-		9B8352DB18EFEBAA00547269 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
-		9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_3.a; sourceTree = "<group>"; };
 		9B8352DF18EFEBF700547269 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9B8352E118EFEC0700547269 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9B88C853189CFA7400941A99 /* RWSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSLocationManager.h; sourceTree = "<group>"; };
 		9B88C854189CFA7400941A99 /* RWSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManager.m; sourceTree = "<group>"; };
 		9B88C856189D02A500941A99 /* RWSLocationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSLocationManagerTests.m; sourceTree = "<group>"; };
+		9B933CB119DD81760090970A /* libPods-Chainguard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Chainguard.a"; path = "Pods/build/Debug-iphoneos/libPods-Chainguard.a"; sourceTree = "<group>"; };
+		9B933CB419DD82490090970A /* CRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRFilter.h; sourceTree = "<group>"; };
+		9B933CB519DD82490090970A /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		9B933CB619DD82490090970A /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		9B933CB719DD82490090970A /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		9B933CB819DD82490090970A /* libCrittercism_v4_3_7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_3_7.a; sourceTree = "<group>"; };
 		9B99A1BF18B91BCF0075389A /* RWSPhotosViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPhotosViewControllerTests.m; sourceTree = "<group>"; };
 		9B99A1C118B91BF60075389A /* RWSPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPhotosViewController.h; sourceTree = "<group>"; };
 		9B99A1C218B91BF60075389A /* RWSPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPhotosViewController.m; sourceTree = "<group>"; };
@@ -245,14 +246,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B933CB219DD81760090970A /* libPods-Chainguard.a in Frameworks */,
 				9B8352E218EFEC0700547269 /* SystemConfiguration.framework in Frameworks */,
 				9B5579EB18969918008E3C0A /* CoreData.framework in Frameworks */,
 				9B59DC831895D1C6000530EF /* MapKit.framework in Frameworks */,
 				9BD6B14A1895A1CC006E02D0 /* CoreGraphics.framework in Frameworks */,
 				9BD6B14C1895A1CC006E02D0 /* UIKit.framework in Frameworks */,
 				9BD6B1481895A1CC006E02D0 /* Foundation.framework in Frameworks */,
-				9B8352DE18EFEBAA00547269 /* libCrittercism_v4_3_3.a in Frameworks */,
-				276A5CEFC1014B12A8A93EEF /* libPods-Chainguard.a in Frameworks */,
+				9B933CBA19DD82490090970A /* libCrittercism_v4_3_7.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,14 +271,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B8352D718EFEBAA00547269 /* CrittercismSDK */ = {
+		9B933CB319DD82490090970A /* CrittercismSDK */ = {
 			isa = PBXGroup;
 			children = (
-				9B8352D818EFEBAA00547269 /* CRFilter.h */,
-				9B8352D918EFEBAA00547269 /* Crittercism.h */,
-				9B8352DA18EFEBAA00547269 /* CrittercismDelegate.h */,
-				9B8352DB18EFEBAA00547269 /* dsym_upload.sh */,
-				9B8352DC18EFEBAA00547269 /* libCrittercism_v4_3_3.a */,
+				9B933CB419DD82490090970A /* CRFilter.h */,
+				9B933CB519DD82490090970A /* Crittercism.h */,
+				9B933CB619DD82490090970A /* CrittercismDelegate.h */,
+				9B933CB719DD82490090970A /* dsym_upload.sh */,
+				9B933CB819DD82490090970A /* libCrittercism_v4_3_7.a */,
 			);
 			path = CrittercismSDK;
 			sourceTree = "<group>";
@@ -306,6 +307,7 @@
 		9BD6B1461895A1CC006E02D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B933CB119DD81760090970A /* libPods-Chainguard.a */,
 				9B8352E118EFEC0700547269 /* SystemConfiguration.framework */,
 				9B8352DF18EFEBF700547269 /* Security.framework */,
 				9B5579EA18969918008E3C0A /* CoreData.framework */,
@@ -325,6 +327,7 @@
 		9BD6B14D1895A1CC006E02D0 /* Manifest */ = {
 			isa = PBXGroup;
 			children = (
+				9B933CB319DD82490090970A /* CrittercismSDK */,
 				9BE3B3B61930871400B5D6CC /* MKMapView+Centering.h */,
 				9BE3B3B71930871400B5D6CC /* MKMapView+Centering.m */,
 				9B079624189A59B20026D489 /* _RWSManagedItem.h */,
@@ -333,7 +336,6 @@
 				9B99A1CC18B922050075389A /* _RWSManagedPhoto.m */,
 				9BDED6021897D175006E8E5C /* _RWSManagedProject.h */,
 				9BDED6031897D175006E8E5C /* _RWSManagedProject.m */,
-				9B8352D718EFEBAA00547269 /* CrittercismSDK */,
 				9B466C4318A38503008AE3FF /* CurrencyToolbar.xib */,
 				9BA79FC5192747C400943097 /* jazzmaster.jpg */,
 				9B079631189A90020026D489 /* NSLocale+RWSCurrency.h */,
@@ -549,13 +551,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8352DD18EFEBAA00547269 /* dsym_upload.sh in Resources */,
 				9BD6B1521895A1CC006E02D0 /* InfoPlist.strings in Resources */,
 				9BD6B15A1895A1CC006E02D0 /* Images.xcassets in Resources */,
 				9BA79FC6192747C400943097 /* jazzmaster.jpg in Resources */,
 				9B1DA95F19139E9100B599CF /* RWSAddPhotoCell.xib in Resources */,
 				9B12FA7F1914D87C0020BD43 /* RWSPageControlView.xib in Resources */,
 				9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */,
+				9B933CB919DD82490090970A /* dsym_upload.sh in Resources */,
 				9B466C4418A38503008AE3FF /* CurrencyToolbar.xib in Resources */,
 				9B03243D190A7ECD003D6506 /* RWSPhotoCell.xib in Resources */,
 				9B59DC811895AA27000530EF /* Storyboard.storyboard in Resources */,
