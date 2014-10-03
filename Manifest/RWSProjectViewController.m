@@ -244,29 +244,18 @@
         return;
     }
 
-    UIActionSheet *sheet = [[UIActionSheet alloc] init];
-    sheet.title = @"Change Display Currency";
-    sheet.delegate = self;
-
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Change Display Currency" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [controller addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    
     for(NSString *currencyCode in currencyCodes){
-        [sheet addButtonWithTitle:currencyCode];
+        [controller addAction:[UIAlertAction actionWithTitle:currencyCode style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self.project setPreferredCurrencyCode:currencyCode];
+            
+            [self recalculatePrice];
+        }]];
     }
-
-    sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
-
-    [sheet showFromToolbar:self.navigationController.toolbar];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if(buttonIndex == [actionSheet cancelButtonIndex]){
-        return;
-    }
-
-    NSString *selectedCurrencyCode = [self.project currencyCodesUsed][buttonIndex];
-    [self.project setPreferredCurrencyCode:selectedCurrencyCode];
-
-    [self recalculatePrice];
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)showEmptyStateIfNecessary

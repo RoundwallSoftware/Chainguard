@@ -12,7 +12,7 @@
 
 @protocol RWSProjectSourceDelegate;
 
-@interface RWSProjectsSource : NSObject<RWSMapItemSource, UIAlertViewDelegate>
+@interface RWSProjectsSource : NSObject<RWSMapItemSource>
 @property (nonatomic, weak) id<RWSProjectSourceDelegate> delegate;
 
 @property (nonatomic, strong) NSManagedObjectContext *context;
@@ -23,6 +23,8 @@
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)indexPathForProjectWithIdentifier:(NSString *)identifier;
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath;
+
+- (UIAlertAction *)defaultProjectAction;
 @end
 
 @protocol RWSProjectSourceDelegate

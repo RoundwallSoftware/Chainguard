@@ -137,24 +137,25 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
     BOOL didPreviouslyAddLocation = [defaults boolForKey:AYIUserDidAddLocationPreference];
     BOOL didPreviouslyChooseAutoLocation = [defaults boolForKey:AYIUserDidDecideOnAutoLocationPreference];
     if(didPreviouslyAddLocation && ![RWSLocationManager isAutoLocationEnabled] && !didPreviouslyChooseAutoLocation){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Auto-add Location" message:@"Do you want to always add location to new items?\n(This can be disabled in settings.)" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-        [alertView show];
-    }else{
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:AYIUserDidDecideOnAutoLocationPreference];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Auto-add Location" message:@"Do you want to always add location to new items?\n(This can be disabled in settings.)" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *autoAdd = [UIAlertAction actionWithTitle:@"Auto" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self.locationManager enableAutoUpdates];
+        }];
+        
+        [alert addAction:cancel];
+        [alert addAction:autoAdd];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
         [defaults setBool:YES forKey:AYIUserDidAddLocationPreference];
     }
 
     [self.locationManager updateLocation];
     [sender setTitle:@"Finding location..." forState:UIControlStateNormal];
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:AYIUserDidDecideOnAutoLocationPreference];
-    if(buttonIndex == [alertView cancelButtonIndex]){
-        return;
-    }
-
-    [self.locationManager enableAutoUpdates];
 }
 
 - (IBAction)dismissKeyboard:(id)sender

@@ -13,6 +13,7 @@
 #import "RWSProjectCell.h"
 #import "RWSProjectViewController.h"
 #import "RWSMapViewController.h"
+#import "RWSManagedProject.h"
 
 @interface RWSProjectsViewController ()
 @end
@@ -68,6 +69,15 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addProject)];
 
     self.navigationItem.rightBarButtonItems = @[addButton, mapButton];
+    
+    if([RWSManagedProject canAddDefaultProject]){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Would you like to see an example project?" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[self.projectSource defaultProjectAction]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+
 }
 
 - (void)showMap

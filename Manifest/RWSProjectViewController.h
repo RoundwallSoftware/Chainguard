@@ -10,7 +10,7 @@
 #import "RWSItemViewController.h"
 #import "RWSItemCell.h"
 
-@interface RWSProjectViewController : UITableViewController<UITextFieldDelegate, RWSItemDelegate, UIActionSheetDelegate>
+@interface RWSProjectViewController : UITableViewController<UITextFieldDelegate, RWSItemDelegate>
 @property (nonatomic, strong) id<RWSProject> project;
 
 - (IBAction)share:(id)sender;

@@ -9,7 +9,7 @@
 #import "RWSProject.h"
 #import "RWSPhotoCell.h"
 
-@interface RWSPhotosViewController : UICollectionViewController<UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, RWSPhotoCellDelegate>
+@interface RWSPhotosViewController : UICollectionViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, RWSPhotoCellDelegate>
 @property (nonatomic, strong) NSObject<RWSItem> *item;
 
 - (IBAction)addPhoto:(id)sender;

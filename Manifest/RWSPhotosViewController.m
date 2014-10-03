@@ -79,31 +79,30 @@
     }];
 }
 
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if(buttonIndex == [actionSheet cancelButtonIndex]){
-        return;
-    }
-
-    UIImagePickerController *controller = [[UIImagePickerController alloc] init];
-    controller.allowsEditing = YES;
-    controller.delegate = self;
-    controller.mediaTypes = @[(NSString *)kUTTypeImage];
-    if(buttonIndex == 1){
-        controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    } else {
-        NSParameterAssert(buttonIndex == 0);
-        controller.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-
-    [self.parentViewController presentViewController:controller animated:YES completion:nil];
-}
-
 - (IBAction)addPhoto:(id)sender
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose From Library", nil];
-    [sheet showInView:self.parentViewController.view];
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    picker.mediaTypes = @[(NSString *)kUTTypeImage];
+
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [controller addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        [controller addAction:[UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:picker animated:YES completion:nil];
+        }]];
+    }
+    
+    [controller addAction:[UIAlertAction actionWithTitle:@"Choose From Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:picker animated:YES completion:nil];
+    }]];
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

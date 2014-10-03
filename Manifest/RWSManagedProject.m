@@ -12,7 +12,6 @@ NSString *const RWSProjectHasAddedKey = @"RWSProjectHasAddedKey";
 + (BOOL)canAddDefaultProject
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     return ![defaults boolForKey:RWSProjectHasAddedKey] && ![defaults boolForKey:RWSProjectWasDeletedKey];
 }
 
