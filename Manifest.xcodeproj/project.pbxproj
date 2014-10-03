@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6486E211573F48398F36E13C /* libPods-ChainguardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */; };
 		9B03243D190A7ECD003D6506 /* RWSPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */; };
-		9B05B33F18C0C9780060536F /* RWSPagedPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */; };
-		9B05B34218C0CC660060536F /* RWSBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05B34118C0CC660060536F /* RWSBigImageViewController.m */; };
 		9B079623189A57E40026D489 /* RWSItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079622189A57E40026D489 /* RWSItemViewController.m */; };
 		9B079628189A59B20026D489 /* _RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079625189A59B20026D489 /* _RWSManagedItem.m */; };
 		9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079627189A59B20026D489 /* RWSManagedItem.m */; };
@@ -117,10 +115,6 @@
 		4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chainguard.xcconfig"; path = "Pods/Pods-Chainguard.xcconfig"; sourceTree = "<group>"; };
 		910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChainguardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWSPhotoCell.xib; sourceTree = "<group>"; };
-		9B05B33D18C0C9780060536F /* RWSPagedPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSPagedPhotosViewController.h; sourceTree = "<group>"; };
-		9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSPagedPhotosViewController.m; sourceTree = "<group>"; };
-		9B05B34018C0CC660060536F /* RWSBigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSBigImageViewController.h; sourceTree = "<group>"; };
-		9B05B34118C0CC660060536F /* RWSBigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSBigImageViewController.m; sourceTree = "<group>"; };
 		9B079621189A57E40026D489 /* RWSItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSItemViewController.h; sourceTree = "<group>"; };
 		9B079622189A57E40026D489 /* RWSItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemViewController.m; sourceTree = "<group>"; };
 		9B079624189A59B20026D489 /* _RWSManagedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _RWSManagedItem.h; sourceTree = "<group>"; };
@@ -343,8 +337,6 @@
 				9B1DA95E19139E9100B599CF /* RWSAddPhotoCell.xib */,
 				9BD6B1561895A1CC006E02D0 /* RWSAppDelegate.h */,
 				9BD6B1571895A1CC006E02D0 /* RWSAppDelegate.m */,
-				9B05B34018C0CC660060536F /* RWSBigImageViewController.h */,
-				9B05B34118C0CC660060536F /* RWSBigImageViewController.m */,
 				9B5579E51896989D008E3C0A /* RWSCoreDataController.h */,
 				9B5579E61896989D008E3C0A /* RWSCoreDataController.m */,
 				9B7A6788189FB131001E6629 /* RWSDumbItem.h */,
@@ -377,8 +369,6 @@
 				9B12FA7E1914D87C0020BD43 /* RWSPageControlView.xib */,
 				9B12FA371914D2640020BD43 /* RWSPagedLayout.h */,
 				9B12FA381914D2640020BD43 /* RWSPagedLayout.m */,
-				9B05B33D18C0C9780060536F /* RWSPagedPhotosViewController.h */,
-				9B05B33E18C0C9780060536F /* RWSPagedPhotosViewController.m */,
 				9B99A1C418B91F940075389A /* RWSPhotoCell.h */,
 				9B99A1C518B91F940075389A /* RWSPhotoCell.m */,
 				9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */,
@@ -660,9 +650,7 @@
 				9B99A1CF18B922050075389A /* _RWSManagedPhoto.m in Sources */,
 				9B99A1C618B91F940075389A /* RWSPhotoCell.m in Sources */,
 				9BD6B1541895A1CC006E02D0 /* main.m in Sources */,
-				9B05B33F18C0C9780060536F /* RWSPagedPhotosViewController.m in Sources */,
 				9B59DC861895D6BF000530EF /* RWSMapViewController.m in Sources */,
-				9B05B34218C0CC660060536F /* RWSBigImageViewController.m in Sources */,
 				9BDECA4F18A6994100CE7C3C /* RWSReverseItemParser.m in Sources */,
 				9B99A1D318B929BB0075389A /* UIImage+CODImageScaling.m in Sources */,
 				9B5579EE189699BA008E3C0A /* Model.xcdatamodeld in Sources */,

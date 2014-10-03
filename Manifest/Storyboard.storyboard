@@ -192,64 +192,6 @@
             </objects>
             <point key="canvasLocation" x="2120.625" y="-584.15492957746471"/>
         </scene>
-        <!--Paged Photos View Controller-->
-        <scene sceneID="S7d-xx-Z7O">
-            <objects>
-                <viewController storyboardIdentifier="pagedPhotos" extendedLayoutIncludesOpaqueBars="YES" id="JHp-QN-qGR" customClass="RWSPagedPhotosViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gsm-OK-4gP"/>
-                        <viewControllerLayoutGuide type="bottom" id="hFT-DC-CVJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KUV-gX-qZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34T-02-XLw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="XV3-SF-Np2" kind="embed" id="2hv-Bi-KMf"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="hFT-DC-CVJ" firstAttribute="top" secondItem="34T-02-XLw" secondAttribute="bottom" id="TYj-j4-bKF"/>
-                            <constraint firstItem="34T-02-XLw" firstAttribute="top" secondItem="gsm-OK-4gP" secondAttribute="bottom" id="WeE-9j-O65"/>
-                            <constraint firstAttribute="trailing" secondItem="34T-02-XLw" secondAttribute="trailing" id="cHW-WX-Grf"/>
-                            <constraint firstItem="34T-02-XLw" firstAttribute="leading" secondItem="KUV-gX-qZJ" secondAttribute="leading" id="jP1-L6-laE"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="hWV-bN-4hn" appends="YES" id="giC-Wk-CPA"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" id="IzU-ot-84d"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LdX-46-gLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="hWV-bN-4hn">
-                    <connections>
-                        <action selector="tapOnScreen:" destination="JHp-QN-qGR" id="FO1-Bi-WNF"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="3924.375" y="-584.15492957746471"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="v41-V8-8Yg">
-            <objects>
-                <pageViewController storyboardIdentifier="pagecontroller" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="20" navigationOrientation="horizontal" spineLocation="none" id="XV3-SF-Np2" sceneMemberID="viewController">
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xq3-1k-ZIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4807.5" y="-584.15492957746471"/>
-        </scene>
         <!--Item View Controller-->
         <scene sceneID="a6K-9J-57d">
             <objects>

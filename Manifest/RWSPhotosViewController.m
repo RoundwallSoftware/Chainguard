@@ -7,7 +7,6 @@
 //
 
 #import "RWSPhotosViewController.h"
-#import "RWSPagedPhotosViewController.h"
 @import MobileCoreServices;
 
 @interface RWSPhotosViewController ()
@@ -111,15 +110,6 @@
         [self addPhoto:nil];
         return;
     }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    RWSPagedPhotosViewController *controller = [segue destinationViewController];
-    controller.item = self.item;
-
-    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
-    controller.initialIndex = [selectedIndexPath item];
 }
 
 - (void)cellDidChoseDeleteAction:(RWSPhotoCell *)cell
