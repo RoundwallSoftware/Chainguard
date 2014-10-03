@@ -250,58 +250,6 @@
             </objects>
             <point key="canvasLocation" x="4807.5" y="-584.15492957746471"/>
         </scene>
-        <!--Big Image View Controller-->
-        <scene sceneID="ltu-1C-ydh">
-            <objects>
-                <viewController storyboardIdentifier="bigImage" id="jcN-xD-sLx" customClass="RWSBigImageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fLU-qU-uAt"/>
-                        <viewControllerLayoutGuide type="bottom" id="lbg-VX-FIz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="owr-OH-8pH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8d-L8-CvG">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="500" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="f22-j4-Rps">
-                                        <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="f22-j4-Rps" firstAttribute="leading" secondItem="F8d-L8-CvG" secondAttribute="leading" id="4nc-tp-5Y0"/>
-                                    <constraint firstItem="f22-j4-Rps" firstAttribute="top" secondItem="F8d-L8-CvG" secondAttribute="top" id="7gn-N3-wwV"/>
-                                    <constraint firstAttribute="trailing" secondItem="f22-j4-Rps" secondAttribute="trailing" id="ccn-zr-Bzd"/>
-                                    <constraint firstAttribute="bottom" secondItem="f22-j4-Rps" secondAttribute="bottom" id="pvM-eF-VIa"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="jcN-xD-sLx" id="ULX-yK-MML"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="F8d-L8-CvG" secondAttribute="trailing" id="Owa-Bf-Sj0"/>
-                            <constraint firstItem="lbg-VX-FIz" firstAttribute="top" secondItem="F8d-L8-CvG" secondAttribute="bottom" id="QxJ-Ml-2qF"/>
-                            <constraint firstItem="F8d-L8-CvG" firstAttribute="top" secondItem="fLU-qU-uAt" secondAttribute="bottom" id="ZIt-iV-um6"/>
-                            <constraint firstItem="F8d-L8-CvG" firstAttribute="leading" secondItem="owr-OH-8pH" secondAttribute="leading" id="t0E-Dl-Umh"/>
-                        </constraints>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="imageView" destination="f22-j4-Rps" id="drK-Mv-zvp"/>
-                        <outlet property="scrollView" destination="F8d-L8-CvG" id="7XS-p9-X3q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nnl-wv-vPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5664.375" y="-584.15492957746471"/>
-        </scene>
         <!--Item View Controller-->
         <scene sceneID="a6K-9J-57d">
             <objects>
