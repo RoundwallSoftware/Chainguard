@@ -227,7 +227,7 @@ NSString *const RWSProjectHasAddedKey = @"RWSProjectHasAddedKey";
 {
     NSString *titleString = [@"Project: " stringByAppendingString:self.title];
     NSString *priceString = [@"Total: " stringByAppendingString:[self formattedTotalRemainingPrice]];
-    NSString *itemString = [[[[self items] valueForKey:@"lineItemString"] array] componentsJoinedByString:@"\n"];
+    NSString *itemString = [[[[self items] valueForKey:@"lineItemWithAddress"] array] componentsJoinedByString:@"\n"];
     NSString *madeWithThisAppString = [NSString stringWithFormat:@"Made with %@.app", [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey]];
     NSString *appURLString = @"itms://itunes.com/apps/chainguard";
 

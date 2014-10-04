@@ -93,14 +93,24 @@
     [self didChangeValueForKey:@"photos"];
 }
 
+- (NSString *)lineItemWithAddress
+{
+    NSMutableArray *items = [NSMutableArray arrayWithObject:[self lineItemString]];
+    if([self addressString]){
+        [items addObject:[NSString stringWithFormat:@"( %@ )", [self addressString]]];
+    }
+    
+    return [items componentsJoinedByString:@" "];
+}
+
 - (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType
 {
-    return [self lineItemString];
+    return [self lineItemWithAddress];
 }
 
 - (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController
 {
-    return [self lineItemString];
+    return [self lineItemWithAddress];
 }
 
 @end
