@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="G7Q-rn-GWp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -23,19 +24,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-ED-tZi">
-                                            <rect key="frame" x="15" y="15" width="40" height="19.5"/>
+                                            <rect key="frame" x="15" y="18.5" width="40" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72V-fR-rfv">
-                                            <rect key="frame" x="15" y="42.5" width="35.5" height="17"/>
+                                            <rect key="frame" x="15" y="42" width="35.5" height="17"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-Uu-xJc">
-                                            <rect key="frame" x="488" y="0.0" width="79" height="79"/>
+                                            <rect key="frame" x="487.5" y="0.0" width="79.5" height="79.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="PNg-Uu-xJc" secondAttribute="height" multiplier="1:1" id="3PA-L0-Ryo"/>
                                             </constraints>
@@ -44,8 +45,8 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="PNg-Uu-xJc" secondAttribute="bottom" id="3QM-Pf-qEO"/>
                                         <constraint firstAttribute="trailing" secondItem="PNg-Uu-xJc" secondAttribute="trailing" id="SwZ-W9-B1i"/>
-                                        <constraint firstItem="72V-fR-rfv" firstAttribute="top" secondItem="XbR-ED-tZi" secondAttribute="bottom" constant="8" symbolic="YES" id="isQ-Iw-WKT"/>
-                                        <constraint firstItem="XbR-ED-tZi" firstAttribute="top" secondItem="dVa-Kj-Qig" secondAttribute="top" constant="15" id="na0-iQ-RvO"/>
+                                        <constraint firstAttribute="centerY" secondItem="XbR-ED-tZi" secondAttribute="bottom" constant="2" id="nma-dY-nbP"/>
+                                        <constraint firstAttribute="centerY" secondItem="72V-fR-rfv" secondAttribute="top" constant="-2" id="q4F-kZ-FAS"/>
                                         <constraint firstAttribute="centerY" secondItem="PNg-Uu-xJc" secondAttribute="centerY" id="s8s-7b-HVq"/>
                                         <constraint firstItem="XbR-ED-tZi" firstAttribute="leading" secondItem="dVa-Kj-Qig" secondAttribute="leading" constant="15" id="tax-nL-SCd"/>
                                         <constraint firstItem="72V-fR-rfv" firstAttribute="leading" secondItem="dVa-Kj-Qig" secondAttribute="leading" constant="15" id="tbW-5W-beg"/>
@@ -96,8 +97,9 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-50-pXX">
-                                <rect key="frame" x="524" y="30" width="60" height="38"/>
+                                <rect key="frame" x="521" y="30" width="63" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" title="Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,9 +206,10 @@
                             <rect key="frame" x="0.0" y="358" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4r-S2-bi7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4r-S2-bi7">
+                                    <rect key="frame" x="100" y="2" width="400" height="40"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                     <state key="normal" title="Delete Item">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -216,6 +219,11 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="O4r-S2-bi7" secondAttribute="trailing" constant="100" id="dGy-zm-NTs"/>
+                                <constraint firstAttribute="centerY" secondItem="O4r-S2-bi7" secondAttribute="centerY" id="pAX-Tm-vyN"/>
+                                <constraint firstItem="O4r-S2-bi7" firstAttribute="leading" secondItem="SEZ-n7-PRg" secondAttribute="leading" constant="100" id="pDG-s5-bmM"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection headerTitle="" id="7Sm-YD-exK">
@@ -281,8 +289,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="18t, forged steel, 2/32" translatesAutoresizingMaskIntoConstraints="NO" id="zDL-b9-kIB">
-                                                    <rect key="frame" x="12" y="4" width="296" height="80"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="18t, forged steel, 2/32" translatesAutoresizingMaskIntoConstraints="NO" id="zDL-b9-kIB">
+                                                    <rect key="frame" x="8" y="8" width="584" height="72.5"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -291,6 +299,12 @@
                                                     </connections>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zDL-b9-kIB" secondAttribute="bottom" id="97K-MG-zx1"/>
+                                                <constraint firstItem="zDL-b9-kIB" firstAttribute="leading" secondItem="gyW-dd-sAQ" secondAttribute="leadingMargin" id="Azy-dB-db8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zDL-b9-kIB" secondAttribute="trailing" id="Knq-mf-AQ9"/>
+                                                <constraint firstItem="zDL-b9-kIB" firstAttribute="top" secondItem="gyW-dd-sAQ" secondAttribute="topMargin" id="ykU-Hl-TY7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>

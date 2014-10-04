@@ -94,7 +94,8 @@ NSString *const AYIUserDidDecideOnAutoLocationPreference = @"AYIUserDidDecideOnA
 
 - (void)setupPhotosController
 {
-    CGFloat width = CGRectGetWidth(self.tableView.bounds);
+    CGFloat width = 320.0f;
+    
     RWSPagedLayout *layout = [[RWSPagedLayout alloc] init];
     layout.itemSize = CGSizeMake(width, width);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
