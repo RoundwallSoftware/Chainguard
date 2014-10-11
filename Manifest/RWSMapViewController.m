@@ -8,6 +8,8 @@
 
 #import "RWSMapViewController.h"
 #import "MKMapView+Centering.h"
+#import "RWSProject.h"
+#import "RWSItemViewController.h"
 
 NSString *const RWSMapCenterLatitude = @"RWSMapCenterLatitude";
 NSString *const RWSMapCenterLongitude = @"RWSMapCenterLongitude";
@@ -42,6 +44,45 @@ NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
 {
     self.closeButton.alpha = 0.2;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+    pin.canShowCallout = YES;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return pin;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"toItem" sender:self];
+}
+
+- (void)showViewController:(UIViewController *)vc sender:(id)sender
+{
+    UIViewController *controller = [self presentingViewController];
+    
+    [controller dismissViewControllerAnimated:YES completion:^{
+        [controller showViewController:vc sender:sender];
+    }];
+}
+
+- (id<RWSItem>)selectedItem
+{
+    return [[self.mapView selectedAnnotations] firstObject];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *identifier = [segue identifier];
+    if([identifier isEqualToString:@"toItem"]){
+        RWSItemViewController *controller = [segue destinationViewController];
+        
+        controller.item = [self selectedItem];
+        NSParameterAssert(controller.item);
+    }
 }
 
 @end
