@@ -9,6 +9,24 @@ NSString *const RWSProjectHasAddedKey = @"RWSProjectHasAddedKey";
 
 @implementation RWSManagedProject
 
++ (NSArray *)search:(NSString *)searchString inContext:(NSManagedObjectContext *)context
+{
+    searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchString];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[self entityInManagedObjectContext:context]];
+    [request setPredicate:predicate];
+    [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:RWSManagedProjectAttributes.title ascending:YES]]];
+    
+    NSError *fetchError;
+    NSArray *results =  [context executeFetchRequest:request error:&fetchError];
+    if(!results){
+        NSAssert(NO, @"Error searching projects: %@", fetchError);
+    }
+    
+    return results;
+}
+
 + (BOOL)canAddDefaultProject
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

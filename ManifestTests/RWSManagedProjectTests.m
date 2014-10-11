@@ -209,4 +209,14 @@
     return [UIImage imageWithContentsOfFile:path];
 }
 
+- (void)testSearchingForProjectNamesWorks
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    
+    NSArray *results = [RWSManagedProject search:@"Untitled" inContext:testContext];
+    
+    assertThatInteger([results count], is(equalToInteger(1)));
+    assertThat(results.firstObject, is(project));
+}
+
 @end

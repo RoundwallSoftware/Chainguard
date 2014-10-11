@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6486E211573F48398F36E13C /* libPods-ChainguardTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */; };
 		9B03243D190A7ECD003D6506 /* RWSPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */; };
+		9B05C7F019E90F2F00CCE383 /* RWSProjectAndItemSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B05C7EF19E90F2F00CCE383 /* RWSProjectAndItemSearch.m */; };
 		9B079623189A57E40026D489 /* RWSItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079622189A57E40026D489 /* RWSItemViewController.m */; };
 		9B079628189A59B20026D489 /* _RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079625189A59B20026D489 /* _RWSManagedItem.m */; };
 		9B079629189A59B20026D489 /* RWSManagedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B079627189A59B20026D489 /* RWSManagedItem.m */; };
@@ -115,6 +116,8 @@
 		4F2FBDF74A0F4130B997EC3E /* Pods-Chainguard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chainguard.xcconfig"; path = "Pods/Pods-Chainguard.xcconfig"; sourceTree = "<group>"; };
 		910DEEF639AB462F877CBFE0 /* libPods-ChainguardTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChainguardTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B03243C190A7ECD003D6506 /* RWSPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RWSPhotoCell.xib; sourceTree = "<group>"; };
+		9B05C7EE19E90F2F00CCE383 /* RWSProjectAndItemSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSProjectAndItemSearch.h; sourceTree = "<group>"; };
+		9B05C7EF19E90F2F00CCE383 /* RWSProjectAndItemSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSProjectAndItemSearch.m; sourceTree = "<group>"; };
 		9B079621189A57E40026D489 /* RWSItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSItemViewController.h; sourceTree = "<group>"; };
 		9B079622189A57E40026D489 /* RWSItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSItemViewController.m; sourceTree = "<group>"; };
 		9B079624189A59B20026D489 /* _RWSManagedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _RWSManagedItem.h; sourceTree = "<group>"; };
@@ -399,6 +402,8 @@
 				9BBF5DC619142E0600C37AF8 /* UIColor+RWSAppColors.m */,
 				9B99A1D118B929BB0075389A /* UIImage+CODImageScaling.h */,
 				9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */,
+				9B05C7EE19E90F2F00CCE383 /* RWSProjectAndItemSearch.h */,
+				9B05C7EF19E90F2F00CCE383 /* RWSProjectAndItemSearch.m */,
 			);
 			path = Manifest;
 			sourceTree = "<group>";
@@ -658,6 +663,7 @@
 				9BC959FF18C6042500CAE84E /* RWSExchangeRates.m in Sources */,
 				9B88C855189CFA7400941A99 /* RWSLocationManager.m in Sources */,
 				9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */,
+				9B05C7F019E90F2F00CCE383 /* RWSProjectAndItemSearch.m in Sources */,
 				9BBF5DC719142E0600C37AF8 /* UIColor+RWSAppColors.m in Sources */,
 				9BDECA4A18A64BE500CE7C3C /* RWSItemCell.m in Sources */,
 				9B079633189A90020026D489 /* NSLocale+RWSCurrency.m in Sources */,

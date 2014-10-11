@@ -12,7 +12,7 @@
 
 @protocol RWSProjectSourceDelegate;
 
-@interface RWSProjectsSource : NSObject<RWSMapItemSource>
+@interface RWSProjectsSource : NSObject<RWSMapItemSource, UISearchResultsUpdating>
 @property (nonatomic, weak) id<RWSProjectSourceDelegate> delegate;
 
 @property (nonatomic, strong) NSManagedObjectContext *context;

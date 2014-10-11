@@ -9,7 +9,6 @@
 @import XCTest;
 #import "RWSProject.h"
 #import "RWSProjectViewController.h"
-#import "SWTableViewCell.h"
 
 #define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
@@ -117,22 +116,6 @@
     [controller itemController:nil didDeleteItem:item];
 
     [verify(project) removeItemFromList:item];
-}
-
-- (void)testDeletingAnItem
-{
-    SWTableViewCell *cell = mock([SWTableViewCell class]);
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableView *tableView = mock([UITableView class]);
-    controller.tableView = tableView;
-    [given([tableView indexPathForCell:cell]) willReturn:indexPath];
-
-    id<RWSProject> project = mockProtocol(@protocol(RWSProject));
-    controller.project = project;
-
-    [controller swipeableTableViewCell:cell didTriggerRightUtilityButtonWithIndex:0];
-
-    [verify(project) removeItemAtIndexPath:indexPath];
 }
 
 - (void)testReorderingItems

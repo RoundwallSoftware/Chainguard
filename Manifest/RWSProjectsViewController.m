@@ -14,8 +14,11 @@
 #import "RWSProjectViewController.h"
 #import "RWSMapViewController.h"
 #import "RWSManagedProject.h"
+#import "RWSProjectAndItemSearch.h"
 
 @interface RWSProjectsViewController ()
+@property (nonatomic, strong) RWSProjectAndItemSearch *searcher;
+@property (nonatomic, strong) UISearchController *searchController;
 @end
 
 @implementation RWSProjectsViewController
@@ -65,6 +68,8 @@
 
     self.title = @"";
     
+    [self setupSearchController];
+    
     UIBarButtonItem *mapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"map"] style:UIBarButtonItemStylePlain target:self action:@selector(showMap)];
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addProject)];
 
@@ -77,7 +82,21 @@
         
         [self presentViewController:alert animated:YES completion:nil];
     }
+}
 
+- (void)setupSearchController
+{
+    self.searcher = [self.storyboard instantiateViewControllerWithIdentifier:@"projectItemSearch"];
+    self.searcher.context = self.projectSource.context;
+    
+    UISearchController *controller = [[UISearchController alloc] initWithSearchResultsController:self.searcher];
+    self.searchController = controller;
+    controller.searchResultsUpdater = self.searcher;
+    
+    self.definesPresentationContext = YES;
+    
+    controller.searchBar.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.bounds), 44.0f);
+    self.tableView.tableHeaderView = controller.searchBar;
 }
 
 - (void)showMap
@@ -162,7 +181,7 @@
 - (void)showEmptyStateIfNecessary
 {
     if([self.projectSource count]){
-        self.tableView.tableHeaderView = nil;
+        //self.tableView.tableHeaderView = nil;
     } else {
         UIView *header = [self emptyHeaderView];
         header.alpha = 0.0;
