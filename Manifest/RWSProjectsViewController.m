@@ -96,6 +96,7 @@
     self.definesPresentationContext = YES;
     
     controller.searchBar.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.bounds), 44.0f);
+    controller.searchBar.searchBarStyle = UISearchBarStyleMinimal;
     self.tableView.tableHeaderView = controller.searchBar;
 }
 
