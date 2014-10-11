@@ -17,7 +17,7 @@ NSString *const RWSMapCenterLatitudeDelta = @"RWSMapCenterLatitudeDelta";
 NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
 
 @interface RWSMapViewController ()
-
+@property (nonatomic, strong) CLLocationManager *manager;
 @end
 
 @implementation RWSMapViewController
@@ -27,9 +27,20 @@ NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
+    
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    if(status != kCLAuthorizationStatusAuthorizedAlways && status != kCLAuthorizationStatusAuthorizedWhenInUse){
+        self.manager = [[CLLocationManager alloc] init];
+        [self.manager  requestWhenInUseAuthorization];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 
     MKMapView *map = self.mapView;
     [map addAnnotations:[self.itemSource annotations]];
@@ -50,7 +61,9 @@ NSString *const RWSMapCenterLongitudeDelta = @"RWSMapCenterLongitudeDelta";
 {
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
     pin.canShowCallout = YES;
-    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    if([[[self  itemSource] annotations] count] > 1){
+        pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    }
     
     return pin;
 }

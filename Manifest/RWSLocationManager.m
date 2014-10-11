@@ -28,7 +28,14 @@ NSString *const RWSAutoLocationEnabled = @"RWSAutoLocationEnabled";
     manager.delegate = self;
     self.manager = manager;
 
-    [manager startUpdatingLocation];
+    [manager requestWhenInUseAuthorization];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if(status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways){
+        [manager startUpdatingLocation];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
