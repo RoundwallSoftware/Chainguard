@@ -8,11 +8,19 @@
 
 #import "RWSProjectAndItemSearch.h"
 #import "RWSManagedProject.h"
+#import "RWSManagedItem.h"
 #import "RWSProjectViewController.h"
+#import "RWSPriceFormatter.h"
 
 @interface RWSProjectAndItemSearch()
-@property (nonatomic, copy) NSArray *results;
+@property (nonatomic, copy) NSArray *projectResults;
+@property (nonatomic, copy) NSArray *itemResults;
 @end
+
+typedef NS_ENUM(NSUInteger, RWSSearchSection) {
+    RWSSearchSectionProjects = 0,
+    RWSSearchSectionItems
+};
 
 @implementation RWSProjectAndItemSearch
 
@@ -20,25 +28,70 @@
 {
     NSString *searchString = searchController.searchBar.text;
     
-    self.results = [RWSManagedProject search:searchString inContext:self.context];
+    self.projectResults = [RWSManagedProject search:searchString inContext:self.context];
+    self.itemResults = [RWSManagedItem search:searchString inContext:self.context];
     
     [self.tableView reloadData];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.results count];
+    switch(section){
+        case RWSSearchSectionItems:
+            return [self.itemResults count];
+            break;
+        case RWSSearchSectionProjects:
+            return [self.projectResults count];
+            break;
+    }
+    
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell;
+    
+    switch(indexPath.section){
+        case RWSSearchSectionProjects:
+            cell = [self tableView:tableView projectCellForRowAtIndexPath:indexPath];
+            break;
+        case RWSSearchSectionItems:
+            cell = [self tableView:tableView itemCellForRowAtIndexPath:indexPath];
+            break;
+    }
+    
+    return cell;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView itemCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item" forIndexPath:indexPath];
+    
+    RWSManagedItem *item = self.itemResults[indexPath.row];
+    
+    cell.textLabel.text = [item name];
+    
+    RWSPriceFormatter *formatter = [[RWSPriceFormatter alloc] init];
+    NSString *priceString = [formatter stringFromNumber:item.price currency:item.currencyCode];
+    
+    cell.detailTextLabel.text = priceString;
+    return cell;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView projectCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"project" forIndexPath:indexPath];
     
-    RWSManagedProject *project = self.results[indexPath.row];
+    RWSManagedProject *project = self.projectResults[indexPath.row];
     
     cell.textLabel.text = [project title];
     cell.detailTextLabel.text = [project formattedTotalRemainingPrice];
-    
     return cell;
 }
 
@@ -51,7 +104,7 @@
 {
     NSString *identifier = [segue identifier];
     if([identifier isEqualToString:@"toProject"]){
-        id<RWSProject> project = self.results[[self.tableView indexPathForSelectedRow].row];
+        id<RWSProject> project = self.projectResults[[self.tableView indexPathForSelectedRow].row];
         
         RWSProjectViewController *controller = [segue destinationViewController];
         controller.project = project;

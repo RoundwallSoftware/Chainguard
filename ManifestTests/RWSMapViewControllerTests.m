@@ -34,7 +34,7 @@
     id<RWSMapItemSource> source = mockProtocol(@protocol(RWSMapItemSource));
     controller.itemSource = source;
 
-    [controller viewDidLoad];
+    [controller viewDidAppear:YES];
 
     [verify(source) annotations];
 }

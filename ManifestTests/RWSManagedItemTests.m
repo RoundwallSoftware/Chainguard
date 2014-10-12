@@ -100,4 +100,12 @@
     assertThat(item.lineItemString, is(equalTo(@"Sup: $2.00")));
 }
 
+- (void)testSearchingForProjectNamesWorks
+{
+    NSArray *results = [RWSManagedItem search:@"Sup" inContext:testContext];
+    
+    assertThatInteger([results count], is(equalToInteger(1)));
+    assertThat(results.firstObject, is(item));
+}
+
 @end

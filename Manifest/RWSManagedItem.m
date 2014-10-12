@@ -8,6 +8,24 @@
 
 @implementation RWSManagedItem
 
++ (NSArray *)search:(NSString *)searchString inContext:(NSManagedObjectContext *)context
+{
+    searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@ OR notes CONTAINS[cd] %@", searchString, searchString];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[self entityInManagedObjectContext:context]];
+    [request setPredicate:predicate];
+    [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:RWSManagedItemAttributes.name ascending:YES]]];
+    
+    NSError *fetchError;
+    NSArray *results =  [context executeFetchRequest:request error:&fetchError];
+    if(!results){
+        NSAssert(NO, @"Error searching projects: %@", fetchError);
+    }
+    
+    return results;
+}
+
 - (CLLocationCoordinate2D)coordinate
 {
     return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);

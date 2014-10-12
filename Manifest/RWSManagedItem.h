@@ -6,5 +6,6 @@
 @property (readonly, copy) NSString *lineItemString;
 @property (readonly, copy) NSString *lineItemWithAddress;
 
++ (NSArray *)search:(NSString *)searchString inContext:(NSManagedObjectContext *)contex;
 - (NSDecimalNumber *)priceInCurrency:(NSString *)currencyCode;
 @end
