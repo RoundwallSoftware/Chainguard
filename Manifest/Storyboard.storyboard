@@ -181,6 +181,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8tF-J3-HnI" kind="show" identifier="toItem" id="YeK-nr-4om"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -191,7 +194,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1Y-7l-FtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341" y="-1442"/>
+            <point key="canvasLocation" x="1903" y="-1414"/>
         </scene>
         <!--Project View Controller-->
         <scene sceneID="NG8-An-tgX">
@@ -599,8 +602,8 @@ Rob Longridge</string>
         <image name="gear" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OF6-uj-SYc"/>
-        <segue reference="Flg-iV-hw1"/>
+        <segue reference="YeK-nr-4om"/>
         <segue reference="9bP-lW-HaF"/>
+        <segue reference="Flg-iV-hw1"/>
     </inferredMetricsTieBreakers>
 </document>

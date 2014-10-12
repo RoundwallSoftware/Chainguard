@@ -109,6 +109,13 @@ typedef NS_ENUM(NSUInteger, RWSSearchSection) {
         RWSProjectViewController *controller = [segue destinationViewController];
         controller.project = project;
     }
+    
+    if([identifier isEqualToString:@"toItem"]){
+        RWSItemViewController *controller = [segue destinationViewController];
+        id<RWSItem> item = self.itemResults[[self.tableView indexPathForSelectedRow].row];
+        
+        controller.item = item;
+    }
 }
 
 @end
