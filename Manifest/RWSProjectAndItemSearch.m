@@ -97,7 +97,10 @@ typedef NS_ENUM(NSUInteger, RWSSearchSection) {
 
 - (void)showViewController:(UIViewController *)vc sender:(id)sender
 {
-    [[self presentingViewController] showViewController:vc sender:sender];
+    UIViewController *controller = [self presentingViewController];
+    [controller dismissViewControllerAnimated:YES completion:^{
+        [controller showViewController:vc sender:sender];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

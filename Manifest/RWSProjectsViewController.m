@@ -182,7 +182,7 @@
 - (void)showEmptyStateIfNecessary
 {
     if([self.projectSource count]){
-        //self.tableView.tableHeaderView = nil;
+        self.tableView.tableHeaderView = self.searchController.searchBar;
     } else {
         UIView *header = [self emptyHeaderView];
         header.alpha = 0.0;
