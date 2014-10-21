@@ -55,7 +55,6 @@
 		9B99A1CF18B922050075389A /* _RWSManagedPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1CC18B922050075389A /* _RWSManagedPhoto.m */; };
 		9B99A1D018B922050075389A /* RWSManagedPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1CE18B922050075389A /* RWSManagedPhoto.m */; };
 		9B99A1D318B929BB0075389A /* UIImage+CODImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */; };
-		9BA79FC6192747C400943097 /* jazzmaster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BA79FC5192747C400943097 /* jazzmaster.jpg */; };
 		9BBEB02C18B8AE84000B7DF6 /* RWSNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */; };
 		9BBF5DC719142E0600C37AF8 /* UIColor+RWSAppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF5DC619142E0600C37AF8 /* UIColor+RWSAppColors.m */; };
 		9BC959FF18C6042500CAE84E /* RWSExchangeRates.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC959FE18C6042500CAE84E /* RWSExchangeRates.m */; };
@@ -191,7 +190,6 @@
 		9B99A1CE18B922050075389A /* RWSManagedPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSManagedPhoto.m; sourceTree = "<group>"; };
 		9B99A1D118B929BB0075389A /* UIImage+CODImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CODImageScaling.h"; sourceTree = "<group>"; };
 		9B99A1D218B929BB0075389A /* UIImage+CODImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CODImageScaling.m"; sourceTree = "<group>"; };
-		9BA79FC5192747C400943097 /* jazzmaster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jazzmaster.jpg; sourceTree = "<group>"; };
 		9BBEB02A18B8AE84000B7DF6 /* RWSNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSNotesViewController.h; sourceTree = "<group>"; };
 		9BBEB02B18B8AE84000B7DF6 /* RWSNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSNotesViewController.m; sourceTree = "<group>"; };
 		9BBF5DC519142E0600C37AF8 /* UIColor+RWSAppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RWSAppColors.h"; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 				9BDED6021897D175006E8E5C /* _RWSManagedProject.h */,
 				9BDED6031897D175006E8E5C /* _RWSManagedProject.m */,
 				9B466C4318A38503008AE3FF /* CurrencyToolbar.xib */,
-				9BA79FC5192747C400943097 /* jazzmaster.jpg */,
 				9B079631189A90020026D489 /* NSLocale+RWSCurrency.h */,
 				9B079632189A90020026D489 /* NSLocale+RWSCurrency.m */,
 				9B1DA95E19139E9100B599CF /* RWSAddPhotoCell.xib */,
@@ -548,7 +545,6 @@
 			files = (
 				9BD6B1521895A1CC006E02D0 /* InfoPlist.strings in Resources */,
 				9BD6B15A1895A1CC006E02D0 /* Images.xcassets in Resources */,
-				9BA79FC6192747C400943097 /* jazzmaster.jpg in Resources */,
 				9B1DA95F19139E9100B599CF /* RWSAddPhotoCell.xib in Resources */,
 				9B12FA7F1914D87C0020BD43 /* RWSPageControlView.xib in Resources */,
 				9BC95A0118C60F1600CAE84E /* Settings.bundle in Resources */,

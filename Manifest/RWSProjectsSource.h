@@ -23,8 +23,6 @@
 - (id<RWSProject>)projectAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)indexPathForProjectWithIdentifier:(NSString *)identifier;
 - (void)deleteProjectAtIndexPath:(NSIndexPath *)indexPath;
-
-- (UIAlertAction *)defaultProjectAction;
 @end
 
 @protocol RWSProjectSourceDelegate

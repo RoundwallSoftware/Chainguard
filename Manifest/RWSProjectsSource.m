@@ -17,15 +17,6 @@
 
 @implementation RWSProjectsSource
 
-- (UIAlertAction *)defaultProjectAction
-{
-    return [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [RWSManagedProject addDefaultProject:[self context]];
-        
-        [self.delegate projectSourceDidAddProject:self];
-    }];
-}
-
 - (NSManagedObjectContext *)context
 {
     if(_context){
@@ -85,8 +76,6 @@
 {
     RWSManagedProject *project = (RWSManagedProject*)[self projectAtIndexPath:indexPath];
     [self.context deleteObject:project];
-    
-    [RWSManagedProject makeNoteProjectWasDeleted];
 }
 
 - (NSArray *)annotations
