@@ -42,7 +42,7 @@
 
     item = [RWSManagedItem insertInManagedObjectContext:testContext];
     item.name = @"Sup";
-    assertThatBool([testContext save:nil], equalToBool(YES));
+    assertThatBool([testContext save:nil], isTrue());
 }
 
 - (void)testAddingAPhoto
@@ -71,7 +71,7 @@
     item.price = [NSDecimalNumber decimalNumberWithString:@"1"];
     item.currencyCode = @"USD";
 
-    assertThat([item priceInCurrency:@"EUR"], equalTo([NSDecimalNumber decimalNumberWithString:@"0.78"]));
+    assertThat([item priceInCurrency:@"EUR"], equalTo([NSDecimalNumber decimalNumberWithString:@"0.83"]));
 }
 
 - (void)testPriceInCurrencyGBPtoEUR

@@ -69,7 +69,7 @@
     [given([textField text]) willReturn:@"Title Now"];
 
     BOOL shouldReturn = [controller textFieldShouldReturn:textField];
-    assertThatBool(shouldReturn, equalToBool(YES));
+    assertThatBool(shouldReturn, isTrue());
 
     [verify(project) setTitle:@"Title Now"];
 }

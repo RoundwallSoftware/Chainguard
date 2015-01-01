@@ -45,7 +45,7 @@
 
     RWSManagedProject *project = [RWSManagedProject insertInManagedObjectContext:testContext];
     project.title = @"Untitled From Test";
-    assertThatBool([testContext save:nil], equalToBool(YES));
+    assertThatBool([testContext save:nil], isTrue());
 
     source = [[RWSProjectsSource alloc] init];
     source.context = testContext;
@@ -91,7 +91,7 @@
 
     NSArray *annotations = [source annotations];
     assertThat(annotations, hasCountOf(1));
-    assertThatBool([[annotations firstObject] conformsToProtocol:@protocol(MKAnnotation)], equalToBool(YES));
+    assertThatBool([[annotations firstObject] conformsToProtocol:@protocol(MKAnnotation)], isTrue());
 }
 
 @end

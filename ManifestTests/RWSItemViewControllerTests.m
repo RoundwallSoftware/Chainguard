@@ -37,7 +37,7 @@
 
     BOOL shouldReturn = [controller textFieldShouldReturn:mockField];
 
-    assertThatBool(shouldReturn, equalToBool(NO));
+    assertThatBool(shouldReturn, isFalse());
     [verify(mockField) resignFirstResponder];
 }
 
