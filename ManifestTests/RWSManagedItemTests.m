@@ -71,7 +71,7 @@
     item.price = [NSDecimalNumber decimalNumberWithString:@"1"];
     item.currencyCode = @"USD";
 
-    assertThat([item priceInCurrency:@"EUR"], equalTo([NSDecimalNumber decimalNumberWithString:@"0.83"]));
+    assertThat([item priceInCurrency:@"EUR"], closeTo([[NSDecimalNumber decimalNumberWithString:@"0.89"] doubleValue], 0.2));
 }
 
 - (void)testPriceInCurrencyGBPtoEUR
@@ -79,7 +79,7 @@
     item.price = [NSDecimalNumber decimalNumberWithString:@"2"];
     item.currencyCode = @"GBP";
 
-    assertThatDouble([[item priceInCurrency:@"EUR"] doubleValue], closeTo([[NSDecimalNumber decimalNumberWithString:@"2.43"] doubleValue], 0.2));
+    assertThatDouble([[item priceInCurrency:@"EUR"] doubleValue], closeTo([[NSDecimalNumber decimalNumberWithString:@"2.69"] doubleValue], 0.2));
 }
 
 - (void)testValidLineItemStringWithoutCurrency

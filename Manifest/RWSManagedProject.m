@@ -107,7 +107,11 @@
 
 - (id<RWSItem>)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.items[indexPath.row];
+    if([self count] > indexPath.row && indexPath.row >= 0){
+        return self.items[indexPath.row];
+    }
+    
+    return nil;
 }
 
 - (void)addItemToList:(id<RWSItem>)item

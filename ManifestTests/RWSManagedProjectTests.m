@@ -42,6 +42,13 @@
     [testContext setPersistentStoreCoordinator:storeCoordinator];
 }
 
+- (void)testAskingForItemsOutsideOfIndexDoesntCrash
+{
+    RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
+    
+    assertThat([project itemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]], nilValue());
+}
+
 - (void)testCreatingANewUntitledList
 {
     RWSManagedProject *project = [RWSManagedProject makeUntitledProjectInContext:testContext];
